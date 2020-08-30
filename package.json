@@ -1,0 +1,96 @@
+{
+  "name": "snippets-ranger",
+  "displayName": "Snippets Ranger",
+  "publisher": "robole",
+  "author": {
+    "name": "Rob O'Leary"
+  },
+  "description": "View all your snippets in one purty place. Yee-haw!",
+  "icon": "img/logo.png",
+  "version": "0.1.0",
+  "engines": {
+    "vscode": "^1.4.0"
+  },
+  "categories": [
+    "Snippets"
+  ],
+  "galleryBanner": {
+    "color": "#ffdd55",
+    "theme": "light"
+  },
+  "keywords": [
+    "snippets",
+    "markdown",
+    "php",
+    "swift",
+    "markdown",
+    "javascript",
+    "typescript",
+    "vb",
+    "csharp",
+    "java",
+    "python",
+    "vue",
+    "react",
+    "rust",
+    "c",
+    "c++",
+    "kotlin"
+  ],
+  "bugs": {
+    "url": "https://github.com/robole/vscode-snippets-ranger/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/robole/vscode-snippets-ranger"
+  },
+  "license": "MIT",
+  "activationEvents": [
+    "onCommand:snippets-ranger.show"
+  ],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "snippets-ranger.show",
+        "title": "Snippets Ranger: Show me that dur Range, Partner"
+      }
+    ]
+  },
+  "scripts": {
+    "lint": "eslint src",
+    "lint:fix": "eslint --fix src",
+    "format": "npx prettier --write .",
+    "test": "node ./test/runTest.js",
+    "webpack": "webpack --mode development",
+    "webpack-dev": "webpack --mode development --watch",
+    "vscode:prepublish": "webpack --mode production",
+    "build": "vsce package ."
+  },
+  "dependencies": {
+    "glob": "^7.1.6",
+    "jsonc-parser": "^2.3.0"
+  },
+  "devDependencies": {
+    "@types/glob": "^7.1.1",
+    "@types/mocha": "^7.0.2",
+    "@types/node": "^13.11.0",
+    "@types/vscode": "^1.4.0",
+    "chai": "^4.2.0",
+    "eslint": "^7.2.0",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-config-roboleary-node": "0.0.2",
+    "eslint-plugin-import": "^2.21.2",
+    "eslint-plugin-node": "^11.1.0",
+    "glob": "^7.1.6",
+    "jsonc-parser": "^2.3.0",
+    "mocha": "^7.1.2",
+    "prettier": "^2.0.5",
+    "typescript": "^3.8.3",
+    "vsce": "^1.77.0",
+    "vscode-test": "^1.3.0",
+    "webpack": "^4.44.0",
+    "webpack-cli": "^3.3.12"
+  }
+}

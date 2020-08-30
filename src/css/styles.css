@@ -1,0 +1,129 @@
+body,
+body.vscode-dark,
+body.vscode-light,
+body.vscode-high-contrast {
+  box-sizing: border-box;
+  font-family: Roboto, "Open Sans", san-serif;
+  font-size: calc(16px + 0.05vw);
+  width: 100%;
+  padding: 10px;
+  margin: 0 auto;
+  max-width: 1600px;
+  overflow-x: auto;
+}
+
+@media (min-width: 800px) {
+  body,
+  body.vscode-dark,
+  body.vscode-light,
+  body.vscode-high-contrast {
+    width: 90%;
+  }
+}
+
+code {
+  font-family: var(--vscode-editor-font-family);
+  font-size: calc(14px + 0.05vw);
+}
+
+h2 {
+  position: -webkit-sticky;
+  position: -moz-sticky;
+  position: -ms-sticky;
+  position: -o-sticky;
+  position: sticky;
+  top: 0;
+  text-align: center;
+  z-index: 1000;
+}
+
+h3 {
+  position: -webkit-sticky;
+  position: -moz-sticky;
+  position: -ms-sticky;
+  position: -o-sticky;
+  position: sticky;
+  top: 2.5rem;
+  z-index: 500;
+  line-height: 125%;
+  font-style: italic;
+}
+
+h2,
+h3 {
+  font-family: var(--vscode-font-family);
+  margin: 0;
+  margin-block-end: 0;
+  padding: 0.5rem 0;
+  background: var(--vscode-editor-background);
+}
+
+table {
+  table-layout: fixed;
+  width: 100%;
+  min-width: 450px;
+  border-collapse: collapse;
+  word-break: break-word;
+  margin: 1em 0;
+}
+
+th {
+  position: -webkit-sticky;
+  position: -moz-sticky;
+  position: -ms-sticky;
+  position: -o-sticky;
+  position: sticky;
+  top: 4.5rem;
+  background: var(--vscode-editor-background);
+  line-height: 150%;
+}
+
+th:nth-child(1),
+td:nth-child(1) {
+  width: 15%;
+}
+
+th:nth-child(2),
+td:nth-child(2) {
+  width: 20%;
+}
+
+th:nth-child(3),
+td:nth-child(3) {
+  width: 30%;
+}
+
+th:nth-child(4),
+td:nth-child(4) {
+  width: 35%;
+}
+
+th,
+td {
+  margin: 0;
+  padding: 10px 0;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+td {
+  padding-right: 5px;
+}
+
+body.vscode-dark tr:hover,
+body.vscode-high-contrast tr:hover {
+  background-color: #545624;
+}
+
+body.vscode-light th {
+  background-color: #f2f2f2;
+}
+
+body.vscode-dark th,
+body.vscode-high-contrast th {
+  background-color: #080515;
+}
+
+.empty {
+  text-align: center;
+}
