@@ -2,6 +2,7 @@ const { basename, normalize, resolve } = require("path");
 const fs = require("fs");
 const vscode = require("vscode");
 const glob = require("glob");
+const ExtensionSnippets = require("./extension-snippets");
 
 /**
  * Environment information.
@@ -86,6 +87,39 @@ class Environment {
       glob(`${extensionRoot}/**/snippets/*.code-snippets`, {}, (err, files) => {
         fufil(files);
       });
+    });
+  }
+
+  /**
+   * Get the filepaths for all of Extension Snippets file.
+   * @return {Promise} Promise with array of filepaths.
+   */
+  // eslint-disable-next-line class-methods-use-this
+  async getExtensionSnippets() {
+    let array = [];
+    vscode.extensions.all.forEach((extension) => {
+      let { packageJSON } = extension;
+      if (
+        packageJSON &&
+        packageJSON.isBuiltin === false &&
+        packageJSON.contributes &&
+        packageJSON.contributes.snippets
+      ) {
+        let extensionSnippets = new ExtensionSnippets(
+          packageJSON.name,
+          packageJSON.displayName,
+          packageJSON.publisher
+        );
+        packageJSON.contributes.snippets.forEach((snippet) => {
+          let path = resolve(extension.extensionPath, snippet.path);
+          extensionSnippets.addSnippetsFile(snippet.language, path);
+        });
+        array.push(extensionSnippets);
+      }
+    });
+
+    return new Promise((fufil) => {
+      fufil(array);
     });
   }
 

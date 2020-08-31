@@ -1,3 +1,8 @@
+:root {
+  --bg-dark-mode: #080515;
+  --bg-light-mode: #f2f2f2;
+}
+
 body,
 body.vscode-dark,
 body.vscode-light,
@@ -21,41 +26,83 @@ body.vscode-high-contrast {
   }
 }
 
+h1 {
+  text-align: center;
+}
+
+#toc {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  width: 90%;
+  margin: 0 auto;
+}
+
+@media (min-width: 600px) {
+  #toc {
+    width: 600px;
+  }
+}
+
 code {
   font-family: var(--vscode-editor-font-family);
   font-size: calc(14px + 0.05vw);
 }
 
-h2 {
-  position: -webkit-sticky;
-  position: -moz-sticky;
-  position: -ms-sticky;
-  position: -o-sticky;
-  position: sticky;
+section#user h2,
+section#extension h2,
+section#app h2 {
   top: 0;
-  text-align: center;
   z-index: 1000;
+  text-align: center;
 }
 
 h3 {
-  position: -webkit-sticky;
-  position: -moz-sticky;
-  position: -ms-sticky;
-  position: -o-sticky;
-  position: sticky;
   top: 2.5rem;
   z-index: 500;
-  line-height: 125%;
+  line-height: 150%;
   font-style: italic;
 }
 
-h2,
-h3 {
+section#extension th {
+  top: 7.5rem;
+}
+
+th {
+  position: -webkit-sticky;
+  position: -moz-sticky;
+  position: -ms-sticky;
+  position: -o-sticky;
+  position: sticky;
+  background: var(--vscode-editor-background);
+  line-height: 150%;
+  top: 4.5rem;
+}
+
+h4 {
+  top: 4.5rem;
+  z-index: 500;
+  padding: 0.25em 0;
+  line-height: 200%;
+  font-style: italic;
+}
+
+section#user h2,
+section#extension h2,
+section#app h2,
+h3,
+h4 {
   font-family: var(--vscode-font-family);
   margin: 0;
   margin-block-end: 0;
   padding: 0.5rem 0;
   background: var(--vscode-editor-background);
+  position: -webkit-sticky;
+  position: -moz-sticky;
+  position: -ms-sticky;
+  position: -o-sticky;
+  position: sticky;
 }
 
 table {
@@ -65,17 +112,6 @@ table {
   border-collapse: collapse;
   word-break: break-word;
   margin: 1em 0;
-}
-
-th {
-  position: -webkit-sticky;
-  position: -moz-sticky;
-  position: -ms-sticky;
-  position: -o-sticky;
-  position: sticky;
-  top: 4.5rem;
-  background: var(--vscode-editor-background);
-  line-height: 150%;
 }
 
 th:nth-child(1),
@@ -115,13 +151,16 @@ body.vscode-high-contrast tr:hover {
   background-color: #545624;
 }
 
-body.vscode-light th {
-  background-color: #f2f2f2;
+body.vscode-light th,
+body.vscode-light #toc {
+  background-color: var(--bg-light-mode);
 }
 
 body.vscode-dark th,
-body.vscode-high-contrast th {
-  background-color: #080515;
+body.vscode-dark #toc,
+body.vscode-high-contrast th,
+body.vscode-high-contrast #toc {
+  background-color: var(--bg-dark-mode);
 }
 
 .empty {

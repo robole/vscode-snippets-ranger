@@ -6,6 +6,7 @@ const jsonc = require("jsonc-parser");
 const { basename, normalize, resolve } = require("path");
 const Environment = require("./environment");
 const LanguageSnippets = require("./language-snippets");
+const ExtensionSnippets = require("./extension-snippets");
 
 /**
  * Fetch the Snippets from the file system.
@@ -23,7 +24,7 @@ class SnippetsFetcher {
    * @returns {Promise} A Promise with an array of JSON objects.
    */
   async getSnippetsCollection(filepaths, type) {
-    let jsonObjects = await this.toJSON(filepaths);
+    let jsonObjects = await this.getObjectArray(filepaths);
     let array = [];
 
     jsonObjects.forEach((obj, index) => {
@@ -49,12 +50,41 @@ class SnippetsFetcher {
   flattenSnippets(snippets) {
     let flatSnippets = [];
     // eslint-disable-next-line no-restricted-syntax
-    for (let [key, value] of Object.entries(obj)) {
+    for (let [key, value] of Object.entries(snippets)) {
       const { prefix, body, description } = value;
       let flatSnippet = { name: key, prefix, body, description };
       flatSnippets.push(flatSnippet);
     }
     return flatSnippets;
+  }
+
+  /**
+   * Get all of the ExtensionSnippets. The actual file data for snippet file is an embedded JSON object.
+   * @returns {Promise} A Promise with an array of ExtensionSnippets.
+   */
+  async getExtensionSnippetsCollection() {
+    let extensionSnippetsArray = await this.env.getExtensionSnippets();
+    let modifiedSnippetsArray = extensionSnippetsArray.map(
+      this.fetchExtensionSnippets.bind(this)
+    );
+    return Promise.all(modifiedSnippetsArray).then(() => {
+      return extensionSnippetsArray;
+    });
+  }
+
+  async fetchExtensionSnippets(extensionSnippets) {
+    let promises = extensionSnippets.snippets.map(async (snippet, i, array) => {
+      let data = await this.getObject(snippet.path);
+
+      if (data !== undefined) {
+        let flatSnippets = this.flattenSnippets(data);
+        // eslint-disable-next-line no-param-reassign
+        snippet.data = flatSnippets;
+      }
+      return snippet;
+    });
+
+    return Promise.all(promises);
   }
 
   /**
@@ -80,8 +110,17 @@ class SnippetsFetcher {
    * @param {Array} filepaths
    * @returns {Promise} A Promise with an array of the file contents.
    */
-  async getData(filepaths) {
+  async getDataArray(filepaths) {
     return Promise.all(filepaths.map((f) => fs.promises.readFile(f, "utf-8")));
+  }
+
+  /**
+   * Get the contents of the files.
+   * @param {Array} filepath
+   * @returns {Promise} A Promise with an array of the file contents.
+   */
+  async getData(filepath) {
+    return fs.promises.readFile(filepath, "utf-8");
   }
 
   /**
@@ -89,10 +128,21 @@ class SnippetsFetcher {
    * @param {Array} filepaths
    * @returns {Promise} A Promise with an array of JSON objects.
    */
-  async toJSON(filepaths) {
-    let data = await this.getData(filepaths);
+  async getObjectArray(filepaths) {
+    let data = await this.getDataArray(filepaths);
     let json = data.map((d) => jsonc.parse(d));
     return Promise.all(json);
+  }
+
+  /**
+   * Get the contents of the file as JSON objects. The files can be JSON or JSONC files (Microsoft JSON with comments standard).
+   * @param {Array} filepath
+   * @returns {Promise} A Promise with an array of JSON objects.
+   */
+  async getObject(filepath) {
+    let data = await this.getData(filepath);
+    let json = await jsonc.parse(data);
+    return json;
   }
 }
 
