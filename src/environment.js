@@ -126,7 +126,7 @@ class Environment {
   /**
    * Get the file name without the extension.
    */
-  static getLanguageName(path) {
+  static getFilename(path) {
     let name = basename(path);
     return name.split(".")[0];
   }

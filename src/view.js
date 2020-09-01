@@ -7,12 +7,12 @@ const SnippetsFetcher = require("./snippets-fetcher");
 const Formatter = require("./formatter");
 const path = require("path");
 const LanguageSnippets = require("./language-snippets");
-const NOT_FOUND_HTML = `<p class="empty">Oucho Gaucho!🌵 Nothing to round up! 🤠</p>`;
+const NOT_FOUND_HTML = `<p class="empty">Oucho Gaucho! 🌵 Nothing to round up! 🤠</p>`;
 
 /**
- * Webview for Snippet Ranger
+ * View for Snippet Ranger.
  */
-class RangerView {
+class View {
   constructor(context) {
     this.context = context;
     this.panel = vscode.window.createWebviewPanel(
@@ -46,20 +46,25 @@ class RangerView {
 				<title>Snippet Ranger</title>
 				<link rel="stylesheet" href="${stylesSrc}"/>
 		</head>
-		<body><h1>Snippets Ranger</h1>`;
+		<body>
+		<h1>Snippets Ranger</h1>`;
     let htmlEnd = `</body></html>`;
+
+    let upIcon = `<a href="#toc"><svg class="upIcon" viewBox="0 0 32 32" aria-labelledby="upIconTitle" role="img"><title id="upIconTitle">Go to top</title><g><path d="m16 31a15 15 0 1 1 15-15 15 15 0 0 1-15 15zm0-28a13 13 0 1 0 13 13 13 13 0 0 0-13-13z"/><path d="m8.93 18.47 7.07-7.07 7.07 7.07a1 1 0 0 1 0 1.41 1 1 0 0 1-1.41 0l-5.66-5.65-5.66 5.66a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.42z"/></g>
+		</svg></a>`;
 
     let userSection = await this.getUserSnippetsSection();
     let appSection = await this.getAppSnippetsSection();
     let extensionSection = await this.getExtensionSnippetsSection();
-    let toc = this.getTableOfContents();
+    let toc = this.getTableOfContents(); //relies on IDs being set by methods above
 
-    return `${htmlStart}${toc}${userSection}${extensionSection}${appSection}${htmlEnd}`;
+    return `${htmlStart}${toc}${userSection}${extensionSection}${appSection}${upIcon}${htmlEnd}`;
   }
 
   /**
-   * Creates the HTML output for the snippets for a language. There is a title and a table listing all of the snippets.
-   * @param {LanguageSnippets} languageSnippets
+   * Creates the HTML output for the section for a snippets set associated with a language. It has a title and a table listing all of the snippets.
+   * @param {LanguageSnippets} languageSnippets The LanguageSnippets you want the section for
+   * @param {String} type The type of snippets. Values can be "user" or "app".
    */
   createLanguageSection(languageSnippets, type) {
     let section = "";
@@ -86,8 +91,8 @@ class RangerView {
   }
 
   /**
-   * Creates the HTML output for the snippets for a language. There is a title and a table listing all of the snippets.
-   * @param {LanguageSnippets} snippets
+   * Creates the HTML output for a set of snippets associated with a snippets file from an extension. There is a title, a list of all the associated languages, and a table listing all of the snippets.
+   * @param {ExtensionSnippets} snippets The snippets associated with a snippets file for an extension.
    */
   createExtensionFileSection(snippets) {
     let section = "";
@@ -106,25 +111,23 @@ class RangerView {
   }
 
   /** Create the HTML output for a collection of snippets.
-   * @param {Array} snippets Array of snippet objects
+   * @param {Array} snippetsArray Array of snippet objects.
    */
-  getSnippetsTable(snippets) {
+  getSnippetsTable(snippetsArray) {
     const tableStart = `<table>
 		<thead><th>Prefix</th><th>Name</th><th>Description</th><th>Body</th></thead>
 		<tbody>`;
     const tableEnd = `</tbody></table>`;
     let table = tableStart;
 
-    snippets.forEach((snippet) => {
+    snippetsArray.forEach((snippet) => {
       table += `<tr>
 			<td>${snippet.prefix}</td>
 			<td>${snippet.name}</td>
 			<td>${snippet.description}</td>`;
-      if (snippet.body && typeof snippet.body === "string") {
-        table += `<td><code>${snippet.body}</code></td></tr>`;
-      } else if (snippet.body && typeof snippet.body === "object") {
-        table += `<td><code>${snippet.body.join("<br>")}</code></td></tr>`;
-      }
+      table += `<td><code>${Formatter.escapeBody(
+        snippet.body
+      )}</code></td></tr>`;
     });
 
     table += `${tableEnd}`;
@@ -132,7 +135,7 @@ class RangerView {
   }
 
   /**
-   * Get the user-defined snippets as HTML output.
+   * Get the user-defined snippets as HTML.
    */
   async getUserSnippetsSection() {
     let userSnippets = await this.snippetsFetcher.getUserSnippetsCollection();
@@ -153,7 +156,7 @@ class RangerView {
   }
 
   /**
-   * Get the app-defined snippets as HTML output.
+   * Get the app-defined snippets as HTML.
    */
   async getAppSnippetsSection() {
     let appSnippets = await this.snippetsFetcher.getAppSnippetsCollection();
@@ -166,7 +169,7 @@ class RangerView {
   }
 
   /**
-   * Get the app-defined snippets as HTML output.
+   * Get the app-defined snippets as HTML.
    */
   async getExtensionSnippetsSection() {
     return this.snippetsFetcher
@@ -193,16 +196,19 @@ class RangerView {
   }
 
   /**
-   * Get the webview-compliant URI for the stylesheet.
+   * Get the webview-compliant URI for the main stylesheet.
    */
   getStylesheetWebviewUri() {
     const onDiskPath = vscode.Uri.file(
-      path.join(this.context.extensionPath, "src", "css", "styles.css")
+      path.join(this.context.extensionPath, "dist", "styles.minified.css")
     );
     const stylesSrc = this.panel.webview.asWebviewUri(onDiskPath);
     return stylesSrc;
   }
 
+  /**
+   * Get the Table of Contents as HTML.
+   */
   getTableOfContents() {
     let html = `<section id="toc">
 		<h2>Table of Contents</h2>
@@ -217,6 +223,9 @@ class RangerView {
     return html;
   }
 
+  /**
+   * Get the Table of Contents entry for Extension snippets as HTML.
+   */
   getExtensionTOCEntry() {
     let html = "<ul>";
     this.extensionIDs.forEach((id) => {
@@ -226,6 +235,9 @@ class RangerView {
     return html;
   }
 
+  /**
+   * Get the Table of Contents entry for user snippets as HTML.
+   */
   getUserTOCEntry() {
     let html = "<ul>";
     this.userIDs.forEach((id) => {
@@ -236,6 +248,9 @@ class RangerView {
     return html;
   }
 
+  /**
+   * Get the Table of Contents entry for app snippets as HTML.
+   */
   getAppTOCEntry() {
     let html = "<ul>";
     this.appIDs.forEach((id) => {
@@ -247,4 +262,4 @@ class RangerView {
   }
 }
 
-module.exports = RangerView;
+module.exports = View;

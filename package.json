@@ -7,15 +7,16 @@
   },
   "description": "View all your snippets in one purty place. Yee-haw!",
   "icon": "img/logo.png",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "engines": {
-    "vscode": "^1.4.0"
+    "vscode": "^1.4.0",
+    "node": ">=12.0.0"
   },
   "categories": [
     "Snippets"
   ],
   "galleryBanner": {
-    "color": "#ffdd55",
+    "color": "#8bc9e9",
     "theme": "light"
   },
   "keywords": [
@@ -35,7 +36,31 @@
     "rust",
     "c",
     "c++",
-    "kotlin"
+    "kotlin",
+    "CSS",
+    "Dockerfile",
+    "Go",
+    "HTML",
+    "Java",
+    "JSON",
+    "Less",
+    "PowerShell",
+    "Python",
+    "SCSS",
+    "T-SQL",
+    "ruby",
+    "go",
+    "scala",
+    "lisp",
+    "yaml",
+    "dart",
+    "swift",
+    "vue",
+    "arduino",
+    "lua",
+    "r",
+    "vb",
+    "objectivec"
   ],
   "bugs": {
     "url": "https://github.com/robole/vscode-snippets-ranger/issues"
@@ -62,8 +87,7 @@
     "lint:fix": "eslint --fix src",
     "format": "npx prettier --write .",
     "test": "node ./test/runTest.js",
-    "webpack": "webpack --mode development",
-    "webpack-dev": "webpack --mode development --watch",
+    "webpack": "webpack --mode development --watch",
     "vscode:prepublish": "webpack --mode production",
     "build": "vsce package ."
   },
@@ -77,6 +101,7 @@
     "@types/node": "^13.11.0",
     "@types/vscode": "^1.4.0",
     "chai": "^4.2.0",
+    "css-loader": "^4.2.2",
     "eslint": "^7.2.0",
     "eslint-config-airbnb-base": "^14.2.0",
     "eslint-config-prettier": "^6.11.0",
@@ -85,10 +110,13 @@
     "eslint-plugin-node": "^11.1.0",
     "glob": "^7.1.6",
     "jsonc-parser": "^2.3.0",
+    "mini-css-extract-plugin": "^0.11.0",
     "mocha": "^7.1.2",
+    "optimize-css-assets-webpack-plugin": "^5.0.4",
     "prettier": "^2.0.5",
+    "terser-webpack-plugin": "^4.1.0",
     "typescript": "^3.8.3",
-    "vsce": "^1.77.0",
+    "vsce": "^1.79.5",
     "vscode-test": "^1.3.0",
     "webpack": "^4.44.0",
     "webpack-cli": "^3.3.12"

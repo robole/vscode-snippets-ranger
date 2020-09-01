@@ -1,5 +1,5 @@
 /**
- * Language-specific snippets.
+ * Snippets for a particular programming language.
  */
 class LanguageSnippets {
   constructor(language, path, type, snippets) {

@@ -1,12 +1,8 @@
-/* eslint-disable class-methods-use-this */
-// eslint-disable-next-line node/no-missing-require, import/no-unresolved
-const vscode = require("vscode");
 const fs = require("fs");
 const jsonc = require("jsonc-parser");
-const { basename, normalize, resolve } = require("path");
 const Environment = require("./environment");
 const LanguageSnippets = require("./language-snippets");
-const ExtensionSnippets = require("./extension-snippets");
+const Snippet = require("./snippet");
 
 /**
  * Fetch the Snippets from the file system.
@@ -19,7 +15,7 @@ class SnippetsFetcher {
 
   /**
    * Get the snippets from the files as JSON objects.
-   * @param {String} filepaths The filepaths for the files you want to extract snippets from.
+   * @param {Array} filepaths The filepaths for the files you want to extract snippets from.
    * @param {String} type The type of snippets you are seeking. Can be "user", "app", or "extension".
    * @returns {Promise} A Promise with an array of JSON objects.
    */
@@ -30,7 +26,7 @@ class SnippetsFetcher {
     jsonObjects.forEach((obj, index) => {
       if (obj !== undefined) {
         let flatSnippets = this.flattenSnippets(obj);
-        let language = Environment.getLanguageName(filepaths[index]);
+        let language = Environment.getFilename(filepaths[index]);
         let languageSnippets = new LanguageSnippets(
           language,
           filepaths[index],
@@ -51,8 +47,8 @@ class SnippetsFetcher {
     let flatSnippets = [];
     // eslint-disable-next-line no-restricted-syntax
     for (let [key, value] of Object.entries(snippets)) {
-      const { prefix, body, description } = value;
-      let flatSnippet = { name: key, prefix, body, description };
+      let { prefix, body, description } = value;
+      let flatSnippet = new Snippet(key, prefix, description, body);
       flatSnippets.push(flatSnippet);
     }
     return flatSnippets;
@@ -73,7 +69,7 @@ class SnippetsFetcher {
   }
 
   async fetchExtensionSnippets(extensionSnippets) {
-    let promises = extensionSnippets.snippets.map(async (snippet, i, array) => {
+    let promises = extensionSnippets.snippets.map(async (snippet) => {
       let data = await this.getObject(snippet.path);
 
       if (data !== undefined) {
@@ -116,11 +112,11 @@ class SnippetsFetcher {
 
   /**
    * Get the contents of the files.
-   * @param {Array} filepath
+   * @param {String} filepath
    * @returns {Promise} A Promise with an array of the file contents.
    */
   async getData(filepath) {
-    return fs.promises.readFile(filepath, "utf-8");
+    return fs.promises.readFile(filepath, { encoding: "utf-8" });
   }
 
   /**
@@ -136,7 +132,7 @@ class SnippetsFetcher {
 
   /**
    * Get the contents of the file as JSON objects. The files can be JSON or JSONC files (Microsoft JSON with comments standard).
-   * @param {Array} filepath
+   * @param {String} filepath
    * @returns {Promise} A Promise with an array of JSON objects.
    */
   async getObject(filepath) {

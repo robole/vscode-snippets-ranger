@@ -1,11 +1,13 @@
-// eslint-disable-next-line import/no-unresolved, node/no-missing-require
 const vscode = require("vscode");
-const RangerView = require("./ranger-view");
+const View = require("./view");
+// this is included for webpack, so that it picks up the CSS file
+const styles = require("../src/css/styles.css");
 
 function activate(context) {
   context.subscriptions.push(
     vscode.commands.registerCommand("snippets-ranger.show", () => {
-      let view = new RangerView(context);
+      // eslint-disable-next-line no-unused-vars
+      let view = new View(context);
     })
   );
 }

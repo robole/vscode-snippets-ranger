@@ -7,8 +7,8 @@ test
 **/*.map
 **/.eslintrc.json
 src
-!src/css/*.css
 webpack.config.js
 img/**
 !img/logo.png
 readme.md
+todo.md
