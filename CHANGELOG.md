@@ -5,6 +5,19 @@ All notable changes to this project are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.4.0] - 2020-09-05
+
+### Added
+
+- Added Demo gif to *README.md*.
+
+### Changed
+
+- Improved styles for light mode, dark mode, and high contrast mode.
+- Change title for Extension TOC entries to be the display name of the Extension.
+- Changed title for Extension Snippets to be the display name of the Extension.
+- Changed languages associated with an extension snippets file into an unordered list (it was a string in a paragraph).
+
 ## [0.3.0] - 2020-09-04
 
 ### Added

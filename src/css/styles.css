@@ -1,6 +1,22 @@
 :root {
-  --bg-dark-mode: #080515;
-  --bg-light-mode: #f2f2f2;
+  --body-bg-color-light-mode: rgb(255, 255, 255);
+  --body-bg-color-dark-mode: #292a2b;
+  --body-bg-color-contrast-mode: rgb(0, 0, 0);
+  --body-color-light-mode: black;
+  --body-color-dark-mode: #e6e6e6;
+  --body-color-contrast-mode: rgb(255, 255, 255);
+  --toc-bg-light-mode: rgba(241, 241, 241, 0.15);
+  --toc-bg-dark-mode: #1f2020;
+  --toc-box-shadow-light-mode: -2px 2px 8px 1px rgba(214, 214, 214, 0.6);
+  --toc-box-shadow-dark-mode: -2px 2px 8px 1px #313131;
+  --table-head-color-light-mode: rgb(246, 246, 246);
+  --table-head-color-dark-mode: #383a3b;
+  --table-divider-color-light-mode: rgb(201, 198, 198);
+  --table-divider-color-dark-mode: #a0a7aa;
+  --table-highlight-color-light-mode: #f0f71d70;
+  --table-highlight-color-dark-mode: #4e501ab0;
+  --code-color-light-mode: #7a5600;
+  --code-color-dark-mode: #d7ba7d;
 }
 
 body,
@@ -15,6 +31,133 @@ body.vscode-high-contrast {
   margin: 0 auto;
   max-width: 1600px;
   overflow-x: auto;
+}
+
+body.vscode-light {
+  background-color: var(--body-bg-color-light-mode);
+  color: var(--body-color-light-mode);
+}
+
+body.vscode-light section#user h2,
+body.vscode-light section#extension h2,
+body.vscode-light section#app h2,
+body.vscode-light h3,
+body.vscode-light h4 {
+  background-color: var(--body-bg-color-light-mode);
+  color: var(--body-color-light-mode);
+}
+
+body.vscode-light #toc {
+  background-color: var(--toc-bg-light-mode);
+  box-shadow: var(--toc-box-shadow-light-mode);
+}
+
+body.vscode-light th {
+  background-color: var(--table-head-color-light-mode);
+  border-bottom: 1px solid var(--table-divider-color-light-mode);
+}
+
+body.vscode-light tr:hover {
+  background-color: var(--table-highlight-color-light-mode);
+}
+
+body.vscode-light td:nth-child(1) {
+  color: var(--code-color-light-mode);
+}
+
+body.vscode-light td {
+  border-bottom: 1px solid var(--table-divider-color-light-mode);
+}
+
+body.vscode-light code {
+  color: var(--code-color-light-mode);
+}
+
+body.vscode-light .upIcon {
+  color: var(--body-color-light-mode);
+  opacity: 1;
+}
+
+body.vscode-dark {
+  background-color: var(--body-bg-color-dark-mode);
+  color: var(--body-color-dark-mode);
+}
+
+body.vscode-dark section#user h2,
+body.vscode-dark section#extension h2,
+body.vscode-dark section#app h2,
+body.vscode-dark h3,
+body.vscode-dark h4 {
+  background-color: var(--body-bg-color-dark-mode);
+  color: var(--body-color-dark-mode);
+}
+
+body.vscode-dark #toc,
+body.vscode-high-contrast #toc {
+  background-color: var(--toc-bg-dark-mode);
+  box-shadow: var(--toc-box-shadow-dark-mode);
+  border: 1px #323333 solid;
+}
+
+body.vscode-dark th,
+body.vscode-high-contrast th {
+  background-color: var(--table-head-color-dark-mode);
+  border-bottom: 1px solid var(--table-divider-color-dark-mode);
+}
+
+body.vscode-dark td,
+body.vscode-high-contrast td {
+  border-bottom: 1px solid var(--table-divider-color-dark-mode);
+}
+
+body.vscode-dark tr:hover,
+body.vscode-high-contrast tr:hover {
+  background-color: var(--table-highlight-color-dark-mode);
+}
+
+body.vscode-dark td:nth-child(1),
+body.vscode-high-contrast td:nth-child(1) {
+  color: var(--code-color-dark-mode);
+}
+
+body.vscode-dark code,
+body.vscode-high-contrast code {
+  color: var(--code-color-dark-mode);
+}
+
+body.vscode-dark .upIcon,
+body.vscode-high-contrast .upIcon {
+  fill: var(--body-color-contrast-mode);
+}
+
+body.vscode-high-contrast {
+  background-color: var(--body-bg-color-contrast-mode);
+  color: var(--body-color-contrast-mode);
+}
+
+body.vscode-high-contrast section#user h2,
+body.vscode-high-contrast section#extension h2,
+body.vscode-high-contrast section#app h2,
+body.vscode-high-contrast h3,
+body.vscode-high-contrast h4 {
+  background-color: var(--body-bg-color-contrast-mode);
+  color: var(--body-color-contrast-mode);
+}
+
+body.vscode-high-contrast #toc {
+  background-color: var(--body-bg-color-light-mode);
+}
+
+body.vscode-high-contrast #toc h2 {
+  color: var(--body-color-light-mode);
+}x
+
+section div p {
+  margin-top: 1.5rem;
+}
+
+a {
+  text-decoration: none;
 }
 
 .upIcon {
@@ -39,18 +182,23 @@ h1 {
   text-align: center;
 }
 
+.wrapper {
+  overflow-x: scroll;
+}
+
 #toc {
   display: flex;
   justify-content: center;
-  flex-direction: column;
   align-items: center;
+  flex-direction: column;
   width: 90%;
-  margin: 0 auto;
+  margin: 10px auto;
+  border-radius: 10px;
 }
 
 @media (min-width: 600px) {
   #toc {
-    width: 600px;
+    width: 580px;
   }
 }
 
@@ -71,15 +219,15 @@ h3 {
   top: 2.5rem;
   z-index: 500;
   line-height: 150%;
+  font-size: 1.2rem;
   font-style: italic;
 }
 
 h4 {
   top: 4.5rem;
   z-index: 500;
-  padding: 0.25em 0;
   line-height: 200%;
-  font-style: italic;
+  font-size: 1.1rem;
   z-index: 400;
 }
 
@@ -93,7 +241,6 @@ th {
   position: -ms-sticky;
   position: -o-sticky;
   position: sticky;
-  background: var(--vscode-editor-background);
   line-height: 150%;
   top: 4.5rem;
 }
@@ -107,12 +254,12 @@ h4 {
   margin: 0;
   margin-block-end: 0;
   padding: 0.5rem 0;
-  background: var(--vscode-editor-background);
   position: -webkit-sticky;
   position: -moz-sticky;
   position: -ms-sticky;
   position: -o-sticky;
   position: sticky;
+  min-width: 450px;
 }
 
 table {
@@ -122,6 +269,11 @@ table {
   border-collapse: collapse;
   word-break: break-word;
   margin: 1em 0;
+  overflow-x: auto;
+}
+
+td:nth-child(1) {
+  font-family: var(--vscode-editor-font-family);
 }
 
 th:nth-child(1),
@@ -144,33 +296,20 @@ td:nth-child(4) {
   width: 35%;
 }
 
+th {
+  font-weight: 500;
+}
+
 th,
 td {
   margin: 0;
   padding: 10px 0;
   text-align: left;
-  border-bottom: 1px solid #ddd;
 }
 
 td {
   padding-right: 5px;
-}
-
-body.vscode-dark tr:hover,
-body.vscode-high-contrast tr:hover {
-  background-color: #545624;
-}
-
-body.vscode-light th,
-body.vscode-light #toc {
-  background-color: var(--bg-light-mode);
-}
-
-body.vscode-dark th,
-body.vscode-dark #toc,
-body.vscode-high-contrast th,
-body.vscode-high-contrast #toc {
-  background-color: var(--bg-dark-mode);
+  vertical-align: top;
 }
 
 .empty {

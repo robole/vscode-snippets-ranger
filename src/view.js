@@ -1,4 +1,3 @@
-/* eslint-disable class-methods-use-this, no-undef */
 // @ts-nocheck
 /* eslint-disable  */
 const vscode = require("vscode");
@@ -80,10 +79,14 @@ class View {
       section += this.getSnippetsTable(languageSnippets.snippets);
       section += `</div>`;
 
+      let idObj = {
+        id: id,
+        name: title,
+      };
       if (type === "user") {
-        this.userIDs.push(id);
+        this.userIDs.push(idObj);
       } else if (type === "app") {
-        this.appIDs.push(id);
+        this.appIDs.push(idObj);
       }
     }
 
@@ -102,8 +105,8 @@ class View {
       let title = basename(snippets.path);
       section += `<h4> ${title} </h4>`;
       // convert from set to array, then make it into comma-separated list
-      let languages = Array.from(snippets.languages).join(", ");
-      section += `Available in the following languages: ${languages}.`;
+      let languages = this.toUnorderedList(Array.from(snippets.languages));
+      section += `<p>Available in the following languages:</p> ${languages}`;
       section += this.getSnippetsTable(snippets.data);
       section += `</div>`;
     }
@@ -179,8 +182,13 @@ class View {
         let section = opening;
         extensionSnippetsArray.forEach((extensionSnippetsObj) => {
           let appID = extensionSnippetsObj.id;
-          section += `<h3 id="${appID}">${extensionSnippetsObj.displayName} (${extensionSnippetsObj.id})</h3>`;
-          this.extensionIDs.push(appID);
+          section += `<h3 id="${appID}">${extensionSnippetsObj.displayName}</h3>`;
+
+          this.extensionIDs.push({
+            id: appID,
+            name: extensionSnippetsObj.displayName,
+          });
+
           extensionSnippetsObj.snippets.forEach((snippetsObj) => {
             section += this.createExtensionFileSection(snippetsObj);
           });
@@ -228,8 +236,8 @@ class View {
    */
   getExtensionTOCEntry() {
     let html = "<ul>";
-    this.extensionIDs.forEach((id) => {
-      html += `<li><a href=#${id}>${id}</a>`;
+    this.extensionIDs.forEach((obj) => {
+      html += `<li><a href=#${obj.id}>${obj.name}</a>`;
     });
     html += "</ul>";
     return html;
@@ -240,9 +248,9 @@ class View {
    */
   getUserTOCEntry() {
     let html = "<ul>";
-    this.userIDs.forEach((id) => {
-      let name = id.replace("user-", ""); //remove prefix
-      html += `<li><a href=#${id}>${name}</a>`;
+    this.userIDs.forEach((obj) => {
+      let name = Formatter.formatTitle(obj.name); //remove prefix
+      html += `<li><a href=#${obj.id}>${name}</a>`;
     });
     html += "</ul>";
     return html;
@@ -253,11 +261,20 @@ class View {
    */
   getAppTOCEntry() {
     let html = "<ul>";
-    this.appIDs.forEach((id) => {
-      let name = id.replace("app-", ""); //remove prefix
-      html += `<li><a href=#${id}>${name}</a>`;
+    this.appIDs.forEach((obj) => {
+      let name = Formatter.formatTitle(obj.name); //remove prefix
+      html += `<li><a href=#${obj.id}>${name}</a>`;
     });
     html += "</ul>";
+    return html;
+  }
+
+  toUnorderedList(array) {
+    let html = `<ul>`;
+    array.forEach((element) => {
+      html += `<li>${element}</li>`;
+    });
+    html += `</ul>`;
     return html;
   }
 }
