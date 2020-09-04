@@ -150,9 +150,9 @@ body.vscode-high-contrast #toc {
 
 body.vscode-high-contrast #toc h2 {
   color: var(--body-color-light-mode);
-}x
+}
 
-section div p {
+section#extension div p {
   margin-top: 1.5rem;
 }
 
