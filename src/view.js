@@ -16,12 +16,26 @@ class View {
     this.context = context;
     this.panel = vscode.window.createWebviewPanel(
       "snippetView",
-      "Snippet Ranger",
+      "Snippets Ranger",
       vscode.ViewColumn.One,
       {
         enableScripts: true,
       }
     );
+
+    this.panel.webview.onDidReceiveMessage(
+      async (message) => {
+        switch (message.command) {
+          case "openSnippetFile":
+            // path is encoded, so must decode first!
+            let uri = vscode.Uri.file(decodeURIComponent(message.path));
+            await vscode.window.showTextDocument(uri);
+        }
+      },
+      {},
+      this.context.subscriptions
+    );
+
     this.userIDs = [];
     this.extensionIDs = [];
     this.appIDs = [];
@@ -42,7 +56,7 @@ class View {
 		<head>
 				<meta charset="UTF-8">
 				<meta name="viewport" content="width=device-width, initial-scale=1.0">
-				<title>Snippet Ranger</title>
+        <title>Snippet Ranger</title>
 				<link rel="stylesheet" href="${stylesSrc}"/>
 		</head>
 		<body>
@@ -57,7 +71,10 @@ class View {
     let extensionSection = await this.getExtensionSnippetsSection();
     let toc = this.getTableOfContents(); //relies on IDs being set by methods above
 
-    return `${htmlStart}${toc}${userSection}${extensionSection}${appSection}${upIcon}${htmlEnd}`;
+    let scriptSrc = this.getScriptWebviewUri();
+    let script = `<script src="${scriptSrc}"></script>`;
+
+    return `${htmlStart}${toc}${userSection}${extensionSection}${appSection}${upIcon}${script}${htmlEnd}`;
   }
 
   /**
@@ -76,6 +93,11 @@ class View {
       let title = Formatter.formatTitle(languageSnippets.language);
       let id = `${type}-${languageSnippets.language}`;
       section += `<h3 id="${id}"> ${title} </h3>`;
+
+      //encodeURIComponent prevents funny business with charcters especially with slashes
+      let uri = encodeURIComponent(languageSnippets.path);
+      section += `<div class="source"><button type="button" onclick="script.openFile('${uri}')")>View Source File</button></div>`;
+
       section += this.getSnippetsTable(languageSnippets.snippets);
       section += `</div>`;
 
@@ -107,6 +129,11 @@ class View {
       // convert from set to array, then make it into comma-separated list
       let languages = this.toUnorderedList(Array.from(snippets.languages));
       section += `<p>Available in the following languages:</p> ${languages}`;
+
+      //encodeURIComponent prevents funny business with charcters especially with slashes
+      let uri = encodeURIComponent(snippets.path);
+      section += `<div class="source"><button type="button" onclick="script.openFile('${uri}')")>View Source File</button></div>`;
+
       section += this.getSnippetsTable(snippets.data);
       section += `</div>`;
     }
@@ -212,6 +239,17 @@ class View {
     );
     const stylesSrc = this.panel.webview.asWebviewUri(onDiskPath);
     return stylesSrc;
+  }
+
+  /**
+   * Get the webview-compliant URI for the main script.
+   */
+  getScriptWebviewUri() {
+    const onDiskPath = vscode.Uri.file(
+      path.join(this.context.extensionPath, "script", "main.js")
+    );
+    const script = this.panel.webview.asWebviewUri(onDiskPath);
+    return script;
   }
 
   /**

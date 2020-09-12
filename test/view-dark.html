@@ -1,168 +1,229 @@
 <html
   lang="en"
   style="
-    --vscode-activityBar-activeBorder: #f9826c;
-    --vscode-activityBar-background: #ffffff;
-    --vscode-activityBar-border: #e1e4e8;
-    --vscode-activityBar-dropBorder: #2f363d;
-    --vscode-activityBar-foreground: #2f363d;
-    --vscode-activityBar-inactiveForeground: #959da5;
-    --vscode-activityBarBadge-background: #2188ff;
-    --vscode-activityBarBadge-foreground: #ffffff;
-    --vscode-badge-background: #dbedff;
-    --vscode-badge-foreground: #005cc5;
-    --vscode-breadcrumb-activeSelectionForeground: #586069;
-    --vscode-breadcrumb-background: #ffffff;
-    --vscode-breadcrumb-focusForeground: #2f363d;
-    --vscode-breadcrumb-foreground: #6a737d;
-    --vscode-breadcrumbPicker-background: #fafbfc;
-    --vscode-button-background: #159739;
-    --vscode-button-foreground: #ffffff;
-    --vscode-button-hoverBackground: #138934;
-    --vscode-button-secondaryBackground: #5f6a79;
-    --vscode-button-secondaryForeground: #ffffff;
-    --vscode-button-secondaryHoverBackground: #4c5561;
-    --vscode-checkbox-background: #fafbfc;
-    --vscode-checkbox-border: #d1d5da;
-    --vscode-checkbox-foreground: #2f363d;
-    --vscode-debugConsole-errorForeground: #cb2431;
-    --vscode-debugConsole-infoForeground: #75beff;
-    --vscode-debugConsole-sourceForeground: #444d56;
-    --vscode-debugConsole-warningForeground: #e9a700;
-    --vscode-debugConsoleInputIcon-foreground: #444d56;
-    --vscode-debugExceptionWidget-background: #f1dfde;
-    --vscode-debugExceptionWidget-border: #a31515;
-    --vscode-debugIcon-breakpointCurrentStackframeForeground: #ffcc00;
-    --vscode-debugIcon-breakpointDisabledForeground: #848484;
-    --vscode-debugIcon-breakpointForeground: #e51400;
-    --vscode-debugIcon-breakpointStackframeForeground: #89d185;
-    --vscode-debugIcon-breakpointUnverifiedForeground: #848484;
-    --vscode-debugIcon-continueForeground: #007acc;
-    --vscode-debugIcon-disconnectForeground: #a1260d;
-    --vscode-debugIcon-pauseForeground: #007acc;
-    --vscode-debugIcon-restartForeground: #388a34;
-    --vscode-debugIcon-startForeground: #388a34;
-    --vscode-debugIcon-stepBackForeground: #007acc;
-    --vscode-debugIcon-stepIntoForeground: #007acc;
-    --vscode-debugIcon-stepOutForeground: #007acc;
-    --vscode-debugIcon-stepOverForeground: #007acc;
-    --vscode-debugIcon-stopForeground: #a1260d;
-    --vscode-debugTokenExpression-boolean: #0000ff;
-    --vscode-debugTokenExpression-error: #e51400;
-    --vscode-debugTokenExpression-name: #9b46b0;
-    --vscode-debugTokenExpression-number: #098658;
-    --vscode-debugTokenExpression-string: #a31515;
-    --vscode-debugTokenExpression-value: rgba(108, 108, 108, 0.8);
-    --vscode-debugToolBar-background: #ffffff;
-    --vscode-debugView-exceptionLabelBackground: #a31515;
-    --vscode-debugView-exceptionLabelForeground: #ffffff;
-    --vscode-debugView-stateLabelBackground: rgba(136, 136, 136, 0.27);
-    --vscode-debugView-stateLabelForeground: #444d56;
-    --vscode-debugView-valueChangedHighlight: #569cd6;
-    --vscode-descriptionForeground: #6a737d;
-    --vscode-diffEditor-diagonalFill: rgba(34, 34, 34, 0.2);
-    --vscode-diffEditor-insertedTextBackground: rgba(52, 208, 88, 0.13);
-    --vscode-diffEditor-removedTextBackground: rgba(215, 58, 73, 0.13);
-    --vscode-dropdown-background: #fafbfc;
-    --vscode-dropdown-border: #e1e4e8;
-    --vscode-dropdown-foreground: #2f363d;
-    --vscode-dropdown-listBackground: #ffffff;
-    --vscode-editor-background: #ffffff;
-    --vscode-editor-findMatchBackground: #ffdf5d;
-    --vscode-editor-findMatchHighlightBackground: rgba(255, 223, 93, 0.4);
-    --vscode-editor-findRangeHighlightBackground: rgba(180, 180, 180, 0.3);
-    --vscode-editor-focusedStackFrameHighlightBackground: #fff5b1;
-    --vscode-editor-foldBackground: #fafbfc;
+    --vscode-font-family: 'Segoe WPC', 'Segoe UI', sans-serif;
+    --vscode-font-weight: normal;
+    --vscode-font-size: 13px;
     --vscode-editor-font-family: 'JetBrains Mono', 'Fira Code', Hasklig,
       Consolas, 'Courier New', monospace;
-    --vscode-editor-font-size: 18px;
     --vscode-editor-font-weight: normal;
-    --vscode-editor-foreground: #24292e;
-    --vscode-editor-hoverHighlightBackground: rgba(173, 214, 255, 0.15);
-    --vscode-editor-inactiveSelectionBackground: rgba(3, 102, 214, 0.07);
-    --vscode-editor-lineHighlightBackground: #f6f8fa;
-    --vscode-editor-lineHighlightBorder: #eeeeee;
-    --vscode-editor-onTypeRenameBackground: rgba(255, 0, 0, 0.3);
-    --vscode-editor-rangeHighlightBackground: rgba(253, 255, 0, 0.2);
-    --vscode-editor-selectionBackground: rgba(3, 102, 214, 0.14);
-    --vscode-editor-selectionHighlightBackground: rgba(52, 208, 88, 0.25);
-    --vscode-editor-selectionHighlightBorder: rgba(52, 208, 88, 0);
-    --vscode-editor-snippetFinalTabstopHighlightBorder: rgba(10, 50, 100, 0.5);
-    --vscode-editor-snippetTabstopHighlightBackground: rgba(10, 50, 100, 0.2);
-    --vscode-editor-stackFrameHighlightBackground: #fffbdd;
-    --vscode-editor-symbolHighlightBackground: rgba(255, 223, 93, 0.4);
-    --vscode-editor-wordHighlightBackground: rgba(52, 208, 88, 0);
-    --vscode-editor-wordHighlightBorder: rgba(36, 148, 62, 0.6);
-    --vscode-editor-wordHighlightStrongBackground: rgba(52, 208, 88, 0);
-    --vscode-editor-wordHighlightStrongBorder: rgba(36, 148, 62, 0.31);
-    --vscode-editorActiveLineNumber-foreground: #0b216f;
-    --vscode-editorBracketMatch-background: rgba(52, 208, 88, 0.25);
-    --vscode-editorBracketMatch-border: rgba(52, 208, 88, 0);
-    --vscode-editorCodeLens-foreground: #999999;
-    --vscode-editorCursor-foreground: #044289;
-    --vscode-editorError-foreground: #e51400;
-    --vscode-editorGroup-border: #e1e4e8;
-    --vscode-editorGroup-dropBackground: rgba(38, 119, 203, 0.18);
-    --vscode-editorGroupHeader-noTabsBackground: #ffffff;
-    --vscode-editorGroupHeader-tabsBackground: #f6f8fa;
-    --vscode-editorGroupHeader-tabsBorder: #e1e4e8;
-    --vscode-editorGutter-addedBackground: #28a745;
-    --vscode-editorGutter-background: #ffffff;
-    --vscode-editorGutter-commentRangeForeground: #c5c5c5;
-    --vscode-editorGutter-deletedBackground: #d73a49;
-    --vscode-editorGutter-foldingControlForeground: #424242;
-    --vscode-editorGutter-modifiedBackground: #2188ff;
-    --vscode-editorHint-foreground: #6c6c6c;
-    --vscode-editorHoverWidget-background: #f6f8fa;
-    --vscode-editorHoverWidget-border: #c8c8c8;
-    --vscode-editorHoverWidget-foreground: #444d56;
-    --vscode-editorHoverWidget-statusBarBackground: #e6ecf1;
-    --vscode-editorIndentGuide-activeBackground: #d7dbe0;
-    --vscode-editorIndentGuide-background: #eff2f6;
+    --vscode-editor-font-size: 16px;
+    --vscode-foreground: #e6e6e6;
+    --vscode-errorForeground: #ff4b82;
+    --vscode-descriptionForeground: rgba(230, 230, 230, 0.7);
+    --vscode-icon-foreground: #c5c5c5;
+    --vscode-focusBorder: #007fd4;
+    --vscode-textSeparator-foreground: rgba(255, 255, 255, 0.18);
+    --vscode-textLink-foreground: #3794ff;
+    --vscode-textLink-activeForeground: #3794ff;
+    --vscode-textPreformat-foreground: #d7ba7d;
+    --vscode-textBlockQuote-background: rgba(127, 127, 127, 0.1);
+    --vscode-textBlockQuote-border: rgba(0, 122, 204, 0.5);
+    --vscode-textCodeBlock-background: rgba(10, 10, 10, 0.4);
+    --vscode-widget-shadow: #000000;
+    --vscode-input-background: #3c3c3c;
+    --vscode-input-foreground: #e6e6e6;
+    --vscode-inputOption-activeBorder: rgba(0, 122, 204, 0);
+    --vscode-inputOption-activeBackground: rgba(0, 127, 212, 0.4);
+    --vscode-inputOption-activeForeground: #ffffff;
+    --vscode-input-placeholderForeground: rgba(230, 230, 230, 0.5);
+    --vscode-inputValidation-infoBackground: #063b49;
+    --vscode-inputValidation-infoBorder: #007acc;
+    --vscode-inputValidation-warningBackground: #352a05;
+    --vscode-inputValidation-warningBorder: #b89500;
+    --vscode-inputValidation-errorBackground: #5a1d1d;
+    --vscode-inputValidation-errorBorder: #be1100;
+    --vscode-dropdown-background: #3c3c3c;
+    --vscode-dropdown-foreground: #f0f0f0;
+    --vscode-dropdown-border: #3c3c3c;
+    --vscode-checkbox-background: #3c3c3c;
+    --vscode-checkbox-foreground: #f0f0f0;
+    --vscode-checkbox-border: #3c3c3c;
+    --vscode-button-foreground: #ffffff;
+    --vscode-button-background: #45a9f9;
+    --vscode-button-hoverBackground: #676b79;
+    --vscode-button-secondaryForeground: #ffffff;
+    --vscode-button-secondaryBackground: #3a3d41;
+    --vscode-button-secondaryHoverBackground: #45494e;
+    --vscode-badge-background: #6fc1ff;
+    --vscode-badge-foreground: #676b79;
+    --vscode-scrollbar-shadow: #222223;
+    --vscode-scrollbarSlider-background: rgba(55, 59, 65, 0.6);
+    --vscode-scrollbarSlider-hoverBackground: #757575;
+    --vscode-scrollbarSlider-activeBackground: #757575;
+    --vscode-progressBar-background: #b084eb;
+    --vscode-editorError-foreground: #ff4b82;
+    --vscode-editorError-border: #ff4b82;
+    --vscode-editorWarning-foreground: #ffcc95;
+    --vscode-editorWarning-border: #ffcc95;
     --vscode-editorInfo-foreground: #75beff;
-    --vscode-editorLightBulb-foreground: #ddb100;
-    --vscode-editorLightBulbAutoFix-foreground: #007acc;
-    --vscode-editorLineNumber-activeForeground: #24292e;
-    --vscode-editorLineNumber-foreground: rgba(27, 31, 35, 0.3);
-    --vscode-editorLink-activeForeground: #0000ff;
-    --vscode-editorMarkerNavigation-background: #ffffff;
-    --vscode-editorMarkerNavigationError-background: #e51400;
-    --vscode-editorMarkerNavigationInfo-background: #75beff;
-    --vscode-editorMarkerNavigationWarning-background: #e9a700;
-    --vscode-editorOverviewRuler-addedForeground: rgba(40, 167, 69, 0.6);
-    --vscode-editorOverviewRuler-border: #ffffff;
-    --vscode-editorOverviewRuler-bracketMatchForeground: #a0a0a0;
-    --vscode-editorOverviewRuler-commonContentForeground: rgba(96, 96, 96, 0.4);
+    --vscode-editorHint-foreground: rgba(238, 238, 238, 0.7);
+    --vscode-editor-background: #292a2b;
+    --vscode-editor-foreground: #e6e6e6;
+    --vscode-editorWidget-background: #2a2c2d;
+    --vscode-editorWidget-foreground: #e6e6e6;
+    --vscode-editorWidget-border: #373b41;
+    --vscode-quickInput-background: #2a2c2d;
+    --vscode-quickInput-foreground: #e6e6e6;
+    --vscode-quickInputTitle-background: rgba(255, 255, 255, 0.1);
+    --vscode-pickerGroup-foreground: #3794ff;
+    --vscode-pickerGroup-border: #3f3f46;
+    --vscode-editor-selectionBackground: rgba(255, 184, 108, 0.25);
+    --vscode-editor-inactiveSelectionBackground: rgba(255, 184, 108, 0.25);
+    --vscode-editor-selectionHighlightBackground: rgba(255, 184, 108, 0.25);
+    --vscode-editor-findMatchBackground: rgba(176, 132, 235, 0.56);
+    --vscode-editor-findMatchHighlightBackground: rgba(255, 184, 108, 0.25);
+    --vscode-editor-findRangeHighlightBackground: rgba(58, 61, 65, 0.4);
+    --vscode-searchEditor-findMatchBackground: rgba(255, 184, 108, 0.17);
+    --vscode-editor-hoverHighlightBackground: rgba(38, 79, 120, 0.25);
+    --vscode-editorHoverWidget-background: #31353a;
+    --vscode-editorHoverWidget-foreground: #e6e6e6;
+    --vscode-editorHoverWidget-border: #373b41;
+    --vscode-editorHoverWidget-statusBarBackground: #3b4046;
+    --vscode-editorLink-activeForeground: #4e94ce;
+    --vscode-editorLightBulb-foreground: #ffcc00;
+    --vscode-editorLightBulbAutoFix-foreground: #75beff;
+    --vscode-diffEditor-insertedTextBackground: rgba(25, 249, 216, 0.4);
+    --vscode-diffEditor-removedTextBackground: rgba(255, 75, 130, 0.4);
+    --vscode-diffEditor-diagonalFill: rgba(204, 204, 204, 0.2);
+    --vscode-list-focusBackground: #292a2b;
+    --vscode-list-focusForeground: #19f9d8;
+    --vscode-list-activeSelectionBackground: #292a2b;
+    --vscode-list-activeSelectionForeground: #19f9d8;
+    --vscode-list-inactiveSelectionBackground: #292a2b;
+    --vscode-list-inactiveSelectionForeground: #19f9d8;
+    --vscode-list-hoverBackground: #292a2b;
+    --vscode-list-hoverForeground: #cdcdcd;
+    --vscode-list-dropBackground: #292a2b;
+    --vscode-list-highlightForeground: #6fc1ff;
+    --vscode-list-invalidItemForeground: #b89500;
+    --vscode-list-errorForeground: #f88070;
+    --vscode-list-warningForeground: #cca700;
+    --vscode-listFilterWidget-background: #653723;
+    --vscode-listFilterWidget-outline: rgba(0, 0, 0, 0);
+    --vscode-listFilterWidget-noMatchesOutline: #be1100;
+    --vscode-list-filterMatchBackground: rgba(255, 184, 108, 0.25);
+    --vscode-tree-indentGuidesStroke: #585858;
+    --vscode-list-deemphasizedForeground: #8c8c8c;
+    --vscode-menu-foreground: #f0f0f0;
+    --vscode-menu-background: #3c3c3c;
+    --vscode-menu-selectionForeground: #19f9d8;
+    --vscode-menu-selectionBackground: #292a2b;
+    --vscode-menu-separatorBackground: #bbbbbb;
+    --vscode-editor-snippetTabstopHighlightBackground: rgba(124, 124, 124, 0.3);
+    --vscode-editor-snippetFinalTabstopHighlightBorder: #525252;
+    --vscode-breadcrumb-foreground: rgba(230, 230, 230, 0.8);
+    --vscode-breadcrumb-background: #292a2b;
+    --vscode-breadcrumb-focusForeground: #fdfdfd;
+    --vscode-breadcrumb-activeSelectionForeground: #fdfdfd;
+    --vscode-breadcrumbPicker-background: #2a2c2d;
+    --vscode-merge-currentHeaderBackground: rgba(176, 132, 235, 0.56);
+    --vscode-merge-currentContentBackground: rgba(176, 132, 235, 0.25);
+    --vscode-merge-incomingHeaderBackground: rgba(69, 169, 249, 0.56);
+    --vscode-merge-incomingContentBackground: rgba(255, 184, 108, 0.25);
+    --vscode-merge-commonHeaderBackground: rgba(96, 96, 96, 0.4);
+    --vscode-merge-commonContentBackground: rgba(96, 96, 96, 0.16);
     --vscode-editorOverviewRuler-currentContentForeground: rgba(
-      64,
-      200,
-      174,
-      0.5
+      176,
+      132,
+      235,
+      0.56
     );
-    --vscode-editorOverviewRuler-deletedForeground: rgba(215, 58, 73, 0.6);
-    --vscode-editorOverviewRuler-errorForeground: rgba(255, 18, 18, 0.7);
-    --vscode-editorOverviewRuler-findMatchForeground: rgba(209, 134, 22, 0.49);
     --vscode-editorOverviewRuler-incomingContentForeground: rgba(
-      64,
-      166,
-      255,
-      0.5
+      69,
+      169,
+      249,
+      0.56
     );
-    --vscode-editorOverviewRuler-infoForeground: #75beff;
-    --vscode-editorOverviewRuler-modifiedForeground: rgba(33, 136, 255, 0.6);
-    --vscode-editorOverviewRuler-rangeHighlightForeground: rgba(
-      0,
-      122,
-      204,
-      0.6
-    );
+    --vscode-editorOverviewRuler-commonContentForeground: rgba(96, 96, 96, 0.4);
+    --vscode-editorOverviewRuler-findMatchForeground: rgba(209, 134, 22, 0.49);
     --vscode-editorOverviewRuler-selectionHighlightForeground: rgba(
       160,
       160,
       160,
       0.8
     );
-    --vscode-editorOverviewRuler-warningForeground: #e9a700;
+    --vscode-minimap-findMatchHighlight: #d18616;
+    --vscode-minimap-selectionHighlight: #264f78;
+    --vscode-minimap-errorHighlight: rgba(255, 18, 18, 0.7);
+    --vscode-minimap-warningHighlight: #ffcc95;
+    --vscode-minimapSlider-background: rgba(55, 59, 65, 0.3);
+    --vscode-minimapSlider-hoverBackground: rgba(117, 117, 117, 0.5);
+    --vscode-minimapSlider-activeBackground: rgba(117, 117, 117, 0.5);
+    --vscode-problemsErrorIcon-foreground: #ff4b82;
+    --vscode-problemsWarningIcon-foreground: #ffcc95;
+    --vscode-problemsInfoIcon-foreground: #75beff;
+    --vscode-editor-lineHighlightBackground: #31353a;
+    --vscode-editor-lineHighlightBorder: #282828;
+    --vscode-editor-rangeHighlightBackground: rgba(255, 255, 255, 0.04);
+    --vscode-editor-symbolHighlightBackground: rgba(255, 184, 108, 0.25);
+    --vscode-editorCursor-foreground: #ff4b82;
+    --vscode-editorWhitespace-foreground: #4e5260;
+    --vscode-editorIndentGuide-background: #4e5260;
+    --vscode-editorIndentGuide-activeBackground: #4e5260;
+    --vscode-editorLineNumber-foreground: #858585;
+    --vscode-editorActiveLineNumber-foreground: #c6c6c6;
+    --vscode-editorLineNumber-activeForeground: #c6c6c6;
+    --vscode-editorRuler-foreground: rgba(176, 132, 235, 0.38);
+    --vscode-editorCodeLens-foreground: rgba(255, 184, 108, 0.25);
+    --vscode-editorBracketMatch-background: rgba(0, 100, 0, 0.1);
+    --vscode-editorBracketMatch-border: #19f9d8;
+    --vscode-editorOverviewRuler-border: rgba(0, 0, 0, 0);
+    --vscode-editorGutter-background: #292a2b;
+    --vscode-editorUnnecessaryCode-opacity: rgba(0, 0, 0, 0.67);
+    --vscode-editorOverviewRuler-rangeHighlightForeground: rgba(
+      0,
+      122,
+      204,
+      0.6
+    );
+    --vscode-editorOverviewRuler-errorForeground: #ff4b82;
+    --vscode-editorOverviewRuler-warningForeground: #ffcc95;
+    --vscode-editorOverviewRuler-infoForeground: #6fc1ff;
+    --vscode-editorOverviewRuler-bracketMatchForeground: #a0a0a0;
+    --vscode-symbolIcon-arrayForeground: #e6e6e6;
+    --vscode-symbolIcon-booleanForeground: #e6e6e6;
+    --vscode-symbolIcon-classForeground: #ee9d28;
+    --vscode-symbolIcon-colorForeground: #e6e6e6;
+    --vscode-symbolIcon-constantForeground: #e6e6e6;
+    --vscode-symbolIcon-constructorForeground: #b180d7;
+    --vscode-symbolIcon-enumeratorForeground: #ee9d28;
+    --vscode-symbolIcon-enumeratorMemberForeground: #75beff;
+    --vscode-symbolIcon-eventForeground: #ee9d28;
+    --vscode-symbolIcon-fieldForeground: #75beff;
+    --vscode-symbolIcon-fileForeground: #e6e6e6;
+    --vscode-symbolIcon-folderForeground: #e6e6e6;
+    --vscode-symbolIcon-functionForeground: #b180d7;
+    --vscode-symbolIcon-interfaceForeground: #75beff;
+    --vscode-symbolIcon-keyForeground: #e6e6e6;
+    --vscode-symbolIcon-keywordForeground: #e6e6e6;
+    --vscode-symbolIcon-methodForeground: #b180d7;
+    --vscode-symbolIcon-moduleForeground: #e6e6e6;
+    --vscode-symbolIcon-namespaceForeground: #e6e6e6;
+    --vscode-symbolIcon-nullForeground: #e6e6e6;
+    --vscode-symbolIcon-numberForeground: #e6e6e6;
+    --vscode-symbolIcon-objectForeground: #e6e6e6;
+    --vscode-symbolIcon-operatorForeground: #e6e6e6;
+    --vscode-symbolIcon-packageForeground: #e6e6e6;
+    --vscode-symbolIcon-propertyForeground: #e6e6e6;
+    --vscode-symbolIcon-referenceForeground: #e6e6e6;
+    --vscode-symbolIcon-snippetForeground: #e6e6e6;
+    --vscode-symbolIcon-stringForeground: #e6e6e6;
+    --vscode-symbolIcon-structForeground: #e6e6e6;
+    --vscode-symbolIcon-textForeground: #e6e6e6;
+    --vscode-symbolIcon-typeParameterForeground: #e6e6e6;
+    --vscode-symbolIcon-unitForeground: #e6e6e6;
+    --vscode-symbolIcon-variableForeground: #75beff;
+    --vscode-editor-foldBackground: rgba(255, 184, 108, 0.07);
+    --vscode-editorGutter-foldingControlForeground: #c5c5c5;
+    --vscode-editor-onTypeRenameBackground: rgba(255, 0, 0, 0.3);
+    --vscode-editorSuggestWidget-background: #2a2c2d;
+    --vscode-editorSuggestWidget-border: #373b41;
+    --vscode-editorSuggestWidget-foreground: #e6e6e6;
+    --vscode-editorSuggestWidget-selectedBackground: rgba(25, 249, 216, 0.6);
+    --vscode-editorSuggestWidget-highlightForeground: #6fc1ff;
+    --vscode-editor-wordHighlightBackground: rgba(255, 204, 149, 0.38);
+    --vscode-editor-wordHighlightStrongBackground: rgba(255, 154, 193, 0.44);
     --vscode-editorOverviewRuler-wordHighlightForeground: rgba(
       160,
       160,
@@ -175,288 +236,214 @@
       192,
       0.8
     );
-    --vscode-editorPane-background: #ffffff;
-    --vscode-editorRuler-foreground: #d3d3d3;
-    --vscode-editorSuggestWidget-background: #f6f8fa;
-    --vscode-editorSuggestWidget-border: #c8c8c8;
-    --vscode-editorSuggestWidget-foreground: #24292e;
-    --vscode-editorSuggestWidget-highlightForeground: #0066bf;
-    --vscode-editorSuggestWidget-selectedBackground: #cce5ff;
-    --vscode-editorUnnecessaryCode-opacity: rgba(0, 0, 0, 0.47);
-    --vscode-editorWarning-foreground: #e9a700;
-    --vscode-editorWhitespace-foreground: #d1d5da;
-    --vscode-editorWidget-background: #f6f8fa;
-    --vscode-editorWidget-border: #c8c8c8;
-    --vscode-editorWidget-foreground: #444d56;
-    --vscode-errorForeground: #cb2431;
-    --vscode-extensionBadge-remoteBackground: #2188ff;
-    --vscode-extensionBadge-remoteForeground: #ffffff;
-    --vscode-extensionButton-prominentBackground: #327e36;
-    --vscode-extensionButton-prominentForeground: #ffffff;
-    --vscode-extensionButton-prominentHoverBackground: #28632b;
-    --vscode-focusBorder: #2188ff;
-    --vscode-font-family: 'Segoe WPC', 'Segoe UI', sans-serif;
-    --vscode-font-size: 13px;
-    --vscode-font-weight: normal;
-    --vscode-foreground: #444d56;
-    --vscode-gitDecoration-addedResourceForeground: #28a745;
-    --vscode-gitDecoration-conflictingResourceForeground: #e36209;
-    --vscode-gitDecoration-deletedResourceForeground: #d73a49;
-    --vscode-gitDecoration-ignoredResourceForeground: #959da5;
-    --vscode-gitDecoration-modifiedResourceForeground: #005cc5;
-    --vscode-gitDecoration-submoduleResourceForeground: #959da5;
-    --vscode-gitDecoration-untrackedResourceForeground: #28a745;
-    --vscode-icon-foreground: #424242;
-    --vscode-imagePreview-border: rgba(128, 128, 128, 0.35);
-    --vscode-input-background: #fafbfc;
-    --vscode-input-border: #e1e4e8;
-    --vscode-input-foreground: #2f363d;
-    --vscode-input-placeholderForeground: #959da5;
-    --vscode-inputOption-activeBackground: rgba(33, 136, 255, 0.2);
-    --vscode-inputOption-activeBorder: rgba(0, 122, 204, 0);
-    --vscode-inputOption-activeForeground: #000000;
-    --vscode-inputValidation-errorBackground: #f2dede;
-    --vscode-inputValidation-errorBorder: #be1100;
-    --vscode-inputValidation-infoBackground: #d6ecf2;
-    --vscode-inputValidation-infoBorder: #007acc;
-    --vscode-inputValidation-warningBackground: #f6f5d2;
-    --vscode-inputValidation-warningBorder: #b89500;
-    --vscode-list-activeSelectionBackground: #e2e5e9;
-    --vscode-list-activeSelectionForeground: #2f363d;
-    --vscode-list-deemphasizedForeground: #8e8e90;
-    --vscode-list-dropBackground: #cce5ff;
-    --vscode-list-errorForeground: #b01011;
-    --vscode-list-filterMatchBackground: rgba(255, 223, 93, 0.4);
-    --vscode-list-focusBackground: #cce5ff;
-    --vscode-list-highlightForeground: #0066bf;
-    --vscode-list-hoverBackground: #ebf0f4;
-    --vscode-list-hoverForeground: #2f363d;
-    --vscode-list-inactiveFocusBackground: #dbedff;
-    --vscode-list-inactiveSelectionBackground: #e8eaed;
-    --vscode-list-inactiveSelectionForeground: #2f363d;
-    --vscode-list-invalidItemForeground: #b89500;
-    --vscode-list-warningForeground: #855f00;
-    --vscode-listFilterWidget-background: #efc1ad;
-    --vscode-listFilterWidget-noMatchesOutline: #be1100;
-    --vscode-listFilterWidget-outline: rgba(0, 0, 0, 0);
-    --vscode-menu-background: #fafbfc;
-    --vscode-menu-foreground: #444d56;
-    --vscode-menu-selectionBackground: #e2e5e9;
-    --vscode-menu-selectionForeground: #2f363d;
-    --vscode-menu-separatorBackground: #888888;
-    --vscode-menubar-selectionBackground: rgba(0, 0, 0, 0.1);
-    --vscode-menubar-selectionForeground: #2f363d;
-    --vscode-merge-commonContentBackground: rgba(96, 96, 96, 0.16);
-    --vscode-merge-commonHeaderBackground: rgba(96, 96, 96, 0.4);
-    --vscode-merge-currentContentBackground: rgba(64, 200, 174, 0.2);
-    --vscode-merge-currentHeaderBackground: rgba(64, 200, 174, 0.5);
-    --vscode-merge-incomingContentBackground: rgba(64, 166, 255, 0.2);
-    --vscode-merge-incomingHeaderBackground: rgba(64, 166, 255, 0.5);
-    --vscode-minimap-errorHighlight: rgba(255, 18, 18, 0.7);
-    --vscode-minimap-findMatchHighlight: #d18616;
-    --vscode-minimap-selectionHighlight: #add6ff;
-    --vscode-minimap-warningHighlight: #e9a700;
-    --vscode-minimapGutter-addedBackground: #81b88b;
-    --vscode-minimapGutter-deletedBackground: #ca4b51;
-    --vscode-minimapGutter-modifiedBackground: #66afe0;
-    --vscode-minimapSlider-activeBackground: rgba(149, 157, 165, 0.27);
-    --vscode-minimapSlider-background: rgba(149, 157, 165, 0.1);
-    --vscode-minimapSlider-hoverBackground: rgba(149, 157, 165, 0.13);
-    --vscode-notebook-cellBorderColor: #e8eaed;
-    --vscode-notebook-cellHoverBackground: rgba(204, 229, 255, 0.28);
-    --vscode-notebook-cellInsertionIndicator: #2188ff;
-    --vscode-notebook-cellStatusBarItemHoverBackground: rgba(0, 0, 0, 0.08);
-    --vscode-notebook-cellToolbarSeparator: rgba(128, 128, 128, 0.35);
-    --vscode-notebook-focusedCellBackground: rgba(204, 229, 255, 0.4);
-    --vscode-notebook-focusedCellBorder: rgba(0, 0, 0, 0.12);
-    --vscode-notebook-focusedEditorBorder: #2188ff;
-    --vscode-notebook-outputContainerBackgroundColor: rgba(204, 229, 255, 0.4);
-    --vscode-notebook-symbolHighlightBackground: rgba(253, 255, 0, 0.2);
-    --vscode-notebookScrollbarSlider-activeBackground: rgba(
-      149,
-      157,
-      165,
-      0.53
-    );
-    --vscode-notebookScrollbarSlider-background: rgba(149, 157, 165, 0.2);
-    --vscode-notebookScrollbarSlider-hoverBackground: rgba(149, 157, 165, 0.27);
-    --vscode-notebookStatusErrorIcon-foreground: #cb2431;
-    --vscode-notebookStatusRunningIcon-foreground: #444d56;
-    --vscode-notebookStatusSuccessIcon-foreground: #388a34;
-    --vscode-notificationCenterHeader-background: #e1e4e8;
-    --vscode-notificationCenterHeader-foreground: #6a737d;
-    --vscode-notificationLink-foreground: #0366d6;
-    --vscode-notifications-background: #fafbfc;
-    --vscode-notifications-border: #e1e4e8;
-    --vscode-notifications-foreground: #2f363d;
-    --vscode-notificationsErrorIcon-foreground: #d73a49;
-    --vscode-notificationsInfoIcon-foreground: #005cc5;
-    --vscode-notificationsWarningIcon-foreground: #e36209;
-    --vscode-panel-background: #f6f8fa;
-    --vscode-panel-border: #e1e4e8;
-    --vscode-panel-dropBorder: #2f363d;
-    --vscode-panelInput-border: #e1e4e8;
-    --vscode-panelSection-border: #e1e4e8;
-    --vscode-panelSection-dropBackground: rgba(38, 119, 203, 0.18);
-    --vscode-panelSectionHeader-background: rgba(128, 128, 128, 0.2);
-    --vscode-panelTitle-activeBorder: #f9826c;
-    --vscode-panelTitle-activeForeground: #2f363d;
-    --vscode-panelTitle-inactiveForeground: #6a737d;
+    --vscode-peekViewTitle-background: #1e1e1e;
+    --vscode-peekViewTitleLabel-foreground: #ffffff;
+    --vscode-peekViewTitleDescription-foreground: rgba(204, 204, 204, 0.7);
     --vscode-peekView-border: #007acc;
-    --vscode-peekViewEditor-background: #f2f8fc;
-    --vscode-peekViewEditor-matchHighlightBackground: rgba(245, 216, 2, 0.87);
-    --vscode-peekViewEditorGutter-background: #f2f8fc;
-    --vscode-peekViewResult-background: #f3f3f3;
-    --vscode-peekViewResult-fileForeground: #1e1e1e;
-    --vscode-peekViewResult-lineForeground: #646465;
-    --vscode-peekViewResult-matchHighlightBackground: rgba(234, 92, 0, 0.3);
+    --vscode-peekViewResult-background: #252526;
+    --vscode-peekViewResult-lineForeground: #bbbbbb;
+    --vscode-peekViewResult-fileForeground: #ffffff;
     --vscode-peekViewResult-selectionBackground: rgba(51, 153, 255, 0.2);
-    --vscode-peekViewResult-selectionForeground: #6c6c6c;
-    --vscode-peekViewTitle-background: #ffffff;
-    --vscode-peekViewTitleDescription-foreground: rgba(97, 97, 97, 0.9);
-    --vscode-peekViewTitleLabel-foreground: #333333;
-    --vscode-pickerGroup-border: #e1e4e8;
-    --vscode-pickerGroup-foreground: #2f363d;
-    --vscode-problemsErrorIcon-foreground: #e51400;
-    --vscode-problemsInfoIcon-foreground: #75beff;
-    --vscode-problemsWarningIcon-foreground: #e9a700;
-    --vscode-progressBar-background: #2188ff;
-    --vscode-quickInput-background: #fafbfc;
-    --vscode-quickInput-foreground: #2f363d;
-    --vscode-quickInputTitle-background: rgba(0, 0, 0, 0.06);
-    --vscode-scm-providerBorder: #c8c8c8;
-    --vscode-scrollbar-shadow: rgba(106, 115, 125, 0.2);
-    --vscode-scrollbarSlider-activeBackground: rgba(149, 157, 165, 0.53);
-    --vscode-scrollbarSlider-background: rgba(149, 157, 165, 0.2);
-    --vscode-scrollbarSlider-hoverBackground: rgba(149, 157, 165, 0.27);
-    --vscode-searchEditor-findMatchBackground: rgba(255, 223, 93, 0.26);
-    --vscode-searchEditor-textInputBorder: #e1e4e8;
-    --vscode-settings-checkboxBackground: #fafbfc;
-    --vscode-settings-checkboxBorder: #d1d5da;
-    --vscode-settings-checkboxForeground: #2f363d;
-    --vscode-settings-dropdownBackground: #fafbfc;
-    --vscode-settings-dropdownBorder: #e1e4e8;
-    --vscode-settings-dropdownForeground: #2f363d;
-    --vscode-settings-dropdownListBorder: #c8c8c8;
-    --vscode-settings-headerForeground: #2f363d;
-    --vscode-settings-modifiedItemIndicator: #2188ff;
-    --vscode-settings-numberInputBackground: #fafbfc;
-    --vscode-settings-numberInputBorder: #e1e4e8;
-    --vscode-settings-numberInputForeground: #2f363d;
-    --vscode-settings-textInputBackground: #fafbfc;
-    --vscode-settings-textInputBorder: #e1e4e8;
-    --vscode-settings-textInputForeground: #2f363d;
-    --vscode-sideBar-background: #f6f8fa;
-    --vscode-sideBar-border: #e1e4e8;
-    --vscode-sideBar-dropBackground: rgba(38, 119, 203, 0.18);
-    --vscode-sideBar-foreground: #586069;
-    --vscode-sideBarSectionHeader-background: #f6f8fa;
-    --vscode-sideBarSectionHeader-border: #e1e4e8;
-    --vscode-sideBarSectionHeader-foreground: #2f363d;
-    --vscode-sideBarTitle-foreground: #2f363d;
-    --vscode-statusBar-background: #ffffff;
-    --vscode-statusBar-border: #e1e4e8;
-    --vscode-statusBar-debuggingBackground: #f9826c;
-    --vscode-statusBar-debuggingBorder: #e1e4e8;
-    --vscode-statusBar-debuggingForeground: #ffffff;
-    --vscode-statusBar-foreground: #586069;
-    --vscode-statusBar-noFolderBackground: #ffffff;
-    --vscode-statusBar-noFolderBorder: #e1e4e8;
-    --vscode-statusBar-noFolderForeground: #586069;
+    --vscode-peekViewResult-selectionForeground: #ffffff;
+    --vscode-peekViewEditor-background: #001f33;
+    --vscode-peekViewEditorGutter-background: #001f33;
+    --vscode-peekViewResult-matchHighlightBackground: rgba(234, 92, 0, 0.3);
+    --vscode-peekViewEditor-matchHighlightBackground: rgba(255, 143, 0, 0.6);
+    --vscode-editorMarkerNavigationError-background: #ff4b82;
+    --vscode-editorMarkerNavigationWarning-background: #ffcc95;
+    --vscode-editorMarkerNavigationInfo-background: #75beff;
+    --vscode-editorMarkerNavigation-background: #2d2d30;
+    --vscode-tab-activeBackground: #292a2b;
+    --vscode-tab-unfocusedActiveBackground: #292a2b;
+    --vscode-tab-inactiveBackground: #242526;
+    --vscode-tab-unfocusedInactiveBackground: #242526;
+    --vscode-tab-activeForeground: #19f9d8;
+    --vscode-tab-inactiveForeground: #e6e6e6;
+    --vscode-tab-unfocusedActiveForeground: rgba(25, 249, 216, 0.5);
+    --vscode-tab-unfocusedInactiveForeground: rgba(230, 230, 230, 0.5);
+    --vscode-tab-activeBorder: #19f9d8;
+    --vscode-tab-unfocusedActiveBorder: rgba(25, 249, 216, 0.5);
+    --vscode-tab-activeModifiedBorder: #3399cc;
+    --vscode-tab-inactiveModifiedBorder: rgba(51, 153, 204, 0.5);
+    --vscode-tab-unfocusedActiveModifiedBorder: rgba(51, 153, 204, 0.5);
+    --vscode-tab-unfocusedInactiveModifiedBorder: rgba(51, 153, 204, 0.25);
+    --vscode-tab-border: #252526;
+    --vscode-editorPane-background: #292a2b;
+    --vscode-editorGroupHeader-tabsBackground: #252526;
+    --vscode-editorGroupHeader-noTabsBackground: #292a2b;
+    --vscode-editorGroup-border: #444444;
+    --vscode-editorGroup-dropBackground: rgba(83, 89, 93, 0.5);
+    --vscode-imagePreview-border: rgba(128, 128, 128, 0.35);
+    --vscode-panel-background: #292a2b;
+    --vscode-panel-border: rgba(128, 128, 128, 0.35);
+    --vscode-panelTitle-activeForeground: #e7e7e7;
+    --vscode-panelTitle-inactiveForeground: rgba(231, 231, 231, 0.6);
+    --vscode-panelTitle-activeBorder: #e7e7e7;
+    --vscode-panel-dropBorder: #e7e7e7;
+    --vscode-panelSection-dropBackground: rgba(83, 89, 93, 0.5);
+    --vscode-panelSectionHeader-background: rgba(128, 128, 128, 0.2);
+    --vscode-panelSection-border: rgba(128, 128, 128, 0.35);
+    --vscode-statusBar-foreground: #e6e6e6;
+    --vscode-statusBar-noFolderForeground: #e6e6e6;
+    --vscode-statusBar-background: #222223;
+    --vscode-statusBar-noFolderBackground: #242526;
     --vscode-statusBarItem-activeBackground: rgba(255, 255, 255, 0.18);
     --vscode-statusBarItem-hoverBackground: rgba(255, 255, 255, 0.12);
+    --vscode-statusBarItem-prominentForeground: #e6e6e6;
     --vscode-statusBarItem-prominentBackground: rgba(0, 0, 0, 0.5);
-    --vscode-statusBarItem-prominentForeground: #586069;
     --vscode-statusBarItem-prominentHoverBackground: rgba(0, 0, 0, 0.3);
-    --vscode-statusBarItem-remoteBackground: #2188ff;
-    --vscode-statusBarItem-remoteForeground: #ffffff;
-    --vscode-symbolIcon-arrayForeground: #444d56;
-    --vscode-symbolIcon-booleanForeground: #444d56;
-    --vscode-symbolIcon-classForeground: #d67e00;
-    --vscode-symbolIcon-colorForeground: #444d56;
-    --vscode-symbolIcon-constantForeground: #444d56;
-    --vscode-symbolIcon-constructorForeground: #652d90;
-    --vscode-symbolIcon-enumeratorForeground: #d67e00;
-    --vscode-symbolIcon-enumeratorMemberForeground: #007acc;
-    --vscode-symbolIcon-eventForeground: #d67e00;
-    --vscode-symbolIcon-fieldForeground: #007acc;
-    --vscode-symbolIcon-fileForeground: #444d56;
-    --vscode-symbolIcon-folderForeground: #444d56;
-    --vscode-symbolIcon-functionForeground: #652d90;
-    --vscode-symbolIcon-interfaceForeground: #007acc;
-    --vscode-symbolIcon-keyForeground: #444d56;
-    --vscode-symbolIcon-keywordForeground: #444d56;
-    --vscode-symbolIcon-methodForeground: #652d90;
-    --vscode-symbolIcon-moduleForeground: #444d56;
-    --vscode-symbolIcon-namespaceForeground: #444d56;
-    --vscode-symbolIcon-nullForeground: #444d56;
-    --vscode-symbolIcon-numberForeground: #444d56;
-    --vscode-symbolIcon-objectForeground: #444d56;
-    --vscode-symbolIcon-operatorForeground: #444d56;
-    --vscode-symbolIcon-packageForeground: #444d56;
-    --vscode-symbolIcon-propertyForeground: #444d56;
-    --vscode-symbolIcon-referenceForeground: #444d56;
-    --vscode-symbolIcon-snippetForeground: #444d56;
-    --vscode-symbolIcon-stringForeground: #444d56;
-    --vscode-symbolIcon-structForeground: #444d56;
-    --vscode-symbolIcon-textForeground: #444d56;
-    --vscode-symbolIcon-typeParameterForeground: #444d56;
-    --vscode-symbolIcon-unitForeground: #444d56;
-    --vscode-symbolIcon-variableForeground: #007acc;
-    --vscode-tab-activeBackground: #ffffff;
-    --vscode-tab-activeBorder: #ffffff;
-    --vscode-tab-activeBorderTop: #f9826c;
-    --vscode-tab-activeForeground: #2f363d;
-    --vscode-tab-activeModifiedBorder: #33aaee;
-    --vscode-tab-border: #e1e4e8;
-    --vscode-tab-hoverBackground: #ffffff;
-    --vscode-tab-inactiveBackground: #f6f8fa;
-    --vscode-tab-inactiveForeground: #6a737d;
-    --vscode-tab-inactiveModifiedBorder: rgba(51, 170, 238, 0.5);
-    --vscode-tab-unfocusedActiveBackground: #ffffff;
-    --vscode-tab-unfocusedActiveBorder: #ffffff;
-    --vscode-tab-unfocusedActiveBorderTop: #e1e4e8;
-    --vscode-tab-unfocusedActiveForeground: rgba(47, 54, 61, 0.7);
-    --vscode-tab-unfocusedActiveModifiedBorder: rgba(51, 170, 238, 0.7);
-    --vscode-tab-unfocusedHoverBackground: #ffffff;
-    --vscode-tab-unfocusedInactiveBackground: #f6f8fa;
-    --vscode-tab-unfocusedInactiveForeground: rgba(106, 115, 125, 0.5);
-    --vscode-tab-unfocusedInactiveModifiedBorder: rgba(51, 170, 238, 0.25);
+    --vscode-activityBar-background: #222223;
+    --vscode-activityBar-foreground: #e6e6e6;
+    --vscode-activityBar-inactiveForeground: rgba(230, 230, 230, 0.4);
+    --vscode-activityBar-border: #222223;
+    --vscode-activityBar-activeBorder: #e6e6e6;
+    --vscode-activityBar-dropBorder: #e6e6e6;
+    --vscode-activityBarBadge-background: #19f9d8;
+    --vscode-activityBarBadge-foreground: #242526;
+    --vscode-statusBarItem-remoteBackground: #19f9d8;
+    --vscode-statusBarItem-remoteForeground: #242526;
+    --vscode-extensionBadge-remoteBackground: #19f9d8;
+    --vscode-extensionBadge-remoteForeground: #242526;
+    --vscode-sideBar-background: #242526;
+    --vscode-sideBar-foreground: #bbbbbb;
+    --vscode-sideBar-border: #222223;
+    --vscode-sideBarTitle-foreground: #bbbbbb;
+    --vscode-sideBar-dropBackground: rgba(83, 89, 93, 0.5);
+    --vscode-sideBarSectionHeader-background: rgba(128, 128, 128, 0.2);
+    --vscode-sideBarSectionHeader-foreground: #bbbbbb;
+    --vscode-titleBar-activeForeground: #e6e6e6;
+    --vscode-titleBar-inactiveForeground: #e6e6e6;
+    --vscode-titleBar-activeBackground: #242526;
+    --vscode-titleBar-inactiveBackground: #242526;
+    --vscode-menubar-selectionForeground: #e6e6e6;
+    --vscode-menubar-selectionBackground: rgba(255, 255, 255, 0.1);
+    --vscode-notifications-foreground: #e6e6e6;
+    --vscode-notifications-background: #2a2c2d;
+    --vscode-notificationLink-foreground: #3794ff;
+    --vscode-notificationCenterHeader-background: #37393b;
+    --vscode-notifications-border: #37393b;
+    --vscode-notificationsErrorIcon-foreground: #ff4b82;
+    --vscode-notificationsWarningIcon-foreground: #ffcc95;
+    --vscode-notificationsInfoIcon-foreground: #75beff;
+    --vscode-editorGutter-commentRangeForeground: #c5c5c5;
+    --vscode-editor-stackFrameHighlightBackground: rgba(255, 255, 0, 0.2);
+    --vscode-editor-focusedStackFrameHighlightBackground: rgba(
+      122,
+      189,
+      122,
+      0.3
+    );
+    --vscode-terminal-foreground: #cccccc;
+    --vscode-terminalCursor-foreground: #ff4b82;
+    --vscode-terminalCursor-background: #e6e6e6;
+    --vscode-terminal-selectionBackground: rgba(255, 255, 255, 0.25);
+    --vscode-terminal-border: rgba(128, 128, 128, 0.35);
+    --vscode-statusBar-debuggingBackground: #b084eb;
+    --vscode-statusBar-debuggingForeground: #e6e6e6;
+    --vscode-settings-headerForeground: #e7e7e7;
+    --vscode-settings-modifiedItemIndicator: #0c7d9d;
+    --vscode-settings-dropdownBackground: #3c3c3c;
+    --vscode-settings-dropdownForeground: #f0f0f0;
+    --vscode-settings-dropdownBorder: #3c3c3c;
+    --vscode-settings-dropdownListBorder: #373b41;
+    --vscode-settings-checkboxBackground: #3c3c3c;
+    --vscode-settings-checkboxForeground: #f0f0f0;
+    --vscode-settings-checkboxBorder: #3c3c3c;
+    --vscode-settings-textInputBackground: #3c3c3c;
+    --vscode-settings-textInputForeground: #e6e6e6;
+    --vscode-settings-numberInputBackground: #3c3c3c;
+    --vscode-settings-numberInputForeground: #e6e6e6;
+    --vscode-debugExceptionWidget-border: #a31515;
+    --vscode-debugExceptionWidget-background: #420b0d;
+    --vscode-editorGutter-modifiedBackground: #ffcc95;
+    --vscode-editorGutter-addedBackground: #19f9d8;
+    --vscode-editorGutter-deletedBackground: #ff4b82;
+    --vscode-minimapGutter-modifiedBackground: #0c7d9d;
+    --vscode-minimapGutter-addedBackground: #587c0c;
+    --vscode-minimapGutter-deletedBackground: #94151b;
+    --vscode-editorOverviewRuler-modifiedForeground: #ffcc95;
+    --vscode-editorOverviewRuler-addedForeground: #19f9d8;
+    --vscode-editorOverviewRuler-deletedForeground: #ff4b82;
+    --vscode-debugIcon-breakpointForeground: #e51400;
+    --vscode-debugIcon-breakpointDisabledForeground: #848484;
+    --vscode-debugIcon-breakpointUnverifiedForeground: #848484;
+    --vscode-debugIcon-breakpointCurrentStackframeForeground: #ffcc00;
+    --vscode-debugIcon-breakpointStackframeForeground: #89d185;
+    --vscode-debugToolBar-background: #333333;
+    --vscode-debugIcon-startForeground: #89d185;
+    --vscode-debugIcon-pauseForeground: #75beff;
+    --vscode-debugIcon-stopForeground: #f48771;
+    --vscode-debugIcon-disconnectForeground: #f48771;
+    --vscode-debugIcon-restartForeground: #89d185;
+    --vscode-debugIcon-stepOverForeground: #75beff;
+    --vscode-debugIcon-stepIntoForeground: #75beff;
+    --vscode-debugIcon-stepOutForeground: #75beff;
+    --vscode-debugIcon-continueForeground: #75beff;
+    --vscode-debugIcon-stepBackForeground: #75beff;
+    --vscode-debugTokenExpression-name: #c586c0;
+    --vscode-debugTokenExpression-value: rgba(204, 204, 204, 0.6);
+    --vscode-debugTokenExpression-string: #ce9178;
+    --vscode-debugTokenExpression-boolean: #4e94ce;
+    --vscode-debugTokenExpression-number: #b5cea8;
+    --vscode-debugTokenExpression-error: #f48771;
+    --vscode-debugView-exceptionLabelForeground: #e6e6e6;
+    --vscode-debugView-exceptionLabelBackground: #6c2022;
+    --vscode-debugView-stateLabelForeground: #e6e6e6;
+    --vscode-debugView-stateLabelBackground: rgba(136, 136, 136, 0.27);
+    --vscode-debugView-valueChangedHighlight: #569cd6;
+    --vscode-debugConsole-infoForeground: #75beff;
+    --vscode-debugConsole-warningForeground: #ffcc95;
+    --vscode-debugConsole-errorForeground: #ff4b82;
+    --vscode-debugConsole-sourceForeground: #e6e6e6;
+    --vscode-debugConsoleInputIcon-foreground: #e6e6e6;
+    --vscode-extensionButton-prominentBackground: #45a9f9;
+    --vscode-extensionButton-prominentForeground: #ffffff;
+    --vscode-extensionButton-prominentHoverBackground: #676b79;
+    --vscode-notebook-cellBorderColor: rgba(128, 128, 128, 0.14);
+    --vscode-notebook-focusedEditorBorder: #007fd4;
+    --vscode-notebookStatusSuccessIcon-foreground: #89d185;
+    --vscode-notebookStatusErrorIcon-foreground: #ff4b82;
+    --vscode-notebookStatusRunningIcon-foreground: #e6e6e6;
+    --vscode-notebook-outputContainerBackgroundColor: rgba(128, 128, 128, 0.14);
+    --vscode-notebook-cellToolbarSeparator: rgba(128, 128, 128, 0.35);
+    --vscode-notebook-focusedCellBackground: rgba(128, 128, 128, 0.14);
+    --vscode-notebook-cellHoverBackground: rgba(128, 128, 128, 0.07);
+    --vscode-notebook-focusedCellBorder: rgba(255, 255, 255, 0.12);
+    --vscode-notebook-cellStatusBarItemHoverBackground: rgba(
+      255,
+      255,
+      255,
+      0.15
+    );
+    --vscode-notebook-cellInsertionIndicator: #007fd4;
+    --vscode-notebookScrollbarSlider-background: rgba(55, 59, 65, 0.6);
+    --vscode-notebookScrollbarSlider-hoverBackground: #757575;
+    --vscode-notebookScrollbarSlider-activeBackground: #757575;
+    --vscode-notebook-symbolHighlightBackground: rgba(255, 255, 255, 0.04);
+    --vscode-scm-providerBorder: #454545;
     --vscode-terminal-ansiBlack: #000000;
-    --vscode-terminal-ansiBlue: #0451a5;
-    --vscode-terminal-ansiBrightBlack: #666666;
-    --vscode-terminal-ansiBrightBlue: #0451a5;
-    --vscode-terminal-ansiBrightCyan: #0598bc;
-    --vscode-terminal-ansiBrightGreen: #14ce14;
-    --vscode-terminal-ansiBrightMagenta: #bc05bc;
-    --vscode-terminal-ansiBrightRed: #cd3131;
-    --vscode-terminal-ansiBrightWhite: #a5a5a5;
-    --vscode-terminal-ansiBrightYellow: #b5ba00;
-    --vscode-terminal-ansiCyan: #0598bc;
-    --vscode-terminal-ansiGreen: #00bc00;
-    --vscode-terminal-ansiMagenta: #bc05bc;
-    --vscode-terminal-ansiRed: #cd3131;
-    --vscode-terminal-ansiWhite: #555555;
-    --vscode-terminal-ansiYellow: #949800;
-    --vscode-terminal-border: #e1e4e8;
-    --vscode-terminal-foreground: #586069;
-    --vscode-terminal-selectionBackground: rgba(0, 0, 0, 0.25);
-    --vscode-textBlockQuote-background: #fafbfc;
-    --vscode-textBlockQuote-border: #e1e4e8;
-    --vscode-textCodeBlock-background: #f6f8fa;
-    --vscode-textLink-activeForeground: #005cc5;
-    --vscode-textLink-foreground: #0366d6;
-    --vscode-textPreformat-foreground: #586069;
-    --vscode-textSeparator-foreground: #d1d5da;
-    --vscode-titleBar-activeBackground: #ffffff;
-    --vscode-titleBar-activeForeground: #2f363d;
-    --vscode-titleBar-border: #e1e4e8;
-    --vscode-titleBar-inactiveBackground: #f6f8fa;
-    --vscode-titleBar-inactiveForeground: #6a737d;
-    --vscode-tree-indentGuidesStroke: #e1e4e8;
-    --vscode-welcomePage-buttonBackground: #f6f8fa;
-    --vscode-welcomePage-buttonHoverBackground: #e1e4e8;
-    --vscode-widget-shadow: #a8a8a8;
+    --vscode-terminal-ansiRed: #ff2c6d;
+    --vscode-terminal-ansiGreen: #19f9d8;
+    --vscode-terminal-ansiYellow: #ffb86c;
+    --vscode-terminal-ansiBlue: #45a9f9;
+    --vscode-terminal-ansiMagenta: #ff75b5;
+    --vscode-terminal-ansiCyan: #b084eb;
+    --vscode-terminal-ansiWhite: #cdcdcd;
+    --vscode-terminal-ansiBrightBlack: #757575;
+    --vscode-terminal-ansiBrightRed: #ff2c6d;
+    --vscode-terminal-ansiBrightGreen: #19f9d8;
+    --vscode-terminal-ansiBrightYellow: #ffcc95;
+    --vscode-terminal-ansiBrightBlue: #6fc1ff;
+    --vscode-terminal-ansiBrightMagenta: #ff9ac1;
+    --vscode-terminal-ansiBrightCyan: #bcaafe;
+    --vscode-terminal-ansiBrightWhite: #e6e6e6;
+    --vscode-gitDecoration-addedResourceForeground: #81b88b;
+    --vscode-gitDecoration-modifiedResourceForeground: #e2c08d;
+    --vscode-gitDecoration-deletedResourceForeground: #c74e39;
+    --vscode-gitDecoration-untrackedResourceForeground: #73c991;
+    --vscode-gitDecoration-ignoredResourceForeground: #8c8c8c;
+    --vscode-gitDecoration-conflictingResourceForeground: #6c6cc4;
+    --vscode-gitDecoration-submoduleResourceForeground: #8db9e2;
   "
 >
   <head>
@@ -472,7 +459,9 @@
       <h2>Table of Contents</h2>
       <ul>
         <li><a href="#user" title="#user">User Snippets</a></li>
-        <ul></ul>
+        <ul>
+          <li><a href="#user-markdown" title="#user-markdown">Markdown</a></li>
+        </ul>
         <li><a href="#extension" title="#extension">Extension Snippets</a></li>
         <ul>
           <li>
@@ -480,13 +469,6 @@
               href="#DavidAnson.vscode-markdownlint"
               title="#DavidAnson.vscode-markdownlint"
               >markdownlint</a
-            >
-          </li>
-          <li>
-            <a
-              href="#dsznajder.es7-react-js-snippets"
-              title="#dsznajder.es7-react-js-snippets"
-              >ES7 React/Redux/GraphQL/React-Native snippets</a
             >
           </li>
           <li>
@@ -501,6 +483,13 @@
               href="#sdras.vue-vscode-snippets"
               title="#sdras.vue-vscode-snippets"
               >Vue VSCode Snippets</a
+            >
+          </li>
+          <li>
+            <a
+              href="#xabikos.JavaScriptSnippets"
+              title="#xabikos.JavaScriptSnippets"
+              >JavaScript (ES6) code snippets</a
             >
           </li>
         </ul>
@@ -536,14 +525,67 @@
     </section>
     <section id="user">
       <h2>User Snippets</h2>
-      <p class="empty">Oucho Gaucho! 🌵 Nothing to round up! 🤠</p>
+      <div>
+        <h3 id="user-markdown">Markdown</h3>
+        <div class="source">
+          <button
+            type="button"
+            onclick="openFile('c%3A%5CUsers%5Croboleary%5CAppData%5CRoaming%5CCode%5Cuser%5Csnippets%5Cmarkdown.json')"
+            )=""
+          >
+            View Source File
+          </button>
+        </div>
+        <table>
+          <thead>
+            <tr>
+              <th>Prefix</th>
+              <th>Name</th>
+              <th>Description</th>
+              <th>Body</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>test</td>
+              <td>test</td>
+              <td></td>
+              <td>
+                <code>[<br />${CLIPBOARD/^(.+)$/'$1',/gm}<br />]<br /></code>
+              </td>
+            </tr>
+            <tr>
+              <td>up</td>
+              <td>Upper the second mirrored tab stop</td>
+              <td></td>
+              <td>
+                <code
+                  >${1:title}<br />${1/(.*)/${1:/upcase}/}<br />${1/(.*)/${1:/upcase}/}<br />$0<br
+                /></code>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </section>
     <section id="extension">
       <h2>Extension Snippets</h2>
       <h3 id="DavidAnson.vscode-markdownlint">markdownlint</h3>
       <div>
         <h4>snippets.json</h4>
-        Available in the following languages: markdown.
+        <p>Available in the following languages:</p>
+        <ul>
+          <li>markdown</li>
+        </ul>
+        <div class="source">
+          <button
+            type="button"
+            onclick="openFile('c%3A%5CUsers%5Croboleary%5C.vscode%5Cextensions%5Cdavidanson.vscode-markdownlint-0.36.3%5Csnippets.json')"
+            )=""
+          >
+            View Source File
+          </button>
+        </div>
         <table>
           <thead>
             <tr>
@@ -653,2499 +695,22 @@
           </tbody>
         </table>
       </div>
-      <h3 id="dsznajder.es7-react-js-snippets">
-        ES7 React/Redux/GraphQL/React-Native snippets
-      </h3>
-      <div>
-        <h4>snippets.json</h4>
-        Available in the following languages: javascript, javascriptreact,
-        typescript, typescriptreact.
-        <table>
-          <thead>
-            <tr>
-              <th>Prefix</th>
-              <th>Name</th>
-              <th>Description</th>
-              <th>Body</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>imp</td>
-              <td>import</td>
-              <td></td>
-              <td>
-                <code>import ${2:moduleName} from '${1:module}'$0<br /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>imn</td>
-              <td>importNoModuleName</td>
-              <td></td>
-              <td>
-                <code>import '${1:module}'$0<br /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>imd</td>
-              <td>importDestructing</td>
-              <td></td>
-              <td>
-                <code>import { $2 } from '${1:module}'$0<br /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>ime</td>
-              <td>importEverything</td>
-              <td></td>
-              <td>
-                <code>import * as ${2:alias} from '${1:module}'$0<br /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>ima</td>
-              <td>importAs</td>
-              <td></td>
-              <td>
-                <code
-                  >import { ${2:originalName} as ${3:alias} } from
-                  '${1:module}'$0<br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>exp</td>
-              <td>exportDefault</td>
-              <td></td>
-              <td>
-                <code>export default $1$0<br /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>exd</td>
-              <td>exportDestructing</td>
-              <td></td>
-              <td>
-                <code>export { $2 } from '${1:module}'$0<br /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>exa</td>
-              <td>exportAs</td>
-              <td></td>
-              <td>
-                <code
-                  >export { ${2:originalName} as ${3:alias} } from
-                  '${1:module}'$0<br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>enf</td>
-              <td>exportNamedFunction</td>
-              <td>Export named function in ES7 syntax</td>
-              <td>
-                <code
-                  >export const ${1:functionName} = (${2:params}) =&gt; {<br />
-                  $0<br />}<br /><br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>edf</td>
-              <td>exportDefaultFunction</td>
-              <td>Export default function in ES7 syntax</td>
-              <td>
-                <code
-                  >export default (${1:params}) =&gt; {<br />
-                  $0<br />}<br /><br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>met</td>
-              <td>method</td>
-              <td>Creates a method inside a class in ES7 syntax</td>
-              <td>
-                <code
-                  >${1:methodName} = (${2:params}) =&gt; {<br />
-                  ${0}<br />}<br /><br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>pge</td>
-              <td>propertyGet</td>
-              <td>Creates a getter property inside a class in ES7 syntax</td>
-              <td>
-                <code
-                  >get ${1:propertyName}() {<br />
-                  return this.${0}<br />}<br /><br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>pse</td>
-              <td>propertySet</td>
-              <td>Creates a setter property inside a class in ES7 syntax</td>
-              <td>
-                <code
-                  >set ${1:propertyName}(${2:value}) {<br />
-                  ${0}<br />}<br /><br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>fre</td>
-              <td>forEach</td>
-              <td>Creates a forEach statement in ES7 syntax</td>
-              <td>
-                <code
-                  >${1:array}.forEach(${2:currentItem} =&gt; {<br />
-                  ${0}<br />})<br /><br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>fof</td>
-              <td>forOf</td>
-              <td>Iterating over property names of iterable objects</td>
-              <td>
-                <code
-                  >for(let ${1:item} of ${2:object}) {<br />
-                  ${0}<br />}<br /><br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>fin</td>
-              <td>forIn</td>
-              <td>Iterating over property values of iterable objects</td>
-              <td>
-                <code
-                  >for(let ${1:item} in ${2:object}) {<br />
-                  ${0}<br />}<br /><br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>anfn</td>
-              <td>anonymousFunction</td>
-              <td>Creates an anonymous function in ES7 syntax</td>
-              <td>
-                <code
-                  >(${1:params}) =&gt; {<br />
-                  ${2}<br />}<br /><br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>nfn</td>
-              <td>namedFunction</td>
-              <td>Creates a named function in ES7 syntax</td>
-              <td>
-                <code
-                  >const ${1:name} = (${2:params}) =&gt; {<br />
-                  ${3}<br />}<br /><br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>dob</td>
-              <td>destructingObject</td>
-              <td>
-                Creates and assigns a local variable using object destructing
-              </td>
-              <td>
-                <code
-                  >const {${1:propertyName}} = ${2:objectToDestruct}<br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>dar</td>
-              <td>destructingArray</td>
-              <td>
-                Creates and assigns a local variable using array destructing
-              </td>
-              <td>
-                <code
-                  >const [${1:propertyName}] = ${2:arrayToDestruct}<br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>sti</td>
-              <td>setInterval</td>
-              <td>
-                Executes the given function at specified intervals in ES7 syntax
-              </td>
-              <td>
-                <code
-                  >setInterval(() =&gt; {<br />
-                  ${2}<br />}, ${0:intervalInms})<br /><br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>sto</td>
-              <td>setTimeOut</td>
-              <td>
-                Executes the given function after the specified delay in ES7
-                syntax
-              </td>
-              <td>
-                <code
-                  >setTimeout(() =&gt; {<br />
-                  ${2}<br />}, ${1:delayInms})<br /><br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>prom</td>
-              <td>promise</td>
-              <td>
-                Creates and returns a new Promise in the standard ES7 syntax
-              </td>
-              <td>
-                <code
-                  >return new Promise((resolve, reject) =&gt; {<br />
-                  ${1}<br />})<br /><br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>cas</td>
-              <td>consoleAssert</td>
-              <td>
-                If the specified expression is false, the message is written to
-                the console along with a stack trace
-              </td>
-              <td>
-                <code>console.assert(${1:expression}, ${2:object})<br /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>ccl</td>
-              <td>consoleClear</td>
-              <td>Clears the console</td>
-              <td>
-                <code>console.clear()<br /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>cco</td>
-              <td>consoleCount</td>
-              <td>
-                Writes the the number of times that count() has been invoked at
-                the same line and with the same label
-              </td>
-              <td>
-                <code>console.count(${1:label})<br /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>cdi</td>
-              <td>consoleDir</td>
-              <td>
-                Prints a JavaScript representation of the specified object
-              </td>
-              <td>
-                <code>console.dir(${1:object})<br /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>cer</td>
-              <td>consoleError</td>
-              <td>
-                Displays a message in the console and also includes a stack
-                trace from where the method was called
-              </td>
-              <td>
-                <code>console.error(${1:object})<br /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>cgr</td>
-              <td>consoleGroup</td>
-              <td>
-                Groups and indents all following output by an additional level,
-                until console.groupEnd() is called.
-              </td>
-              <td>
-                <code>console.group("${1:label}")<br /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>cge</td>
-              <td>consoleGroupEnd</td>
-              <td>Closes out the corresponding console.group().</td>
-              <td>
-                <code>console.groupEnd()<br /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>clg</td>
-              <td>consoleLog</td>
-              <td>Displays a message in the console</td>
-              <td>
-                <code>console.log(${1:object})<br /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>ctr</td>
-              <td>consoleTrace</td>
-              <td>
-                Prints a stack trace from the point where the method was called
-              </td>
-              <td>
-                <code>console.trace(${1:object})<br /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>clo</td>
-              <td>consoleLogObject</td>
-              <td>Logs property with name.</td>
-              <td>
-                <code>console.log('${1:object}', ${1:object})<br /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>ctm</td>
-              <td>consoleTime</td>
-              <td>Console time wrapper</td>
-              <td>
-                <code>console.time('${1:object}')<br /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>cte</td>
-              <td>consoleTimeEnd</td>
-              <td>Console time end wrapper</td>
-              <td>
-                <code>console.timeEnd('${1:object}')<br /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>cwa</td>
-              <td>consoleWarn</td>
-              <td>
-                Displays a message in the console but also displays a yellow
-                warning icon along with the logged message
-              </td>
-              <td>
-                <code>console.warn(${1:object})<br /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>cin</td>
-              <td>consoleInfo</td>
-              <td>
-                Displays a message in the console but also displays a blue
-                information icon along with the logged message
-              </td>
-              <td>
-                <code>console.info(${1:object})<br /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>cp</td>
-              <td>destructProps</td>
-              <td>
-                Creates and assigns a local variable using props destructing
-              </td>
-              <td>
-                <code>const { $1 } = this.props<br /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>cs</td>
-              <td>destructState</td>
-              <td>
-                Creates and assigns a local variable using state destructing
-              </td>
-              <td>
-                <code>const { $1 } = this.state<br /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>imr</td>
-              <td>import React</td>
-              <td></td>
-              <td>
-                <code>import React from 'react'<br /><br /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>imrd</td>
-              <td>import ReactDOM</td>
-              <td></td>
-              <td>
-                <code>import ReactDOM from 'react-dom'<br /><br /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>imrc</td>
-              <td>import React, { Component }</td>
-              <td></td>
-              <td>
-                <code
-                  >import React, { Component } from 'react'<br /><br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>imrcp</td>
-              <td>import React, { Component } &amp; PropTypes</td>
-              <td></td>
-              <td>
-                <code
-                  >import React, { Component } from 'react'<br />import
-                  PropTypes from 'prop-types'<br /><br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>imrpc</td>
-              <td>import React, { PureComponent }</td>
-              <td></td>
-              <td>
-                <code
-                  >import React, { PureComponent } from 'react'<br /><br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>imrpcp</td>
-              <td>import React, { PureComponent } &amp; PropTypes</td>
-              <td></td>
-              <td>
-                <code
-                  >import React, { PureComponent } from 'react'<br />import
-                  PropTypes from 'prop-types'<br /><br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>imrm</td>
-              <td>import React, { memo }</td>
-              <td></td>
-              <td>
-                <code>import React, { memo } from 'react'<br /><br /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>imrmp</td>
-              <td>import React, { memo } &amp; PropTypes</td>
-              <td></td>
-              <td>
-                <code
-                  >import React, { memo } from 'react'<br />import PropTypes
-                  from 'prop-types'<br /><br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>imrs</td>
-              <td>import React, {useState}</td>
-              <td></td>
-              <td>
-                <code>import React, { useState } from 'react'<br /><br /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>imrse</td>
-              <td>import React, {useState, useEffect}</td>
-              <td></td>
-              <td>
-                <code
-                  >import React, { useState, useEffect } from 'react'<br /><br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>impt</td>
-              <td>import PropTypes</td>
-              <td></td>
-              <td>
-                <code>import PropTypes from 'prop-types'<br /><br /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>imrr</td>
-              <td>import React Router</td>
-              <td></td>
-              <td>
-                <code
-                  >import { BrowserRouter as Router, Route, NavLink } from
-                  'react-router-dom'<br /><br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>imbr</td>
-              <td>import React Browser Router</td>
-              <td></td>
-              <td>
-                <code
-                  >import { BrowserRouter as Router } from 'react-router-dom'<br /><br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>imbrr</td>
-              <td>import React Browser Router - Route</td>
-              <td></td>
-              <td>
-                <code
-                  >import { Route } from 'react-router-dom'<br /><br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>imbrc</td>
-              <td>import React Browser Router - Route Combo</td>
-              <td></td>
-              <td>
-                <code
-                  >import { Route, Switch, NavLink, Link } from
-                  'react-router-dom'<br /><br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>imbrs</td>
-              <td>import React Browser Router - Switch</td>
-              <td></td>
-              <td>
-                <code
-                  >import { Switch } from 'react-router-dom'<br /><br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>imbrl</td>
-              <td>import React Browser Router - Link</td>
-              <td></td>
-              <td>
-                <code>import { Link } from 'react-router-dom'<br /><br /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>imbrnl</td>
-              <td>import React Browser Router - NavLink</td>
-              <td></td>
-              <td>
-                <code
-                  >import { NavLink } from 'react-router-dom'<br /><br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>redux</td>
-              <td>import redux statement</td>
-              <td></td>
-              <td>
-                <code>import { connect } from 'react-redux'<br /><br /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>rcc</td>
-              <td>reactClassCompoment</td>
-              <td>Creates a React component class with ES7 module system</td>
-              <td>
-                <code
-                  >import React, { Component } from 'react'<br /><br />export
-                  default class ${1:${TM_FILENAME_BASE}} extends Component {<br />
-                  render() {<br />
-                  return (<br />
-                  &lt;div&gt;<br />
-                  $0<br />
-                  &lt;/div&gt;<br />
-                  )<br />
-                  }<br />}<br /><br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>rce</td>
-              <td>reactClassExportComponent</td>
-              <td>Creates a React component class with ES7 module system</td>
-              <td>
-                <code
-                  >import React, { Component } from 'react'<br /><br />export
-                  class ${1:${TM_FILENAME_BASE}} extends Component {<br />
-                  render() {<br />
-                  return (<br />
-                  &lt;div&gt;<br />
-                  $0<br />
-                  &lt;/div&gt;<br />
-                  )<br />
-                  }<br />}<br /><br />export default ${1:${TM_FILENAME_BASE}}<br /><br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>rfce</td>
-              <td>reactFunctionalExportComponent</td>
-              <td>
-                Creates a React Functional Component with ES7 module system
-              </td>
-              <td>
-                <code
-                  >import React from 'react'<br /><br />function
-                  ${1:${TM_FILENAME_BASE}}() {<br />
-                  return (<br />
-                  &lt;div&gt;<br />
-                  $0<br />
-                  &lt;/div&gt;<br />
-                  )<br />}<br /><br />export default ${1:${TM_FILENAME_BASE}}<br /><br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>rfc</td>
-              <td>reactFunctionalComponent</td>
-              <td>
-                Creates a React Functional Component with ES7 module system
-              </td>
-              <td>
-                <code
-                  >import React from 'react'<br /><br />export default function
-                  ${1:${TM_FILENAME_BASE}}() {<br />
-                  return (<br />
-                  &lt;div&gt;<br />
-                  $0<br />
-                  &lt;/div&gt;<br />
-                  )<br />}<br /><br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>rfcp</td>
-              <td>reactFunctionalComponentWithPropTypes</td>
-              <td>
-                Creates a React Functional Component with ES7 module system with
-                PropTypes
-              </td>
-              <td>
-                <code
-                  >import React from 'react'<br />import PropTypes from
-                  'prop-types'<br /><br />function
-                  ${1:${TM_FILENAME_BASE}}(props) {<br />
-                  return (<br />
-                  &lt;div&gt;<br />
-                  $0<br />
-                  &lt;/div&gt;<br />
-                  )<br />}<br /><br />${1:${TM_FILENAME_BASE}}.propTypes = {<br /><br />}<br /><br />export
-                  default ${1:${TM_FILENAME_BASE}}<br /><br /><br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>rafce</td>
-              <td>reactArrowFunctionExportComponent</td>
-              <td>
-                Creates a React Arrow Function Component with ES7 module system
-              </td>
-              <td>
-                <code
-                  >import React from 'react'<br /><br />const
-                  ${1:${TM_FILENAME_BASE}} = () =&gt; {<br />
-                  return (<br />
-                  &lt;div&gt;<br />
-                  $0<br />
-                  &lt;/div&gt;<br />
-                  )<br />}<br /><br />export default ${1:${TM_FILENAME_BASE}}<br /><br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>rafc</td>
-              <td>reactArrowFunctionComponent</td>
-              <td>
-                Creates a React Arrow Function Component with ES7 module system
-              </td>
-              <td>
-                <code
-                  >import React from 'react'<br /><br />export const
-                  ${1:${TM_FILENAME_BASE}} = () =&gt; {<br />
-                  return (<br />
-                  &lt;div&gt;<br />
-                  $0<br />
-                  &lt;/div&gt;<br />
-                  )<br />}<br /><br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>rafcp</td>
-              <td>reactArrowFunctionComponentWithPropTypes</td>
-              <td>
-                Creates a React Arrow Function Component with ES7 module system
-                with PropTypes
-              </td>
-              <td>
-                <code
-                  >import React from 'react'<br />import PropTypes from
-                  'prop-types'<br /><br />const ${1:${TM_FILENAME_BASE}} = props
-                  =&gt; {<br />
-                  return (<br />
-                  &lt;div&gt;<br />
-                  $0<br />
-                  &lt;/div&gt;<br />
-                  )<br />}<br /><br />${1:${TM_FILENAME_BASE}}.propTypes = {<br /><br />}<br /><br />export
-                  default ${1:${TM_FILENAME_BASE}}<br /><br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>rcep</td>
-              <td>reactClassExportComponentWithPropTypes</td>
-              <td>Creates a React component class with ES7 module system</td>
-              <td>
-                <code
-                  >import React, { Component } from 'react'<br />import
-                  PropTypes from 'prop-types'<br /><br />export class
-                  ${1:${TM_FILENAME_BASE}} extends Component {<br />
-                  static propTypes = {<br /><br />
-                  }<br /><br />
-                  render() {<br />
-                  return (<br />
-                  &lt;div&gt;<br />
-                  $0<br />
-                  &lt;/div&gt;<br />
-                  )<br />
-                  }<br />}<br /><br />export default ${1:${TM_FILENAME_BASE}}<br /><br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>rpc</td>
-              <td>reactClassPureComponent</td>
-              <td>
-                Creates a React pure component class with ES7 module system
-              </td>
-              <td>
-                <code
-                  >import React, { PureComponent } from 'react'<br /><br />export
-                  default class ${1:${TM_FILENAME_BASE}} extends PureComponent
-                  {<br />
-                  render() {<br />
-                  return (<br />
-                  &lt;div&gt;<br />
-                  $0<br />
-                  &lt;/div&gt;<br />
-                  )<br />
-                  }<br />}<br /><br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>rpce</td>
-              <td>reactClassExportPureComponent</td>
-              <td>
-                Creates a React pure component class with ES7 module system
-                export
-              </td>
-              <td>
-                <code
-                  >import React, { PureComponent } from 'react'<br /><br />export
-                  class ${1:${TM_FILENAME_BASE}} extends PureComponent {<br />
-                  render() {<br />
-                  return (<br />
-                  &lt;div&gt;<br />
-                  $0<br />
-                  &lt;/div&gt;<br />
-                  )<br />
-                  }<br />}<br /><br />export default ${1:$TM_FILENAME_BASE}<br /><br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>rpcp</td>
-              <td>reactClassPureComponentWithPropTypes</td>
-              <td>Creates a React component class with ES7 module system</td>
-              <td>
-                <code
-                  >import React, { PureComponent } from 'react'<br />import
-                  PropTypes from 'prop-types'<br /><br />export default class
-                  ${1:${TM_FILENAME_BASE}} extends PureComponent {<br />
-                  static propTypes = {<br /><br />
-                  }<br /><br />
-                  render() {<br />
-                  return (<br />
-                  &lt;div&gt;<br />
-                  $0<br />
-                  &lt;/div&gt;<br />
-                  )<br />
-                  }<br />}<br /><br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>rmc</td>
-              <td>reactFunctionMemoComponent</td>
-              <td>
-                Creates a React Memo Function Component with ES7 module system
-              </td>
-              <td>
-                <code
-                  >import React, { memo } from 'react'<br /><br />export default
-                  memo(function ${1:${TM_FILENAME_BASE}}() {<br />
-                  return (<br />
-                  &lt;div&gt;<br />
-                  $0<br />
-                  &lt;/div&gt;<br />
-                  )<br />})<br /><br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>rmcp</td>
-              <td>reactFunctionMemoComponentWithPropTypes</td>
-              <td>
-                Creates a React Memo Function Component with ES7 module system
-                with PropTypes
-              </td>
-              <td>
-                <code
-                  >import React, { memo } from 'react'<br />import PropTypes
-                  from 'prop-types'<br /><br />const ${1:${TM_FILENAME_BASE}} =
-                  memo(function ${1:${TM_FILENAME_BASE}}(props) {<br />
-                  return (<br />
-                  &lt;div&gt;<br />
-                  $0<br />
-                  &lt;/div&gt;<br />
-                  )<br />})<br /><br />${1:${TM_FILENAME_BASE}}.propTypes = {<br /><br />}<br /><br />export
-                  default ${1:${TM_FILENAME_BASE}}<br /><br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>rccp</td>
-              <td>reactClassCompomentPropTypes</td>
-              <td>
-                Creates a React component class with PropTypes and ES7 module
-                system
-              </td>
-              <td>
-                <code
-                  >import React, { Component } from 'react'<br />import
-                  PropTypes from 'prop-types'<br /><br />export default class
-                  ${1:${TM_FILENAME_BASE}} extends Component {<br />
-                  static propTypes = {<br />
-                  ${2:prop}: ${3:PropTypes}<br />
-                  }<br /><br />
-                  render() {<br />
-                  return (<br />
-                  &lt;div&gt;<br />
-                  $0<br />
-                  &lt;/div&gt;<br />
-                  )<br />
-                  }<br />}<br /><br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>rcredux</td>
-              <td>reactClassCompomentRedux</td>
-              <td>
-                Creates a React component class with connected redux and ES7
-                module system
-              </td>
-              <td>
-                <code
-                  >import React, { Component } from 'react'<br />import {
-                  connect } from 'react-redux'<br /><br />export class
-                  ${1:${TM_FILENAME_BASE}} extends Component {<br />
-                  render() {<br />
-                  return (<br />
-                  &lt;div&gt;<br />
-                  $0<br />
-                  &lt;/div&gt;<br />
-                  )<br />
-                  }<br />}<br /><br />const mapStateToProps = (state) =&gt;
-                  ({<br />
-                  <br />})<br /><br />const mapDispatchToProps = {<br />
-                  <br />}<br /><br />export default connect(mapStateToProps,
-                  mapDispatchToProps)(${1:${TM_FILENAME_BASE}})<br /><br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>rcreduxp</td>
-              <td>reactClassCompomentReduxPropTypes</td>
-              <td>
-                Creates a React component class with PropTypes with connected
-                redux and ES7 module system
-              </td>
-              <td>
-                <code
-                  >import React, { Component } from 'react'<br />import
-                  PropTypes from 'prop-types'<br />import { connect } from
-                  'react-redux'<br /><br />export class ${1:${TM_FILENAME_BASE}}
-                  extends Component {<br />
-                  static propTypes = {<br />
-                  ${2:prop}: ${3:PropTypes}<br />
-                  }<br /><br />
-                  render() {<br />
-                  return (<br />
-                  &lt;div&gt;<br />
-                  $0<br />
-                  &lt;/div&gt;<br />
-                  )<br />
-                  }<br />}<br /><br />const mapStateToProps = (state) =&gt;
-                  ({<br />
-                  <br />})<br /><br />const mapDispatchToProps = {<br />
-                  <br />}<br /><br />export default connect(mapStateToProps,
-                  mapDispatchToProps)(${1:${TM_FILENAME_BASE}})<br /><br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>rfcredux</td>
-              <td>reactFunctionalCompomentRedux</td>
-              <td>
-                Creates a React functional component with connected redux and
-                ES7 module system
-              </td>
-              <td>
-                <code
-                  >import React, { Component } from 'react'<br />import {
-                  connect } from 'react-redux'<br /><br />export const
-                  ${1:${TM_FILENAME_BASE}} = () =&gt; {<br />
-                  return (<br />
-                  &lt;div&gt;<br />
-                  $0<br />
-                  &lt;/div&gt;<br />
-                  )<br />}<br /><br />const mapStateToProps = (state) =&gt;
-                  ({<br />
-                  <br />})<br /><br />const mapDispatchToProps = {<br />
-                  <br />}<br /><br />export default connect(mapStateToProps,
-                  mapDispatchToProps)(${1:${TM_FILENAME_BASE}})<br /><br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>rfcreduxp</td>
-              <td>reactFunctionalCompomentReduxPropTypes</td>
-              <td>
-                Creates a React functional component with PropTypes with
-                connected redux and ES7 module system
-              </td>
-              <td>
-                <code
-                  >import React, { Component } from 'react'<br />import
-                  PropTypes from 'prop-types'<br />import { connect } from
-                  'react-redux'<br /><br />export const ${1:${TM_FILENAME_BASE}}
-                  = () =&gt; {<br />
-                  return (<br />
-                  &lt;div&gt;<br />
-                  $0<br />
-                  &lt;/div&gt;<br />
-                  )<br />}<br /><br />${1:${TM_FILENAME_BASE}}.propTypes = {<br />
-                  ${2:prop}: ${3:PropTypes}<br />}<br /><br />const
-                  mapStateToProps = (state) =&gt; ({<br />
-                  <br />})<br /><br />const mapDispatchToProps = {<br />
-                  <br />}<br /><br />export default connect(mapStateToProps,
-                  mapDispatchToProps)(${1:${TM_FILENAME_BASE}})<br /><br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>reduxmap</td>
-              <td>mappingToProps</td>
-              <td></td>
-              <td>
-                <code
-                  >const mapStateToProps = (state) =&gt; ({<br />
-                  ${1}<br />})<br /><br />const mapDispatchToProps = {<br />
-                  <br />}<br /><br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>rconst</td>
-              <td>classConstructor</td>
-              <td>
-                Adds a default constructor for it('', () =&gt; {})the class that
-                contains props as arguments
-              </td>
-              <td>
-                <code
-                  >constructor(props) {<br />
-                  super(props)<br /><br />
-                  this.state = {<br />
-                  $0<br />
-                  }<br />}<br /><br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>est</td>
-              <td>emptyState</td>
-              <td>Creates empty state object. To be used in a constructor.</td>
-              <td>
-                <code
-                  >state = {<br />
-                  $1<br />}<br /><br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>cwm</td>
-              <td>componentWillMount</td>
-              <td>
-                DEPRECATED!!!. Invoked once, both on the client and server,
-                immediately before the initial rendering occurs
-              </td>
-              <td>
-                <code
-                  >componentWillMount() {<br />
-                  $0<br />}<br /><br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>cdm</td>
-              <td>componentDidMount</td>
-              <td>
-                Invoked once, only on the client (not on the server),
-                immediately after the initial rendering occurs.
-              </td>
-              <td>
-                <code
-                  >componentDidMount() {<br />
-                  $0<br />}<br /><br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>cwr</td>
-              <td>componentWillReceiveProps</td>
-              <td>
-                DEPRECATED!!!. Invoked when a component is receiving new props.
-                This method is not called for the initial render.
-              </td>
-              <td>
-                <code
-                  >componentWillReceiveProps(nextProps) {<br />
-                  $0<br />}<br /><br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>scu</td>
-              <td>shouldComponentUpdate</td>
-              <td>
-                Invoked before rendering when new props or state are being
-                received.
-              </td>
-              <td>
-                <code
-                  >shouldComponentUpdate(nextProps, nextState) {<br />
-                  $0<br />}<br /><br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>cwup</td>
-              <td>componentWillUpdate</td>
-              <td>
-                DEPRECATED!!!. Invoked immediately before rendering when new
-                props or state are being received.
-              </td>
-              <td>
-                <code
-                  >componentWillUpdate(nextProps, nextState) {<br />
-                  $0<br />}<br /><br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>cdup</td>
-              <td>componentDidUpdate</td>
-              <td>
-                Invoked immediately after the component's updates are flushed to
-                the DOM.
-              </td>
-              <td>
-                <code
-                  >componentDidUpdate(prevProps, prevState) {<br />
-                  $0<br />}<br /><br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>cwun</td>
-              <td>componentWillUnmount</td>
-              <td>
-                Invoked immediately before a component is unmounted from the
-                DOM.
-              </td>
-              <td>
-                <code
-                  >componentWillUnmount() {<br />
-                  $0<br />}<br /><br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>gdsfp</td>
-              <td>getDerivedStateFromProps</td>
-              <td>
-                Invoked right before calling the render method, both on the
-                initial mount and on subsequent updates.
-              </td>
-              <td>
-                <code
-                  >static getDerivedStateFromProps(props, state) {<br />
-                  ${1}<br />}<br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>gsbu</td>
-              <td>getSnapshotBeforeUpdate</td>
-              <td>
-                Called right before mutations are made (e.g. before the DOM is
-                updated)
-              </td>
-              <td>
-                <code
-                  >getSnapshotBeforeUpdate = (prevProps, prevState) =&gt; {<br />
-                  $0<br />}<br /><br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>ren</td>
-              <td>componentRender</td>
-              <td>Basic render.</td>
-              <td>
-                <code
-                  >render() {<br />
-                  return (<br />
-                  &lt;div&gt;<br />
-                  $0<br />
-                  &lt;/div&gt;<br />
-                  )<br />}<br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>rcontext</td>
-              <td>createContext</td>
-              <td>Create React context</td>
-              <td>
-                <code
-                  >const ${1:contextName} = React.createContext()<br /><br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>cref</td>
-              <td>createRef</td>
-              <td>Create ref statement used inside constructor</td>
-              <td>
-                <code
-                  >this.${1:refName}Ref = React.createRef()<br /><br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>fref</td>
-              <td>forwardRef</td>
-              <td>Forward ref statement used inside component</td>
-              <td>
-                <code>const ref = React.createRef()<br /><br /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>sst</td>
-              <td>componentSetStateObject</td>
-              <td>Performs a shallow merge of nextState into current state</td>
-              <td>
-                <code>this.setState({$0})<br /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>ssf</td>
-              <td>componentSetStateFunc</td>
-              <td>Performs a shallow merge of nextState into current state</td>
-              <td>
-                <code
-                  >this.setState((state, props) =&gt; { return { $0 }})<br /><br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>props</td>
-              <td>componentProps</td>
-              <td>Access component's props</td>
-              <td>
-                <code>this.props.$0<br /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>state</td>
-              <td>componentState</td>
-              <td></td>
-              <td>
-                <code>this.state.$0<br /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>bnd</td>
-              <td>bindThis</td>
-              <td>Binds this to a method</td>
-              <td>
-                <code
-                  >this.${1:methodName} = this.${1:methodName}.bind(this)$0<br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>rxaction</td>
-              <td>reduxAction</td>
-              <td></td>
-              <td>
-                <code
-                  >export const ${1:actionName} = (payload) =&gt; ({<br />
-                  type: ${3:type},<br />
-                  payload<br />})<br /><br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>rxconst</td>
-              <td>reduxConst</td>
-              <td></td>
-              <td>
-                <code
-                  >export const ${1:constantName} = '${1:constantName}'<br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>rxreducer</td>
-              <td>reduxReducer</td>
-              <td></td>
-              <td>
-                <code
-                  >const initialState = {<br /><br />}<br /><br />export default
-                  (state = initialState, { type, payload }) =&gt; {<br />
-                  switch (type) {<br /><br />
-                  case ${1:typeName}:<br />
-                  return { ...state, ...payload }<br /><br />
-                  default:<br />
-                  return state<br />
-                  }<br />}<br /><br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>rxselect</td>
-              <td>reduxSelector</td>
-              <td></td>
-              <td>
-                <code
-                  >import { createSelector } from 'reselect'<br /><br />export
-                  const ${1:selectorName} = state =&gt; state.${2:selector}<br /><br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>rnc</td>
-              <td>reactNativeComponent</td>
-              <td></td>
-              <td>
-                <code
-                  >import React, { Component } from 'react'<br />import { Text,
-                  View } from 'react-native'<br /><br />export default class
-                  ${1:${TM_FILENAME_BASE}} extends Component {<br />
-                  render() {<br />
-                  return (<br />
-                  &lt;View&gt;<br />
-                  &lt;Text&gt; ${2:textInComponent} &lt;/Text&gt;<br />
-                  &lt;/View&gt;<br />
-                  )<br />
-                  }<br />}<br /><br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>rncs</td>
-              <td>reactNativeComponentWithStyles</td>
-              <td></td>
-              <td>
-                <code
-                  >import React, { Component } from 'react'<br />import { Text,
-                  StyleSheet, View } from 'react-native'<br /><br />export
-                  default class ${1:${TM_FILENAME_BASE}} extends Component {<br />
-                  render() {<br />
-                  return (<br />
-                  &lt;View&gt;<br />
-                  &lt;Text&gt; ${2:textInComponent} &lt;/Text&gt;<br />
-                  &lt;/View&gt;<br />
-                  )<br />
-                  }<br />}<br /><br />const styles = StyleSheet.create({})<br /><br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>rnce</td>
-              <td>reactNativeComponentExport</td>
-              <td></td>
-              <td>
-                <code
-                  >import React, { Component } from 'react'<br />import { Text,
-                  View } from 'react-native'<br /><br />export class
-                  ${1:${TM_FILENAME_BASE}} extends Component {<br />
-                  render() {<br />
-                  return (<br />
-                  &lt;View&gt;<br />
-                  &lt;Text&gt; ${2:textInComponent} &lt;/Text&gt;<br />
-                  &lt;/View&gt;<br />
-                  )<br />
-                  }<br />}<br /><br />export default ${1:${TM_FILENAME_BASE}}<br /><br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>rnpc</td>
-              <td>reactNativePureComponent</td>
-              <td></td>
-              <td>
-                <code
-                  >import React, { PureComponent } from 'react'<br />import {
-                  Text, View } from 'react-native'<br /><br />export default
-                  class ${1:${TM_FILENAME_BASE}} extends PureComponent {<br />
-                  render() {<br />
-                  return (<br />
-                  &lt;View&gt;<br />
-                  &lt;Text&gt; ${2:textInComponent} &lt;/Text&gt;<br />
-                  &lt;/View&gt;<br />
-                  )<br />
-                  }<br />}<br /><br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>rnpce</td>
-              <td>reactNativePureComponentExport</td>
-              <td></td>
-              <td>
-                <code
-                  >import React, { PureComponent } from 'react'<br />import {
-                  Text, View } from 'react-native'<br /><br />export class
-                  ${1:${TM_FILENAME_BASE}} extends PureComponent {<br />
-                  render() {<br />
-                  return (<br />
-                  &lt;View&gt;<br />
-                  &lt;Text&gt; ${2:textInComponent} &lt;/Text&gt;<br />
-                  &lt;/View&gt;<br />
-                  )<br />
-                  }<br />}<br /><br />export default ${1:${TM_FILENAME_BASE}}<br /><br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>rncredux</td>
-              <td>reactNativeClassComponentRedux</td>
-              <td>
-                Creates a React Native component class with PropTypes with
-                connected redux and ES7 module system
-              </td>
-              <td>
-                <code
-                  >import React, { Component } from 'react'<br />import { View,
-                  Text } from 'react-native'<br />import PropTypes from
-                  'prop-types'<br />import { connect } from 'react-redux'<br /><br />export
-                  class ${1:${TM_FILENAME_BASE}} extends Component {<br />
-                  static propTypes = {<br />
-                  ${2:prop}: ${3:PropTypes}<br />
-                  }<br /><br />
-                  render() {<br />
-                  return (<br />
-                  &lt;View&gt;<br />
-                  &lt;Text&gt; ${2:textInComponent} &lt;/Text&gt;<br />
-                  &lt;/View&gt;<br />
-                  )<br />
-                  }<br />}<br /><br />const mapStateToProps = (state) =&gt;
-                  ({<br />
-                  <br />})<br /><br />const mapDispatchToProps = {<br />
-                  <br />}<br /><br />export default connect(mapStateToProps,
-                  mapDispatchToProps)(${1:${TM_FILENAME_BASE}})<br /><br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>rnfe</td>
-              <td>reactNativeFunctionalExportComponent</td>
-              <td></td>
-              <td>
-                <code
-                  >import React from 'react'<br />import { View, Text } from
-                  'react-native'<br /><br />const ${1:${TM_FILENAME_BASE}} = ()
-                  =&gt; {<br />
-                  return (<br />
-                  &lt;View&gt;<br />
-                  &lt;Text&gt;$0&lt;/Text&gt;<br />
-                  &lt;/View&gt;<br />
-                  )<br />}<br /><br />export default ${1:${TM_FILENAME_BASE}}<br /><br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>rnfes</td>
-              <td>reactNativeFunctionalExportComponentWithStyles</td>
-              <td></td>
-              <td>
-                <code
-                  >import React from 'react'<br />import { StyleSheet, Text,
-                  View } from 'react-native'<br /><br />const
-                  ${1:${TM_FILENAME_BASE}} = () =&gt; {<br />
-                  return (<br />
-                  &lt;View&gt;<br />
-                  &lt;Text&gt;$0&lt;/Text&gt;<br />
-                  &lt;/View&gt;<br />
-                  )<br />}<br /><br />export default ${1:${TM_FILENAME_BASE}}<br /><br />const
-                  styles = StyleSheet.create({})<br /><br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>rnf</td>
-              <td>reactNativeFunctionalComponent</td>
-              <td></td>
-              <td>
-                <code
-                  >import React from 'react'<br />import { View, Text } from
-                  'react-native'<br /><br />export default function
-                  ${1:${TM_FILENAME_BASE}}() {<br />
-                  return (<br />
-                  &lt;View&gt;<br />
-                  &lt;Text&gt;$0&lt;/Text&gt;<br />
-                  &lt;/View&gt;<br />
-                  )<br />}<br /><br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>rnfs</td>
-              <td>reactNativeFunctionalComponentWithStyles</td>
-              <td></td>
-              <td>
-                <code
-                  >import React from 'react'<br />import { StyleSheet, Text,
-                  View } from 'react-native'<br /><br />export default function
-                  ${1:${TM_FILENAME_BASE}}() {<br />
-                  return (<br />
-                  &lt;View&gt;<br />
-                  &lt;Text&gt;$0&lt;/Text&gt;<br />
-                  &lt;/View&gt;<br />
-                  )<br />}<br /><br />const styles = StyleSheet.create({})<br /><br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>imrn</td>
-              <td>reactNativeImport</td>
-              <td></td>
-              <td>
-                <code
-                  >import { ${1:moduleName} } from 'react-native'<br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>rnstyle</td>
-              <td>reactNativeStyles</td>
-              <td></td>
-              <td>
-                <code
-                  >const styles = StyleSheet.create({<br />
-                  ${1:style}<br />})<br /><br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>pta</td>
-              <td>propTypeArray</td>
-              <td>Array prop type</td>
-              <td>
-                <code>PropTypes.array,<br /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>ptar</td>
-              <td>propTypeArrayRequired</td>
-              <td>Array prop type required</td>
-              <td>
-                <code>PropTypes.array.isRequired,<br /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>ptb</td>
-              <td>propTypeBool</td>
-              <td>Bool prop type</td>
-              <td>
-                <code>PropTypes.bool,<br /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>ptbr</td>
-              <td>propTypeBoolRequired</td>
-              <td>Bool prop type required</td>
-              <td>
-                <code>PropTypes.bool.isRequired,<br /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>ptf</td>
-              <td>propTypeFunc</td>
-              <td>Func prop type</td>
-              <td>
-                <code>PropTypes.func,<br /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>ptfr</td>
-              <td>propTypeFuncRequired</td>
-              <td>Func prop type required</td>
-              <td>
-                <code>PropTypes.func.isRequired,<br /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>ptn</td>
-              <td>propTypeNumber</td>
-              <td>Number prop type</td>
-              <td>
-                <code>PropTypes.number,<br /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>ptnr</td>
-              <td>propTypeNumberRequired</td>
-              <td>Number prop type required</td>
-              <td>
-                <code>PropTypes.number.isRequired,<br /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>pto</td>
-              <td>propTypeObject</td>
-              <td>Object prop type</td>
-              <td>
-                <code>PropTypes.object,<br /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>ptor</td>
-              <td>propTypeObjectRequired</td>
-              <td>Object prop type required</td>
-              <td>
-                <code>PropTypes.object.isRequired,<br /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>pts</td>
-              <td>propTypeString</td>
-              <td>String prop type</td>
-              <td>
-                <code>PropTypes.string,<br /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>ptsr</td>
-              <td>propTypeStringRequired</td>
-              <td>String prop type required</td>
-              <td>
-                <code>PropTypes.string.isRequired,<br /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>ptnd</td>
-              <td>propTypeNode</td>
-              <td>
-                Anything that can be rendered: numbers, strings, elements or an
-                array
-              </td>
-              <td>
-                <code>PropTypes.node,<br /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>ptndr</td>
-              <td>propTypeNodeRequired</td>
-              <td>
-                Anything that can be rendered: numbers, strings, elements or an
-                array required
-              </td>
-              <td>
-                <code>PropTypes.node.isRequired,<br /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>ptel</td>
-              <td>propTypeElement</td>
-              <td>React element prop type</td>
-              <td>
-                <code>PropTypes.element,<br /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>ptelr</td>
-              <td>propTypeElementRequired</td>
-              <td>React element prop type required</td>
-              <td>
-                <code>PropTypes.element.isRequired,<br /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>pti</td>
-              <td>propTypeInstanceOf</td>
-              <td>Is an instance of a class prop type</td>
-              <td>
-                <code>PropTypes.instanceOf($0),<br /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>ptir</td>
-              <td>propTypeInstanceOfRequired</td>
-              <td>Is an instance of a class prop type required</td>
-              <td>
-                <code>PropTypes.instanceOf($0).isRequired,<br /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>pte</td>
-              <td>propTypeEnum</td>
-              <td>
-                Prop type limited to specific values by treating it as an enum
-              </td>
-              <td>
-                <code>PropTypes.oneOf(['$0']),<br /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>pter</td>
-              <td>propTypeEnumRequired</td>
-              <td>
-                Prop type limited to specific values by treating it as an enum
-                required
-              </td>
-              <td>
-                <code>PropTypes.oneOf(['$0']).isRequired,<br /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>ptet</td>
-              <td>propTypeOneOfType</td>
-              <td>An object that could be one of many types</td>
-              <td>
-                <code
-                  >PropTypes.oneOfType([<br />
-                  $0<br />]),<br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>ptetr</td>
-              <td>propTypeOneOfTypeRequired</td>
-              <td>An object that could be one of many types required</td>
-              <td>
-                <code
-                  >PropTypes.oneOfType([<br />
-                  $0<br />]).isRequired,<br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>ptao</td>
-              <td>propTypeArrayOf</td>
-              <td>An array of a certain type</td>
-              <td>
-                <code>PropTypes.arrayOf($0),<br /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>ptaor</td>
-              <td>propTypeArrayOfRequired</td>
-              <td>An array of a certain type required</td>
-              <td>
-                <code>PropTypes.arrayOf($0).isRequired,<br /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>ptoo</td>
-              <td>propTypeObjectOf</td>
-              <td>An object with property values of a certain type</td>
-              <td>
-                <code>PropTypes.objectOf($0),<br /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>ptoor</td>
-              <td>propTypeObjectOfRequired</td>
-              <td>An object with property values of a certain type required</td>
-              <td>
-                <code>PropTypes.objectOf($0).isRequired,<br /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>ptsh</td>
-              <td>propTypeShape</td>
-              <td>An object taking on a particular shape</td>
-              <td>
-                <code
-                  >PropTypes.shape({<br />
-                  $0<br />}),<br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>ptshr</td>
-              <td>propTypeShapeRequired</td>
-              <td>An object taking on a particular shape required</td>
-              <td>
-                <code
-                  >PropTypes.shape({<br />
-                  $0<br />}).isRequired,<br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>ptex</td>
-              <td>propTypeExact</td>
-              <td>An object with warnings on extra properties</td>
-              <td>
-                <code
-                  >PropTypes.exact({<br />
-                  $0<br />}),<br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>ptexr</td>
-              <td>propTypeExactRequired</td>
-              <td>An object with warnings on extra properties required</td>
-              <td>
-                <code
-                  >PropTypes.exact({<br />
-                  $0<br />}).isRequired,<br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>ptypes</td>
-              <td>staticPropTpyes</td>
-              <td></td>
-              <td>
-                <code>static propTypes = {<br />$0<br />}<br /><br /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>ptany</td>
-              <td>propTypeAny</td>
-              <td>Any prop type</td>
-              <td>
-                <code>PropTypes.any,<br /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>cmmb</td>
-              <td>Comment Big Block</td>
-              <td></td>
-              <td>
-                <code
-                  >/**<br />
-                  * ${0}<br />
-                  */<br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>desc</td>
-              <td>describeBlock</td>
-              <td>Testing `describe` block</td>
-              <td>
-                <code
-                  >describe('$1', () =&gt; {<br />
-                  $0<br />})<br /><br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>test</td>
-              <td>testBlock</td>
-              <td>Testing `test` block</td>
-              <td>
-                <code
-                  >test('should $1', () =&gt; {<br />
-                  $0<br />})<br /><br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>testa</td>
-              <td>testAsyncBlock</td>
-              <td>Testing `asynchronous test` block</td>
-              <td>
-                <code
-                  >test('should $1', async () =&gt; {<br />
-                  $0<br />})<br /><br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>tit</td>
-              <td>itBlock</td>
-              <td>Testing `it` block</td>
-              <td>
-                <code
-                  >it('should $1', () =&gt; {<br />
-                  $0<br />})<br /><br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>tita</td>
-              <td>itAsyncBlock</td>
-              <td>Testing asynchronous `it` block</td>
-              <td>
-                <code
-                  >it('should $1', async () =&gt; {<br />
-                  $0<br />})<br /><br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>stest</td>
-              <td>setupReactTest</td>
-              <td></td>
-              <td>
-                <code
-                  >import React from 'react'<br />import renderer from
-                  'react-test-renderer'<br /><br />import {
-                  ${1:${TM_FILENAME_BASE}} } from
-                  '../${1:${TM_FILENAME_BASE}}'<br /><br />describe('&lt;${1:${TM_FILENAME_BASE}}
-                  /&gt;', () =&gt; {<br />
-                  const defaultProps = {}<br />
-                  const wrapper = renderer.create(&lt;${1:${TM_FILENAME_BASE}}
-                  {...defaultProps} /&gt;)<br /><br />
-                  test('render', () =&gt; {<br />
-                  expect(wrapper).toMatchSnapshot()<br />
-                  })<br />})<br /><br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>sntest</td>
-              <td>setupReactNativeTest</td>
-              <td></td>
-              <td>
-                <code
-                  >import 'react-native'<br />import React from 'react'<br />import
-                  renderer from 'react-test-renderer'<br /><br />import
-                  ${1:${TM_FILENAME_BASE}} from '../${1:${TM_FILENAME_BASE}}'<br /><br />describe('&lt;${1:${TM_FILENAME_BASE}}
-                  /&gt;', () =&gt; {<br />
-                  const defaultProps = {}<br />
-                  const wrapper = renderer.create(&lt;${1:${TM_FILENAME_BASE}}
-                  {...defaultProps} /&gt;)<br /><br />
-                  test('render', () =&gt; {<br />
-                  expect(wrapper).toMatchSnapshot()<br />
-                  })<br />})<br /><br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>srtest</td>
-              <td>setupReactComponentTestWithRedux</td>
-              <td>Create test component</td>
-              <td>
-                <code
-                  >import React from 'react'<br />import renderer from
-                  'react-test-renderer'<br />import { Provider } from
-                  'react-redux'<br /><br />import store from 'src/store'<br />import
-                  { ${1:${TM_FILENAME_BASE}} } from
-                  '../${1:${TM_FILENAME_BASE}}'<br /><br />describe('&lt;${1:${TM_FILENAME_BASE}}
-                  /&gt;', () =&gt; {<br />
-                  const defaultProps = {}<br />
-                  const wrapper = renderer.create(<br />
-                  &lt;Provider store={store}&gt;<br />
-                  &lt;${1:${TM_FILENAME_BASE}} {...defaultProps} /&gt;<br />
-                  &lt;/Provider&gt;,<br />
-                  )<br /><br />
-                  test('render', () =&gt; {<br />
-                  expect(wrapper).toMatchSnapshot()<br />
-                  })<br />})<br /><br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>snrtest</td>
-              <td>setupReactNativeTestWithRedux</td>
-              <td></td>
-              <td>
-                <code
-                  >import 'react-native'<br />import React from 'react'<br />import
-                  renderer from 'react-test-renderer'<br />import { Provider }
-                  from 'react-redux'<br /><br />import store from 'src/store'<br />import
-                  ${1:${TM_FILENAME_BASE}} from '../${1:${TM_FILENAME_BASE}}'<br /><br />describe('&lt;${1:${TM_FILENAME_BASE}}
-                  /&gt;', () =&gt; {<br />
-                  const defaultProps = {}<br />
-                  const wrapper = renderer.create(<br />
-                  &lt;Provider store={store}&gt;<br />
-                  &lt;${1:${TM_FILENAME_BASE}} {...defaultProps} /&gt;<br />
-                  &lt;/Provider&gt;,<br />
-                  )<br /><br />
-                  test('render', () =&gt; {<br />
-                  expect(wrapper).toMatchSnapshot()<br />
-                  })<br />})<br /><br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>graphql</td>
-              <td>graphQLForComponent</td>
-              <td></td>
-              <td>
-                <code
-                  >import { compose, graphql } from 'react-apollo'<br /><br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>expgql</td>
-              <td>exportGraphQL</td>
-              <td></td>
-              <td>
-                <code
-                  >export default compose(<br />
-                  graphql(${1:queryOrMutation}, { name: ${2:name} }),<br />)(${1:${TM_FILENAME_BASE}})<br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>hocredux</td>
-              <td>hocComponentWithRedux</td>
-              <td></td>
-              <td>
-                <code
-                  >import React from 'react'<br />import PropTypes from
-                  'prop-types'<br />import { connect } from 'react-redux'<br /><br />export
-                  const mapStateToProps = state =&gt; ({<br /><br />})<br /><br />export
-                  const mapDispatchToProps = {<br />
-                  <br />}<br /><br />export const ${1:hocComponentName} =
-                  (WrappedComponent) =&gt; {<br />
-                  const hocComponent = ({ ...props }) =&gt; &lt;WrappedComponent
-                  {...props} /&gt;<br /><br />
-                  hocComponent.propTypes = {<br />
-                  }<br /><br />
-                  return hocComponent<br />}<br /><br />export default
-                  WrapperComponent =&gt; connect(mapStateToProps,
-                  mapDispatchToProps)(${1:hocComponentName}(WrapperComponent))<br /><br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>hoc</td>
-              <td>hocComponent</td>
-              <td></td>
-              <td>
-                <code
-                  >import React from 'react'<br />import PropTypes from
-                  'prop-types'<br /><br />export default (WrappedComponent)
-                  =&gt; {<br />
-                  const hocComponent = ({ ...props }) =&gt; &lt;WrappedComponent
-                  {...props} /&gt;<br /><br />
-                  hocComponent.propTypes = {<br />
-                  }<br /><br />
-                  return hocComponent<br />}<br /><br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>useState</td>
-              <td>useState</td>
-              <td></td>
-              <td>
-                <code
-                  >const [${1:state}, set${1/(.*)/${1:/capitalize}/}] =
-                  useState(${2:initialState})<br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>useEffect</td>
-              <td>useEffect</td>
-              <td></td>
-              <td>
-                <code
-                  >useEffect(() =&gt; {<br />
-                  ${1:effect}<br />
-                  return () =&gt; {<br />
-                  ${2:cleanup}<br />
-                  }<br />}, [${3:input}])<br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>useContext</td>
-              <td>useContext</td>
-              <td></td>
-              <td>
-                <code
-                  >const ${1:context} = useContext(${2:contextValue})<br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>useReducer</td>
-              <td>useReducer</td>
-              <td></td>
-              <td>
-                <code
-                  >const [state, dispatch] = useReducer(${1:reducer},
-                  ${2:initialState}, ${3:init})<br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>useCallback</td>
-              <td>useCallback</td>
-              <td></td>
-              <td>
-                <code
-                  >useCallback(<br />
-                  () =&gt; {<br />
-                  ${1:callback}<br />
-                  },<br />
-                  [${2:input}],<br />)<br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>useMemo</td>
-              <td>useMemo</td>
-              <td></td>
-              <td>
-                <code>useMemo(() =&gt; ${1:function}, ${2:input})<br /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>useRef</td>
-              <td>useRef</td>
-              <td></td>
-              <td>
-                <code>const ${1:ref} = useRef(${2:initialValue})<br /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>useImperativeHandle</td>
-              <td>useImperativeHandle</td>
-              <td></td>
-              <td>
-                <code
-                  >useImperativeHandle(<br />
-                  ${1:ref},<br />
-                  () =&gt; {<br />
-                  ${2:handler}<br />
-                  },<br />
-                  [${3:input}],<br />)<br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>useDebugValue</td>
-              <td>useDebugValue</td>
-              <td></td>
-              <td>
-                <code>useDebugValue(${1:value})<br /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>useLayoutEffect</td>
-              <td>useLayoutEffect</td>
-              <td></td>
-              <td>
-                <code
-                  >useLayoutEffect(() =&gt; {<br />
-                  ${1:effect}<br />
-                  return () =&gt; {<br />
-                  ${2:cleanup}<br />
-                  };<br />}, [${3:input}])<br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>useSelector</td>
-              <td>useSelector</td>
-              <td></td>
-              <td>
-                <code
-                  >const ${1:state} = useSelector(state =&gt;
-                  state.${1:state})<br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>useDispatch</td>
-              <td>useDispatch</td>
-              <td></td>
-              <td>
-                <code>const dispatch = useDispatch(${1:function})<br /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>tpf</td>
-              <td>typeof</td>
-              <td></td>
-              <td>
-                <code>typeof ${0}<br /></code>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <div>
-        <h4>ts-snippets.json</h4>
-        Available in the following languages: typescript, typescriptreact.
-        <table>
-          <thead>
-            <tr>
-              <th>Prefix</th>
-              <th>Name</th>
-              <th>Description</th>
-              <th>Body</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>tsrcc</td>
-              <td>typeScriptReactClassComponent</td>
-              <td>
-                Creates a React component class with ES7 module system and
-                TypeScript interfaces
-              </td>
-              <td>
-                <code
-                  >import React, { Component } from 'react'<br /><br />interface
-                  Props {<br />
-                  <br />}<br />interface State {<br />
-                  <br />}<br /><br />export default class
-                  ${1:${TM_FILENAME_BASE}} extends Component&lt;Props, State&gt;
-                  {<br />
-                  state = {}<br /><br />
-                  render() {<br />
-                  return (<br />
-                  &lt;div&gt;<br />
-                  $0<br />
-                  &lt;/div&gt;<br />
-                  )<br />
-                  }<br />}<br /><br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>tsrce</td>
-              <td>typeScriptReactClassExportComponent</td>
-              <td>
-                Creates a React component class with ES7 module system and
-                TypeScript interfaces
-              </td>
-              <td>
-                <code
-                  >import React, { Component } from 'react'<br /><br />interface
-                  Props {<br />
-                  <br />}<br />interface State {<br />
-                  <br />}<br /><br />class ${1:${TM_FILENAME_BASE}} extends
-                  Component&lt;Props, State&gt; {<br />
-                  state = {}<br /><br />
-                  render() {<br />
-                  return (<br />
-                  &lt;div&gt;<br />
-                  $0<br />
-                  &lt;/div&gt;<br />
-                  )<br />
-                  }<br />}<br /><br />export default ${1:${TM_FILENAME_BASE}}<br /><br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>tsrfce</td>
-              <td>typeScriptReactFunctionalExportComponent</td>
-              <td>
-                Creates a React Functional Component with ES7 module system and
-                TypeScript interface
-              </td>
-              <td>
-                <code
-                  >import React, { ReactElement } from 'react'<br /><br />interface
-                  Props {<br />
-                  <br />}<br /><br />function ${1:${TM_FILENAME_BASE}}({}:
-                  Props): ReactElement {<br />
-                  return (<br />
-                  &lt;div&gt;<br />
-                  $0<br />
-                  &lt;/div&gt;<br />
-                  )<br />}<br /><br />export default ${1:${TM_FILENAME_BASE}}<br /><br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>tsrfc</td>
-              <td>typeScriptReactFunctionalComponent</td>
-              <td>
-                Creates a React Functional Component with ES7 module system and
-                TypeScript interface
-              </td>
-              <td>
-                <code
-                  >import React, { ReactElement } from 'react'<br /><br />interface
-                  Props {<br />
-                  <br />}<br /><br />export default function
-                  ${1:${TM_FILENAME_BASE}}({}: Props): ReactElement {<br />
-                  return (<br />
-                  &lt;div&gt;<br />
-                  $0<br />
-                  &lt;/div&gt;<br />
-                  )<br />}<br /><br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>tsrafce</td>
-              <td>typeScriptReactArrowFunctionExportComponent</td>
-              <td>
-                Creates a React Arrow Function Component with ES7 module system
-                and TypeScript interface
-              </td>
-              <td>
-                <code
-                  >import React from 'react'<br /><br />interface Props {<br />
-                  <br />}<br /><br />const ${1:${TM_FILENAME_BASE}} = (props:
-                  Props) =&gt; {<br />
-                  return (<br />
-                  &lt;div&gt;<br />
-                  $0<br />
-                  &lt;/div&gt;<br />
-                  )<br />}<br /><br />export default ${1:${TM_FILENAME_BASE}}<br /><br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>tsrafc</td>
-              <td>typeScriptReactArrowFunctionComponent</td>
-              <td>
-                Creates a React Arrow Function Component with ES7 module system
-                and TypeScript interface
-              </td>
-              <td>
-                <code
-                  >import React from 'react'<br /><br />interface Props {<br />
-                  <br />}<br /><br />export const ${1:${TM_FILENAME_BASE}} =
-                  (props: Props) =&gt; {<br />
-                  return (<br />
-                  &lt;div&gt;<br />
-                  $0<br />
-                  &lt;/div&gt;<br />
-                  )<br />}<br /><br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>tsrpc</td>
-              <td>typeScriptReactClassPureComponent</td>
-              <td>
-                Creates a React pure component class with ES7 module system and
-                TypeScript interface
-              </td>
-              <td>
-                <code
-                  >import React, { PureComponent } from 'react'<br /><br />interface
-                  Props {<br />
-                  <br />}<br /><br />export default class
-                  ${1:${TM_FILENAME_BASE}} extends PureComponent&lt;Props&gt;
-                  {<br />
-                  render() {<br />
-                  return (<br />
-                  &lt;div&gt;<br />
-                  $0<br />
-                  &lt;/div&gt;<br />
-                  )<br />
-                  }<br />}<br /><br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>tsrpce</td>
-              <td>typeScriptReactClassExportPureComponent</td>
-              <td>
-                Creates a React pure component class with ES7 module system and
-                TypeScript interface
-              </td>
-              <td>
-                <code
-                  >import React, { PureComponent } from 'react'<br /><br />interface
-                  Props {<br />
-                  <br />}<br /><br />class ${1:${TM_FILENAME_BASE}} extends
-                  PureComponent&lt;Props&gt; {<br />
-                  render() {<br />
-                  return (<br />
-                  &lt;div&gt;<br />
-                  $0<br />
-                  &lt;/div&gt;<br />
-                  )<br />
-                  }<br />}<br /><br />export default ${1:${TM_FILENAME_BASE}}<br /><br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>tsrmc</td>
-              <td>typeScriptReactFunctionMemoComponent</td>
-              <td>
-                Creates a React Memo Function Component with ES7 module system
-                and TypeScript interface
-              </td>
-              <td>
-                <code
-                  >import React, { memo } from 'react'<br /><br />interface
-                  Props {<br />
-                  <br />}<br /><br />export default memo(function
-                  ${1:${TM_FILENAME_BASE}}({}: Props) {<br />
-                  return (<br />
-                  &lt;div&gt;<br />
-                  $0<br />
-                  &lt;/div&gt;<br />
-                  )<br />})<br /><br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>tsrcredux</td>
-              <td>typeScriptReactClassCompomentRedux</td>
-              <td>
-                Creates a React component class with PropTypes with connected
-                redux and ES7 module system and TypeScript interfaces
-              </td>
-              <td>
-                <code
-                  >import React, { Component } from 'react'<br />import {
-                  connect } from 'react-redux'<br /><br />interface Props {<br />
-                  <br />}<br />interface State {<br />
-                  <br />}<br /><br />export class ${1:${TM_FILENAME_BASE}}
-                  extends Component&lt;Props, State&gt; {<br />
-                  state = {}<br /><br />
-                  render() {<br />
-                  return (<br />
-                  &lt;div&gt;<br />
-                  $0<br />
-                  &lt;/div&gt;<br />
-                  )<br />
-                  }<br />}<br /><br />const mapStateToProps = (state) =&gt;
-                  ({<br />
-                  <br />})<br /><br />const mapDispatchToProps = {<br />
-                  <br />}<br /><br />export default connect(mapStateToProps,
-                  mapDispatchToProps)(${1:${TM_FILENAME_BASE}})<br /><br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>tsrnf</td>
-              <td>typescriptReactNativeArrowFunctionComponent</td>
-              <td>
-                Creates a React Native Arrow Function Component with ES7 module
-                system and TypeScript interface
-              </td>
-              <td>
-                <code
-                  >import React from 'react'<br />import { View, Text } from
-                  'react-native'<br /><br />interface Props {<br />
-                  <br />}<br /><br />const ${1:${TM_FILENAME_BASE}} = (props:
-                  Props) =&gt; {<br />
-                  return (<br />
-                  &lt;View&gt;<br />
-                  &lt;Text&gt;$0&lt;/Text&gt;<br />
-                  &lt;/View&gt;<br />
-                  )<br />}<br /><br />export default ${1:${TM_FILENAME_BASE}}<br /><br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>tsrnfi</td>
-              <td>typescriptReactNativeArrowFunctionComponentNamedProps</td>
-              <td>
-                Creates a React Native Arrow Function Component with ES7 module
-                system and named TypeScript interface
-              </td>
-              <td>
-                <code
-                  >import React from 'react'<br />import { View } from
-                  'react-native'<br /><br />interface
-                  ${1:${TM_FILENAME_BASE}}Props {<br />
-                  <br />}<br /><br />const ${1:${TM_FILENAME_BASE}}:
-                  React.FunctionComponent&lt;${1:${TM_FILENAME_BASE}}Props&gt; =
-                  (props) =&gt; {<br />
-                  return (<br />
-                  &lt;View&gt;<br />
-                  $0<br />
-                  &lt;/View&gt;<br />
-                  )<br />}<br /><br />export default ${1:${TM_FILENAME_BASE}}<br /><br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>tsrnfs</td>
-              <td>typescriptReactNativeArrowFunctionComponentWithStyles</td>
-              <td>
-                Creates a React Native Arrow Function Component with ES7 module
-                system, TypeScript interface and StyleSheet
-              </td>
-              <td>
-                <code
-                  >import React from 'react'<br />import { StyleSheet, Text,
-                  View } from 'react-native'<br /><br />interface Props {<br />
-                  <br />}<br /><br />const ${1:${TM_FILENAME_BASE}} = (props:
-                  Props) =&gt; {<br />
-                  return (<br />
-                  &lt;View&gt;<br />
-                  &lt;Text&gt;$0&lt;/Text&gt;<br />
-                  &lt;/View&gt;<br />
-                  )<br />}<br /><br />export default ${1:${TM_FILENAME_BASE}}<br /><br />const
-                  styles = StyleSheet.create({})<br /><br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>expint</td>
-              <td>Export interface</td>
-              <td></td>
-              <td>
-                <code
-                  >export interface ${1:${TM_FILENAME_BASE}} {$0}<br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>exptp</td>
-              <td>Export type</td>
-              <td></td>
-              <td>
-                <code>export type ${1:${TM_FILENAME_BASE}} = {$0}<br /></code>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
       <h3 id="robole.markdown-snippets">Markdown Snippets</h3>
       <div>
         <h4>snippets.code-snippets</h4>
-        Available in the following languages: markdown.
+        <p>Available in the following languages:</p>
+        <ul>
+          <li>markdown</li>
+        </ul>
+        <div class="source">
+          <button
+            type="button"
+            onclick="openFile('c%3A%5CUsers%5Croboleary%5C.vscode%5Cextensions%5Crobole.markdown-snippets-0.6.0%5Csnippets%5Csnippets.code-snippets')"
+            )=""
+          >
+            View Source File
+          </button>
+        </div>
         <table>
           <thead>
             <tr>
@@ -3156,69 +721,55 @@
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>heading1</td>
-              <td>Insert heading level 1</td>
-              <td>Insert heading level 1</td>
-              <td>
-                <code># ${1:${TM_SELECTED_TEXT}}<br /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>heading2</td>
-              <td>Insert heading level 2</td>
-              <td>Insert heading level 2</td>
-              <td>
-                <code>## ${1:${TM_SELECTED_TEXT}}<br /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>heading3</td>
-              <td>Insert heading level 3</td>
-              <td>Insert heading level 3</td>
-              <td>
-                <code>### ${1:${TM_SELECTED_TEXT}}<br /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>heading4</td>
-              <td>Insert heading level 4</td>
-              <td>Insert heading level 4</td>
-              <td>
-                <code>#### ${1:${TM_SELECTED_TEXT}}<br /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>heading5</td>
-              <td>Insert heading level 5</td>
-              <td>Insert heading level 5</td>
-              <td>
-                <code>##### ${1:${TM_SELECTED_TEXT}}<br /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>heading6</td>
-              <td>Insert heading level 6</td>
-              <td>Insert heading level 6</td>
-              <td>
-                <code>###### ${1:${TM_SELECTED_TEXT}}<br /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>strikethrough</td>
-              <td>Insert strikethrough</td>
-              <td>Insert strikethrough</td>
-              <td>
-                <code>~~${1:${TM_SELECTED_TEXT}}~~<br /></code>
-              </td>
-            </tr>
             <tr>
               <td>task</td>
               <td>Insert task list</td>
               <td>Insert task list</td>
               <td>
+                <code>- [${1| ,x|}] ${2:text}<br />${0}<br /></code>
+              </td>
+            </tr>
+            <tr>
+              <td>task2</td>
+              <td>Insert task list 2</td>
+              <td>Insert task list with 2 tasks</td>
+              <td>
                 <code
                   >- [${1| ,x|}] ${2:text}<br />- [${3| ,x|}] ${4:text}<br />${0}<br
+                /></code>
+              </td>
+            </tr>
+            <tr>
+              <td>task3</td>
+              <td>Insert task list 3</td>
+              <td>Insert task list with 3 tasks</td>
+              <td>
+                <code
+                  >- [${1| ,x|}] ${2:text}<br />- [${3| ,x|}] ${4:text}<br />-
+                  [${5| ,x|}] ${6:text}<br />${0}<br
+                /></code>
+              </td>
+            </tr>
+            <tr>
+              <td>task4</td>
+              <td>Insert task list 4</td>
+              <td>Insert task list with 4 tasks</td>
+              <td>
+                <code
+                  >- [${1| ,x|}] ${2:text}<br />- [${3| ,x|}] ${4:text}<br />-
+                  [${5| ,x|}] ${6:text}<br />- [${7| ,x|}] ${8:text}<br />${0}<br
+                /></code>
+              </td>
+            </tr>
+            <tr>
+              <td>task5</td>
+              <td>Insert task list 5</td>
+              <td>Insert task list with 5 tasks</td>
+              <td>
+                <code
+                  >- [${1| ,x|}] ${2:text}<br />- [${3| ,x|}] ${4:text}<br />-
+                  [${5| ,x|}] ${6:text}<br />- [${7| ,x|}] ${8:text}<br />-
+                  [${9| ,x|}] ${10:text}<br />${0}<br
                 /></code>
               </td>
             </tr>
@@ -3414,7 +965,19 @@
       <h3 id="sdras.vue-vscode-snippets">Vue VSCode Snippets</h3>
       <div>
         <h4>vue.json</h4>
-        Available in the following languages: vue.
+        <p>Available in the following languages:</p>
+        <ul>
+          <li>vue</li>
+        </ul>
+        <div class="source">
+          <button
+            type="button"
+            onclick="openFile('c%3A%5CUsers%5Croboleary%5C.vscode%5Cextensions%5Csdras.vue-vscode-snippets-2.1.5%5Csnippets%5Cvue.json')"
+            )=""
+          >
+            View Source File
+          </button>
+        </div>
         <table>
           <thead>
             <tr>
@@ -3638,7 +1201,19 @@
       </div>
       <div>
         <h4>vue-pug.json</h4>
-        Available in the following languages: jade.
+        <p>Available in the following languages:</p>
+        <ul>
+          <li>jade</li>
+        </ul>
+        <div class="source">
+          <button
+            type="button"
+            onclick="openFile('c%3A%5CUsers%5Croboleary%5C.vscode%5Cextensions%5Csdras.vue-vscode-snippets-2.1.5%5Csnippets%5Cvue-pug.json')"
+            )=""
+          >
+            View Source File
+          </button>
+        </div>
         <table>
           <thead>
             <tr>
@@ -3787,7 +1362,20 @@
       </div>
       <div>
         <h4>vue-template.json</h4>
-        Available in the following languages: html, vue-html.
+        <p>Available in the following languages:</p>
+        <ul>
+          <li>html</li>
+          <li>vue-html</li>
+        </ul>
+        <div class="source">
+          <button
+            type="button"
+            onclick="openFile('c%3A%5CUsers%5Croboleary%5C.vscode%5Cextensions%5Csdras.vue-vscode-snippets-2.1.5%5Csnippets%5Cvue-template.json')"
+            )=""
+          >
+            View Source File
+          </button>
+        </div>
         <table>
           <thead>
             <tr>
@@ -4010,7 +1598,20 @@
       </div>
       <div>
         <h4>vue-script.json</h4>
-        Available in the following languages: javascript, typescript.
+        <p>Available in the following languages:</p>
+        <ul>
+          <li>javascript</li>
+          <li>typescript</li>
+        </ul>
+        <div class="source">
+          <button
+            type="button"
+            onclick="openFile('c%3A%5CUsers%5Croboleary%5C.vscode%5Cextensions%5Csdras.vue-vscode-snippets-2.1.5%5Csnippets%5Cvue-script.json')"
+            )=""
+          >
+            View Source File
+          </button>
+        </div>
         <table>
           <thead>
             <tr>
@@ -4616,7 +2217,20 @@
       </div>
       <div>
         <h4>vue-script-vuex.json</h4>
-        Available in the following languages: javascript, typescript.
+        <p>Available in the following languages:</p>
+        <ul>
+          <li>javascript</li>
+          <li>typescript</li>
+        </ul>
+        <div class="source">
+          <button
+            type="button"
+            onclick="openFile('c%3A%5CUsers%5Croboleary%5C.vscode%5Cextensions%5Csdras.vue-vscode-snippets-2.1.5%5Csnippets%5Cvue-script-vuex.json')"
+            )=""
+          >
+            View Source File
+          </button>
+        </div>
         <table>
           <thead>
             <tr>
@@ -4742,7 +2356,20 @@
       </div>
       <div>
         <h4>vue-script-router.json</h4>
-        Available in the following languages: javascript, typescript.
+        <p>Available in the following languages:</p>
+        <ul>
+          <li>javascript</li>
+          <li>typescript</li>
+        </ul>
+        <div class="source">
+          <button
+            type="button"
+            onclick="openFile('c%3A%5CUsers%5Croboleary%5C.vscode%5Cextensions%5Csdras.vue-vscode-snippets-2.1.5%5Csnippets%5Cvue-script-router.json')"
+            )=""
+          >
+            View Source File
+          </button>
+        </div>
         <table>
           <thead>
             <tr>
@@ -4880,7 +2507,20 @@
       </div>
       <div>
         <h4>nuxt-config.json</h4>
-        Available in the following languages: javascript, typescript.
+        <p>Available in the following languages:</p>
+        <ul>
+          <li>javascript</li>
+          <li>typescript</li>
+        </ul>
+        <div class="source">
+          <button
+            type="button"
+            onclick="openFile('c%3A%5CUsers%5Croboleary%5C.vscode%5Cextensions%5Csdras.vue-vscode-snippets-2.1.5%5Csnippets%5Cnuxt-config.json')"
+            )=""
+          >
+            View Source File
+          </button>
+        </div>
         <table>
           <thead>
             <tr>
@@ -4916,7 +2556,19 @@
       </div>
       <div>
         <h4>nuxt-script.json</h4>
-        Available in the following languages: javascript.
+        <p>Available in the following languages:</p>
+        <ul>
+          <li>javascript</li>
+        </ul>
+        <div class="source">
+          <button
+            type="button"
+            onclick="openFile('c%3A%5CUsers%5Croboleary%5C.vscode%5Cextensions%5Csdras.vue-vscode-snippets-2.1.5%5Csnippets%5Cnuxt-script.json')"
+            )=""
+          >
+            View Source File
+          </button>
+        </div>
         <table>
           <thead>
             <tr>
@@ -4983,11 +2635,482 @@
           </tbody>
         </table>
       </div>
+      <h3 id="xabikos.JavaScriptSnippets">JavaScript (ES6) code snippets</h3>
+      <div>
+        <h4>snippets.json</h4>
+        <p>Available in the following languages:</p>
+        <ul>
+          <li>javascript</li>
+          <li>typescript</li>
+          <li>javascriptreact</li>
+          <li>typescriptreact</li>
+          <li>html</li>
+          <li>vue</li>
+        </ul>
+        <div class="source">
+          <button
+            type="button"
+            onclick="openFile('c%3A%5CUsers%5Croboleary%5C.vscode%5Cextensions%5Cxabikos.javascriptsnippets-1.8.0%5Csnippets%5Csnippets.json')"
+            )=""
+          >
+            View Source File
+          </button>
+        </div>
+        <table>
+          <thead>
+            <tr>
+              <th>Prefix</th>
+              <th>Name</th>
+              <th>Description</th>
+              <th>Body</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>imp</td>
+              <td>import</td>
+              <td>Imports entire module statement in ES6 syntax</td>
+              <td>
+                <code>import ${2:moduleName} from '${1:module}';$0<br /></code>
+              </td>
+            </tr>
+            <tr>
+              <td>imn</td>
+              <td>importNoModuleName</td>
+              <td>Imports entire module in ES6 syntax without module name</td>
+              <td>
+                <code>import '${1:module}';$0<br /></code>
+              </td>
+            </tr>
+            <tr>
+              <td>imd</td>
+              <td>importDestructing</td>
+              <td>Imports only a portion of the module in ES6 syntax</td>
+              <td>
+                <code>import { $2 } from '${1:module}';$0<br /></code>
+              </td>
+            </tr>
+            <tr>
+              <td>ime</td>
+              <td>importEverything</td>
+              <td>Imports everything as alias from the module in ES6 syntax</td>
+              <td>
+                <code>import * as ${2:alias} from '${1:module}';$0<br /></code>
+              </td>
+            </tr>
+            <tr>
+              <td>ima</td>
+              <td>importAs</td>
+              <td>
+                Imports a specific portion of the module by assigning a local
+                alias in ES6 syntax
+              </td>
+              <td>
+                <code
+                  >import { ${2:originalName} as ${3:alias} } from
+                  '${1:module}';$0<br
+                /></code>
+              </td>
+            </tr>
+            <tr>
+              <td>rqr</td>
+              <td>require</td>
+              <td>Require a package</td>
+              <td>
+                <code>require('${1:package}');<br /></code>
+              </td>
+            </tr>
+            <tr>
+              <td>req</td>
+              <td>requireToConst</td>
+              <td>Require a package to const</td>
+              <td>
+                <code
+                  >const ${1:packageName} = require('${1:package}');$0<br
+                /></code>
+              </td>
+            </tr>
+            <tr>
+              <td>mde</td>
+              <td>moduleExports</td>
+              <td>Module exports from Common JS, node syntax at ES6</td>
+              <td>
+                <code>module.exports = { $0 }; <br /></code>
+              </td>
+            </tr>
+            <tr>
+              <td>env</td>
+              <td>exportNamedVariable</td>
+              <td>Export named variable in ES6 syntax</td>
+              <td>
+                <code
+                  >export const ${1:exportVariable} = ${2:localVariable}; <br
+                /></code>
+              </td>
+            </tr>
+            <tr>
+              <td>enf</td>
+              <td>exportNamedFunction</td>
+              <td>Export named function in ES6 syntax</td>
+              <td>
+                <code
+                  >export const ${1:functionName} = (${2:params}) =&gt; { $0 };
+                  <br
+                /></code>
+              </td>
+            </tr>
+            <tr>
+              <td>edf</td>
+              <td>exportDefaultFunction</td>
+              <td>Export default function in ES6 syntax</td>
+              <td>
+                <code
+                  >export default function ${1:${TM_FILENAME_BASE}}(${2:params})
+                  { $0 }; <br
+                /></code>
+              </td>
+            </tr>
+            <tr>
+              <td>ecl</td>
+              <td>exportClass</td>
+              <td>Export default class in ES6 syntax</td>
+              <td>
+                <code>export default class ${1:className} { $0 }; <br /></code>
+              </td>
+            </tr>
+            <tr>
+              <td>ece</td>
+              <td>exportClassExtends</td>
+              <td>
+                Export default class which extends a base one in ES6 syntax
+              </td>
+              <td>
+                <code
+                  >export default class ${1:className} extends
+                  ${2:baseclassName} { $0 }; <br
+                /></code>
+              </td>
+            </tr>
+            <tr>
+              <td>con</td>
+              <td>constructor</td>
+              <td>Add default constructor in a class in ES6 syntax</td>
+              <td>
+                <code>constructor(${1:params}) { ${0} }<br /></code>
+              </td>
+            </tr>
+            <tr>
+              <td>met</td>
+              <td>method</td>
+              <td>Creates a method inside a class in ES6 syntax</td>
+              <td>
+                <code>${1:methodName}(${2:params}) { ${0} }<br /></code>
+              </td>
+            </tr>
+            <tr>
+              <td>pge</td>
+              <td>propertyGet</td>
+              <td>Creates a getter property inside a class in ES6 syntax</td>
+              <td>
+                <code>get ${1:propertyName}() { return this.${0}; }<br /></code>
+              </td>
+            </tr>
+            <tr>
+              <td>pse</td>
+              <td>propertyset</td>
+              <td>Creates a setter property inside a class in ES6 syntax</td>
+              <td>
+                <code>set ${1:propertyName}(${2:value}) { ${0}; }<br /></code>
+              </td>
+            </tr>
+            <tr>
+              <td>fre</td>
+              <td>forEach</td>
+              <td>Creates a forEach statement in ES6 syntax</td>
+              <td>
+                <code
+                  >${1:array}.forEach(${2:currentItem} =&gt; { ${0} });<br
+                /></code>
+              </td>
+            </tr>
+            <tr>
+              <td>fof</td>
+              <td>forOf</td>
+              <td>Iterating over property names of iterable objects</td>
+              <td>
+                <code>for (const ${1:item} of ${2:object}) { ${0} }<br /></code>
+              </td>
+            </tr>
+            <tr>
+              <td>fin</td>
+              <td>forIn</td>
+              <td>Iterating over property values of iterable objects</td>
+              <td>
+                <code>for (const ${1:item} in ${2:object}) { ${0} }<br /></code>
+              </td>
+            </tr>
+            <tr>
+              <td>anfn</td>
+              <td>anonymousFunction</td>
+              <td>Creates an anonymous function in ES6 syntax</td>
+              <td>
+                <code>(${1:params}) =&gt; { ${2} }<br /></code>
+              </td>
+            </tr>
+            <tr>
+              <td>nfn</td>
+              <td>namedFunction</td>
+              <td>Creates a named function in ES6 syntax</td>
+              <td>
+                <code
+                  >const ${1:name} = (${2:params}) =&gt; { ${3} }<br
+                /></code>
+              </td>
+            </tr>
+            <tr>
+              <td>dob</td>
+              <td>destructingObject</td>
+              <td>
+                Creates and assigns a local variable using object destructing
+              </td>
+              <td>
+                <code
+                  >const {${2:propertyName}} = ${1:objectToDestruct};<br
+                /></code>
+              </td>
+            </tr>
+            <tr>
+              <td>dar</td>
+              <td>destructingArray</td>
+              <td>
+                Creates and assigns a local variable using array destructing
+              </td>
+              <td>
+                <code
+                  >const [${2:propertyName}] = ${1:arrayToDestruct};<br
+                /></code>
+              </td>
+            </tr>
+            <tr>
+              <td>sti</td>
+              <td>setInterval</td>
+              <td>
+                Executes the given function at specified intervals in ES6 syntax
+              </td>
+              <td>
+                <code
+                  >setInterval(() =&gt; { ${2} }, ${0:intervalInms});<br
+                /></code>
+              </td>
+            </tr>
+            <tr>
+              <td>sto</td>
+              <td>setTimeOut</td>
+              <td>
+                Executes the given function after the specified delay in ES6
+                syntax
+              </td>
+              <td>
+                <code
+                  >setTimeout(() =&gt; { ${2} }, ${1:delayInms});<br
+                /></code>
+              </td>
+            </tr>
+            <tr>
+              <td>prom</td>
+              <td>promise</td>
+              <td>
+                Creates and returns a new Promise in the standard ES6 syntax
+              </td>
+              <td>
+                <code
+                  >return new Promise((resolve, reject) =&gt; { ${1} });<br
+                /></code>
+              </td>
+            </tr>
+            <tr>
+              <td>thenc</td>
+              <td>thenCatch</td>
+              <td>Add the .then and .catch methods to handle promises</td>
+              <td>
+                <code
+                  >.then((${1:result}) =&gt; { ${2} }).catch((${3:err}) =&gt; {
+                  ${4} });<br
+                /></code>
+              </td>
+            </tr>
+            <tr>
+              <td>cas</td>
+              <td>consoleAssert</td>
+              <td>
+                If the specified expression is false, the message is written to
+                the console along with a stack trace
+              </td>
+              <td>
+                <code>console.assert(${1:expression}, ${2:object});<br /></code>
+              </td>
+            </tr>
+            <tr>
+              <td>ccl</td>
+              <td>consoleClear</td>
+              <td>Clears the console</td>
+              <td>
+                <code>console.clear();<br /></code>
+              </td>
+            </tr>
+            <tr>
+              <td>cco</td>
+              <td>consoleCount</td>
+              <td>
+                Writes the the number of times that count() has been invoked at
+                the same line and with the same label
+              </td>
+              <td>
+                <code>console.count(${1:label});<br /></code>
+              </td>
+            </tr>
+            <tr>
+              <td>cdb</td>
+              <td>consoleDebug</td>
+              <td>
+                Displays a message in the console. Also display a blue right
+                arrow icon along with the logged message in Safari
+              </td>
+              <td>
+                <code>console.debug(${1:object});<br /></code>
+              </td>
+            </tr>
+            <tr>
+              <td>cdi</td>
+              <td>consoleDir</td>
+              <td>
+                Prints a JavaScript representation of the specified object
+              </td>
+              <td>
+                <code>console.dir(${1:object});<br /></code>
+              </td>
+            </tr>
+            <tr>
+              <td>cer</td>
+              <td>consoleError</td>
+              <td>
+                Displays a message in the console and also includes a stack
+                trace from where the method was called
+              </td>
+              <td>
+                <code>console.error(${1:object});<br /></code>
+              </td>
+            </tr>
+            <tr>
+              <td>cgr</td>
+              <td>consoleGroup</td>
+              <td>
+                Groups and indents all following output by an additional level,
+                until console.groupEnd() is called.
+              </td>
+              <td>
+                <code>console.group('${1:label}');<br /></code>
+              </td>
+            </tr>
+            <tr>
+              <td>cge</td>
+              <td>consoleGroupEnd</td>
+              <td>Closes out the corresponding console.group().</td>
+              <td>
+                <code>console.groupEnd();<br /></code>
+              </td>
+            </tr>
+            <tr>
+              <td>clg</td>
+              <td>consoleLog</td>
+              <td>Displays a message in the console</td>
+              <td>
+                <code>console.log(${1:object});<br /></code>
+              </td>
+            </tr>
+            <tr>
+              <td>clo</td>
+              <td>consoleLogObject</td>
+              <td>Displays an object in the console with its name</td>
+              <td>
+                <code
+                  >console.log('${1:object} :&gt;&gt; ', ${1:object});<br
+                /></code>
+              </td>
+            </tr>
+            <tr>
+              <td>ctr</td>
+              <td>consoleTrace</td>
+              <td>
+                Prints a stack trace from the point where the method was called
+              </td>
+              <td>
+                <code>console.trace(${1:object});<br /></code>
+              </td>
+            </tr>
+            <tr>
+              <td>cwa</td>
+              <td>consoleWarn</td>
+              <td>
+                Displays a message in the console but also displays a yellow
+                warning icon along with the logged message
+              </td>
+              <td>
+                <code>console.warn(${1:object});<br /></code>
+              </td>
+            </tr>
+            <tr>
+              <td>cin</td>
+              <td>consoleInfo</td>
+              <td>
+                Displays a message in the console but also displays a blue
+                information icon along with the logged message
+              </td>
+              <td>
+                <code>console.info(${1:object});<br /></code>
+              </td>
+            </tr>
+            <tr>
+              <td>clt</td>
+              <td>consoleTable</td>
+              <td>Displays tabular data as a table.</td>
+              <td>
+                <code>console.table(${1:object});<br /></code>
+              </td>
+            </tr>
+            <tr>
+              <td>cti</td>
+              <td>consoleTime</td>
+              <td>Sets starting point for execution time measurement</td>
+              <td>
+                <code>console.time(${1:object});<br /></code>
+              </td>
+            </tr>
+            <tr>
+              <td>cte</td>
+              <td>consoleTimeEnd</td>
+              <td>Sets end point for execution time measurement</td>
+              <td>
+                <code>console.timeEnd(${1:object});<br /></code>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </section>
     <section id="app">
       <h2>VS Code Snippets</h2>
       <div>
         <h3 id="app-batchfile">Batchfile</h3>
+        <div class="source">
+          <button
+            type="button"
+            onclick="openFile('c%3A%2FProgram%20Files%2FMicrosoft%20VS%20Code%2Fresources%2Fapp%2Fextensions%2Fbat%2Fsnippets%2Fbatchfile.code-snippets')"
+            )=""
+          >
+            View Source File
+          </button>
+        </div>
         <table>
           <thead>
             <tr>
@@ -5019,6 +3142,15 @@
       </div>
       <div>
         <h3 id="app-coffeescript">Coffeescript</h3>
+        <div class="source">
+          <button
+            type="button"
+            onclick="openFile('c%3A%2FProgram%20Files%2FMicrosoft%20VS%20Code%2Fresources%2Fapp%2Fextensions%2Fcoffeescript%2Fsnippets%2Fcoffeescript.code-snippets')"
+            )=""
+          >
+            View Source File
+          </button>
+        </div>
         <table>
           <thead>
             <tr>
@@ -5050,6 +3182,15 @@
       </div>
       <div>
         <h3 id="app-c">C</h3>
+        <div class="source">
+          <button
+            type="button"
+            onclick="openFile('c%3A%2FProgram%20Files%2FMicrosoft%20VS%20Code%2Fresources%2Fapp%2Fextensions%2Fcpp%2Fsnippets%2Fc.code-snippets')"
+            )=""
+          >
+            View Source File
+          </button>
+        </div>
         <table>
           <thead>
             <tr>
@@ -5081,6 +3222,15 @@
       </div>
       <div>
         <h3 id="app-cpp">CPP</h3>
+        <div class="source">
+          <button
+            type="button"
+            onclick="openFile('c%3A%2FProgram%20Files%2FMicrosoft%20VS%20Code%2Fresources%2Fapp%2Fextensions%2Fcpp%2Fsnippets%2Fcpp.code-snippets')"
+            )=""
+          >
+            View Source File
+          </button>
+        </div>
         <table>
           <thead>
             <tr>
@@ -5112,6 +3262,15 @@
       </div>
       <div>
         <h3 id="app-csharp">Csharp</h3>
+        <div class="source">
+          <button
+            type="button"
+            onclick="openFile('c%3A%2FProgram%20Files%2FMicrosoft%20VS%20Code%2Fresources%2Fapp%2Fextensions%2Fcsharp%2Fsnippets%2Fcsharp.code-snippets')"
+            )=""
+          >
+            View Source File
+          </button>
+        </div>
         <table>
           <thead>
             <tr>
@@ -5143,6 +3302,15 @@
       </div>
       <div>
         <h3 id="app-fsharp">Fsharp</h3>
+        <div class="source">
+          <button
+            type="button"
+            onclick="openFile('c%3A%2FProgram%20Files%2FMicrosoft%20VS%20Code%2Fresources%2Fapp%2Fextensions%2Ffsharp%2Fsnippets%2Ffsharp.code-snippets')"
+            )=""
+          >
+            View Source File
+          </button>
+        </div>
         <table>
           <thead>
             <tr>
@@ -5174,6 +3342,15 @@
       </div>
       <div>
         <h3 id="app-groovy">Groovy</h3>
+        <div class="source">
+          <button
+            type="button"
+            onclick="openFile('c%3A%2FProgram%20Files%2FMicrosoft%20VS%20Code%2Fresources%2Fapp%2Fextensions%2Fgroovy%2Fsnippets%2Fgroovy.code-snippets')"
+            )=""
+          >
+            View Source File
+          </button>
+        </div>
         <table>
           <thead>
             <tr>
@@ -5480,6 +3657,15 @@
       </div>
       <div>
         <h3 id="app-java">Java</h3>
+        <div class="source">
+          <button
+            type="button"
+            onclick="openFile('c%3A%2FProgram%20Files%2FMicrosoft%20VS%20Code%2Fresources%2Fapp%2Fextensions%2Fjava%2Fsnippets%2Fjava.code-snippets')"
+            )=""
+          >
+            View Source File
+          </button>
+        </div>
         <table>
           <thead>
             <tr>
@@ -5511,6 +3697,15 @@
       </div>
       <div>
         <h3 id="app-javascript">Javascript</h3>
+        <div class="source">
+          <button
+            type="button"
+            onclick="openFile('c%3A%2FProgram%20Files%2FMicrosoft%20VS%20Code%2Fresources%2Fapp%2Fextensions%2Fjavascript%2Fsnippets%2Fjavascript.code-snippets')"
+            )=""
+          >
+            View Source File
+          </button>
+        </div>
         <table>
           <thead>
             <tr>
@@ -5752,6 +3947,15 @@
       </div>
       <div>
         <h3 id="app-markdown">Markdown</h3>
+        <div class="source">
+          <button
+            type="button"
+            onclick="openFile('c%3A%2FProgram%20Files%2FMicrosoft%20VS%20Code%2Fresources%2Fapp%2Fextensions%2Fmarkdown-basics%2Fsnippets%2Fmarkdown.code-snippets')"
+            )=""
+          >
+            View Source File
+          </button>
+        </div>
         <table>
           <thead>
             <tr>
@@ -5788,8 +3992,8 @@
             </tr>
             <tr>
               <td>code</td>
-              <td>Insert code</td>
-              <td>Insert code</td>
+              <td>Insert inline code</td>
+              <td>Insert inline code</td>
               <td>
                 <code>`${1:${TM_SELECTED_TEXT}}`$0<br /></code>
               </td>
@@ -5805,11 +4009,51 @@
               </td>
             </tr>
             <tr>
-              <td>heading</td>
-              <td>Insert heading</td>
-              <td>Insert heading</td>
+              <td>heading1</td>
+              <td>Insert heading level 1</td>
+              <td>Insert heading level 1</td>
               <td>
                 <code># ${1:${TM_SELECTED_TEXT}}<br /></code>
+              </td>
+            </tr>
+            <tr>
+              <td>heading2</td>
+              <td>Insert heading level 2</td>
+              <td>Insert heading level 2</td>
+              <td>
+                <code>## ${1:${TM_SELECTED_TEXT}}<br /></code>
+              </td>
+            </tr>
+            <tr>
+              <td>heading3</td>
+              <td>Insert heading level 3</td>
+              <td>Insert heading level 3</td>
+              <td>
+                <code>### ${1:${TM_SELECTED_TEXT}}<br /></code>
+              </td>
+            </tr>
+            <tr>
+              <td>heading4</td>
+              <td>Insert heading level 4</td>
+              <td>Insert heading level 4</td>
+              <td>
+                <code>#### ${1:${TM_SELECTED_TEXT}}<br /></code>
+              </td>
+            </tr>
+            <tr>
+              <td>heading5</td>
+              <td>Insert heading level 5</td>
+              <td>Insert heading level 5</td>
+              <td>
+                <code>##### ${1:${TM_SELECTED_TEXT}}<br /></code>
+              </td>
+            </tr>
+            <tr>
+              <td>heading6</td>
+              <td>Insert heading level 6</td>
+              <td>Insert heading level 6</td>
+              <td>
+                <code>###### ${1:${TM_SELECTED_TEXT}}<br /></code>
               </td>
             </tr>
             <tr>
@@ -5860,11 +4104,28 @@
                 /></code>
               </td>
             </tr>
+            <tr>
+              <td>strikethrough</td>
+              <td>Insert strikethrough</td>
+              <td>Insert strikethrough</td>
+              <td>
+                <code>~~${1:${TM_SELECTED_TEXT}}~~<br /></code>
+              </td>
+            </tr>
           </tbody>
         </table>
       </div>
       <div>
         <h3 id="app-php">PHP</h3>
+        <div class="source">
+          <button
+            type="button"
+            onclick="openFile('c%3A%2FProgram%20Files%2FMicrosoft%20VS%20Code%2Fresources%2Fapp%2Fextensions%2Fphp%2Fsnippets%2Fphp.code-snippets')"
+            )=""
+          >
+            View Source File
+          </button>
+        </div>
         <table>
           <thead>
             <tr>
@@ -6201,6 +4462,15 @@
       </div>
       <div>
         <h3 id="app-powershell">Powershell</h3>
+        <div class="source">
+          <button
+            type="button"
+            onclick="openFile('c%3A%2FProgram%20Files%2FMicrosoft%20VS%20Code%2Fresources%2Fapp%2Fextensions%2Fpowershell%2Fsnippets%2Fpowershell.code-snippets')"
+            )=""
+          >
+            View Source File
+          </button>
+        </div>
         <table>
           <thead>
             <tr>
@@ -6232,6 +4502,15 @@
       </div>
       <div>
         <h3 id="app-swift">Swift</h3>
+        <div class="source">
+          <button
+            type="button"
+            onclick="openFile('c%3A%2FProgram%20Files%2FMicrosoft%20VS%20Code%2Fresources%2Fapp%2Fextensions%2Fswift%2Fsnippets%2Fswift.code-snippets')"
+            )=""
+          >
+            View Source File
+          </button>
+        </div>
         <table>
           <thead>
             <tr>
@@ -6452,6 +4731,15 @@
       </div>
       <div>
         <h3 id="app-typescript">Typescript</h3>
+        <div class="source">
+          <button
+            type="button"
+            onclick="openFile('c%3A%2FProgram%20Files%2FMicrosoft%20VS%20Code%2Fresources%2Fapp%2Fextensions%2Ftypescript-basics%2Fsnippets%2Ftypescript.code-snippets')"
+            )=""
+          >
+            View Source File
+          </button>
+        </div>
         <table>
           <thead>
             <tr>
@@ -6778,11 +5066,53 @@
                 <code>//#endregion<br /></code>
               </td>
             </tr>
+            <tr>
+              <td>newpromise</td>
+              <td>new Promise</td>
+              <td>Create a new Promise</td>
+              <td>
+                <code
+                  >new Promise&lt;$1:type&gt;((resolve, reject) =&gt; {<br />
+                  $1<br />})<br
+                /></code>
+              </td>
+            </tr>
+            <tr>
+              <td>async function</td>
+              <td>Async Function Statement</td>
+              <td>Async Function Statement</td>
+              <td>
+                <code
+                  >async function ${1:name}(${2:params}:${3:type}) {<br />
+                  $0<br />}<br
+                /></code>
+              </td>
+            </tr>
+            <tr>
+              <td>async arrow function</td>
+              <td>Async Function Expression</td>
+              <td>Async Function Expression</td>
+              <td>
+                <code
+                  >async (${1:params}:${2:type}) =&gt; {<br />
+                  $0<br />}<br
+                /></code>
+              </td>
+            </tr>
           </tbody>
         </table>
       </div>
       <div>
         <h3 id="app-vb">VB</h3>
+        <div class="source">
+          <button
+            type="button"
+            onclick="openFile('c%3A%2FProgram%20Files%2FMicrosoft%20VS%20Code%2Fresources%2Fapp%2Fextensions%2Fvb%2Fsnippets%2Fvb.code-snippets')"
+            )=""
+          >
+            View Source File
+          </button>
+        </div>
         <table>
           <thead>
             <tr>
@@ -6917,5 +5247,15 @@
           ></path>
         </g></svg
     ></a>
+    <script>
+      const vscode = acquireVsCodeApi();
+      function openFile(path) {
+        console.log("open");
+        vscode.postMessage({
+          command: "openSnippetFile",
+          path: path,
+        });
+      }
+    </script>
   </body>
 </html>

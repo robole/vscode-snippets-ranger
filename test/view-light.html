@@ -472,7 +472,9 @@
       <h2>Table of Contents</h2>
       <ul>
         <li><a href="#user" title="#user">User Snippets</a></li>
-        <ul></ul>
+        <ul>
+          <li><a href="#user-markdown" title="#user-markdown">Markdown</a></li>
+        </ul>
         <li><a href="#extension" title="#extension">Extension Snippets</a></li>
         <ul>
           <li>
@@ -480,13 +482,6 @@
               href="#DavidAnson.vscode-markdownlint"
               title="#DavidAnson.vscode-markdownlint"
               >markdownlint</a
-            >
-          </li>
-          <li>
-            <a
-              href="#dsznajder.es7-react-js-snippets"
-              title="#dsznajder.es7-react-js-snippets"
-              >ES7 React/Redux/GraphQL/React-Native snippets</a
             >
           </li>
           <li>
@@ -501,6 +496,13 @@
               href="#sdras.vue-vscode-snippets"
               title="#sdras.vue-vscode-snippets"
               >Vue VSCode Snippets</a
+            >
+          </li>
+          <li>
+            <a
+              href="#xabikos.JavaScriptSnippets"
+              title="#xabikos.JavaScriptSnippets"
+              >JavaScript (ES6) code snippets</a
             >
           </li>
         </ul>
@@ -536,14 +538,63 @@
     </section>
     <section id="user">
       <h2>User Snippets</h2>
-      <p class="empty">Oucho Gaucho! 🌵 Nothing to round up! 🤠</p>
+      <div>
+        <h3 id="user-markdown">Markdown</h3>
+        <button
+          type="button"
+          onclick="openFile('c%3A%5CUsers%5Croboleary%5CAppData%5CRoaming%5CCode%5Cuser%5Csnippets%5Cmarkdown.json')"
+          )=""
+        >
+          View Source File
+        </button>
+        <table>
+          <thead>
+            <tr>
+              <th>Prefix</th>
+              <th>Name</th>
+              <th>Description</th>
+              <th>Body</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>test</td>
+              <td>test</td>
+              <td></td>
+              <td>
+                <code>[<br />${CLIPBOARD/^(.+)$/'$1',/gm}<br />]<br /></code>
+              </td>
+            </tr>
+            <tr>
+              <td>up</td>
+              <td>Upper the second mirrored tab stop</td>
+              <td></td>
+              <td>
+                <code
+                  >${1:title}<br />${1/(.*)/${1:/upcase}/}<br />${1/(.*)/${1:/upcase}/}<br />$0<br
+                /></code>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </section>
     <section id="extension">
       <h2>Extension Snippets</h2>
       <h3 id="DavidAnson.vscode-markdownlint">markdownlint</h3>
       <div>
         <h4>snippets.json</h4>
-        Available in the following languages: markdown.
+        <p>Available in the following languages:</p>
+        <ul>
+          <li>markdown</li>
+        </ul>
+        <button
+          type="button"
+          onclick="openFile('c%3A%5CUsers%5Croboleary%5C.vscode%5Cextensions%5Cdavidanson.vscode-markdownlint-0.36.3%5Csnippets.json')"
+          )=""
+        >
+          View Source File
+        </button>
         <table>
           <thead>
             <tr>
@@ -653,2499 +704,20 @@
           </tbody>
         </table>
       </div>
-      <h3 id="dsznajder.es7-react-js-snippets">
-        ES7 React/Redux/GraphQL/React-Native snippets
-      </h3>
-      <div>
-        <h4>snippets.json</h4>
-        Available in the following languages: javascript, javascriptreact,
-        typescript, typescriptreact.
-        <table>
-          <thead>
-            <tr>
-              <th>Prefix</th>
-              <th>Name</th>
-              <th>Description</th>
-              <th>Body</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>imp</td>
-              <td>import</td>
-              <td></td>
-              <td>
-                <code>import ${2:moduleName} from '${1:module}'$0<br /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>imn</td>
-              <td>importNoModuleName</td>
-              <td></td>
-              <td>
-                <code>import '${1:module}'$0<br /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>imd</td>
-              <td>importDestructing</td>
-              <td></td>
-              <td>
-                <code>import { $2 } from '${1:module}'$0<br /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>ime</td>
-              <td>importEverything</td>
-              <td></td>
-              <td>
-                <code>import * as ${2:alias} from '${1:module}'$0<br /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>ima</td>
-              <td>importAs</td>
-              <td></td>
-              <td>
-                <code
-                  >import { ${2:originalName} as ${3:alias} } from
-                  '${1:module}'$0<br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>exp</td>
-              <td>exportDefault</td>
-              <td></td>
-              <td>
-                <code>export default $1$0<br /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>exd</td>
-              <td>exportDestructing</td>
-              <td></td>
-              <td>
-                <code>export { $2 } from '${1:module}'$0<br /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>exa</td>
-              <td>exportAs</td>
-              <td></td>
-              <td>
-                <code
-                  >export { ${2:originalName} as ${3:alias} } from
-                  '${1:module}'$0<br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>enf</td>
-              <td>exportNamedFunction</td>
-              <td>Export named function in ES7 syntax</td>
-              <td>
-                <code
-                  >export const ${1:functionName} = (${2:params}) =&gt; {<br />
-                  $0<br />}<br /><br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>edf</td>
-              <td>exportDefaultFunction</td>
-              <td>Export default function in ES7 syntax</td>
-              <td>
-                <code
-                  >export default (${1:params}) =&gt; {<br />
-                  $0<br />}<br /><br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>met</td>
-              <td>method</td>
-              <td>Creates a method inside a class in ES7 syntax</td>
-              <td>
-                <code
-                  >${1:methodName} = (${2:params}) =&gt; {<br />
-                  ${0}<br />}<br /><br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>pge</td>
-              <td>propertyGet</td>
-              <td>Creates a getter property inside a class in ES7 syntax</td>
-              <td>
-                <code
-                  >get ${1:propertyName}() {<br />
-                  return this.${0}<br />}<br /><br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>pse</td>
-              <td>propertySet</td>
-              <td>Creates a setter property inside a class in ES7 syntax</td>
-              <td>
-                <code
-                  >set ${1:propertyName}(${2:value}) {<br />
-                  ${0}<br />}<br /><br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>fre</td>
-              <td>forEach</td>
-              <td>Creates a forEach statement in ES7 syntax</td>
-              <td>
-                <code
-                  >${1:array}.forEach(${2:currentItem} =&gt; {<br />
-                  ${0}<br />})<br /><br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>fof</td>
-              <td>forOf</td>
-              <td>Iterating over property names of iterable objects</td>
-              <td>
-                <code
-                  >for(let ${1:item} of ${2:object}) {<br />
-                  ${0}<br />}<br /><br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>fin</td>
-              <td>forIn</td>
-              <td>Iterating over property values of iterable objects</td>
-              <td>
-                <code
-                  >for(let ${1:item} in ${2:object}) {<br />
-                  ${0}<br />}<br /><br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>anfn</td>
-              <td>anonymousFunction</td>
-              <td>Creates an anonymous function in ES7 syntax</td>
-              <td>
-                <code
-                  >(${1:params}) =&gt; {<br />
-                  ${2}<br />}<br /><br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>nfn</td>
-              <td>namedFunction</td>
-              <td>Creates a named function in ES7 syntax</td>
-              <td>
-                <code
-                  >const ${1:name} = (${2:params}) =&gt; {<br />
-                  ${3}<br />}<br /><br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>dob</td>
-              <td>destructingObject</td>
-              <td>
-                Creates and assigns a local variable using object destructing
-              </td>
-              <td>
-                <code
-                  >const {${1:propertyName}} = ${2:objectToDestruct}<br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>dar</td>
-              <td>destructingArray</td>
-              <td>
-                Creates and assigns a local variable using array destructing
-              </td>
-              <td>
-                <code
-                  >const [${1:propertyName}] = ${2:arrayToDestruct}<br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>sti</td>
-              <td>setInterval</td>
-              <td>
-                Executes the given function at specified intervals in ES7 syntax
-              </td>
-              <td>
-                <code
-                  >setInterval(() =&gt; {<br />
-                  ${2}<br />}, ${0:intervalInms})<br /><br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>sto</td>
-              <td>setTimeOut</td>
-              <td>
-                Executes the given function after the specified delay in ES7
-                syntax
-              </td>
-              <td>
-                <code
-                  >setTimeout(() =&gt; {<br />
-                  ${2}<br />}, ${1:delayInms})<br /><br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>prom</td>
-              <td>promise</td>
-              <td>
-                Creates and returns a new Promise in the standard ES7 syntax
-              </td>
-              <td>
-                <code
-                  >return new Promise((resolve, reject) =&gt; {<br />
-                  ${1}<br />})<br /><br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>cas</td>
-              <td>consoleAssert</td>
-              <td>
-                If the specified expression is false, the message is written to
-                the console along with a stack trace
-              </td>
-              <td>
-                <code>console.assert(${1:expression}, ${2:object})<br /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>ccl</td>
-              <td>consoleClear</td>
-              <td>Clears the console</td>
-              <td>
-                <code>console.clear()<br /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>cco</td>
-              <td>consoleCount</td>
-              <td>
-                Writes the the number of times that count() has been invoked at
-                the same line and with the same label
-              </td>
-              <td>
-                <code>console.count(${1:label})<br /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>cdi</td>
-              <td>consoleDir</td>
-              <td>
-                Prints a JavaScript representation of the specified object
-              </td>
-              <td>
-                <code>console.dir(${1:object})<br /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>cer</td>
-              <td>consoleError</td>
-              <td>
-                Displays a message in the console and also includes a stack
-                trace from where the method was called
-              </td>
-              <td>
-                <code>console.error(${1:object})<br /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>cgr</td>
-              <td>consoleGroup</td>
-              <td>
-                Groups and indents all following output by an additional level,
-                until console.groupEnd() is called.
-              </td>
-              <td>
-                <code>console.group("${1:label}")<br /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>cge</td>
-              <td>consoleGroupEnd</td>
-              <td>Closes out the corresponding console.group().</td>
-              <td>
-                <code>console.groupEnd()<br /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>clg</td>
-              <td>consoleLog</td>
-              <td>Displays a message in the console</td>
-              <td>
-                <code>console.log(${1:object})<br /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>ctr</td>
-              <td>consoleTrace</td>
-              <td>
-                Prints a stack trace from the point where the method was called
-              </td>
-              <td>
-                <code>console.trace(${1:object})<br /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>clo</td>
-              <td>consoleLogObject</td>
-              <td>Logs property with name.</td>
-              <td>
-                <code>console.log('${1:object}', ${1:object})<br /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>ctm</td>
-              <td>consoleTime</td>
-              <td>Console time wrapper</td>
-              <td>
-                <code>console.time('${1:object}')<br /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>cte</td>
-              <td>consoleTimeEnd</td>
-              <td>Console time end wrapper</td>
-              <td>
-                <code>console.timeEnd('${1:object}')<br /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>cwa</td>
-              <td>consoleWarn</td>
-              <td>
-                Displays a message in the console but also displays a yellow
-                warning icon along with the logged message
-              </td>
-              <td>
-                <code>console.warn(${1:object})<br /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>cin</td>
-              <td>consoleInfo</td>
-              <td>
-                Displays a message in the console but also displays a blue
-                information icon along with the logged message
-              </td>
-              <td>
-                <code>console.info(${1:object})<br /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>cp</td>
-              <td>destructProps</td>
-              <td>
-                Creates and assigns a local variable using props destructing
-              </td>
-              <td>
-                <code>const { $1 } = this.props<br /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>cs</td>
-              <td>destructState</td>
-              <td>
-                Creates and assigns a local variable using state destructing
-              </td>
-              <td>
-                <code>const { $1 } = this.state<br /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>imr</td>
-              <td>import React</td>
-              <td></td>
-              <td>
-                <code>import React from 'react'<br /><br /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>imrd</td>
-              <td>import ReactDOM</td>
-              <td></td>
-              <td>
-                <code>import ReactDOM from 'react-dom'<br /><br /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>imrc</td>
-              <td>import React, { Component }</td>
-              <td></td>
-              <td>
-                <code
-                  >import React, { Component } from 'react'<br /><br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>imrcp</td>
-              <td>import React, { Component } &amp; PropTypes</td>
-              <td></td>
-              <td>
-                <code
-                  >import React, { Component } from 'react'<br />import
-                  PropTypes from 'prop-types'<br /><br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>imrpc</td>
-              <td>import React, { PureComponent }</td>
-              <td></td>
-              <td>
-                <code
-                  >import React, { PureComponent } from 'react'<br /><br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>imrpcp</td>
-              <td>import React, { PureComponent } &amp; PropTypes</td>
-              <td></td>
-              <td>
-                <code
-                  >import React, { PureComponent } from 'react'<br />import
-                  PropTypes from 'prop-types'<br /><br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>imrm</td>
-              <td>import React, { memo }</td>
-              <td></td>
-              <td>
-                <code>import React, { memo } from 'react'<br /><br /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>imrmp</td>
-              <td>import React, { memo } &amp; PropTypes</td>
-              <td></td>
-              <td>
-                <code
-                  >import React, { memo } from 'react'<br />import PropTypes
-                  from 'prop-types'<br /><br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>imrs</td>
-              <td>import React, {useState}</td>
-              <td></td>
-              <td>
-                <code>import React, { useState } from 'react'<br /><br /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>imrse</td>
-              <td>import React, {useState, useEffect}</td>
-              <td></td>
-              <td>
-                <code
-                  >import React, { useState, useEffect } from 'react'<br /><br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>impt</td>
-              <td>import PropTypes</td>
-              <td></td>
-              <td>
-                <code>import PropTypes from 'prop-types'<br /><br /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>imrr</td>
-              <td>import React Router</td>
-              <td></td>
-              <td>
-                <code
-                  >import { BrowserRouter as Router, Route, NavLink } from
-                  'react-router-dom'<br /><br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>imbr</td>
-              <td>import React Browser Router</td>
-              <td></td>
-              <td>
-                <code
-                  >import { BrowserRouter as Router } from 'react-router-dom'<br /><br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>imbrr</td>
-              <td>import React Browser Router - Route</td>
-              <td></td>
-              <td>
-                <code
-                  >import { Route } from 'react-router-dom'<br /><br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>imbrc</td>
-              <td>import React Browser Router - Route Combo</td>
-              <td></td>
-              <td>
-                <code
-                  >import { Route, Switch, NavLink, Link } from
-                  'react-router-dom'<br /><br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>imbrs</td>
-              <td>import React Browser Router - Switch</td>
-              <td></td>
-              <td>
-                <code
-                  >import { Switch } from 'react-router-dom'<br /><br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>imbrl</td>
-              <td>import React Browser Router - Link</td>
-              <td></td>
-              <td>
-                <code>import { Link } from 'react-router-dom'<br /><br /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>imbrnl</td>
-              <td>import React Browser Router - NavLink</td>
-              <td></td>
-              <td>
-                <code
-                  >import { NavLink } from 'react-router-dom'<br /><br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>redux</td>
-              <td>import redux statement</td>
-              <td></td>
-              <td>
-                <code>import { connect } from 'react-redux'<br /><br /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>rcc</td>
-              <td>reactClassCompoment</td>
-              <td>Creates a React component class with ES7 module system</td>
-              <td>
-                <code
-                  >import React, { Component } from 'react'<br /><br />export
-                  default class ${1:${TM_FILENAME_BASE}} extends Component {<br />
-                  render() {<br />
-                  return (<br />
-                  &lt;div&gt;<br />
-                  $0<br />
-                  &lt;/div&gt;<br />
-                  )<br />
-                  }<br />}<br /><br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>rce</td>
-              <td>reactClassExportComponent</td>
-              <td>Creates a React component class with ES7 module system</td>
-              <td>
-                <code
-                  >import React, { Component } from 'react'<br /><br />export
-                  class ${1:${TM_FILENAME_BASE}} extends Component {<br />
-                  render() {<br />
-                  return (<br />
-                  &lt;div&gt;<br />
-                  $0<br />
-                  &lt;/div&gt;<br />
-                  )<br />
-                  }<br />}<br /><br />export default ${1:${TM_FILENAME_BASE}}<br /><br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>rfce</td>
-              <td>reactFunctionalExportComponent</td>
-              <td>
-                Creates a React Functional Component with ES7 module system
-              </td>
-              <td>
-                <code
-                  >import React from 'react'<br /><br />function
-                  ${1:${TM_FILENAME_BASE}}() {<br />
-                  return (<br />
-                  &lt;div&gt;<br />
-                  $0<br />
-                  &lt;/div&gt;<br />
-                  )<br />}<br /><br />export default ${1:${TM_FILENAME_BASE}}<br /><br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>rfc</td>
-              <td>reactFunctionalComponent</td>
-              <td>
-                Creates a React Functional Component with ES7 module system
-              </td>
-              <td>
-                <code
-                  >import React from 'react'<br /><br />export default function
-                  ${1:${TM_FILENAME_BASE}}() {<br />
-                  return (<br />
-                  &lt;div&gt;<br />
-                  $0<br />
-                  &lt;/div&gt;<br />
-                  )<br />}<br /><br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>rfcp</td>
-              <td>reactFunctionalComponentWithPropTypes</td>
-              <td>
-                Creates a React Functional Component with ES7 module system with
-                PropTypes
-              </td>
-              <td>
-                <code
-                  >import React from 'react'<br />import PropTypes from
-                  'prop-types'<br /><br />function
-                  ${1:${TM_FILENAME_BASE}}(props) {<br />
-                  return (<br />
-                  &lt;div&gt;<br />
-                  $0<br />
-                  &lt;/div&gt;<br />
-                  )<br />}<br /><br />${1:${TM_FILENAME_BASE}}.propTypes = {<br /><br />}<br /><br />export
-                  default ${1:${TM_FILENAME_BASE}}<br /><br /><br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>rafce</td>
-              <td>reactArrowFunctionExportComponent</td>
-              <td>
-                Creates a React Arrow Function Component with ES7 module system
-              </td>
-              <td>
-                <code
-                  >import React from 'react'<br /><br />const
-                  ${1:${TM_FILENAME_BASE}} = () =&gt; {<br />
-                  return (<br />
-                  &lt;div&gt;<br />
-                  $0<br />
-                  &lt;/div&gt;<br />
-                  )<br />}<br /><br />export default ${1:${TM_FILENAME_BASE}}<br /><br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>rafc</td>
-              <td>reactArrowFunctionComponent</td>
-              <td>
-                Creates a React Arrow Function Component with ES7 module system
-              </td>
-              <td>
-                <code
-                  >import React from 'react'<br /><br />export const
-                  ${1:${TM_FILENAME_BASE}} = () =&gt; {<br />
-                  return (<br />
-                  &lt;div&gt;<br />
-                  $0<br />
-                  &lt;/div&gt;<br />
-                  )<br />}<br /><br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>rafcp</td>
-              <td>reactArrowFunctionComponentWithPropTypes</td>
-              <td>
-                Creates a React Arrow Function Component with ES7 module system
-                with PropTypes
-              </td>
-              <td>
-                <code
-                  >import React from 'react'<br />import PropTypes from
-                  'prop-types'<br /><br />const ${1:${TM_FILENAME_BASE}} = props
-                  =&gt; {<br />
-                  return (<br />
-                  &lt;div&gt;<br />
-                  $0<br />
-                  &lt;/div&gt;<br />
-                  )<br />}<br /><br />${1:${TM_FILENAME_BASE}}.propTypes = {<br /><br />}<br /><br />export
-                  default ${1:${TM_FILENAME_BASE}}<br /><br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>rcep</td>
-              <td>reactClassExportComponentWithPropTypes</td>
-              <td>Creates a React component class with ES7 module system</td>
-              <td>
-                <code
-                  >import React, { Component } from 'react'<br />import
-                  PropTypes from 'prop-types'<br /><br />export class
-                  ${1:${TM_FILENAME_BASE}} extends Component {<br />
-                  static propTypes = {<br /><br />
-                  }<br /><br />
-                  render() {<br />
-                  return (<br />
-                  &lt;div&gt;<br />
-                  $0<br />
-                  &lt;/div&gt;<br />
-                  )<br />
-                  }<br />}<br /><br />export default ${1:${TM_FILENAME_BASE}}<br /><br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>rpc</td>
-              <td>reactClassPureComponent</td>
-              <td>
-                Creates a React pure component class with ES7 module system
-              </td>
-              <td>
-                <code
-                  >import React, { PureComponent } from 'react'<br /><br />export
-                  default class ${1:${TM_FILENAME_BASE}} extends PureComponent
-                  {<br />
-                  render() {<br />
-                  return (<br />
-                  &lt;div&gt;<br />
-                  $0<br />
-                  &lt;/div&gt;<br />
-                  )<br />
-                  }<br />}<br /><br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>rpce</td>
-              <td>reactClassExportPureComponent</td>
-              <td>
-                Creates a React pure component class with ES7 module system
-                export
-              </td>
-              <td>
-                <code
-                  >import React, { PureComponent } from 'react'<br /><br />export
-                  class ${1:${TM_FILENAME_BASE}} extends PureComponent {<br />
-                  render() {<br />
-                  return (<br />
-                  &lt;div&gt;<br />
-                  $0<br />
-                  &lt;/div&gt;<br />
-                  )<br />
-                  }<br />}<br /><br />export default ${1:$TM_FILENAME_BASE}<br /><br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>rpcp</td>
-              <td>reactClassPureComponentWithPropTypes</td>
-              <td>Creates a React component class with ES7 module system</td>
-              <td>
-                <code
-                  >import React, { PureComponent } from 'react'<br />import
-                  PropTypes from 'prop-types'<br /><br />export default class
-                  ${1:${TM_FILENAME_BASE}} extends PureComponent {<br />
-                  static propTypes = {<br /><br />
-                  }<br /><br />
-                  render() {<br />
-                  return (<br />
-                  &lt;div&gt;<br />
-                  $0<br />
-                  &lt;/div&gt;<br />
-                  )<br />
-                  }<br />}<br /><br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>rmc</td>
-              <td>reactFunctionMemoComponent</td>
-              <td>
-                Creates a React Memo Function Component with ES7 module system
-              </td>
-              <td>
-                <code
-                  >import React, { memo } from 'react'<br /><br />export default
-                  memo(function ${1:${TM_FILENAME_BASE}}() {<br />
-                  return (<br />
-                  &lt;div&gt;<br />
-                  $0<br />
-                  &lt;/div&gt;<br />
-                  )<br />})<br /><br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>rmcp</td>
-              <td>reactFunctionMemoComponentWithPropTypes</td>
-              <td>
-                Creates a React Memo Function Component with ES7 module system
-                with PropTypes
-              </td>
-              <td>
-                <code
-                  >import React, { memo } from 'react'<br />import PropTypes
-                  from 'prop-types'<br /><br />const ${1:${TM_FILENAME_BASE}} =
-                  memo(function ${1:${TM_FILENAME_BASE}}(props) {<br />
-                  return (<br />
-                  &lt;div&gt;<br />
-                  $0<br />
-                  &lt;/div&gt;<br />
-                  )<br />})<br /><br />${1:${TM_FILENAME_BASE}}.propTypes = {<br /><br />}<br /><br />export
-                  default ${1:${TM_FILENAME_BASE}}<br /><br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>rccp</td>
-              <td>reactClassCompomentPropTypes</td>
-              <td>
-                Creates a React component class with PropTypes and ES7 module
-                system
-              </td>
-              <td>
-                <code
-                  >import React, { Component } from 'react'<br />import
-                  PropTypes from 'prop-types'<br /><br />export default class
-                  ${1:${TM_FILENAME_BASE}} extends Component {<br />
-                  static propTypes = {<br />
-                  ${2:prop}: ${3:PropTypes}<br />
-                  }<br /><br />
-                  render() {<br />
-                  return (<br />
-                  &lt;div&gt;<br />
-                  $0<br />
-                  &lt;/div&gt;<br />
-                  )<br />
-                  }<br />}<br /><br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>rcredux</td>
-              <td>reactClassCompomentRedux</td>
-              <td>
-                Creates a React component class with connected redux and ES7
-                module system
-              </td>
-              <td>
-                <code
-                  >import React, { Component } from 'react'<br />import {
-                  connect } from 'react-redux'<br /><br />export class
-                  ${1:${TM_FILENAME_BASE}} extends Component {<br />
-                  render() {<br />
-                  return (<br />
-                  &lt;div&gt;<br />
-                  $0<br />
-                  &lt;/div&gt;<br />
-                  )<br />
-                  }<br />}<br /><br />const mapStateToProps = (state) =&gt;
-                  ({<br />
-                  <br />})<br /><br />const mapDispatchToProps = {<br />
-                  <br />}<br /><br />export default connect(mapStateToProps,
-                  mapDispatchToProps)(${1:${TM_FILENAME_BASE}})<br /><br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>rcreduxp</td>
-              <td>reactClassCompomentReduxPropTypes</td>
-              <td>
-                Creates a React component class with PropTypes with connected
-                redux and ES7 module system
-              </td>
-              <td>
-                <code
-                  >import React, { Component } from 'react'<br />import
-                  PropTypes from 'prop-types'<br />import { connect } from
-                  'react-redux'<br /><br />export class ${1:${TM_FILENAME_BASE}}
-                  extends Component {<br />
-                  static propTypes = {<br />
-                  ${2:prop}: ${3:PropTypes}<br />
-                  }<br /><br />
-                  render() {<br />
-                  return (<br />
-                  &lt;div&gt;<br />
-                  $0<br />
-                  &lt;/div&gt;<br />
-                  )<br />
-                  }<br />}<br /><br />const mapStateToProps = (state) =&gt;
-                  ({<br />
-                  <br />})<br /><br />const mapDispatchToProps = {<br />
-                  <br />}<br /><br />export default connect(mapStateToProps,
-                  mapDispatchToProps)(${1:${TM_FILENAME_BASE}})<br /><br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>rfcredux</td>
-              <td>reactFunctionalCompomentRedux</td>
-              <td>
-                Creates a React functional component with connected redux and
-                ES7 module system
-              </td>
-              <td>
-                <code
-                  >import React, { Component } from 'react'<br />import {
-                  connect } from 'react-redux'<br /><br />export const
-                  ${1:${TM_FILENAME_BASE}} = () =&gt; {<br />
-                  return (<br />
-                  &lt;div&gt;<br />
-                  $0<br />
-                  &lt;/div&gt;<br />
-                  )<br />}<br /><br />const mapStateToProps = (state) =&gt;
-                  ({<br />
-                  <br />})<br /><br />const mapDispatchToProps = {<br />
-                  <br />}<br /><br />export default connect(mapStateToProps,
-                  mapDispatchToProps)(${1:${TM_FILENAME_BASE}})<br /><br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>rfcreduxp</td>
-              <td>reactFunctionalCompomentReduxPropTypes</td>
-              <td>
-                Creates a React functional component with PropTypes with
-                connected redux and ES7 module system
-              </td>
-              <td>
-                <code
-                  >import React, { Component } from 'react'<br />import
-                  PropTypes from 'prop-types'<br />import { connect } from
-                  'react-redux'<br /><br />export const ${1:${TM_FILENAME_BASE}}
-                  = () =&gt; {<br />
-                  return (<br />
-                  &lt;div&gt;<br />
-                  $0<br />
-                  &lt;/div&gt;<br />
-                  )<br />}<br /><br />${1:${TM_FILENAME_BASE}}.propTypes = {<br />
-                  ${2:prop}: ${3:PropTypes}<br />}<br /><br />const
-                  mapStateToProps = (state) =&gt; ({<br />
-                  <br />})<br /><br />const mapDispatchToProps = {<br />
-                  <br />}<br /><br />export default connect(mapStateToProps,
-                  mapDispatchToProps)(${1:${TM_FILENAME_BASE}})<br /><br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>reduxmap</td>
-              <td>mappingToProps</td>
-              <td></td>
-              <td>
-                <code
-                  >const mapStateToProps = (state) =&gt; ({<br />
-                  ${1}<br />})<br /><br />const mapDispatchToProps = {<br />
-                  <br />}<br /><br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>rconst</td>
-              <td>classConstructor</td>
-              <td>
-                Adds a default constructor for it('', () =&gt; {})the class that
-                contains props as arguments
-              </td>
-              <td>
-                <code
-                  >constructor(props) {<br />
-                  super(props)<br /><br />
-                  this.state = {<br />
-                  $0<br />
-                  }<br />}<br /><br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>est</td>
-              <td>emptyState</td>
-              <td>Creates empty state object. To be used in a constructor.</td>
-              <td>
-                <code
-                  >state = {<br />
-                  $1<br />}<br /><br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>cwm</td>
-              <td>componentWillMount</td>
-              <td>
-                DEPRECATED!!!. Invoked once, both on the client and server,
-                immediately before the initial rendering occurs
-              </td>
-              <td>
-                <code
-                  >componentWillMount() {<br />
-                  $0<br />}<br /><br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>cdm</td>
-              <td>componentDidMount</td>
-              <td>
-                Invoked once, only on the client (not on the server),
-                immediately after the initial rendering occurs.
-              </td>
-              <td>
-                <code
-                  >componentDidMount() {<br />
-                  $0<br />}<br /><br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>cwr</td>
-              <td>componentWillReceiveProps</td>
-              <td>
-                DEPRECATED!!!. Invoked when a component is receiving new props.
-                This method is not called for the initial render.
-              </td>
-              <td>
-                <code
-                  >componentWillReceiveProps(nextProps) {<br />
-                  $0<br />}<br /><br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>scu</td>
-              <td>shouldComponentUpdate</td>
-              <td>
-                Invoked before rendering when new props or state are being
-                received.
-              </td>
-              <td>
-                <code
-                  >shouldComponentUpdate(nextProps, nextState) {<br />
-                  $0<br />}<br /><br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>cwup</td>
-              <td>componentWillUpdate</td>
-              <td>
-                DEPRECATED!!!. Invoked immediately before rendering when new
-                props or state are being received.
-              </td>
-              <td>
-                <code
-                  >componentWillUpdate(nextProps, nextState) {<br />
-                  $0<br />}<br /><br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>cdup</td>
-              <td>componentDidUpdate</td>
-              <td>
-                Invoked immediately after the component's updates are flushed to
-                the DOM.
-              </td>
-              <td>
-                <code
-                  >componentDidUpdate(prevProps, prevState) {<br />
-                  $0<br />}<br /><br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>cwun</td>
-              <td>componentWillUnmount</td>
-              <td>
-                Invoked immediately before a component is unmounted from the
-                DOM.
-              </td>
-              <td>
-                <code
-                  >componentWillUnmount() {<br />
-                  $0<br />}<br /><br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>gdsfp</td>
-              <td>getDerivedStateFromProps</td>
-              <td>
-                Invoked right before calling the render method, both on the
-                initial mount and on subsequent updates.
-              </td>
-              <td>
-                <code
-                  >static getDerivedStateFromProps(props, state) {<br />
-                  ${1}<br />}<br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>gsbu</td>
-              <td>getSnapshotBeforeUpdate</td>
-              <td>
-                Called right before mutations are made (e.g. before the DOM is
-                updated)
-              </td>
-              <td>
-                <code
-                  >getSnapshotBeforeUpdate = (prevProps, prevState) =&gt; {<br />
-                  $0<br />}<br /><br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>ren</td>
-              <td>componentRender</td>
-              <td>Basic render.</td>
-              <td>
-                <code
-                  >render() {<br />
-                  return (<br />
-                  &lt;div&gt;<br />
-                  $0<br />
-                  &lt;/div&gt;<br />
-                  )<br />}<br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>rcontext</td>
-              <td>createContext</td>
-              <td>Create React context</td>
-              <td>
-                <code
-                  >const ${1:contextName} = React.createContext()<br /><br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>cref</td>
-              <td>createRef</td>
-              <td>Create ref statement used inside constructor</td>
-              <td>
-                <code
-                  >this.${1:refName}Ref = React.createRef()<br /><br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>fref</td>
-              <td>forwardRef</td>
-              <td>Forward ref statement used inside component</td>
-              <td>
-                <code>const ref = React.createRef()<br /><br /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>sst</td>
-              <td>componentSetStateObject</td>
-              <td>Performs a shallow merge of nextState into current state</td>
-              <td>
-                <code>this.setState({$0})<br /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>ssf</td>
-              <td>componentSetStateFunc</td>
-              <td>Performs a shallow merge of nextState into current state</td>
-              <td>
-                <code
-                  >this.setState((state, props) =&gt; { return { $0 }})<br /><br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>props</td>
-              <td>componentProps</td>
-              <td>Access component's props</td>
-              <td>
-                <code>this.props.$0<br /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>state</td>
-              <td>componentState</td>
-              <td></td>
-              <td>
-                <code>this.state.$0<br /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>bnd</td>
-              <td>bindThis</td>
-              <td>Binds this to a method</td>
-              <td>
-                <code
-                  >this.${1:methodName} = this.${1:methodName}.bind(this)$0<br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>rxaction</td>
-              <td>reduxAction</td>
-              <td></td>
-              <td>
-                <code
-                  >export const ${1:actionName} = (payload) =&gt; ({<br />
-                  type: ${3:type},<br />
-                  payload<br />})<br /><br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>rxconst</td>
-              <td>reduxConst</td>
-              <td></td>
-              <td>
-                <code
-                  >export const ${1:constantName} = '${1:constantName}'<br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>rxreducer</td>
-              <td>reduxReducer</td>
-              <td></td>
-              <td>
-                <code
-                  >const initialState = {<br /><br />}<br /><br />export default
-                  (state = initialState, { type, payload }) =&gt; {<br />
-                  switch (type) {<br /><br />
-                  case ${1:typeName}:<br />
-                  return { ...state, ...payload }<br /><br />
-                  default:<br />
-                  return state<br />
-                  }<br />}<br /><br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>rxselect</td>
-              <td>reduxSelector</td>
-              <td></td>
-              <td>
-                <code
-                  >import { createSelector } from 'reselect'<br /><br />export
-                  const ${1:selectorName} = state =&gt; state.${2:selector}<br /><br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>rnc</td>
-              <td>reactNativeComponent</td>
-              <td></td>
-              <td>
-                <code
-                  >import React, { Component } from 'react'<br />import { Text,
-                  View } from 'react-native'<br /><br />export default class
-                  ${1:${TM_FILENAME_BASE}} extends Component {<br />
-                  render() {<br />
-                  return (<br />
-                  &lt;View&gt;<br />
-                  &lt;Text&gt; ${2:textInComponent} &lt;/Text&gt;<br />
-                  &lt;/View&gt;<br />
-                  )<br />
-                  }<br />}<br /><br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>rncs</td>
-              <td>reactNativeComponentWithStyles</td>
-              <td></td>
-              <td>
-                <code
-                  >import React, { Component } from 'react'<br />import { Text,
-                  StyleSheet, View } from 'react-native'<br /><br />export
-                  default class ${1:${TM_FILENAME_BASE}} extends Component {<br />
-                  render() {<br />
-                  return (<br />
-                  &lt;View&gt;<br />
-                  &lt;Text&gt; ${2:textInComponent} &lt;/Text&gt;<br />
-                  &lt;/View&gt;<br />
-                  )<br />
-                  }<br />}<br /><br />const styles = StyleSheet.create({})<br /><br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>rnce</td>
-              <td>reactNativeComponentExport</td>
-              <td></td>
-              <td>
-                <code
-                  >import React, { Component } from 'react'<br />import { Text,
-                  View } from 'react-native'<br /><br />export class
-                  ${1:${TM_FILENAME_BASE}} extends Component {<br />
-                  render() {<br />
-                  return (<br />
-                  &lt;View&gt;<br />
-                  &lt;Text&gt; ${2:textInComponent} &lt;/Text&gt;<br />
-                  &lt;/View&gt;<br />
-                  )<br />
-                  }<br />}<br /><br />export default ${1:${TM_FILENAME_BASE}}<br /><br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>rnpc</td>
-              <td>reactNativePureComponent</td>
-              <td></td>
-              <td>
-                <code
-                  >import React, { PureComponent } from 'react'<br />import {
-                  Text, View } from 'react-native'<br /><br />export default
-                  class ${1:${TM_FILENAME_BASE}} extends PureComponent {<br />
-                  render() {<br />
-                  return (<br />
-                  &lt;View&gt;<br />
-                  &lt;Text&gt; ${2:textInComponent} &lt;/Text&gt;<br />
-                  &lt;/View&gt;<br />
-                  )<br />
-                  }<br />}<br /><br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>rnpce</td>
-              <td>reactNativePureComponentExport</td>
-              <td></td>
-              <td>
-                <code
-                  >import React, { PureComponent } from 'react'<br />import {
-                  Text, View } from 'react-native'<br /><br />export class
-                  ${1:${TM_FILENAME_BASE}} extends PureComponent {<br />
-                  render() {<br />
-                  return (<br />
-                  &lt;View&gt;<br />
-                  &lt;Text&gt; ${2:textInComponent} &lt;/Text&gt;<br />
-                  &lt;/View&gt;<br />
-                  )<br />
-                  }<br />}<br /><br />export default ${1:${TM_FILENAME_BASE}}<br /><br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>rncredux</td>
-              <td>reactNativeClassComponentRedux</td>
-              <td>
-                Creates a React Native component class with PropTypes with
-                connected redux and ES7 module system
-              </td>
-              <td>
-                <code
-                  >import React, { Component } from 'react'<br />import { View,
-                  Text } from 'react-native'<br />import PropTypes from
-                  'prop-types'<br />import { connect } from 'react-redux'<br /><br />export
-                  class ${1:${TM_FILENAME_BASE}} extends Component {<br />
-                  static propTypes = {<br />
-                  ${2:prop}: ${3:PropTypes}<br />
-                  }<br /><br />
-                  render() {<br />
-                  return (<br />
-                  &lt;View&gt;<br />
-                  &lt;Text&gt; ${2:textInComponent} &lt;/Text&gt;<br />
-                  &lt;/View&gt;<br />
-                  )<br />
-                  }<br />}<br /><br />const mapStateToProps = (state) =&gt;
-                  ({<br />
-                  <br />})<br /><br />const mapDispatchToProps = {<br />
-                  <br />}<br /><br />export default connect(mapStateToProps,
-                  mapDispatchToProps)(${1:${TM_FILENAME_BASE}})<br /><br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>rnfe</td>
-              <td>reactNativeFunctionalExportComponent</td>
-              <td></td>
-              <td>
-                <code
-                  >import React from 'react'<br />import { View, Text } from
-                  'react-native'<br /><br />const ${1:${TM_FILENAME_BASE}} = ()
-                  =&gt; {<br />
-                  return (<br />
-                  &lt;View&gt;<br />
-                  &lt;Text&gt;$0&lt;/Text&gt;<br />
-                  &lt;/View&gt;<br />
-                  )<br />}<br /><br />export default ${1:${TM_FILENAME_BASE}}<br /><br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>rnfes</td>
-              <td>reactNativeFunctionalExportComponentWithStyles</td>
-              <td></td>
-              <td>
-                <code
-                  >import React from 'react'<br />import { StyleSheet, Text,
-                  View } from 'react-native'<br /><br />const
-                  ${1:${TM_FILENAME_BASE}} = () =&gt; {<br />
-                  return (<br />
-                  &lt;View&gt;<br />
-                  &lt;Text&gt;$0&lt;/Text&gt;<br />
-                  &lt;/View&gt;<br />
-                  )<br />}<br /><br />export default ${1:${TM_FILENAME_BASE}}<br /><br />const
-                  styles = StyleSheet.create({})<br /><br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>rnf</td>
-              <td>reactNativeFunctionalComponent</td>
-              <td></td>
-              <td>
-                <code
-                  >import React from 'react'<br />import { View, Text } from
-                  'react-native'<br /><br />export default function
-                  ${1:${TM_FILENAME_BASE}}() {<br />
-                  return (<br />
-                  &lt;View&gt;<br />
-                  &lt;Text&gt;$0&lt;/Text&gt;<br />
-                  &lt;/View&gt;<br />
-                  )<br />}<br /><br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>rnfs</td>
-              <td>reactNativeFunctionalComponentWithStyles</td>
-              <td></td>
-              <td>
-                <code
-                  >import React from 'react'<br />import { StyleSheet, Text,
-                  View } from 'react-native'<br /><br />export default function
-                  ${1:${TM_FILENAME_BASE}}() {<br />
-                  return (<br />
-                  &lt;View&gt;<br />
-                  &lt;Text&gt;$0&lt;/Text&gt;<br />
-                  &lt;/View&gt;<br />
-                  )<br />}<br /><br />const styles = StyleSheet.create({})<br /><br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>imrn</td>
-              <td>reactNativeImport</td>
-              <td></td>
-              <td>
-                <code
-                  >import { ${1:moduleName} } from 'react-native'<br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>rnstyle</td>
-              <td>reactNativeStyles</td>
-              <td></td>
-              <td>
-                <code
-                  >const styles = StyleSheet.create({<br />
-                  ${1:style}<br />})<br /><br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>pta</td>
-              <td>propTypeArray</td>
-              <td>Array prop type</td>
-              <td>
-                <code>PropTypes.array,<br /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>ptar</td>
-              <td>propTypeArrayRequired</td>
-              <td>Array prop type required</td>
-              <td>
-                <code>PropTypes.array.isRequired,<br /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>ptb</td>
-              <td>propTypeBool</td>
-              <td>Bool prop type</td>
-              <td>
-                <code>PropTypes.bool,<br /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>ptbr</td>
-              <td>propTypeBoolRequired</td>
-              <td>Bool prop type required</td>
-              <td>
-                <code>PropTypes.bool.isRequired,<br /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>ptf</td>
-              <td>propTypeFunc</td>
-              <td>Func prop type</td>
-              <td>
-                <code>PropTypes.func,<br /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>ptfr</td>
-              <td>propTypeFuncRequired</td>
-              <td>Func prop type required</td>
-              <td>
-                <code>PropTypes.func.isRequired,<br /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>ptn</td>
-              <td>propTypeNumber</td>
-              <td>Number prop type</td>
-              <td>
-                <code>PropTypes.number,<br /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>ptnr</td>
-              <td>propTypeNumberRequired</td>
-              <td>Number prop type required</td>
-              <td>
-                <code>PropTypes.number.isRequired,<br /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>pto</td>
-              <td>propTypeObject</td>
-              <td>Object prop type</td>
-              <td>
-                <code>PropTypes.object,<br /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>ptor</td>
-              <td>propTypeObjectRequired</td>
-              <td>Object prop type required</td>
-              <td>
-                <code>PropTypes.object.isRequired,<br /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>pts</td>
-              <td>propTypeString</td>
-              <td>String prop type</td>
-              <td>
-                <code>PropTypes.string,<br /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>ptsr</td>
-              <td>propTypeStringRequired</td>
-              <td>String prop type required</td>
-              <td>
-                <code>PropTypes.string.isRequired,<br /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>ptnd</td>
-              <td>propTypeNode</td>
-              <td>
-                Anything that can be rendered: numbers, strings, elements or an
-                array
-              </td>
-              <td>
-                <code>PropTypes.node,<br /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>ptndr</td>
-              <td>propTypeNodeRequired</td>
-              <td>
-                Anything that can be rendered: numbers, strings, elements or an
-                array required
-              </td>
-              <td>
-                <code>PropTypes.node.isRequired,<br /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>ptel</td>
-              <td>propTypeElement</td>
-              <td>React element prop type</td>
-              <td>
-                <code>PropTypes.element,<br /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>ptelr</td>
-              <td>propTypeElementRequired</td>
-              <td>React element prop type required</td>
-              <td>
-                <code>PropTypes.element.isRequired,<br /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>pti</td>
-              <td>propTypeInstanceOf</td>
-              <td>Is an instance of a class prop type</td>
-              <td>
-                <code>PropTypes.instanceOf($0),<br /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>ptir</td>
-              <td>propTypeInstanceOfRequired</td>
-              <td>Is an instance of a class prop type required</td>
-              <td>
-                <code>PropTypes.instanceOf($0).isRequired,<br /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>pte</td>
-              <td>propTypeEnum</td>
-              <td>
-                Prop type limited to specific values by treating it as an enum
-              </td>
-              <td>
-                <code>PropTypes.oneOf(['$0']),<br /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>pter</td>
-              <td>propTypeEnumRequired</td>
-              <td>
-                Prop type limited to specific values by treating it as an enum
-                required
-              </td>
-              <td>
-                <code>PropTypes.oneOf(['$0']).isRequired,<br /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>ptet</td>
-              <td>propTypeOneOfType</td>
-              <td>An object that could be one of many types</td>
-              <td>
-                <code
-                  >PropTypes.oneOfType([<br />
-                  $0<br />]),<br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>ptetr</td>
-              <td>propTypeOneOfTypeRequired</td>
-              <td>An object that could be one of many types required</td>
-              <td>
-                <code
-                  >PropTypes.oneOfType([<br />
-                  $0<br />]).isRequired,<br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>ptao</td>
-              <td>propTypeArrayOf</td>
-              <td>An array of a certain type</td>
-              <td>
-                <code>PropTypes.arrayOf($0),<br /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>ptaor</td>
-              <td>propTypeArrayOfRequired</td>
-              <td>An array of a certain type required</td>
-              <td>
-                <code>PropTypes.arrayOf($0).isRequired,<br /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>ptoo</td>
-              <td>propTypeObjectOf</td>
-              <td>An object with property values of a certain type</td>
-              <td>
-                <code>PropTypes.objectOf($0),<br /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>ptoor</td>
-              <td>propTypeObjectOfRequired</td>
-              <td>An object with property values of a certain type required</td>
-              <td>
-                <code>PropTypes.objectOf($0).isRequired,<br /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>ptsh</td>
-              <td>propTypeShape</td>
-              <td>An object taking on a particular shape</td>
-              <td>
-                <code
-                  >PropTypes.shape({<br />
-                  $0<br />}),<br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>ptshr</td>
-              <td>propTypeShapeRequired</td>
-              <td>An object taking on a particular shape required</td>
-              <td>
-                <code
-                  >PropTypes.shape({<br />
-                  $0<br />}).isRequired,<br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>ptex</td>
-              <td>propTypeExact</td>
-              <td>An object with warnings on extra properties</td>
-              <td>
-                <code
-                  >PropTypes.exact({<br />
-                  $0<br />}),<br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>ptexr</td>
-              <td>propTypeExactRequired</td>
-              <td>An object with warnings on extra properties required</td>
-              <td>
-                <code
-                  >PropTypes.exact({<br />
-                  $0<br />}).isRequired,<br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>ptypes</td>
-              <td>staticPropTpyes</td>
-              <td></td>
-              <td>
-                <code>static propTypes = {<br />$0<br />}<br /><br /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>ptany</td>
-              <td>propTypeAny</td>
-              <td>Any prop type</td>
-              <td>
-                <code>PropTypes.any,<br /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>cmmb</td>
-              <td>Comment Big Block</td>
-              <td></td>
-              <td>
-                <code
-                  >/**<br />
-                  * ${0}<br />
-                  */<br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>desc</td>
-              <td>describeBlock</td>
-              <td>Testing `describe` block</td>
-              <td>
-                <code
-                  >describe('$1', () =&gt; {<br />
-                  $0<br />})<br /><br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>test</td>
-              <td>testBlock</td>
-              <td>Testing `test` block</td>
-              <td>
-                <code
-                  >test('should $1', () =&gt; {<br />
-                  $0<br />})<br /><br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>testa</td>
-              <td>testAsyncBlock</td>
-              <td>Testing `asynchronous test` block</td>
-              <td>
-                <code
-                  >test('should $1', async () =&gt; {<br />
-                  $0<br />})<br /><br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>tit</td>
-              <td>itBlock</td>
-              <td>Testing `it` block</td>
-              <td>
-                <code
-                  >it('should $1', () =&gt; {<br />
-                  $0<br />})<br /><br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>tita</td>
-              <td>itAsyncBlock</td>
-              <td>Testing asynchronous `it` block</td>
-              <td>
-                <code
-                  >it('should $1', async () =&gt; {<br />
-                  $0<br />})<br /><br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>stest</td>
-              <td>setupReactTest</td>
-              <td></td>
-              <td>
-                <code
-                  >import React from 'react'<br />import renderer from
-                  'react-test-renderer'<br /><br />import {
-                  ${1:${TM_FILENAME_BASE}} } from
-                  '../${1:${TM_FILENAME_BASE}}'<br /><br />describe('&lt;${1:${TM_FILENAME_BASE}}
-                  /&gt;', () =&gt; {<br />
-                  const defaultProps = {}<br />
-                  const wrapper = renderer.create(&lt;${1:${TM_FILENAME_BASE}}
-                  {...defaultProps} /&gt;)<br /><br />
-                  test('render', () =&gt; {<br />
-                  expect(wrapper).toMatchSnapshot()<br />
-                  })<br />})<br /><br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>sntest</td>
-              <td>setupReactNativeTest</td>
-              <td></td>
-              <td>
-                <code
-                  >import 'react-native'<br />import React from 'react'<br />import
-                  renderer from 'react-test-renderer'<br /><br />import
-                  ${1:${TM_FILENAME_BASE}} from '../${1:${TM_FILENAME_BASE}}'<br /><br />describe('&lt;${1:${TM_FILENAME_BASE}}
-                  /&gt;', () =&gt; {<br />
-                  const defaultProps = {}<br />
-                  const wrapper = renderer.create(&lt;${1:${TM_FILENAME_BASE}}
-                  {...defaultProps} /&gt;)<br /><br />
-                  test('render', () =&gt; {<br />
-                  expect(wrapper).toMatchSnapshot()<br />
-                  })<br />})<br /><br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>srtest</td>
-              <td>setupReactComponentTestWithRedux</td>
-              <td>Create test component</td>
-              <td>
-                <code
-                  >import React from 'react'<br />import renderer from
-                  'react-test-renderer'<br />import { Provider } from
-                  'react-redux'<br /><br />import store from 'src/store'<br />import
-                  { ${1:${TM_FILENAME_BASE}} } from
-                  '../${1:${TM_FILENAME_BASE}}'<br /><br />describe('&lt;${1:${TM_FILENAME_BASE}}
-                  /&gt;', () =&gt; {<br />
-                  const defaultProps = {}<br />
-                  const wrapper = renderer.create(<br />
-                  &lt;Provider store={store}&gt;<br />
-                  &lt;${1:${TM_FILENAME_BASE}} {...defaultProps} /&gt;<br />
-                  &lt;/Provider&gt;,<br />
-                  )<br /><br />
-                  test('render', () =&gt; {<br />
-                  expect(wrapper).toMatchSnapshot()<br />
-                  })<br />})<br /><br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>snrtest</td>
-              <td>setupReactNativeTestWithRedux</td>
-              <td></td>
-              <td>
-                <code
-                  >import 'react-native'<br />import React from 'react'<br />import
-                  renderer from 'react-test-renderer'<br />import { Provider }
-                  from 'react-redux'<br /><br />import store from 'src/store'<br />import
-                  ${1:${TM_FILENAME_BASE}} from '../${1:${TM_FILENAME_BASE}}'<br /><br />describe('&lt;${1:${TM_FILENAME_BASE}}
-                  /&gt;', () =&gt; {<br />
-                  const defaultProps = {}<br />
-                  const wrapper = renderer.create(<br />
-                  &lt;Provider store={store}&gt;<br />
-                  &lt;${1:${TM_FILENAME_BASE}} {...defaultProps} /&gt;<br />
-                  &lt;/Provider&gt;,<br />
-                  )<br /><br />
-                  test('render', () =&gt; {<br />
-                  expect(wrapper).toMatchSnapshot()<br />
-                  })<br />})<br /><br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>graphql</td>
-              <td>graphQLForComponent</td>
-              <td></td>
-              <td>
-                <code
-                  >import { compose, graphql } from 'react-apollo'<br /><br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>expgql</td>
-              <td>exportGraphQL</td>
-              <td></td>
-              <td>
-                <code
-                  >export default compose(<br />
-                  graphql(${1:queryOrMutation}, { name: ${2:name} }),<br />)(${1:${TM_FILENAME_BASE}})<br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>hocredux</td>
-              <td>hocComponentWithRedux</td>
-              <td></td>
-              <td>
-                <code
-                  >import React from 'react'<br />import PropTypes from
-                  'prop-types'<br />import { connect } from 'react-redux'<br /><br />export
-                  const mapStateToProps = state =&gt; ({<br /><br />})<br /><br />export
-                  const mapDispatchToProps = {<br />
-                  <br />}<br /><br />export const ${1:hocComponentName} =
-                  (WrappedComponent) =&gt; {<br />
-                  const hocComponent = ({ ...props }) =&gt; &lt;WrappedComponent
-                  {...props} /&gt;<br /><br />
-                  hocComponent.propTypes = {<br />
-                  }<br /><br />
-                  return hocComponent<br />}<br /><br />export default
-                  WrapperComponent =&gt; connect(mapStateToProps,
-                  mapDispatchToProps)(${1:hocComponentName}(WrapperComponent))<br /><br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>hoc</td>
-              <td>hocComponent</td>
-              <td></td>
-              <td>
-                <code
-                  >import React from 'react'<br />import PropTypes from
-                  'prop-types'<br /><br />export default (WrappedComponent)
-                  =&gt; {<br />
-                  const hocComponent = ({ ...props }) =&gt; &lt;WrappedComponent
-                  {...props} /&gt;<br /><br />
-                  hocComponent.propTypes = {<br />
-                  }<br /><br />
-                  return hocComponent<br />}<br /><br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>useState</td>
-              <td>useState</td>
-              <td></td>
-              <td>
-                <code
-                  >const [${1:state}, set${1/(.*)/${1:/capitalize}/}] =
-                  useState(${2:initialState})<br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>useEffect</td>
-              <td>useEffect</td>
-              <td></td>
-              <td>
-                <code
-                  >useEffect(() =&gt; {<br />
-                  ${1:effect}<br />
-                  return () =&gt; {<br />
-                  ${2:cleanup}<br />
-                  }<br />}, [${3:input}])<br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>useContext</td>
-              <td>useContext</td>
-              <td></td>
-              <td>
-                <code
-                  >const ${1:context} = useContext(${2:contextValue})<br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>useReducer</td>
-              <td>useReducer</td>
-              <td></td>
-              <td>
-                <code
-                  >const [state, dispatch] = useReducer(${1:reducer},
-                  ${2:initialState}, ${3:init})<br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>useCallback</td>
-              <td>useCallback</td>
-              <td></td>
-              <td>
-                <code
-                  >useCallback(<br />
-                  () =&gt; {<br />
-                  ${1:callback}<br />
-                  },<br />
-                  [${2:input}],<br />)<br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>useMemo</td>
-              <td>useMemo</td>
-              <td></td>
-              <td>
-                <code>useMemo(() =&gt; ${1:function}, ${2:input})<br /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>useRef</td>
-              <td>useRef</td>
-              <td></td>
-              <td>
-                <code>const ${1:ref} = useRef(${2:initialValue})<br /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>useImperativeHandle</td>
-              <td>useImperativeHandle</td>
-              <td></td>
-              <td>
-                <code
-                  >useImperativeHandle(<br />
-                  ${1:ref},<br />
-                  () =&gt; {<br />
-                  ${2:handler}<br />
-                  },<br />
-                  [${3:input}],<br />)<br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>useDebugValue</td>
-              <td>useDebugValue</td>
-              <td></td>
-              <td>
-                <code>useDebugValue(${1:value})<br /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>useLayoutEffect</td>
-              <td>useLayoutEffect</td>
-              <td></td>
-              <td>
-                <code
-                  >useLayoutEffect(() =&gt; {<br />
-                  ${1:effect}<br />
-                  return () =&gt; {<br />
-                  ${2:cleanup}<br />
-                  };<br />}, [${3:input}])<br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>useSelector</td>
-              <td>useSelector</td>
-              <td></td>
-              <td>
-                <code
-                  >const ${1:state} = useSelector(state =&gt;
-                  state.${1:state})<br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>useDispatch</td>
-              <td>useDispatch</td>
-              <td></td>
-              <td>
-                <code>const dispatch = useDispatch(${1:function})<br /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>tpf</td>
-              <td>typeof</td>
-              <td></td>
-              <td>
-                <code>typeof ${0}<br /></code>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <div>
-        <h4>ts-snippets.json</h4>
-        Available in the following languages: typescript, typescriptreact.
-        <table>
-          <thead>
-            <tr>
-              <th>Prefix</th>
-              <th>Name</th>
-              <th>Description</th>
-              <th>Body</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>tsrcc</td>
-              <td>typeScriptReactClassComponent</td>
-              <td>
-                Creates a React component class with ES7 module system and
-                TypeScript interfaces
-              </td>
-              <td>
-                <code
-                  >import React, { Component } from 'react'<br /><br />interface
-                  Props {<br />
-                  <br />}<br />interface State {<br />
-                  <br />}<br /><br />export default class
-                  ${1:${TM_FILENAME_BASE}} extends Component&lt;Props, State&gt;
-                  {<br />
-                  state = {}<br /><br />
-                  render() {<br />
-                  return (<br />
-                  &lt;div&gt;<br />
-                  $0<br />
-                  &lt;/div&gt;<br />
-                  )<br />
-                  }<br />}<br /><br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>tsrce</td>
-              <td>typeScriptReactClassExportComponent</td>
-              <td>
-                Creates a React component class with ES7 module system and
-                TypeScript interfaces
-              </td>
-              <td>
-                <code
-                  >import React, { Component } from 'react'<br /><br />interface
-                  Props {<br />
-                  <br />}<br />interface State {<br />
-                  <br />}<br /><br />class ${1:${TM_FILENAME_BASE}} extends
-                  Component&lt;Props, State&gt; {<br />
-                  state = {}<br /><br />
-                  render() {<br />
-                  return (<br />
-                  &lt;div&gt;<br />
-                  $0<br />
-                  &lt;/div&gt;<br />
-                  )<br />
-                  }<br />}<br /><br />export default ${1:${TM_FILENAME_BASE}}<br /><br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>tsrfce</td>
-              <td>typeScriptReactFunctionalExportComponent</td>
-              <td>
-                Creates a React Functional Component with ES7 module system and
-                TypeScript interface
-              </td>
-              <td>
-                <code
-                  >import React, { ReactElement } from 'react'<br /><br />interface
-                  Props {<br />
-                  <br />}<br /><br />function ${1:${TM_FILENAME_BASE}}({}:
-                  Props): ReactElement {<br />
-                  return (<br />
-                  &lt;div&gt;<br />
-                  $0<br />
-                  &lt;/div&gt;<br />
-                  )<br />}<br /><br />export default ${1:${TM_FILENAME_BASE}}<br /><br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>tsrfc</td>
-              <td>typeScriptReactFunctionalComponent</td>
-              <td>
-                Creates a React Functional Component with ES7 module system and
-                TypeScript interface
-              </td>
-              <td>
-                <code
-                  >import React, { ReactElement } from 'react'<br /><br />interface
-                  Props {<br />
-                  <br />}<br /><br />export default function
-                  ${1:${TM_FILENAME_BASE}}({}: Props): ReactElement {<br />
-                  return (<br />
-                  &lt;div&gt;<br />
-                  $0<br />
-                  &lt;/div&gt;<br />
-                  )<br />}<br /><br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>tsrafce</td>
-              <td>typeScriptReactArrowFunctionExportComponent</td>
-              <td>
-                Creates a React Arrow Function Component with ES7 module system
-                and TypeScript interface
-              </td>
-              <td>
-                <code
-                  >import React from 'react'<br /><br />interface Props {<br />
-                  <br />}<br /><br />const ${1:${TM_FILENAME_BASE}} = (props:
-                  Props) =&gt; {<br />
-                  return (<br />
-                  &lt;div&gt;<br />
-                  $0<br />
-                  &lt;/div&gt;<br />
-                  )<br />}<br /><br />export default ${1:${TM_FILENAME_BASE}}<br /><br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>tsrafc</td>
-              <td>typeScriptReactArrowFunctionComponent</td>
-              <td>
-                Creates a React Arrow Function Component with ES7 module system
-                and TypeScript interface
-              </td>
-              <td>
-                <code
-                  >import React from 'react'<br /><br />interface Props {<br />
-                  <br />}<br /><br />export const ${1:${TM_FILENAME_BASE}} =
-                  (props: Props) =&gt; {<br />
-                  return (<br />
-                  &lt;div&gt;<br />
-                  $0<br />
-                  &lt;/div&gt;<br />
-                  )<br />}<br /><br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>tsrpc</td>
-              <td>typeScriptReactClassPureComponent</td>
-              <td>
-                Creates a React pure component class with ES7 module system and
-                TypeScript interface
-              </td>
-              <td>
-                <code
-                  >import React, { PureComponent } from 'react'<br /><br />interface
-                  Props {<br />
-                  <br />}<br /><br />export default class
-                  ${1:${TM_FILENAME_BASE}} extends PureComponent&lt;Props&gt;
-                  {<br />
-                  render() {<br />
-                  return (<br />
-                  &lt;div&gt;<br />
-                  $0<br />
-                  &lt;/div&gt;<br />
-                  )<br />
-                  }<br />}<br /><br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>tsrpce</td>
-              <td>typeScriptReactClassExportPureComponent</td>
-              <td>
-                Creates a React pure component class with ES7 module system and
-                TypeScript interface
-              </td>
-              <td>
-                <code
-                  >import React, { PureComponent } from 'react'<br /><br />interface
-                  Props {<br />
-                  <br />}<br /><br />class ${1:${TM_FILENAME_BASE}} extends
-                  PureComponent&lt;Props&gt; {<br />
-                  render() {<br />
-                  return (<br />
-                  &lt;div&gt;<br />
-                  $0<br />
-                  &lt;/div&gt;<br />
-                  )<br />
-                  }<br />}<br /><br />export default ${1:${TM_FILENAME_BASE}}<br /><br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>tsrmc</td>
-              <td>typeScriptReactFunctionMemoComponent</td>
-              <td>
-                Creates a React Memo Function Component with ES7 module system
-                and TypeScript interface
-              </td>
-              <td>
-                <code
-                  >import React, { memo } from 'react'<br /><br />interface
-                  Props {<br />
-                  <br />}<br /><br />export default memo(function
-                  ${1:${TM_FILENAME_BASE}}({}: Props) {<br />
-                  return (<br />
-                  &lt;div&gt;<br />
-                  $0<br />
-                  &lt;/div&gt;<br />
-                  )<br />})<br /><br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>tsrcredux</td>
-              <td>typeScriptReactClassCompomentRedux</td>
-              <td>
-                Creates a React component class with PropTypes with connected
-                redux and ES7 module system and TypeScript interfaces
-              </td>
-              <td>
-                <code
-                  >import React, { Component } from 'react'<br />import {
-                  connect } from 'react-redux'<br /><br />interface Props {<br />
-                  <br />}<br />interface State {<br />
-                  <br />}<br /><br />export class ${1:${TM_FILENAME_BASE}}
-                  extends Component&lt;Props, State&gt; {<br />
-                  state = {}<br /><br />
-                  render() {<br />
-                  return (<br />
-                  &lt;div&gt;<br />
-                  $0<br />
-                  &lt;/div&gt;<br />
-                  )<br />
-                  }<br />}<br /><br />const mapStateToProps = (state) =&gt;
-                  ({<br />
-                  <br />})<br /><br />const mapDispatchToProps = {<br />
-                  <br />}<br /><br />export default connect(mapStateToProps,
-                  mapDispatchToProps)(${1:${TM_FILENAME_BASE}})<br /><br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>tsrnf</td>
-              <td>typescriptReactNativeArrowFunctionComponent</td>
-              <td>
-                Creates a React Native Arrow Function Component with ES7 module
-                system and TypeScript interface
-              </td>
-              <td>
-                <code
-                  >import React from 'react'<br />import { View, Text } from
-                  'react-native'<br /><br />interface Props {<br />
-                  <br />}<br /><br />const ${1:${TM_FILENAME_BASE}} = (props:
-                  Props) =&gt; {<br />
-                  return (<br />
-                  &lt;View&gt;<br />
-                  &lt;Text&gt;$0&lt;/Text&gt;<br />
-                  &lt;/View&gt;<br />
-                  )<br />}<br /><br />export default ${1:${TM_FILENAME_BASE}}<br /><br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>tsrnfi</td>
-              <td>typescriptReactNativeArrowFunctionComponentNamedProps</td>
-              <td>
-                Creates a React Native Arrow Function Component with ES7 module
-                system and named TypeScript interface
-              </td>
-              <td>
-                <code
-                  >import React from 'react'<br />import { View } from
-                  'react-native'<br /><br />interface
-                  ${1:${TM_FILENAME_BASE}}Props {<br />
-                  <br />}<br /><br />const ${1:${TM_FILENAME_BASE}}:
-                  React.FunctionComponent&lt;${1:${TM_FILENAME_BASE}}Props&gt; =
-                  (props) =&gt; {<br />
-                  return (<br />
-                  &lt;View&gt;<br />
-                  $0<br />
-                  &lt;/View&gt;<br />
-                  )<br />}<br /><br />export default ${1:${TM_FILENAME_BASE}}<br /><br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>tsrnfs</td>
-              <td>typescriptReactNativeArrowFunctionComponentWithStyles</td>
-              <td>
-                Creates a React Native Arrow Function Component with ES7 module
-                system, TypeScript interface and StyleSheet
-              </td>
-              <td>
-                <code
-                  >import React from 'react'<br />import { StyleSheet, Text,
-                  View } from 'react-native'<br /><br />interface Props {<br />
-                  <br />}<br /><br />const ${1:${TM_FILENAME_BASE}} = (props:
-                  Props) =&gt; {<br />
-                  return (<br />
-                  &lt;View&gt;<br />
-                  &lt;Text&gt;$0&lt;/Text&gt;<br />
-                  &lt;/View&gt;<br />
-                  )<br />}<br /><br />export default ${1:${TM_FILENAME_BASE}}<br /><br />const
-                  styles = StyleSheet.create({})<br /><br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>expint</td>
-              <td>Export interface</td>
-              <td></td>
-              <td>
-                <code
-                  >export interface ${1:${TM_FILENAME_BASE}} {$0}<br
-                /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>exptp</td>
-              <td>Export type</td>
-              <td></td>
-              <td>
-                <code>export type ${1:${TM_FILENAME_BASE}} = {$0}<br /></code>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
       <h3 id="robole.markdown-snippets">Markdown Snippets</h3>
       <div>
         <h4>snippets.code-snippets</h4>
-        Available in the following languages: markdown.
+        <p>Available in the following languages:</p>
+        <ul>
+          <li>markdown</li>
+        </ul>
+        <button
+          type="button"
+          onclick="openFile('c%3A%5CUsers%5Croboleary%5C.vscode%5Cextensions%5Crobole.markdown-snippets-0.6.0%5Csnippets%5Csnippets.code-snippets')"
+          )=""
+        >
+          View Source File
+        </button>
         <table>
           <thead>
             <tr>
@@ -3156,69 +728,55 @@
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>heading1</td>
-              <td>Insert heading level 1</td>
-              <td>Insert heading level 1</td>
-              <td>
-                <code># ${1:${TM_SELECTED_TEXT}}<br /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>heading2</td>
-              <td>Insert heading level 2</td>
-              <td>Insert heading level 2</td>
-              <td>
-                <code>## ${1:${TM_SELECTED_TEXT}}<br /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>heading3</td>
-              <td>Insert heading level 3</td>
-              <td>Insert heading level 3</td>
-              <td>
-                <code>### ${1:${TM_SELECTED_TEXT}}<br /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>heading4</td>
-              <td>Insert heading level 4</td>
-              <td>Insert heading level 4</td>
-              <td>
-                <code>#### ${1:${TM_SELECTED_TEXT}}<br /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>heading5</td>
-              <td>Insert heading level 5</td>
-              <td>Insert heading level 5</td>
-              <td>
-                <code>##### ${1:${TM_SELECTED_TEXT}}<br /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>heading6</td>
-              <td>Insert heading level 6</td>
-              <td>Insert heading level 6</td>
-              <td>
-                <code>###### ${1:${TM_SELECTED_TEXT}}<br /></code>
-              </td>
-            </tr>
-            <tr>
-              <td>strikethrough</td>
-              <td>Insert strikethrough</td>
-              <td>Insert strikethrough</td>
-              <td>
-                <code>~~${1:${TM_SELECTED_TEXT}}~~<br /></code>
-              </td>
-            </tr>
             <tr>
               <td>task</td>
               <td>Insert task list</td>
               <td>Insert task list</td>
               <td>
+                <code>- [${1| ,x|}] ${2:text}<br />${0}<br /></code>
+              </td>
+            </tr>
+            <tr>
+              <td>task2</td>
+              <td>Insert task list 2</td>
+              <td>Insert task list with 2 tasks</td>
+              <td>
                 <code
                   >- [${1| ,x|}] ${2:text}<br />- [${3| ,x|}] ${4:text}<br />${0}<br
+                /></code>
+              </td>
+            </tr>
+            <tr>
+              <td>task3</td>
+              <td>Insert task list 3</td>
+              <td>Insert task list with 3 tasks</td>
+              <td>
+                <code
+                  >- [${1| ,x|}] ${2:text}<br />- [${3| ,x|}] ${4:text}<br />-
+                  [${5| ,x|}] ${6:text}<br />${0}<br
+                /></code>
+              </td>
+            </tr>
+            <tr>
+              <td>task4</td>
+              <td>Insert task list 4</td>
+              <td>Insert task list with 4 tasks</td>
+              <td>
+                <code
+                  >- [${1| ,x|}] ${2:text}<br />- [${3| ,x|}] ${4:text}<br />-
+                  [${5| ,x|}] ${6:text}<br />- [${7| ,x|}] ${8:text}<br />${0}<br
+                /></code>
+              </td>
+            </tr>
+            <tr>
+              <td>task5</td>
+              <td>Insert task list 5</td>
+              <td>Insert task list with 5 tasks</td>
+              <td>
+                <code
+                  >- [${1| ,x|}] ${2:text}<br />- [${3| ,x|}] ${4:text}<br />-
+                  [${5| ,x|}] ${6:text}<br />- [${7| ,x|}] ${8:text}<br />-
+                  [${9| ,x|}] ${10:text}<br />${0}<br
                 /></code>
               </td>
             </tr>
@@ -3414,7 +972,17 @@
       <h3 id="sdras.vue-vscode-snippets">Vue VSCode Snippets</h3>
       <div>
         <h4>vue.json</h4>
-        Available in the following languages: vue.
+        <p>Available in the following languages:</p>
+        <ul>
+          <li>vue</li>
+        </ul>
+        <button
+          type="button"
+          onclick="openFile('c%3A%5CUsers%5Croboleary%5C.vscode%5Cextensions%5Csdras.vue-vscode-snippets-2.1.5%5Csnippets%5Cvue.json')"
+          )=""
+        >
+          View Source File
+        </button>
         <table>
           <thead>
             <tr>
@@ -3638,7 +1206,17 @@
       </div>
       <div>
         <h4>vue-pug.json</h4>
-        Available in the following languages: jade.
+        <p>Available in the following languages:</p>
+        <ul>
+          <li>jade</li>
+        </ul>
+        <button
+          type="button"
+          onclick="openFile('c%3A%5CUsers%5Croboleary%5C.vscode%5Cextensions%5Csdras.vue-vscode-snippets-2.1.5%5Csnippets%5Cvue-pug.json')"
+          )=""
+        >
+          View Source File
+        </button>
         <table>
           <thead>
             <tr>
@@ -3787,7 +1365,18 @@
       </div>
       <div>
         <h4>vue-template.json</h4>
-        Available in the following languages: html, vue-html.
+        <p>Available in the following languages:</p>
+        <ul>
+          <li>html</li>
+          <li>vue-html</li>
+        </ul>
+        <button
+          type="button"
+          onclick="openFile('c%3A%5CUsers%5Croboleary%5C.vscode%5Cextensions%5Csdras.vue-vscode-snippets-2.1.5%5Csnippets%5Cvue-template.json')"
+          )=""
+        >
+          View Source File
+        </button>
         <table>
           <thead>
             <tr>
@@ -4010,7 +1599,18 @@
       </div>
       <div>
         <h4>vue-script.json</h4>
-        Available in the following languages: javascript, typescript.
+        <p>Available in the following languages:</p>
+        <ul>
+          <li>javascript</li>
+          <li>typescript</li>
+        </ul>
+        <button
+          type="button"
+          onclick="openFile('c%3A%5CUsers%5Croboleary%5C.vscode%5Cextensions%5Csdras.vue-vscode-snippets-2.1.5%5Csnippets%5Cvue-script.json')"
+          )=""
+        >
+          View Source File
+        </button>
         <table>
           <thead>
             <tr>
@@ -4616,7 +2216,18 @@
       </div>
       <div>
         <h4>vue-script-vuex.json</h4>
-        Available in the following languages: javascript, typescript.
+        <p>Available in the following languages:</p>
+        <ul>
+          <li>javascript</li>
+          <li>typescript</li>
+        </ul>
+        <button
+          type="button"
+          onclick="openFile('c%3A%5CUsers%5Croboleary%5C.vscode%5Cextensions%5Csdras.vue-vscode-snippets-2.1.5%5Csnippets%5Cvue-script-vuex.json')"
+          )=""
+        >
+          View Source File
+        </button>
         <table>
           <thead>
             <tr>
@@ -4742,7 +2353,18 @@
       </div>
       <div>
         <h4>vue-script-router.json</h4>
-        Available in the following languages: javascript, typescript.
+        <p>Available in the following languages:</p>
+        <ul>
+          <li>javascript</li>
+          <li>typescript</li>
+        </ul>
+        <button
+          type="button"
+          onclick="openFile('c%3A%5CUsers%5Croboleary%5C.vscode%5Cextensions%5Csdras.vue-vscode-snippets-2.1.5%5Csnippets%5Cvue-script-router.json')"
+          )=""
+        >
+          View Source File
+        </button>
         <table>
           <thead>
             <tr>
@@ -4880,7 +2502,18 @@
       </div>
       <div>
         <h4>nuxt-config.json</h4>
-        Available in the following languages: javascript, typescript.
+        <p>Available in the following languages:</p>
+        <ul>
+          <li>javascript</li>
+          <li>typescript</li>
+        </ul>
+        <button
+          type="button"
+          onclick="openFile('c%3A%5CUsers%5Croboleary%5C.vscode%5Cextensions%5Csdras.vue-vscode-snippets-2.1.5%5Csnippets%5Cnuxt-config.json')"
+          )=""
+        >
+          View Source File
+        </button>
         <table>
           <thead>
             <tr>
@@ -4916,7 +2549,17 @@
       </div>
       <div>
         <h4>nuxt-script.json</h4>
-        Available in the following languages: javascript.
+        <p>Available in the following languages:</p>
+        <ul>
+          <li>javascript</li>
+        </ul>
+        <button
+          type="button"
+          onclick="openFile('c%3A%5CUsers%5Croboleary%5C.vscode%5Cextensions%5Csdras.vue-vscode-snippets-2.1.5%5Csnippets%5Cnuxt-script.json')"
+          )=""
+        >
+          View Source File
+        </button>
         <table>
           <thead>
             <tr>
@@ -4983,11 +2626,478 @@
           </tbody>
         </table>
       </div>
+      <h3 id="xabikos.JavaScriptSnippets">JavaScript (ES6) code snippets</h3>
+      <div>
+        <h4>snippets.json</h4>
+        <p>Available in the following languages:</p>
+        <ul>
+          <li>javascript</li>
+          <li>typescript</li>
+          <li>javascriptreact</li>
+          <li>typescriptreact</li>
+          <li>html</li>
+          <li>vue</li>
+        </ul>
+        <button
+          type="button"
+          onclick="openFile('c%3A%5CUsers%5Croboleary%5C.vscode%5Cextensions%5Cxabikos.javascriptsnippets-1.8.0%5Csnippets%5Csnippets.json')"
+          )=""
+        >
+          View Source File
+        </button>
+        <table>
+          <thead>
+            <tr>
+              <th>Prefix</th>
+              <th>Name</th>
+              <th>Description</th>
+              <th>Body</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>imp</td>
+              <td>import</td>
+              <td>Imports entire module statement in ES6 syntax</td>
+              <td>
+                <code>import ${2:moduleName} from '${1:module}';$0<br /></code>
+              </td>
+            </tr>
+            <tr>
+              <td>imn</td>
+              <td>importNoModuleName</td>
+              <td>Imports entire module in ES6 syntax without module name</td>
+              <td>
+                <code>import '${1:module}';$0<br /></code>
+              </td>
+            </tr>
+            <tr>
+              <td>imd</td>
+              <td>importDestructing</td>
+              <td>Imports only a portion of the module in ES6 syntax</td>
+              <td>
+                <code>import { $2 } from '${1:module}';$0<br /></code>
+              </td>
+            </tr>
+            <tr>
+              <td>ime</td>
+              <td>importEverything</td>
+              <td>Imports everything as alias from the module in ES6 syntax</td>
+              <td>
+                <code>import * as ${2:alias} from '${1:module}';$0<br /></code>
+              </td>
+            </tr>
+            <tr>
+              <td>ima</td>
+              <td>importAs</td>
+              <td>
+                Imports a specific portion of the module by assigning a local
+                alias in ES6 syntax
+              </td>
+              <td>
+                <code
+                  >import { ${2:originalName} as ${3:alias} } from
+                  '${1:module}';$0<br
+                /></code>
+              </td>
+            </tr>
+            <tr>
+              <td>rqr</td>
+              <td>require</td>
+              <td>Require a package</td>
+              <td>
+                <code>require('${1:package}');<br /></code>
+              </td>
+            </tr>
+            <tr>
+              <td>req</td>
+              <td>requireToConst</td>
+              <td>Require a package to const</td>
+              <td>
+                <code
+                  >const ${1:packageName} = require('${1:package}');$0<br
+                /></code>
+              </td>
+            </tr>
+            <tr>
+              <td>mde</td>
+              <td>moduleExports</td>
+              <td>Module exports from Common JS, node syntax at ES6</td>
+              <td>
+                <code>module.exports = { $0 }; <br /></code>
+              </td>
+            </tr>
+            <tr>
+              <td>env</td>
+              <td>exportNamedVariable</td>
+              <td>Export named variable in ES6 syntax</td>
+              <td>
+                <code
+                  >export const ${1:exportVariable} = ${2:localVariable}; <br
+                /></code>
+              </td>
+            </tr>
+            <tr>
+              <td>enf</td>
+              <td>exportNamedFunction</td>
+              <td>Export named function in ES6 syntax</td>
+              <td>
+                <code
+                  >export const ${1:functionName} = (${2:params}) =&gt; { $0 };
+                  <br
+                /></code>
+              </td>
+            </tr>
+            <tr>
+              <td>edf</td>
+              <td>exportDefaultFunction</td>
+              <td>Export default function in ES6 syntax</td>
+              <td>
+                <code
+                  >export default function ${1:${TM_FILENAME_BASE}}(${2:params})
+                  { $0 }; <br
+                /></code>
+              </td>
+            </tr>
+            <tr>
+              <td>ecl</td>
+              <td>exportClass</td>
+              <td>Export default class in ES6 syntax</td>
+              <td>
+                <code>export default class ${1:className} { $0 }; <br /></code>
+              </td>
+            </tr>
+            <tr>
+              <td>ece</td>
+              <td>exportClassExtends</td>
+              <td>
+                Export default class which extends a base one in ES6 syntax
+              </td>
+              <td>
+                <code
+                  >export default class ${1:className} extends
+                  ${2:baseclassName} { $0 }; <br
+                /></code>
+              </td>
+            </tr>
+            <tr>
+              <td>con</td>
+              <td>constructor</td>
+              <td>Add default constructor in a class in ES6 syntax</td>
+              <td>
+                <code>constructor(${1:params}) { ${0} }<br /></code>
+              </td>
+            </tr>
+            <tr>
+              <td>met</td>
+              <td>method</td>
+              <td>Creates a method inside a class in ES6 syntax</td>
+              <td>
+                <code>${1:methodName}(${2:params}) { ${0} }<br /></code>
+              </td>
+            </tr>
+            <tr>
+              <td>pge</td>
+              <td>propertyGet</td>
+              <td>Creates a getter property inside a class in ES6 syntax</td>
+              <td>
+                <code>get ${1:propertyName}() { return this.${0}; }<br /></code>
+              </td>
+            </tr>
+            <tr>
+              <td>pse</td>
+              <td>propertyset</td>
+              <td>Creates a setter property inside a class in ES6 syntax</td>
+              <td>
+                <code>set ${1:propertyName}(${2:value}) { ${0}; }<br /></code>
+              </td>
+            </tr>
+            <tr>
+              <td>fre</td>
+              <td>forEach</td>
+              <td>Creates a forEach statement in ES6 syntax</td>
+              <td>
+                <code
+                  >${1:array}.forEach(${2:currentItem} =&gt; { ${0} });<br
+                /></code>
+              </td>
+            </tr>
+            <tr>
+              <td>fof</td>
+              <td>forOf</td>
+              <td>Iterating over property names of iterable objects</td>
+              <td>
+                <code>for (const ${1:item} of ${2:object}) { ${0} }<br /></code>
+              </td>
+            </tr>
+            <tr>
+              <td>fin</td>
+              <td>forIn</td>
+              <td>Iterating over property values of iterable objects</td>
+              <td>
+                <code>for (const ${1:item} in ${2:object}) { ${0} }<br /></code>
+              </td>
+            </tr>
+            <tr>
+              <td>anfn</td>
+              <td>anonymousFunction</td>
+              <td>Creates an anonymous function in ES6 syntax</td>
+              <td>
+                <code>(${1:params}) =&gt; { ${2} }<br /></code>
+              </td>
+            </tr>
+            <tr>
+              <td>nfn</td>
+              <td>namedFunction</td>
+              <td>Creates a named function in ES6 syntax</td>
+              <td>
+                <code
+                  >const ${1:name} = (${2:params}) =&gt; { ${3} }<br
+                /></code>
+              </td>
+            </tr>
+            <tr>
+              <td>dob</td>
+              <td>destructingObject</td>
+              <td>
+                Creates and assigns a local variable using object destructing
+              </td>
+              <td>
+                <code
+                  >const {${2:propertyName}} = ${1:objectToDestruct};<br
+                /></code>
+              </td>
+            </tr>
+            <tr>
+              <td>dar</td>
+              <td>destructingArray</td>
+              <td>
+                Creates and assigns a local variable using array destructing
+              </td>
+              <td>
+                <code
+                  >const [${2:propertyName}] = ${1:arrayToDestruct};<br
+                /></code>
+              </td>
+            </tr>
+            <tr>
+              <td>sti</td>
+              <td>setInterval</td>
+              <td>
+                Executes the given function at specified intervals in ES6 syntax
+              </td>
+              <td>
+                <code
+                  >setInterval(() =&gt; { ${2} }, ${0:intervalInms});<br
+                /></code>
+              </td>
+            </tr>
+            <tr>
+              <td>sto</td>
+              <td>setTimeOut</td>
+              <td>
+                Executes the given function after the specified delay in ES6
+                syntax
+              </td>
+              <td>
+                <code
+                  >setTimeout(() =&gt; { ${2} }, ${1:delayInms});<br
+                /></code>
+              </td>
+            </tr>
+            <tr>
+              <td>prom</td>
+              <td>promise</td>
+              <td>
+                Creates and returns a new Promise in the standard ES6 syntax
+              </td>
+              <td>
+                <code
+                  >return new Promise((resolve, reject) =&gt; { ${1} });<br
+                /></code>
+              </td>
+            </tr>
+            <tr>
+              <td>thenc</td>
+              <td>thenCatch</td>
+              <td>Add the .then and .catch methods to handle promises</td>
+              <td>
+                <code
+                  >.then((${1:result}) =&gt; { ${2} }).catch((${3:err}) =&gt; {
+                  ${4} });<br
+                /></code>
+              </td>
+            </tr>
+            <tr>
+              <td>cas</td>
+              <td>consoleAssert</td>
+              <td>
+                If the specified expression is false, the message is written to
+                the console along with a stack trace
+              </td>
+              <td>
+                <code>console.assert(${1:expression}, ${2:object});<br /></code>
+              </td>
+            </tr>
+            <tr>
+              <td>ccl</td>
+              <td>consoleClear</td>
+              <td>Clears the console</td>
+              <td>
+                <code>console.clear();<br /></code>
+              </td>
+            </tr>
+            <tr>
+              <td>cco</td>
+              <td>consoleCount</td>
+              <td>
+                Writes the the number of times that count() has been invoked at
+                the same line and with the same label
+              </td>
+              <td>
+                <code>console.count(${1:label});<br /></code>
+              </td>
+            </tr>
+            <tr>
+              <td>cdb</td>
+              <td>consoleDebug</td>
+              <td>
+                Displays a message in the console. Also display a blue right
+                arrow icon along with the logged message in Safari
+              </td>
+              <td>
+                <code>console.debug(${1:object});<br /></code>
+              </td>
+            </tr>
+            <tr>
+              <td>cdi</td>
+              <td>consoleDir</td>
+              <td>
+                Prints a JavaScript representation of the specified object
+              </td>
+              <td>
+                <code>console.dir(${1:object});<br /></code>
+              </td>
+            </tr>
+            <tr>
+              <td>cer</td>
+              <td>consoleError</td>
+              <td>
+                Displays a message in the console and also includes a stack
+                trace from where the method was called
+              </td>
+              <td>
+                <code>console.error(${1:object});<br /></code>
+              </td>
+            </tr>
+            <tr>
+              <td>cgr</td>
+              <td>consoleGroup</td>
+              <td>
+                Groups and indents all following output by an additional level,
+                until console.groupEnd() is called.
+              </td>
+              <td>
+                <code>console.group('${1:label}');<br /></code>
+              </td>
+            </tr>
+            <tr>
+              <td>cge</td>
+              <td>consoleGroupEnd</td>
+              <td>Closes out the corresponding console.group().</td>
+              <td>
+                <code>console.groupEnd();<br /></code>
+              </td>
+            </tr>
+            <tr>
+              <td>clg</td>
+              <td>consoleLog</td>
+              <td>Displays a message in the console</td>
+              <td>
+                <code>console.log(${1:object});<br /></code>
+              </td>
+            </tr>
+            <tr>
+              <td>clo</td>
+              <td>consoleLogObject</td>
+              <td>Displays an object in the console with its name</td>
+              <td>
+                <code
+                  >console.log('${1:object} :&gt;&gt; ', ${1:object});<br
+                /></code>
+              </td>
+            </tr>
+            <tr>
+              <td>ctr</td>
+              <td>consoleTrace</td>
+              <td>
+                Prints a stack trace from the point where the method was called
+              </td>
+              <td>
+                <code>console.trace(${1:object});<br /></code>
+              </td>
+            </tr>
+            <tr>
+              <td>cwa</td>
+              <td>consoleWarn</td>
+              <td>
+                Displays a message in the console but also displays a yellow
+                warning icon along with the logged message
+              </td>
+              <td>
+                <code>console.warn(${1:object});<br /></code>
+              </td>
+            </tr>
+            <tr>
+              <td>cin</td>
+              <td>consoleInfo</td>
+              <td>
+                Displays a message in the console but also displays a blue
+                information icon along with the logged message
+              </td>
+              <td>
+                <code>console.info(${1:object});<br /></code>
+              </td>
+            </tr>
+            <tr>
+              <td>clt</td>
+              <td>consoleTable</td>
+              <td>Displays tabular data as a table.</td>
+              <td>
+                <code>console.table(${1:object});<br /></code>
+              </td>
+            </tr>
+            <tr>
+              <td>cti</td>
+              <td>consoleTime</td>
+              <td>Sets starting point for execution time measurement</td>
+              <td>
+                <code>console.time(${1:object});<br /></code>
+              </td>
+            </tr>
+            <tr>
+              <td>cte</td>
+              <td>consoleTimeEnd</td>
+              <td>Sets end point for execution time measurement</td>
+              <td>
+                <code>console.timeEnd(${1:object});<br /></code>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </section>
     <section id="app">
       <h2>VS Code Snippets</h2>
       <div>
         <h3 id="app-batchfile">Batchfile</h3>
+        <button
+          type="button"
+          onclick="openFile('c%3A%2FProgram%20Files%2FMicrosoft%20VS%20Code%2Fresources%2Fapp%2Fextensions%2Fbat%2Fsnippets%2Fbatchfile.code-snippets')"
+          )=""
+        >
+          View Source File
+        </button>
         <table>
           <thead>
             <tr>
@@ -5019,6 +3129,13 @@
       </div>
       <div>
         <h3 id="app-coffeescript">Coffeescript</h3>
+        <button
+          type="button"
+          onclick="openFile('c%3A%2FProgram%20Files%2FMicrosoft%20VS%20Code%2Fresources%2Fapp%2Fextensions%2Fcoffeescript%2Fsnippets%2Fcoffeescript.code-snippets')"
+          )=""
+        >
+          View Source File
+        </button>
         <table>
           <thead>
             <tr>
@@ -5050,6 +3167,13 @@
       </div>
       <div>
         <h3 id="app-c">C</h3>
+        <button
+          type="button"
+          onclick="openFile('c%3A%2FProgram%20Files%2FMicrosoft%20VS%20Code%2Fresources%2Fapp%2Fextensions%2Fcpp%2Fsnippets%2Fc.code-snippets')"
+          )=""
+        >
+          View Source File
+        </button>
         <table>
           <thead>
             <tr>
@@ -5081,6 +3205,13 @@
       </div>
       <div>
         <h3 id="app-cpp">CPP</h3>
+        <button
+          type="button"
+          onclick="openFile('c%3A%2FProgram%20Files%2FMicrosoft%20VS%20Code%2Fresources%2Fapp%2Fextensions%2Fcpp%2Fsnippets%2Fcpp.code-snippets')"
+          )=""
+        >
+          View Source File
+        </button>
         <table>
           <thead>
             <tr>
@@ -5112,6 +3243,13 @@
       </div>
       <div>
         <h3 id="app-csharp">Csharp</h3>
+        <button
+          type="button"
+          onclick="openFile('c%3A%2FProgram%20Files%2FMicrosoft%20VS%20Code%2Fresources%2Fapp%2Fextensions%2Fcsharp%2Fsnippets%2Fcsharp.code-snippets')"
+          )=""
+        >
+          View Source File
+        </button>
         <table>
           <thead>
             <tr>
@@ -5143,6 +3281,13 @@
       </div>
       <div>
         <h3 id="app-fsharp">Fsharp</h3>
+        <button
+          type="button"
+          onclick="openFile('c%3A%2FProgram%20Files%2FMicrosoft%20VS%20Code%2Fresources%2Fapp%2Fextensions%2Ffsharp%2Fsnippets%2Ffsharp.code-snippets')"
+          )=""
+        >
+          View Source File
+        </button>
         <table>
           <thead>
             <tr>
@@ -5174,6 +3319,13 @@
       </div>
       <div>
         <h3 id="app-groovy">Groovy</h3>
+        <button
+          type="button"
+          onclick="openFile('c%3A%2FProgram%20Files%2FMicrosoft%20VS%20Code%2Fresources%2Fapp%2Fextensions%2Fgroovy%2Fsnippets%2Fgroovy.code-snippets')"
+          )=""
+        >
+          View Source File
+        </button>
         <table>
           <thead>
             <tr>
@@ -5480,6 +3632,13 @@
       </div>
       <div>
         <h3 id="app-java">Java</h3>
+        <button
+          type="button"
+          onclick="openFile('c%3A%2FProgram%20Files%2FMicrosoft%20VS%20Code%2Fresources%2Fapp%2Fextensions%2Fjava%2Fsnippets%2Fjava.code-snippets')"
+          )=""
+        >
+          View Source File
+        </button>
         <table>
           <thead>
             <tr>
@@ -5511,6 +3670,13 @@
       </div>
       <div>
         <h3 id="app-javascript">Javascript</h3>
+        <button
+          type="button"
+          onclick="openFile('c%3A%2FProgram%20Files%2FMicrosoft%20VS%20Code%2Fresources%2Fapp%2Fextensions%2Fjavascript%2Fsnippets%2Fjavascript.code-snippets')"
+          )=""
+        >
+          View Source File
+        </button>
         <table>
           <thead>
             <tr>
@@ -5752,6 +3918,13 @@
       </div>
       <div>
         <h3 id="app-markdown">Markdown</h3>
+        <button
+          type="button"
+          onclick="openFile('c%3A%2FProgram%20Files%2FMicrosoft%20VS%20Code%2Fresources%2Fapp%2Fextensions%2Fmarkdown-basics%2Fsnippets%2Fmarkdown.code-snippets')"
+          )=""
+        >
+          View Source File
+        </button>
         <table>
           <thead>
             <tr>
@@ -5788,8 +3961,8 @@
             </tr>
             <tr>
               <td>code</td>
-              <td>Insert code</td>
-              <td>Insert code</td>
+              <td>Insert inline code</td>
+              <td>Insert inline code</td>
               <td>
                 <code>`${1:${TM_SELECTED_TEXT}}`$0<br /></code>
               </td>
@@ -5805,11 +3978,51 @@
               </td>
             </tr>
             <tr>
-              <td>heading</td>
-              <td>Insert heading</td>
-              <td>Insert heading</td>
+              <td>heading1</td>
+              <td>Insert heading level 1</td>
+              <td>Insert heading level 1</td>
               <td>
                 <code># ${1:${TM_SELECTED_TEXT}}<br /></code>
+              </td>
+            </tr>
+            <tr>
+              <td>heading2</td>
+              <td>Insert heading level 2</td>
+              <td>Insert heading level 2</td>
+              <td>
+                <code>## ${1:${TM_SELECTED_TEXT}}<br /></code>
+              </td>
+            </tr>
+            <tr>
+              <td>heading3</td>
+              <td>Insert heading level 3</td>
+              <td>Insert heading level 3</td>
+              <td>
+                <code>### ${1:${TM_SELECTED_TEXT}}<br /></code>
+              </td>
+            </tr>
+            <tr>
+              <td>heading4</td>
+              <td>Insert heading level 4</td>
+              <td>Insert heading level 4</td>
+              <td>
+                <code>#### ${1:${TM_SELECTED_TEXT}}<br /></code>
+              </td>
+            </tr>
+            <tr>
+              <td>heading5</td>
+              <td>Insert heading level 5</td>
+              <td>Insert heading level 5</td>
+              <td>
+                <code>##### ${1:${TM_SELECTED_TEXT}}<br /></code>
+              </td>
+            </tr>
+            <tr>
+              <td>heading6</td>
+              <td>Insert heading level 6</td>
+              <td>Insert heading level 6</td>
+              <td>
+                <code>###### ${1:${TM_SELECTED_TEXT}}<br /></code>
               </td>
             </tr>
             <tr>
@@ -5860,11 +4073,26 @@
                 /></code>
               </td>
             </tr>
+            <tr>
+              <td>strikethrough</td>
+              <td>Insert strikethrough</td>
+              <td>Insert strikethrough</td>
+              <td>
+                <code>~~${1:${TM_SELECTED_TEXT}}~~<br /></code>
+              </td>
+            </tr>
           </tbody>
         </table>
       </div>
       <div>
         <h3 id="app-php">PHP</h3>
+        <button
+          type="button"
+          onclick="openFile('c%3A%2FProgram%20Files%2FMicrosoft%20VS%20Code%2Fresources%2Fapp%2Fextensions%2Fphp%2Fsnippets%2Fphp.code-snippets')"
+          )=""
+        >
+          View Source File
+        </button>
         <table>
           <thead>
             <tr>
@@ -6201,6 +4429,13 @@
       </div>
       <div>
         <h3 id="app-powershell">Powershell</h3>
+        <button
+          type="button"
+          onclick="openFile('c%3A%2FProgram%20Files%2FMicrosoft%20VS%20Code%2Fresources%2Fapp%2Fextensions%2Fpowershell%2Fsnippets%2Fpowershell.code-snippets')"
+          )=""
+        >
+          View Source File
+        </button>
         <table>
           <thead>
             <tr>
@@ -6232,6 +4467,13 @@
       </div>
       <div>
         <h3 id="app-swift">Swift</h3>
+        <button
+          type="button"
+          onclick="openFile('c%3A%2FProgram%20Files%2FMicrosoft%20VS%20Code%2Fresources%2Fapp%2Fextensions%2Fswift%2Fsnippets%2Fswift.code-snippets')"
+          )=""
+        >
+          View Source File
+        </button>
         <table>
           <thead>
             <tr>
@@ -6452,6 +4694,13 @@
       </div>
       <div>
         <h3 id="app-typescript">Typescript</h3>
+        <button
+          type="button"
+          onclick="openFile('c%3A%2FProgram%20Files%2FMicrosoft%20VS%20Code%2Fresources%2Fapp%2Fextensions%2Ftypescript-basics%2Fsnippets%2Ftypescript.code-snippets')"
+          )=""
+        >
+          View Source File
+        </button>
         <table>
           <thead>
             <tr>
@@ -6778,11 +5027,51 @@
                 <code>//#endregion<br /></code>
               </td>
             </tr>
+            <tr>
+              <td>newpromise</td>
+              <td>new Promise</td>
+              <td>Create a new Promise</td>
+              <td>
+                <code
+                  >new Promise&lt;$1:type&gt;((resolve, reject) =&gt; {<br />
+                  $1<br />})<br
+                /></code>
+              </td>
+            </tr>
+            <tr>
+              <td>async function</td>
+              <td>Async Function Statement</td>
+              <td>Async Function Statement</td>
+              <td>
+                <code
+                  >async function ${1:name}(${2:params}:${3:type}) {<br />
+                  $0<br />}<br
+                /></code>
+              </td>
+            </tr>
+            <tr>
+              <td>async arrow function</td>
+              <td>Async Function Expression</td>
+              <td>Async Function Expression</td>
+              <td>
+                <code
+                  >async (${1:params}:${2:type}) =&gt; {<br />
+                  $0<br />}<br
+                /></code>
+              </td>
+            </tr>
           </tbody>
         </table>
       </div>
       <div>
         <h3 id="app-vb">VB</h3>
+        <button
+          type="button"
+          onclick="openFile('c%3A%2FProgram%20Files%2FMicrosoft%20VS%20Code%2Fresources%2Fapp%2Fextensions%2Fvb%2Fsnippets%2Fvb.code-snippets')"
+          )=""
+        >
+          View Source File
+        </button>
         <table>
           <thead>
             <tr>
@@ -6917,5 +5206,15 @@
           ></path>
         </g></svg
     ></a>
+    <script>
+      const vscode = acquireVsCodeApi();
+      function openFile(path) {
+        console.log("open");
+        vscode.postMessage({
+          command: "openSnippetFile",
+          path: path,
+        });
+      }
+    </script>
   </body>
 </html>
