@@ -1,0 +1,33 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "type": "npm",
+      "script": "build",
+      "group": "build",
+      "problemMatcher": [],
+      "label": "npm: build",
+      "detail": "vsce package ."
+    },
+    {
+      "type": "npm",
+      "script": "webpack",
+      "problemMatcher": [],
+      "label": "npm: webpack",
+      "detail": "webpack --mode development --watch"
+    },
+    {
+      "label": "Run npm webpack on startup",
+      "type": "shell",
+      "command": "npm run webpack",
+      "windows": {
+        "command": "npm run webpack"
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      },
+      "runOptions": { "runOn": "folderOpen" }
+    }
+  ]
+}
