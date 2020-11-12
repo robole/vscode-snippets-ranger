@@ -26,14 +26,14 @@ class Environment {
       dir = resolve(
         this.context.globalStoragePath,
         "../../..",
-        "user",
+        "User",
         "snippets"
       ).concat(normalize("/"));
     } else {
       dir = resolve(
         this.portableAppPath,
         "user-data",
-        "user",
+        "User",
         "snippets"
       ).concat(normalize("/"));
     }
@@ -67,7 +67,13 @@ class Environment {
   async getUserSnippetsPaths() {
     let list = [];
 
-    let filenames = await fs.promises.readdir(this.userSnippetsDir);
+    let filenames = await fs.promises
+      .readdir(this.userSnippetsDir)
+      .catch((error) => {
+        console.error("No user snippets. " + error);
+        return list;
+      });
+
     filenames.forEach((file) => {
       let path = resolve(this.userSnippetsDir, file);
       list.push(path);
@@ -83,9 +89,13 @@ class Environment {
   // eslint-disable-next-line class-methods-use-this
   async getAppSnippetsPaths() {
     let extensionRoot = resolve(vscode.env.appRoot, "extensions");
-    return new Promise((fufil) => {
+    return new Promise((fufil, reject) => {
       glob(`${extensionRoot}/**/snippets/*.code-snippets`, {}, (err, files) => {
-        fufil(files);
+        if (err) {
+          reject("could not find app snippets");
+        } else {
+          fufil(files);
+        }
       });
     });
   }

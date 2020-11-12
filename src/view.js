@@ -40,10 +40,36 @@ class View {
     this.extensionIDs = [];
     this.appIDs = [];
 
+    this.getLoadingWebviewContent().then((html) => {
+      this.panel.webview.html = html;
+    });
+
     this.snippetsFetcher = new SnippetsFetcher(context);
     this.getWebviewContent().then((html) => {
       this.panel.webview.html = html;
     });
+  }
+
+  /**
+   * Get the HTML for the loading page.
+   */
+  async getLoadingWebviewContent() {
+    const stylesSrc = this.getStylesheetWebviewUri();
+
+    let html = `<!DOCTYPE html><html lang="en">
+		<head>
+				<meta charset="UTF-8">
+				<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Snippet Ranger</title>
+				<link rel="stylesheet" href="${stylesSrc}"/>
+		</head>
+		<body>
+		<h1>Snippets Ranger</h2>
+		<img src=${this.getLoadingWebviewUri()} alt="loading image" class="loading"/>
+		<h2 style="text-align:center">Rounding them up!</h2>
+		</body></html>`;
+
+    return html;
   }
 
   /**
@@ -228,6 +254,17 @@ class View {
         section += `</section>`;
         return section;
       });
+  }
+
+  /**
+   * Get the webview-compliant URI for the loading image.
+   */
+  getLoadingWebviewUri() {
+    const onDiskPath = vscode.Uri.file(
+      path.join(this.context.extensionPath, "img", "logo.png")
+    );
+    const stylesSrc = this.panel.webview.asWebviewUri(onDiskPath);
+    return stylesSrc;
   }
 
   /**

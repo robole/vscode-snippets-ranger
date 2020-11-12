@@ -350,3 +350,8 @@ body.vscode-high-contrast button {
 button:focus {
   outline: 3px solid orange;
 }
+
+.loading {
+  display: block;
+  margin: 0 auto;
+}

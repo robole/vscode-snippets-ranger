@@ -89,7 +89,7 @@ class SnippetsFetcher {
    */
   async getUserSnippetsCollection() {
     let paths = await this.env.getUserSnippetsPaths();
-    return this.getSnippetsCollection(paths, "user");
+    return this.getSnippetsCollection(paths, "User");
   }
 
   /**

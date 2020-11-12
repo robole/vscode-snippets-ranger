@@ -1,12 +1,33 @@
-let assert = require("assert");
+/* eslint-disable no-undef */
+// @ts-nocheck
+const assert = require("assert");
 const vscode = require("vscode");
 
-describe("extension", function () {
-  describe("snippets-ranger.show", function () {
-    it("should create a webview", async () => {
-      await vscode.commands.executeCommand("snippets-ranger.show");
-      // how can i test webview?
-      // assert.equal(1, 1);
+suite("Extension", () => {
+  const extensionID = "robole.snippets-ranger";
+  const extensionShortName = "snippets-ranger";
+
+  let extension;
+
+  suiteSetup(() => {
+    extension = vscode.extensions.getExtension(extensionID);
+  });
+
+  test("All package.json commands should be registered in extension", (done) => {
+    const packageCommands = extension.packageJSON.contributes.commands.map(
+      (c) => c.command
+    );
+
+    // get all extension commands excluding internal commands.
+    vscode.commands.getCommands(true).then((allCommands) => {
+      const activeCommands = allCommands.filter((c) =>
+        c.startsWith(`${extensionShortName}.`)
+      );
+      activeCommands.forEach((command) => {
+        const result = packageCommands.some((c) => c === command);
+        assert.ok(result);
+      });
+      done();
     });
   });
 });
