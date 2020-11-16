@@ -26,6 +26,10 @@ The following commands can be run from the Command Palette (`Ctrl+Shift+P`):
 
 1. `Snippets Ranger: Show me that dur Range, Partner`.
 
+## Performance
+
+To gather and render approx 6000 snippets sourced from 18 different files, it takes 4.5 seconds on a modestly-specced 4-year old laptop running Ubuntu 18.
+
 ## Features Under Consideration
 
 1. Add "create new snippet" command which enables quickly adding a new snippet. It copies the selected text, opens the snippet file for that language, inserts a snippet using the text on the clipboard as the *body*, and allows editing of the other fields.
