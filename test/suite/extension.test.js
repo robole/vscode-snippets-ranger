@@ -23,10 +23,12 @@ suite("Extension", () => {
       const activeCommands = allCommands.filter((c) =>
         c.startsWith(`${extensionShortName}.`)
       );
+
       activeCommands.forEach((command) => {
         const result = packageCommands.some((c) => c === command);
         assert.ok(result);
       });
+
       done();
     });
   });

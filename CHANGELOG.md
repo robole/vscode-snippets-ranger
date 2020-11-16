@@ -5,6 +5,18 @@ All notable changes to this project are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.7.0] - 2020-11-12
+
+### Added
+
+- To retain the webview content when the panel is not in focus, added `retainContextWhenHidden: true`. This improves rendering time when switching between editor tabs, but requires more resources overall. A necessary tradeoff.
+- Added download and install badges to *readme.md*.
+- Added a loading screen to show after 3/4 of a second.
+
+### Changed
+
+- Tidied up code to remove remaining ES Lint errors.
+
 ## [0.6.0] - 2020-11-12
 
 ### Added

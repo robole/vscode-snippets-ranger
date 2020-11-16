@@ -352,6 +352,18 @@ button:focus {
 }
 
 .loading {
+  opacity: 0;
+  animation: showLoading 0.1s 1 forwards;
+  animation-delay: 0.75s;
+}
+
+@keyframes showLoading {
+  to {
+    opacity: 1;
+  }
+}
+
+.gif {
   display: block;
   margin: 0 auto;
 }

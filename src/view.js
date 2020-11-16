@@ -6,7 +6,7 @@ const SnippetsFetcher = require("./snippets-fetcher");
 const Formatter = require("./formatter");
 const path = require("path");
 const LanguageSnippets = require("./language-snippets");
-const NOT_FOUND_HTML = `<p class="empty">Oucho Gaucho! 🌵 Nothing to round up! 🤠</p>`;
+const notFoundHTML = `<p class="empty">Oucho Gaucho! 🌵 Nothing to round up! 🤠</p>`;
 
 /**
  * View for Snippet Ranger.
@@ -20,6 +20,7 @@ class View {
       vscode.ViewColumn.One,
       {
         enableScripts: true,
+        retainContextWhenHidden: true,
       }
     );
 
@@ -40,11 +41,18 @@ class View {
     this.extensionIDs = [];
     this.appIDs = [];
 
+    this.loadContent();
+  }
+
+  /**
+   * Show the web view.
+   */
+  async loadContent() {
     this.getLoadingWebviewContent().then((html) => {
       this.panel.webview.html = html;
     });
 
-    this.snippetsFetcher = new SnippetsFetcher(context);
+    this.snippetsFetcher = new SnippetsFetcher(this.context);
     this.getWebviewContent().then((html) => {
       this.panel.webview.html = html;
     });
@@ -64,9 +72,11 @@ class View {
 				<link rel="stylesheet" href="${stylesSrc}"/>
 		</head>
 		<body>
+		<main class="loading">
 		<h1>Snippets Ranger</h2>
-		<img src=${this.getLoadingWebviewUri()} alt="loading image" class="loading"/>
-		<h2 style="text-align:center">Rounding them up!</h2>
+			<img src=${this.getLoadingWebviewUri()} alt="loading image" class="gif"/>
+			<h2 style="text-align:center">Rounding them up!</h2>
+		</main>
 		</body></html>`;
 
     return html;
@@ -203,7 +213,7 @@ class View {
     });
 
     if (section === opening) {
-      section += NOT_FOUND_HTML;
+      section += notFoundHTML;
     }
 
     section += "</section>";
@@ -248,7 +258,7 @@ class View {
         });
 
         if (section === opening) {
-          section += NOT_FOUND_HTML;
+          section += notFoundHTML;
         }
 
         section += `</section>`;
@@ -261,7 +271,7 @@ class View {
    */
   getLoadingWebviewUri() {
     const onDiskPath = vscode.Uri.file(
-      path.join(this.context.extensionPath, "img", "logo.png")
+      path.join(this.context.extensionPath, "img", "loading.gif")
     );
     const stylesSrc = this.panel.webview.asWebviewUri(onDiskPath);
     return stylesSrc;

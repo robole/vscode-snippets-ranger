@@ -11,5 +11,6 @@ src
 webpack.config.js
 img/**
 !img/logo.png
+!img/loading.gif
 readme.md
 todo.md

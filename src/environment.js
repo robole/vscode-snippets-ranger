@@ -1,5 +1,6 @@
 const { basename, normalize, resolve } = require("path");
 const fs = require("fs");
+// eslint-disable-next-line import/no-unresolved
 const vscode = require("vscode");
 const glob = require("glob");
 const ExtensionSnippets = require("./extension-snippets");
@@ -70,7 +71,7 @@ class Environment {
     let filenames = await fs.promises
       .readdir(this.userSnippetsDir)
       .catch((error) => {
-        console.error("No user snippets. " + error);
+        console.error(`No user snippets. ${error}`);
         return list;
       });
 
@@ -92,7 +93,7 @@ class Environment {
     return new Promise((fufil, reject) => {
       glob(`${extensionRoot}/**/snippets/*.code-snippets`, {}, (err, files) => {
         if (err) {
-          reject("could not find app snippets");
+          reject(err);
         } else {
           fufil(files);
         }
