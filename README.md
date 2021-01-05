@@ -5,7 +5,7 @@
 ![Extension file size in bytes](https://img.shields.io/static/v1?logo=visual-studio-code&label=size&message=355KB&color=008000)
 ![Visual Studio Marketplace Rating](https://img.shields.io/visual-studio-marketplace/r/robole.snippets-ranger?logo=visual-studio-code&color=brightgreen)
 ![Visual Studio Marketplace Downloads](https://img.shields.io/visual-studio-marketplace/d/robole.snippets-ranger?logo=visual-studio-code&color=blue)
-![Visual Studio Marketplace Downloads](https://img.shields.io/visual-studio-marketplace/i/robole.snippets-ranger?logo=visual-studio-code&color=blue)
+![Visual Studio Marketplace Installs](https://img.shields.io/visual-studio-marketplace/i/robole.snippets-ranger?logo=visual-studio-code&color=blue)
 ![Built with](https://img.shields.io/static/v1?label=built%20with&message=sarsaparilla%20%26%20javascript&color=af0161)
 
 Did you know that Visual Studio Code has **built-in snippets** for JavaScript, Markdown, and other languages? They are not listed in the docs, so where in tarnations can you find out what they are?
