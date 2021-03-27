@@ -2,7 +2,7 @@
 
 ![Extension file size in bytes](https://img.shields.io/static/v1?logo=visual-studio-code&label=made%20for&message=VS%20Code&color=0000ff)
 ![Visual Studio Marketplace Version](https://img.shields.io/visual-studio-marketplace/v/robole.snippets-ranger?logo=visual-studio-code&color=ffa500)
-![Extension file size in bytes](https://img.shields.io/static/v1?logo=visual-studio-code&label=size&message=355KB&color=008000)
+![Extension file size in bytes](https://img.shields.io/static/v1?logo=visual-studio-code&label=size&message=62KB&color=008000)
 ![Visual Studio Marketplace Rating](https://img.shields.io/visual-studio-marketplace/r/robole.snippets-ranger?logo=visual-studio-code&color=brightgreen)
 ![Visual Studio Marketplace Downloads](https://img.shields.io/visual-studio-marketplace/d/robole.snippets-ranger?logo=visual-studio-code&color=blue)
 ![Visual Studio Marketplace Installs](https://img.shields.io/visual-studio-marketplace/i/robole.snippets-ranger?logo=visual-studio-code&color=blue)
