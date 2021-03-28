@@ -20,21 +20,20 @@ There are sticky headings to ensure you can browse through long snippet lists wi
 
 You can view the source snippet file. This makes it simple to edit your user snippets.
 
+![add new snippet demo](/img/screenshots/add-snippet.gif)
+
+You can add a new snippet to a user snippet file with a command.
+
 ## Commands
 
 The following commands can be run from the Command Palette (`Ctrl+Shift+P`):
 
-1. `Snippets Ranger: Show me that dur Range, Partner`.
+1. `Snippets Ranger: Show me that dur Range, Partner`: Opens the view that lists all snippets.
+1. `Snippets Ranger: Add new snippet`: Quickly add a new snippet to a user snippet file. It will copy selected text to the `body` property of the snippet. If there is no text selection, it will create an empty `body`.
 
 ## Performance
 
 To gather and render approx 6000 snippets sourced from 18 different files, it takes 4.5 seconds on a modestly-specced 4-year old laptop running Ubuntu 18.
-
-## Features Under Consideration
-
-1. Add "create new snippet" command which enables quickly adding a new snippet. It copies the selected text, opens the snippet file for that language, inserts a snippet using the text on the clipboard as the *body*, and allows editing of the other fields.
-1. Filter out languages that have only 'Region Start' and 'Region End' snippets.
-1. Show the shortcuts assigned to any snippets (via command 'insert snippet').
 
 ## Installation
 

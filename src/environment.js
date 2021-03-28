@@ -141,5 +141,12 @@ class Environment {
     let name = basename(path);
     return name.split(".")[0];
   }
+
+  /**
+   * Get the filepath for User Extensions Directory.
+   */
+  getUserSnippetsDirPath() {
+    return this.userSnippetsDir;
+  }
 }
 module.exports = Environment;

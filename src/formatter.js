@@ -90,6 +90,15 @@ class Formatter {
     });
     return str;
   }
+
+  static convertToArray(text, eolChar = "\n") {
+    let array = text.split(eolChar);
+    array.map((line) => {
+      // surround by double quotes and escape any double quotes within
+      return line.replace(/"/g, `\"`);
+    });
+    return array;
+  }
 }
 
 module.exports = Formatter;

@@ -7,7 +7,7 @@
   },
   "description": "View all your snippets in one purty place. Yee-haw!",
   "icon": "img/logo.png",
-  "version": "0.9.0",
+  "version": "0.10.0",
   "engines": {
     "vscode": "^1.4.0",
     "node": ">=12.0.0"
@@ -73,7 +73,8 @@
   },
   "license": "MIT",
   "activationEvents": [
-    "onCommand:snippets-ranger.show"
+    "onCommand:snippets-ranger.show",
+    "onCommand:snippets-ranger.add"
   ],
   "main": "./dist/extension.js",
   "contributes": {
@@ -81,6 +82,10 @@
       {
         "command": "snippets-ranger.show",
         "title": "Snippets Ranger: Show me that dur Range, Partner"
+      },
+      {
+        "command": "snippets-ranger.add",
+        "title": "Snippets Ranger: Add new snippet"
       }
     ]
   },
