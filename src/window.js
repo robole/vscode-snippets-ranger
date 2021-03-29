@@ -4,7 +4,7 @@ const Environment = require("./environment");
 const vscode = require("vscode");
 
 /**
- * Convenience class for the current window of the editor.
+ * Convenience class for the window of the editor.
  */
 class Window {
   constructor(context) {

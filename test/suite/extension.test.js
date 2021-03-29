@@ -3,17 +3,17 @@
 const assert = require("assert");
 const vscode = require("vscode");
 
-suite("Extension", () => {
+describe("Extension", () => {
   const extensionID = "robole.snippets-ranger";
   const extensionShortName = "snippets-ranger";
 
   let extension;
 
-  suiteSetup(() => {
+  before(() => {
     extension = vscode.extensions.getExtension(extensionID);
   });
 
-  test("All package.json commands should be registered in extension", (done) => {
+  it("All package.json commands should be registered in extension", (done) => {
     const packageCommands = extension.packageJSON.contributes.commands.map(
       (c) => c.command
     );

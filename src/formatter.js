@@ -28,55 +28,20 @@ class Formatter {
   }
 
   /**
-   * Escapes HTML content removing traces of offending characters that could be wrongfully interpreted as markup. This is based on https://github.com/component/escape-html
+   * Transforms HTML content that could be wrongfully interpreted as markup.
    * @param {String} text The text to format.
    */
   static escapeHtml(text) {
-    // eslint-disable-next-line prefer-template
-    let str = "" + text;
-    let matchHtmlRegExp = /["'&<>]/;
-    let match = matchHtmlRegExp.exec(str);
+    let str = text
+      .replace(/&/g, "&amp;")
+      .replace(/"/g, "&quot;")
+      .replace(/'/g, "&#39;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/\r?\n/g, "<br/>")
+      .replace(/\t/g, "&emsp;");
 
-    if (!match) {
-      return str;
-    }
-
-    let escape;
-    let html = "";
-    let lastIndex = 0;
-    let index;
-
-    for ({ index } = match; index < str.length; index++) {
-      switch (str.charCodeAt(index)) {
-        case 34: // "
-          escape = "&quot;";
-          break;
-        case 38: // &
-          escape = "&amp;";
-          break;
-        case 39: // '
-          escape = "&#39;";
-          break;
-        case 60: // <
-          escape = "&lt;";
-          break;
-        case 62: // >
-          escape = "&gt;";
-          break;
-        default:
-          // eslint-disable-next-line no-continue
-          continue;
-      }
-
-      if (lastIndex !== index) {
-        html += str.substring(lastIndex, index);
-      }
-
-      lastIndex = index + 1;
-      html += escape;
-    }
-
-    return lastIndex !== index ? html + str.substring(lastIndex, index) : html;
+    return str;
   }
 
   /**
@@ -92,11 +57,11 @@ class Formatter {
   }
 
   static convertToArray(text, eolChar = "\n") {
+    if (text.includes(eolChar) === false) {
+      return [text];
+    }
+
     let array = text.split(eolChar);
-    array.map((line) => {
-      // surround by double quotes and escape any double quotes within
-      return line.replace(/"/g, `\"`);
-    });
     return array;
   }
 }

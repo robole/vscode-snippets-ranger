@@ -48,7 +48,7 @@ class SnippetsFetcher {
     // eslint-disable-next-line no-restricted-syntax
     for (let [key, value] of Object.entries(snippets)) {
       let { prefix, body, description } = value;
-      let flatSnippet = new Snippet(key, prefix, description, body);
+      let flatSnippet = new Snippet(key, prefix, body, description);
       flatSnippets.push(flatSnippet);
     }
     return flatSnippets;

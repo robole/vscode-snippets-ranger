@@ -5,6 +5,17 @@ All notable changes to this project are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.11.0] - 2021-03-30
+
+### Changed
+
+- Improved formatting of `body` in View to show tabs and line breaks. Changed `Formatter.escapeHtml()`.
+- Refactored `Snippets` and `SnippetsEditor` to simplify code.
+
+### Added
+
+- Tests: formatter.test.js,  snippet.test.js.
+
 ## [0.10.0] - 2021-03-29
 
 ### Added

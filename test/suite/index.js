@@ -5,10 +5,11 @@ const glob = require("glob");
 function run() {
   // Create the mocha test
   const mocha = new Mocha({
-    ui: "tdd",
+    ui: "bdd",
     color: true,
     timeout: 2000,
   });
+  mocha.set;
 
   const testsRoot = path.resolve(__dirname, "..");
 
