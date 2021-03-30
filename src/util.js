@@ -26,4 +26,7 @@ async function askForLanguage() {
   return result;
 }
 
-module.exports = { createFileIfDoesNotExist, askForLanguage };
+module.exports = {
+  createFileIfDoesNotExist,
+  askForLanguage,
+};

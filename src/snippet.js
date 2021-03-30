@@ -57,7 +57,7 @@ class Snippet {
 
   toString() {
     // prettier-ignore
-    return `${JSON.stringify(this.name)} : {${this.eol}\t"prefix": ${JSON.stringify(this.prefix)},${this.eol}\t"body": ${JSON.stringify(this.body)},${this.eol}\t"description": ${JSON.stringify(this.description)}${this.eol}}`;
+    return `${this.eol}${JSON.stringify(this.name)} : {${this.eol}\t"prefix": ${JSON.stringify(this.prefix)},${this.eol}\t"body": ${JSON.stringify(this.body)},${this.eol}\t"description": ${JSON.stringify(this.description)}${this.eol}}`;
   }
 }
 

@@ -2,7 +2,7 @@
 
 ![Extension file size in bytes](https://img.shields.io/static/v1?logo=visual-studio-code&label=made%20for&message=VS%20Code&color=0000ff)
 ![Visual Studio Marketplace Version](https://img.shields.io/visual-studio-marketplace/v/robole.snippets-ranger?logo=visual-studio-code&color=ffa500)
-![Extension file size in bytes](https://img.shields.io/static/v1?logo=visual-studio-code&label=size&message=62KB&color=008000)
+![Extension file size in bytes](https://img.shields.io/static/v1?logo=visual-studio-code&label=size&message=63KB&color=008000)
 ![Visual Studio Marketplace Rating](https://img.shields.io/visual-studio-marketplace/r/robole.snippets-ranger?logo=visual-studio-code&color=brightgreen)
 ![Visual Studio Marketplace Downloads](https://img.shields.io/visual-studio-marketplace/d/robole.snippets-ranger?logo=visual-studio-code&color=blue)
 ![Visual Studio Marketplace Installs](https://img.shields.io/visual-studio-marketplace/i/robole.snippets-ranger?logo=visual-studio-code&color=blue)
@@ -12,24 +12,28 @@ Did you know that Visual Studio Code has **built-in snippets** for JavaScript, M
 
 Snippets Ranger to rescue! 🤠
 
+You can **open a view of all your snippets**.
+
 ![demo gif](/img/screenshots/demo1.gif)
 
 There are sticky headings to ensure you can browse through long snippet lists without losing context. 🦎🔝
 
 ![view source screenshot](/img/screenshots/view-source.png)
 
-You can view the source snippet file. This makes it simple to edit your user snippets.
+You can **view the source snippet file**. This makes it simple to edit your snippets.
 
-![add new snippet demo](/img/screenshots/add-snippet.gif)
+---
 
-You can add a new snippet to a user snippet file with a command.
+You can **quickly add a new snippet directly to any snippet file with a command** .
+
+![add new snippet](/img/screenshots/add-new.png)
 
 ## Commands
 
 The following commands can be run from the Command Palette (`Ctrl+Shift+P`):
 
 1. `Snippets Ranger: Show me that dur Range, Partner`: Opens the view that lists all snippets.
-1. `Snippets Ranger: Add new snippet`: Quickly add a new snippet to a user snippet file. It will copy selected text to the `body` property of the snippet. If there is no text selection, it will create an empty `body`.
+1. `Snippets Ranger: Add new snippet`: Quickly add a new snippet to a snippet file of your choosing. It will copy selected text to the `body` property of the snippet. If there is no text selection, it will create an empty `body`. You can tab through the properties and fill them out as a snippet (how meta!).
 
 ## Performance
 

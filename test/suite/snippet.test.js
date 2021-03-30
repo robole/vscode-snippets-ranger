@@ -37,7 +37,7 @@ describe("Snippet", function () {
       eol = "\r\n";
     }
 
-    let expectedResult = `"map js" : {${eol}\t"prefix": "map",${eol}\t"body": ["console.log(\\"err\\");","alert(\\"hello\\");"],${eol}\t"description": "blah"${eol}}`;
+    let expectedResult = `${eol}"map js" : {${eol}\t"prefix": "map",${eol}\t"body": ["console.log(\\"err\\");","alert(\\"hello\\");"],${eol}\t"description": "blah"${eol}}`;
 
     assert.strictEqual(mySnippet.toString(), expectedResult);
   });

@@ -5,6 +5,14 @@ All notable changes to this project are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.12.0] - 2021-03-31
+
+### Changed
+
+- Changed the "Add new snippet" command to open up the built-in  "open snippets" quickPick to make it possible to add a snippet to any type of snippet file.
+- Changed `toString()` in `snippets.js` to include a new line at the start of the string.
+- Edited the README for the "Add new snippet" command. Replaced the GIF with a photo showing the step-by-step actions of adding a new snippet.
+
 ## [0.11.0] - 2021-03-30
 
 ### Changed
