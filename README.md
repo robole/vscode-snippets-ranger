@@ -12,7 +12,7 @@ Did you know that Visual Studio Code has **built-in snippets** for JavaScript, M
 
 Snippets Ranger to rescue! 🤠
 
-You can **open a view of all your snippets**.
+You can **open a view of all your snippets**. 🎆
 
 ![demo gif](/img/screenshots/demo1.gif)
 
@@ -22,18 +22,14 @@ There are sticky headings to ensure you can browse through long snippet lists wi
 
 You can **view the source snippet file**. This makes it simple to edit your snippets.
 
----
-
-You can **quickly add a new snippet directly to any snippet file with a command** .
-
-![add new snippet](/img/screenshots/add-new.png)
-
 ## Commands
 
 The following commands can be run from the Command Palette (`Ctrl+Shift+P`):
 
-1. `Snippets Ranger: Show me that dur Range, Partner`: Opens the view that lists all snippets.
-1. `Snippets Ranger: Add new snippet`: Quickly add a new snippet to a snippet file of your choosing. It will copy selected text to the `body` property of the snippet. If there is no text selection, it will create an empty `body`. You can tab through the properties and fill them out as a snippet (how meta!).
+1. **`Snippets Ranger: Show me that dur Range, Partner`**: Opens the view that lists all snippets.
+1. **`Snippets Ranger: Add new snippet`**: Quickly add a new snippet to a snippet file of your choosing. It will copy selected code to the `body` property of the snippet. If there is no text selection, it will create an empty `body`. You can tab through the properties and fill them out as a snippet (how meta!).
+
+![add new snippet](/img/screenshots/add-new.png)
 
 ## Performance
 

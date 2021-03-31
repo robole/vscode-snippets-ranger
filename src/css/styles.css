@@ -13,8 +13,8 @@
   --table-head-color-dark-mode: #383a3b;
   --table-divider-color-light-mode: rgb(201, 198, 198);
   --table-divider-color-dark-mode: #a0a7aa;
-  --table-highlight-color-light-mode: #f0f71d70;
-  --table-highlight-color-dark-mode: #4e501ab0;
+  --table-highlight-color-light-mode: #f0f71d2f;
+  --table-highlight-color-dark-mode: #ffffff18;
   --code-color-light-mode: #7a5600;
   --code-color-dark-mode: #d7ba7d;
 }
