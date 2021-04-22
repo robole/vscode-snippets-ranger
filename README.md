@@ -48,9 +48,9 @@ To gather and render approx 6000 snippets sourced from 18 different files, it ta
 1. From the Command-line: Run the command `code --install-extension robole.snippets-ranger`.
 1. From the [VS Marketplace](https://marketplace.visualstudio.com/items?itemName=robole.snippets-ranger): Click the _Install_ button.
 
-## Learn more about Snippets
+## Learn more about snippets
 
-You can read my comprehensive guide on FreeCodeCamp: [Visual Studio Code Snippets – the Definitive VS Code Snippet Guide for Beginners](https://www.freecodecamp.org/news/definitive-guide-to-snippets-visual-studio-code/).
+You can read my comprehensive guide on Snippets on FreeCodeCamp: [Visual Studio Code Snippets – the Definitive VS Code Snippet Guide for Beginners](https://www.freecodecamp.org/news/definitive-guide-to-snippets-visual-studio-code/).
 
 ## Contribute
 

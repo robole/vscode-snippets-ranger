@@ -51,6 +51,7 @@ class Window {
     let position = textEditor.document.positionAt(index);
     let range = new vscode.Range(position, position);
     textEditor.revealRange(range, vscode.TextEditorRevealType.AtTop);
+    textEditor.selection = new vscode.Selection(position, position);
     return textEditor;
   }
 }
