@@ -1,20 +1,18 @@
-/* eslint-disable no-template-curly-in-string */
-/* eslint-disable import/no-unresolved */
-/* eslint-disable import/no-useless-path-segments */
+// @ts-nocheck
+/* eslint-disable import/no-unresolved, import/no-useless-path-segments, no-template-curly-in-string, no-unused-vars */
 const vscode = require("vscode");
 const View = require("./view");
 const Snippet = require("./snippet");
 const SnippetsEditor = require("./snippets-editor");
 
 // this is included for webpack, so that it picks up the CSS file
-// eslint-disable-next-line import/no-unresolved
-// @ts-ignore
 const styles = require("../src/css/styles.css");
 
 function activate(context) {
   context.subscriptions.push(
     vscode.commands.registerCommand("snippets-ranger.show", () => {
       let view = new View(context);
+      view.show();
     }),
     vscode.commands.registerCommand("snippets-ranger.add", () => {
       let snippetsEditor = new SnippetsEditor(context);

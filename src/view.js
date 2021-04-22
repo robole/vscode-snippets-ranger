@@ -1,11 +1,12 @@
 // @ts-nocheck
-/* eslint-disable  */
+// eslint-disable-next-line import/no-unresolved
 const vscode = require("vscode");
 const { basename } = require("path");
+const path = require("path");
 const SnippetsFetcher = require("./snippets-fetcher");
 const Formatter = require("./formatter");
-const path = require("path");
-const LanguageSnippets = require("./language-snippets");
+const Window = require("./window");
+
 const notFoundHTML = `<p class="empty">Oucho Gaucho! 🌵 Nothing to round up! 🤠</p>`;
 
 /**
@@ -24,13 +25,24 @@ class View {
       }
     );
 
+    this.snippetsFetcher = new SnippetsFetcher(this.context);
+
     this.panel.webview.onDidReceiveMessage(
       async (message) => {
+        // eslint-disable-next-line default-case
         switch (message.command) {
-          case "openSnippetFile":
+          case "openSnippetFile": {
             // path is encoded, so must decode first!
             let uri = vscode.Uri.file(decodeURIComponent(message.path));
             await vscode.window.showTextDocument(uri);
+            break;
+          }
+          case "editSnippet": {
+            // path is encoded, so must decode first!
+            let uri = vscode.Uri.file(decodeURIComponent(message.path));
+            await Window.goToSnippet(uri, message.snippetName);
+            break;
+          }
         }
       },
       {},
@@ -40,19 +52,16 @@ class View {
     this.userIDs = [];
     this.extensionIDs = [];
     this.appIDs = [];
-
-    this.loadContent();
   }
 
   /**
    * Show the web view.
    */
-  async loadContent() {
+  async show() {
     this.getLoadingWebviewContent().then((html) => {
       this.panel.webview.html = html;
     });
 
-    this.snippetsFetcher = new SnippetsFetcher(this.context);
     this.getWebviewContent().then((html) => {
       this.panel.webview.html = html;
     });
@@ -105,7 +114,7 @@ class View {
     let userSection = await this.getUserSnippetsSection();
     let appSection = await this.getAppSnippetsSection();
     let extensionSection = await this.getExtensionSnippetsSection();
-    let toc = this.getTableOfContents(); //relies on IDs being set by methods above
+    let toc = this.getTableOfContents(); // relies on IDs being set by methods above
 
     let scriptSrc = this.getScriptWebviewUri();
     let script = `<script src="${scriptSrc}"></script>`;
@@ -130,15 +139,15 @@ class View {
       let id = `${type}-${languageSnippets.language}`;
       section += `<h3 id="${id}"> ${title} </h3>`;
 
-      //encodeURIComponent prevents funny business with charcters especially with slashes
+      // encodeURIComponent prevents funny business with charcters especially with slashes
       let uri = encodeURIComponent(languageSnippets.path);
-      section += `<div class="source"><button type="button" onclick="script.openFile('${uri}')")>View Source File</button></div>`;
+      section += `<div class="source"><button type="button" class="sourceBtn" onclick="script.openFile('${uri}')")>View Source File</button></div>`;
 
-      section += this.getSnippetsTable(languageSnippets.snippets);
+      section += this.getSnippetsTable(languageSnippets);
       section += `</div>`;
 
       let idObj = {
-        id: id,
+        id,
         name: title,
       };
       if (type === "user") {
@@ -166,34 +175,42 @@ class View {
       let languages = this.toUnorderedList(Array.from(snippets.languages));
       section += `<p>Available in the following languages:</p> ${languages}`;
 
-      //encodeURIComponent prevents funny business with charcters especially with slashes
+      // encodeURIComponent prevents funny business with charcters especially with slashes
       let uri = encodeURIComponent(snippets.path);
-      section += `<div class="source"><button type="button" onclick="script.openFile('${uri}')")>View Source File</button></div>`;
+      section += `<div class="source"><button type="button" class="sourceBtn" onclick="script.openFile('${uri}')")>View Source File</button></div>`;
 
-      section += this.getSnippetsTable(snippets.data);
+      section += this.getSnippetsTable(snippets);
       section += `</div>`;
     }
     return section;
   }
 
   /** Create the HTML output for a collection of snippets.
-   * @param {Array} snippetsArray Array of snippet objects.
+   * @param {Array} snippetsCollection Array of snippet objects.
    */
-  getSnippetsTable(snippetsArray) {
+  getSnippetsTable(snippetsCollection) {
     const tableStart = `<table>
-		<thead><th>Prefix</th><th>Name</th><th>Description</th><th>Body</th></thead>
+		<thead><th>Prefix</th><th>Name</th><th>Description</th><th>Body</th><th>Action</th></thead>
 		<tbody>`;
     const tableEnd = `</tbody></table>`;
     let table = tableStart;
 
-    snippetsArray.forEach((snippet) => {
+    // encodeURIComponent prevents funny business with charcters especially with slashes
+    let uri = encodeURIComponent(snippetsCollection.path);
+
+    // if (snippetsCollection instanceof Type)
+
+    snippetsCollection.snippets.forEach((snippet) => {
+      let editIcon = `<svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="inherit"><path d="M13.23 1h-1.46L3.52 9.25l-.16.22L1 13.59 2.41 15l4.12-2.36.22-.16L15 4.23V2.77L13.23 1zM2.41 13.59l1.51-3 1.45 1.45-2.96 1.55zm3.83-2.06L4.47 9.76l8-8 1.77 1.77-8 8z"/></svg>`;
+      let editButton = `<button type="button" class="editBtn" title="Edit" onclick="script.editSnippet('${uri}', '${snippet.name}')")>${editIcon}</button>`;
+
       table += `<tr>
 			<td>${snippet.prefix}</td>
 			<td>${snippet.name}</td>
 			<td>${snippet.description}</td>`;
-      table += `<td><code>${Formatter.escapeBody(
-        snippet.body
-      )}</code></td></tr>`;
+      table += `<td><code>${Formatter.escapeBody(snippet.body)}</code></td>
+			<td>${editButton}</td>
+			</tr>`;
     });
 
     table += `${tableEnd}`;
@@ -334,7 +351,7 @@ class View {
   getUserTOCEntry() {
     let html = "<ul>";
     this.userIDs.forEach((obj) => {
-      let name = Formatter.formatTitle(obj.name); //remove prefix
+      let name = Formatter.formatTitle(obj.name); // remove prefix
       html += `<li><a href=#${obj.id}>${name}</a>`;
     });
     html += "</ul>";
@@ -347,7 +364,7 @@ class View {
   getAppTOCEntry() {
     let html = "<ul>";
     this.appIDs.forEach((obj) => {
-      let name = Formatter.formatTitle(obj.name); //remove prefix
+      let name = Formatter.formatTitle(obj.name); // remove prefix
       html += `<li><a href=#${obj.id}>${name}</a>`;
     });
     html += "</ul>";

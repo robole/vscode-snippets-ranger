@@ -28,7 +28,7 @@ class ExtensionSnippets {
     if (matched === false) {
       let languagesSet = new Set();
       languagesSet.add(language);
-      this.snippets.push({ languages: languagesSet, path, data: [] });
+      this.snippets.push({ languages: languagesSet, path, snippets: [] });
     }
   }
 }

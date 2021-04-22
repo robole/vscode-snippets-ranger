@@ -1,7 +1,6 @@
-/* eslint-disable no-undef */
-// @ts-nocheck
-const assert = require("assert");
+// eslint-disable-next-line import/no-unresolved, node/no-missing-require
 const vscode = require("vscode");
+const assert = require("assert");
 
 describe("Extension", () => {
   const extensionID = "robole.snippets-ranger";

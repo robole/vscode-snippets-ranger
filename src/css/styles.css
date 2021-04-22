@@ -8,15 +8,16 @@
   --toc-bg-light-mode: rgba(241, 241, 241, 0.15);
   --toc-bg-dark-mode: #1f2020;
   --toc-box-shadow-light-mode: -2px 2px 8px 1px rgba(214, 214, 214, 0.6);
-  --toc-box-shadow-dark-mode: -2px 2px 8px 1px #313131;
+  --toc-box-shadow-dark-mode: -2px 2px 8px 1px #18171782;
   --table-head-color-light-mode: rgb(246, 246, 246);
   --table-head-color-dark-mode: #383a3b;
   --table-divider-color-light-mode: rgb(201, 198, 198);
   --table-divider-color-dark-mode: #a0a7aa;
   --table-highlight-color-light-mode: #f0f71d2f;
-  --table-highlight-color-dark-mode: #ffffff18;
+  --table-highlight-color-dark-mode: #ffffff05;
   --code-color-light-mode: #7a5600;
   --code-color-dark-mode: #d7ba7d;
+  --table-action-column-width: 50px;
 }
 
 body,
@@ -156,11 +157,6 @@ section#extension div p {
   margin-top: 1.5rem;
 }
 
-section#user button,
-section#app button {
-  margin-top: 2.25em;
-}
-
 a {
   text-decoration: none;
 }
@@ -298,7 +294,12 @@ td:nth-child(3) {
 
 th:nth-child(4),
 td:nth-child(4) {
-  width: 35%;
+  width: calc(35% - var(--table-action-column-width));
+}
+
+th:nth-child(5),
+td:nth-child(5) {
+  width: var(--table-action-column-width);
 }
 
 th {
@@ -324,23 +325,37 @@ td {
 button {
   display: block;
   font-family: inherit;
-  padding: 0.75em;
   border-radius: 5px;
   border: none;
+}
+
+.sourceBtn {
   margin: 0 0.25em;
+  margin-top: 2.25em;
+  padding: 0.75em;
+}
+
+.editBtn {
+  padding: 0.5em;
+  margin: 0 0.5em;
+  margin-top: 0;
+}
+
+button.editBtn svg {
+  width: 100%;
 }
 
 body.vscode-light button {
   color: black;
   background-color: rgb(218, 218, 218);
-  box-shadow: 0 0 3px 1px rgb(0, 0, 0, 0.3);
+  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 35%);
 }
 
 body.vscode-dark button,
 body.vscode-high-contrast button {
   color: black;
   background-color: white;
-  box-shadow: 0 0 3px 1px grey;
+  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 20%);
 }
 
 body.vscode-high-contrast button {

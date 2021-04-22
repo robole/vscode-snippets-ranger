@@ -7,7 +7,7 @@
   },
   "description": "View all your snippets in one purty place. Yee-haw!",
   "icon": "img/logo.png",
-  "version": "0.13.0",
+  "version": "0.14.0",
   "engines": {
     "vscode": "^1.4.0",
     "node": ">=12.0.0"
@@ -20,20 +20,32 @@
     "theme": "light"
   },
   "keywords": [
+    "snippet",
     "snippets",
+    "snippets viewer",
+    "snippet viewer",
+    "snippets manager",
+    "snippet manager",
+    "viewer",
     "clojure",
     "markdown",
     "php",
     "swift",
     "markdown",
     "javascript",
+    "javascript snippets",
     "typescript",
+    "typescript snippets",
     "vb",
     "csharp",
     "java",
+    "java snippets",
     "python",
+    "python snippets",
     "vue",
+    "vue snippets",
     "react",
+    "react snippets",
     "rust",
     "c",
     "c++",
@@ -48,6 +60,7 @@
     "PowerShell",
     "Python",
     "SCSS",
+    "sass",
     "T-SQL",
     "ruby",
     "go",
@@ -62,7 +75,8 @@
     "lua",
     "r",
     "vb",
-    "objectivec"
+    "flutter",
+    "svelte"
   ],
   "bugs": {
     "url": "https://github.com/robole/vscode-snippets-ranger/issues"

@@ -75,7 +75,7 @@ class SnippetsFetcher {
       if (data !== undefined) {
         let flatSnippets = this.flattenSnippets(data);
         // eslint-disable-next-line no-param-reassign
-        snippet.data = flatSnippets;
+        snippet.snippets = flatSnippets;
       }
       return snippet;
     });

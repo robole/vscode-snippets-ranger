@@ -1,6 +1,7 @@
-/* eslint-disable no-useless-escape, prefer-destructuring, no-template-curly-in-string */
-const Window = require("./window");
+// @ts-nocheck
+/* eslint-disable import/no-unresolved, no-useless-escape, prefer-destructuring, no-template-curly-in-string */
 const vscode = require("vscode");
+const Window = require("./window");
 
 /**
  * Responsible for adding new snippets it to a user snippet file of the user's choosing.
