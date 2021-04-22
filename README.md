@@ -7,6 +7,7 @@
 ![Visual Studio Marketplace Downloads](https://img.shields.io/visual-studio-marketplace/d/robole.snippets-ranger?logo=visual-studio-code&color=blue)
 ![Visual Studio Marketplace Installs](https://img.shields.io/visual-studio-marketplace/i/robole.snippets-ranger?logo=visual-studio-code&color=blue)
 ![Built with](https://img.shields.io/static/v1?label=built%20with&message=sarsaparilla%20%26%20javascript&color=af0161)
+[![Coffee](https://img.shields.io/badge/Buy%20me%20a%20coffee-$4-orange?logo=buy-me-a-coffee)](https://www.buymeacoffee.com/robole)
 
 View *all* your snippets in one purty place. Yee-haw!! 🤠💕
 
@@ -24,7 +25,9 @@ The snippets body is **prettily formatted**. 🌻✨
 
 ![view source screenshot](/img/screenshots/edit.png)
 
-**You can go to a specific snippet** with the *Edit* action button. This makes editing a piece of cake.🍰
+**You can go to a specific snippet** with the *Edit* action button.
+
+This makes editing a piece of cake.🍰
 
 ## Commands
 
@@ -44,6 +47,18 @@ To gather and render approx 6000 snippets sourced from 18 different files, it ta
 1. Inside VS Code: Type `Ctrl+P`, write `ext install robole.snippets-ranger` in the text field, and hit `Enter`.
 1. From the Command-line: Run the command `code --install-extension robole.snippets-ranger`.
 1. From the [VS Marketplace](https://marketplace.visualstudio.com/items?itemName=robole.snippets-ranger): Click the _Install_ button.
+
+## Learn more about Snippets
+
+You can read my comprehensive guide on FreeCodeCamp: [Visual Studio Code Snippets – the Definitive VS Code Snippet Guide for Beginners](https://www.freecodecamp.org/news/definitive-guide-to-snippets-visual-studio-code/).
+
+## Contribute
+
+If you have a suggestion or find a bug, please file an issue.
+
+If you are happy with the extension, please star the repo, and leave a review to help others find it. 🌟
+
+You can [buy me a coffee](https://www.buymeacoffee.com/robole) if you would like to support me to make more great open-source software. ☕
 
 ## Icon Attribution
 
