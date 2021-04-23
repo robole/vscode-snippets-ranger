@@ -1,4 +1,5 @@
 {
   "markyMarkdown.tableOfContents.updateOnSave": true,
-  "markyMarkdown.tableOfContents.label": "**Table of Contents**"
+	"markyMarkdown.tableOfContents.label": "**Table of Contents**",
+	"svg.preview.background": "transparent"
 }

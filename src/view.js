@@ -6,6 +6,7 @@ const path = require("path");
 const SnippetsFetcher = require("./snippets-fetcher");
 const Formatter = require("./formatter");
 const Window = require("./window");
+const SnippetsEditor = require("./snippets-editor");
 
 const notFoundHTML = `<p class="empty">Oucho Gaucho! 🌵 Nothing to round up! 🤠</p>`;
 
@@ -40,7 +41,16 @@ class View {
           case "editSnippet": {
             // path is encoded, so must decode first!
             let uri = vscode.Uri.file(decodeURIComponent(message.path));
-            await Window.goToSnippet(uri, message.snippetName);
+            await Window.showSnippet(uri, message.snippetName);
+            break;
+          }
+          case "deleteSnippet": {
+            // path is encoded, so must decode first!
+            let uri = vscode.Uri.file(decodeURIComponent(message.path));
+
+            let snippetsEditor = new SnippetsEditor(context);
+
+            await snippetsEditor.deleteSnippet(uri, message.snippetName);
             break;
           }
         }
@@ -108,8 +118,7 @@ class View {
 		<h1>Snippets Ranger</h1>`;
     let htmlEnd = `</body></html>`;
 
-    let upIcon = `<a href="#toc"><svg class="upIcon" viewBox="0 0 32 32" aria-labelledby="upIconTitle" role="img"><title id="upIconTitle">Go to top</title><g><path d="m16 31a15 15 0 1 1 15-15 15 15 0 0 1-15 15zm0-28a13 13 0 1 0 13 13 13 13 0 0 0-13-13z"/><path d="m8.93 18.47 7.07-7.07 7.07 7.07a1 1 0 0 1 0 1.41 1 1 0 0 1-1.41 0l-5.66-5.65-5.66 5.66a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.42z"/></g>
-		</svg></a>`;
+    let upIcon = `<a id="toTopLink" href="#toc"><svg class="upIcon" viewBox="0 0 16 16" aria-labelledby="upIconTitle" role="img"><title id="upIconTitle">Go to top</title><path fill-rule="evenodd" clip-rule="evenodd" d="M8.024 5.928l-4.357 4.357-.62-.618L7.716 5h.618L13 9.667l-.619.618-4.357-4.357z"/></svg></a>`;
 
     let userSection = await this.getUserSnippetsSection();
     let appSection = await this.getAppSnippetsSection();
@@ -189,27 +198,30 @@ class View {
    * @param {Array} snippetsCollection Array of snippet objects.
    */
   getSnippetsTable(snippetsCollection) {
-    const tableStart = `<table>
+    const tableStart = `<table data-path="${snippetsCollection.path}">
 		<thead><th>Prefix</th><th>Name</th><th>Description</th><th>Body</th><th>Action</th></thead>
 		<tbody>`;
     const tableEnd = `</tbody></table>`;
     let table = tableStart;
 
-    // encodeURIComponent prevents funny business with charcters especially with slashes
+    // prevents funny business with charcters especially with slashes
     let uri = encodeURIComponent(snippetsCollection.path);
 
-    // if (snippetsCollection instanceof Type)
+    snippetsCollection.snippets.forEach((snippet, index) => {
+      let editIcon = `<svg viewBox="0 0 16 16" preserveAspectRatio="xMaxYMax meet" xmlns="http://www.w3.org/2000/svg" fill="inherit"><path d="M13.23 1h-1.46L3.52 9.25l-.16.22L1 13.59 2.41 15l4.12-2.36.22-.16L15 4.23V2.77L13.23 1zM2.41 13.59l1.51-3 1.45 1.45-2.96 1.55zm3.83-2.06L4.47 9.76l8-8 1.77 1.77-8 8z"/></svg>`;
+      let editButton = `<button type="button" class="editBtn actionBtn" title="Edit" onclick="script.editSnippet('${uri}', '${snippet.name}')")>${editIcon}</button>`;
 
-    snippetsCollection.snippets.forEach((snippet) => {
-      let editIcon = `<svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="inherit"><path d="M13.23 1h-1.46L3.52 9.25l-.16.22L1 13.59 2.41 15l4.12-2.36.22-.16L15 4.23V2.77L13.23 1zM2.41 13.59l1.51-3 1.45 1.45-2.96 1.55zm3.83-2.06L4.47 9.76l8-8 1.77 1.77-8 8z"/></svg>`;
-      let editButton = `<button type="button" class="editBtn" title="Edit" onclick="script.editSnippet('${uri}', '${snippet.name}')")>${editIcon}</button>`;
+      let rowIndex = index + 1;
+
+      let deleteIcon = `<svg viewBox="0 0 16 16" preserveAspectRatio="xMaxYMax meet" xmlns="http://www.w3.org/2000/svg" fill="inherit"><path fill-rule="evenodd" clip-rule="evenodd" d="M10 3h3v1h-1v9l-1 1H4l-1-1V4H2V3h3V2a1 1 0 0 1 1-1h3a1 1 0 0 1 1 1v1zM9 2H6v1h3V2zM4 13h7V4H4v9zm2-8H5v7h1V5zm1 0h1v7H7V5zm2 0h1v7H9V5z"/></svg>`;
+      let deleteButton = `<button type="button" class="deleteBtn actionBtn" title="Delete" onclick="script.deleteSnippet('${uri}', '${snippet.name}', '${rowIndex}')")>${deleteIcon}</button>`;
 
       table += `<tr>
 			<td>${snippet.prefix}</td>
 			<td>${snippet.name}</td>
 			<td>${snippet.description}</td>`;
       table += `<td><code>${Formatter.escapeBody(snippet.body)}</code></td>
-			<td>${editButton}</td>
+			<td>${editButton}${deleteButton}</td>
 			</tr>`;
     });
 

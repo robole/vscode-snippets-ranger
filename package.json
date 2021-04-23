@@ -5,9 +5,9 @@
   "author": {
     "name": "Rob O'Leary"
   },
-  "description": "View all your snippets in one purty place. Yee-haw!",
+  "description": "View and edit all your snippets in one purty place. Yee-haw!",
   "icon": "img/logo.png",
-  "version": "0.16.0",
+  "version": "0.17.0",
   "engines": {
     "vscode": "^1.4.0",
     "node": ">=12.0.0"
@@ -95,11 +95,13 @@
     "commands": [
       {
         "command": "snippets-ranger.show",
-        "title": "Snippets Ranger: Show me that dur Range, Partner"
+        "title": "Show me that dur Range, Partner",
+        "category": "Snippets Ranger"
       },
       {
         "command": "snippets-ranger.add",
-        "title": "Snippets Ranger: Add new snippet"
+        "title": "Add New Snippet",
+        "category": "Snippets Ranger"
       }
     ]
   },

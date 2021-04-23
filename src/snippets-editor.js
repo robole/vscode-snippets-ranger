@@ -1,7 +1,10 @@
 // @ts-nocheck
 /* eslint-disable import/no-unresolved, no-useless-escape, prefer-destructuring, no-template-curly-in-string */
 const vscode = require("vscode");
+const fs = require("fs");
 const Window = require("./window");
+const Util = require("./util");
+const SnippetsFetcher = require("./snippets-fetcher");
 
 /**
  * Responsible for adding new snippets it to a user snippet file of the user's choosing.
@@ -25,7 +28,7 @@ class SnippetsEditor {
 
     let editor = vscode.window.activeTextEditor;
 
-    // if user didnt selected an option, do nothing!
+    // if user didnt selected an option
     if (
       selected === undefined &&
       editor.document.fileName.endsWith(".code-snippets") === false
@@ -40,6 +43,25 @@ class SnippetsEditor {
     let snippetString = `${snippet.toString()},`;
 
     editor.insertSnippet(new vscode.SnippetString(snippetString), range);
+  }
+
+  /**
+   * @async
+   * Delete a snippet from a snippet file.
+   * @param {vscode.Uri} uri Uri of snippet file
+   * @param {String} snippetName The name of the snippet to delete
+   * @returns {Promise} The TextEditor that contains the user snippets document.
+   */
+  async deleteSnippet(uri, snippetName) {
+    let text = await SnippetsFetcher.getData(uri.fsPath);
+
+    let escapedSnippetName = Util.escapeStringRegexp(snippetName);
+    let regex = new RegExp(
+      `[\r\n]*?"${escapedSnippetName}".*?:.*?\\{.*?\\},{0,1}`,
+      "ms"
+    );
+    let newText = text.replace(regex, "");
+    await fs.promises.writeFile(uri.fsPath, newText);
   }
 }
 

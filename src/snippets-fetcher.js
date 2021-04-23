@@ -20,7 +20,7 @@ class SnippetsFetcher {
    * @returns {Promise} A Promise with an array of JSON objects.
    */
   async getSnippetsCollection(filepaths, type) {
-    let jsonObjects = await this.getObjectArray(filepaths);
+    let jsonObjects = await SnippetsFetcher.getObjectArray(filepaths);
     let array = [];
 
     jsonObjects.forEach((obj, index) => {
@@ -70,7 +70,7 @@ class SnippetsFetcher {
 
   async fetchExtensionSnippets(extensionSnippets) {
     let promises = extensionSnippets.snippets.map(async (snippet) => {
-      let data = await this.getObject(snippet.path);
+      let data = await SnippetsFetcher.getObject(snippet.path);
 
       if (data !== undefined) {
         let flatSnippets = this.flattenSnippets(data);
@@ -102,20 +102,24 @@ class SnippetsFetcher {
   }
 
   /**
+   * @static
+   * @async
    * Get the contents of the files.
    * @param {Array} filepaths
    * @returns {Promise} A Promise with an array of the file contents.
    */
-  async getDataArray(filepaths) {
+  static async getDataArray(filepaths) {
     return Promise.all(filepaths.map((f) => fs.promises.readFile(f, "utf-8")));
   }
 
   /**
-   * Get the contents of the files.
+   * @async
+   * @static
+   * Get the contents of the file.
    * @param {String} filepath
-   * @returns {Promise} A Promise with an array of the file contents.
+   * @returns {Promise} A Promise with the file contents.
    */
-  async getData(filepath) {
+  static async getData(filepath) {
     return fs.promises.readFile(filepath, { encoding: "utf-8" });
   }
 
@@ -124,19 +128,21 @@ class SnippetsFetcher {
    * @param {Array} filepaths
    * @returns {Promise} A Promise with an array of JSON objects.
    */
-  async getObjectArray(filepaths) {
-    let data = await this.getDataArray(filepaths);
+  static async getObjectArray(filepaths) {
+    let data = await SnippetsFetcher.getDataArray(filepaths);
     let json = data.map((d) => jsonc.parse(d));
     return Promise.all(json);
   }
 
   /**
+   * @async
+   * @static
    * Get the contents of the file as JSON objects. The files can be JSON or JSONC files (Microsoft JSON with comments standard).
    * @param {String} filepath
    * @returns {Promise} A Promise with an array of JSON objects.
    */
-  async getObject(filepath) {
-    let data = await this.getData(filepath);
+  static async getObject(filepath) {
+    let data = await SnippetsFetcher.getData(filepath);
     let json = await jsonc.parse(data);
     return json;
   }

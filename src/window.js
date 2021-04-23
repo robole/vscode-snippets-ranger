@@ -18,7 +18,7 @@ class Window {
    * Open a user snippet file. The user it prompted to pick a language.
    * @returns {Promise} The TextEditor that contains the user snippets document.
    */
-  async openUserSnippetFile(language) {
+  async showUserSnippets(language) {
     let dir = this.env.getUserSnippetsDirPath();
     let languageFile = `${language}.json`;
     let languageFilePath = path.join(dir, languageFile);
@@ -31,10 +31,10 @@ class Window {
 
   /**
    * @async
-   * Open a snippet file and jump to the snippet. If the snippet is not found, it will go to the first line.
+   * Open a snippet file and jump to the snippet. If the snippet is not found, it will open the snippet file with the cursor on the first line.
    * @returns {Promise} The TextEditor that contains the user snippets document.
    */
-  static async goToSnippet(uri, snippetName) {
+  static async showSnippet(uri, snippetName) {
     let textEditor = await vscode.window.showTextDocument(uri);
     let doc = textEditor.document;
     let text = doc.getText();
@@ -45,7 +45,7 @@ class Window {
     let index = 0;
 
     if (match !== null) {
-      index = match.index;
+      index = match.index + 1;
     }
 
     let position = textEditor.document.positionAt(index);
