@@ -46,7 +46,7 @@ body.vscode-high-contrast {
   flex-direction: column;
   width: 90%;
   max-width: 580px;
-  margin: 10px auto;
+  margin: 40px auto;
   border-radius: 10px;
 }
 
@@ -82,7 +82,7 @@ h3 {
   top: 1.5rem;
   z-index: 500;
   line-height: 150%;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   font-style: italic;
 }
 
@@ -107,13 +107,14 @@ button {
   font-family: inherit;
   border-radius: 5px;
   border: none;
+  cursor: pointer;
 }
 
 #toTopLink {
-  --size: 2.25rem;
+  --size: 2.5rem;
   position: fixed;
-  bottom: 5%;
-  right: 5px;
+  bottom: 20px;
+  left: 5px;
   z-index: 9999;
   width: var(--size);
   height: var(--size);
@@ -251,7 +252,7 @@ body.vscode-light code {
 }
 
 body.vscode-light .upIcon {
-  background-color: var(--body-color-dark-mode);
+  background-color: rgb(208 208 208);
   opacity: 1;
 }
 
@@ -377,7 +378,7 @@ body.vscode-high-contrast button {
   }
 
   #toTopLink {
-    right: 5%;
+    left: 5%;
   }
 
   th:nth-child(1),
@@ -398,5 +399,11 @@ body.vscode-high-contrast button {
   th:nth-child(4),
   td:nth-child(4) {
     width: calc(40% - var(--table-action-column-width));
+  }
+}
+
+@media (min-width: 1600px) {
+  #toTopLink {
+    left: calc((100vw - 1600px) / 2);
   }
 }

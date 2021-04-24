@@ -10,10 +10,10 @@
 [![Coffee](https://img.shields.io/badge/Buy%20me%20a%20coffee-$4-orange?logo=buy-me-a-coffee)](https://www.buymeacoffee.com/robole)
 
 <p align="center">
-<img src="img/screenshots/demo1.gif" alt="demo"/>
+<img src="img/screenshots/demo.gif" alt="demo"/>
 </p>
 
-**Snippets are grouped as: user, extension, and built-in snippets.** The table of contents facilitates quick navigation to a snippets set.
+**Snippets are grouped as: user, extension, and built-in snippets.** The table of contents facilitates quick navigation to a snippets set. Pressing the <kbd>Home</kbd> key will return you to the table of contents.
 
 There are sticky headings to ensure you can browse through long snippet lists without losing context. 🦎🔝
 
@@ -54,8 +54,8 @@ If you have a suggestion or find a bug, please file an issue.
 
 If you are happy with the extension, please star the repo, and leave a review to help others find it. 🌟
 
-You can [buy me a coffee](https://www.buymeacoffee.com/robole) if you would like to support me to make more great open-source software. ☕
+You can [buy me a coffee](https://www.buymeacoffee.com/robole) if you would like to support me to make more great open-source software. ☕🙏
 
 ## Learn more about snippets
 
-You can read my comprehensive guide on Snippets on FreeCodeCamp: [Visual Studio Code Snippets – the Definitive VS Code Snippet Guide for Beginners](https://www.freecodecamp.org/news/definitive-guide-to-snippets-visual-studio-code/).
+You can read my comprehensive guide on Snippets on FreeCodeCamp: [Visual Studio Code Snippets – the Definitive VS Code Snippet Guide for Beginners](https://www.freecodecamp.org/news/definitive-guide-to-snippets-visual-studio-code/). It's not just for beginners!

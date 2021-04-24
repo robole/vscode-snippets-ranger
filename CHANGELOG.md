@@ -5,6 +5,13 @@ All notable changes to this project are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.18.0] - 2021-04-24
+
+### Changed
+
+- Moved "Go to top" floating button to the left-hand side. On thr right-hand side, it floats above the action buttons, which could lead to a fat finger mistake.
+- Updated add-new.jpg to blend in better with surrounding text. Reduced font-size of text in the figure.
+
 ## [0.17.0] - 2021-04-23
 
 ### Added
