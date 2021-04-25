@@ -111,14 +111,15 @@ button {
 }
 
 #toTopLink {
-  --size: 2.5rem;
+  --size: 25px;
+  display: none;
   position: fixed;
-  bottom: 20px;
-  left: 5px;
+  top: 6px;
+  right: 10px;
   z-index: 9999;
   width: var(--size);
   height: var(--size);
-  border-radius: 50%;
+  border-radius: 15px;
   cursor: pointer;
   box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2),
     0px 6px 10px 0px rgba(0, 0, 0, 0.14), 0px 1px 18px 0px rgba(0, 0, 0, 0.12);
@@ -378,7 +379,8 @@ body.vscode-high-contrast button {
   }
 
   #toTopLink {
-    left: 5%;
+    --size: 30px;
+    right: 6%;
   }
 
   th:nth-child(1),
@@ -404,6 +406,6 @@ body.vscode-high-contrast button {
 
 @media (min-width: 1600px) {
   #toTopLink {
-    left: calc((100vw - 1600px) / 2);
+    right: calc((100vw - 1592px) / 2);
   }
 }

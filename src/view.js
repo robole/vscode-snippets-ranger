@@ -92,9 +92,9 @@ class View {
 		</head>
 		<body>
 		<main class="loading">
-		<h1>Snippets Ranger</h2>
+		<h1>Snippets Ranger</h1>
 			<img src=${this.getLoadingWebviewUri()} alt="loading image" class="gif"/>
-			<h2 style="text-align:center">Rounding them up!</h2>
+			<p style="text-align:center">Rounding them up!</p>
 		</main>
 		</body></html>`;
 
@@ -118,7 +118,7 @@ class View {
 		<h1>Snippets Ranger</h1>`;
     let htmlEnd = `</body></html>`;
 
-    let upIcon = `<a id="toTopLink" href="#toc"><svg class="upIcon" viewBox="0 0 16 16" aria-labelledby="upIconTitle" role="img"><title id="upIconTitle">Go to top</title><path fill-rule="evenodd" clip-rule="evenodd" d="M8.024 5.928l-4.357 4.357-.62-.618L7.716 5h.618L13 9.667l-.619.618-4.357-4.357z"/></svg></a>`;
+    let upIcon = `<a id="toTopLink" href="#toc"><svg class="upIcon" viewBox="0 0 16 16" aria-labelledby="upIconTitle" role="img"><title id="upIconTitle">Go to Table of Contents</title><path fill-rule="evenodd" clip-rule="evenodd" d="M8.024 5.928l-4.357 4.357-.62-.618L7.716 5h.618L13 9.667l-.619.618-4.357-4.357z"/></svg></a>`;
 
     let userSection = await this.getUserSnippetsSection();
     let appSection = await this.getAppSnippetsSection();

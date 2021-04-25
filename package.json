@@ -7,7 +7,7 @@
   },
   "description": "View and edit all your snippets in one purty place. Yee-haw!",
   "icon": "img/logo.png",
-  "version": "0.18.0",
+  "version": "0.19.0",
   "engines": {
     "vscode": "^1.4.0",
     "node": ">=12.0.0"
@@ -106,10 +106,11 @@
     ]
   },
   "scripts": {
-    "lint": "eslint src",
-    "lint:fix": "eslint --fix src",
-    "format": "npx prettier --write .",
-    "test": "node ./test/runTest.js",
+    "lint": "npx eslint src test",
+    "lint:fix": "npm run lint -- --fix",
+    "prettier": "npx prettier src test --check",
+    "prettier:fix": "npm run prettier -- --write",
+    "format": "npm run prettier:fix && npm run lint:fix",
     "webpack": "webpack --mode development --watch",
     "vscode:prepublish": "webpack --mode production",
     "build": "vsce package ."

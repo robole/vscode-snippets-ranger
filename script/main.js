@@ -3,6 +3,31 @@
 let script = (function () {
   const vscode = acquireVsCodeApi();
 
+  let toTopLink = document.getElementById("toTopLink");
+  let debounceTimer;
+
+  window.onscroll = function () {
+    if (debounceTimer) {
+      window.clearTimeout(debounceTimer);
+    }
+    debounceTimer = window.setTimeout(() => {
+      showToTopLink();
+    }, 100);
+  };
+
+  function showToTopLink() {
+    let gap = 750;
+
+    if (
+      document.body.scrollTop > gap ||
+      document.documentElement.scrollTop > gap
+    ) {
+      toTopLink.style.display = "block";
+    } else {
+      toTopLink.style.display = "none";
+    }
+  }
+
   let openFile = function (path) {
     vscode.postMessage({
       command: "openSnippetFile",
