@@ -62,7 +62,6 @@ To gather and render approx 6000 snippets sourced from 18 different files, it ta
 
 1. The extension is listed in the [VS Code Marketplace](https://marketplace.visualstudio.com/items?itemName=robole.snippets-ranger) and [Open VSX Marketplace](https://open-vsx.org/extension/robole/snippets-ranger) where you can download or install it directly.
 1. From the Command-line: Run the command `code --install-extension robole.snippets-ranger`.
-1. From the [VS Marketplace](https://marketplace.visualstudio.com/items?itemName=robole.snippets-ranger): Click the _Install_ button.
 
 ## Contribute
 
