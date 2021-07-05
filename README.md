@@ -52,7 +52,7 @@ The following commands can be run from the Command Palette (`Ctrl+Shift+P`):
 1. **`Snippets Ranger: Show me that dur Range, Partner`**: Opens the view that lists all snippets.
 1. **`Snippets Ranger: Add New Snippet`**: Quickly add a new snippet to a snippet file of your choosing.
 
-![add new snippet](img/screenshots/add-new.jpg)
+![add new snippet](img/screenshots/add-new.webp)
 
 ## Performance
 
@@ -69,9 +69,9 @@ If you have a suggestion or find a bug, please file an issue.
 
 ## Show gratitude
 
-If you are happy with the extension, please star the repo, and leave a review to help others find it. 🌟
+If you are happy with the extension: please star the repo, and leave a review to help others find it. 🌟
 
-You can [buy me a coffee](https://ko-fi.com/roboleary) if you would like to support me to make more great open-source software and tutorials. ☕🙏
+You can [buy me a coffee](https://ko-fi.com/roboleary) if you would like to support me in maintaining this project and creating more open-source software. ☕🙏
 
 ## Learn more about snippets
 

@@ -5,6 +5,16 @@ All notable changes to this project are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.20.2] - 2021-07-05
+
+### Fixed
+
+- Fixed spacing between headings. The text of the *h3* was getting slightly truncated at the top when the tab is less than 800px.
+
+### Changed
+
+- Edited "add-new.jpg" explanation of *add new* command. Changed bg color and made into smaller webp.
+
 ## [0.20.1] - 2021-05-09
 
 ### Fixed
