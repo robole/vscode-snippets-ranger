@@ -7,7 +7,7 @@
   },
   "description": "View and edit all your snippets in one purty place. Yee-haw!",
   "icon": "img/logo.png",
-  "version": "0.20.2",
+  "version": "0.21.0",
   "engines": {
     "vscode": "^1.4.0",
     "node": ">=12.0.0"
@@ -105,6 +105,9 @@
       }
     ]
   },
+  "sponsor": {
+    "url": "https://ko-fi.com/roboleary"
+  },
   "scripts": {
     "lint": "npx eslint src test",
     "lint:fix": "npm run lint -- --fix",
@@ -128,8 +131,8 @@
     "css-loader": "^4.2.2",
     "eslint": "^7.2.0",
     "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-config-node-roboleary": "^0.1.0",
     "eslint-config-prettier": "^6.11.0",
-    "eslint-config-roboleary-node": "0.0.2",
     "eslint-plugin-import": "^2.21.2",
     "eslint-plugin-node": "^11.1.0",
     "glob": "^7.1.6",
