@@ -1,20 +1,3 @@
 {
-  "extends": ["roboleary-node"],
-  "rules": {
-    "node/no-missing-require": [
-      "error",
-      {
-        "allowModules": ["vscode"]
-      }
-    ],
-    "class-methods-use-this": "off",
-    "no-restricted-syntax": "warn"
-  },
-  "settings": {
-    "import/ignore": ["vscode"],
-    "eslint import/no-unresolved": [
-      "error",
-      { "caseSensitive": false, "ignore": ["vscode"] }
-    ]
-  }
+  "extends": ["eslint-config-node-roboleary"]
 }

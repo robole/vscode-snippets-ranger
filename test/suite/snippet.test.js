@@ -1,8 +1,8 @@
 const assert = require("assert");
 const Snippet = require("../../src/snippet");
 
-describe("Snippet", function () {
-  it("should create an empty object if no arguments given to constructor", function () {
+describe("Snippet", () => {
+  it("should create an empty object if no arguments given to constructor", () => {
     let mySnippet = new Snippet();
     assert.strictEqual(mySnippet.name, "");
     assert.strictEqual(mySnippet.description, "");
@@ -10,7 +10,7 @@ describe("Snippet", function () {
     assert.strictEqual(typeof mySnippet.body === "object", true); // it should be an array
   });
 
-  it("should allow double quotes in fields", function () {
+  it("should allow double quotes in fields", () => {
     let mySnippet = new Snippet(
       `my "name"`,
       `my "prefix"`,
@@ -23,7 +23,7 @@ describe("Snippet", function () {
     assert.strictEqual(mySnippet.body[0], 'my "body"');
   });
 
-  it("should produce a string of the object", function () {
+  it("should produce a string of the object", () => {
     let mySnippet = new Snippet(
       `map js`,
       `map`,

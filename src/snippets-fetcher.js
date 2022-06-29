@@ -63,9 +63,7 @@ class SnippetsFetcher {
     let modifiedSnippetsArray = extensionSnippetsArray.map(
       this.fetchExtensionSnippets.bind(this)
     );
-    return Promise.all(modifiedSnippetsArray).then(() => {
-      return extensionSnippetsArray;
-    });
+    return Promise.all(modifiedSnippetsArray).then(() => extensionSnippetsArray);
   }
 
   async fetchExtensionSnippets(extensionSnippets) {

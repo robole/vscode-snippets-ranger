@@ -13,16 +13,13 @@
       "type": "npm",
       "script": "webpack",
       "problemMatcher": [],
-      "label": "npm: webpack",
+      "label": "dev",
       "detail": "webpack --mode development --watch"
     },
     {
-      "label": "Run npm webpack on startup",
+      "label": "Run dev on startup",
       "type": "shell",
-      "command": "npm run webpack",
-      "windows": {
-        "command": "npm run webpack"
-      },
+      "command": "npm run dev",
       "presentation": {
         "reveal": "always",
         "panel": "new"

@@ -7,7 +7,7 @@
   },
   "description": "View and edit all your snippets in one purty place. Yee-haw!",
   "icon": "img/logo.png",
-  "version": "0.21.2",
+  "version": "0.22.0",
   "engines": {
     "vscode": "^1.4.0",
     "node": ">=12.0.0"
@@ -114,9 +114,9 @@
     "prettier": "npx prettier src test --check",
     "prettier:fix": "npm run prettier -- --write",
     "format": "npm run prettier:fix && npm run lint:fix",
-    "webpack": "webpack --mode development --watch",
+    "dev": "webpack --mode development --watch",
     "vscode:prepublish": "webpack --mode production",
-    "build": "npx vsce package ."
+    "build": "vsce package"
   },
   "dependencies": {
     "glob": "^7.1.6",

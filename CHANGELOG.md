@@ -5,6 +5,17 @@ All notable changes to this project are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.22.0] - 2022-06-29
+
+### Changed
+
+- Update GitHub Action to latest major version (version 1).
+- Update *.eslintrc.json* to use `eslint-config-node-roboleary` config.
+
+### Fixed
+
+- Autofixed some mistakes caught by ESLint.
+
 ## [0.21.2] - 2022-06-12
 
 ### Fixed
