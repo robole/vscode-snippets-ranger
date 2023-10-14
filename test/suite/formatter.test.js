@@ -42,16 +42,35 @@ describe("Formatter", () => {
   });
 
   describe("escapeHtml()", () => {
-    it("should replace anything that could be interpeted as HTML with a text equivalent", () => {
+    it("should replace html element with a HTML-safe equivalent", () => {
       let text1 = formatter.escapeHtml(`This is the <html> tag.`);
-      let text2 = formatter.escapeHtml(`No '"& allowed.`);
-      let text3 = formatter.escapeHtml(`\t let x = 1;`);
-      let text4 = formatter.escapeHtml(`Line 1.\r\n`);
-
+    
       assert.strictEqual(text1, "This is the &lt;html&gt; tag.");
+    });
+
+		it("should replace single quotes, double quotes, and ampersands with a HTML-safe equivalent", () => {
+      let text2 = formatter.escapeHtml(`No '"& allowed.`);
+  
       assert.strictEqual(text2, "No &#39;&quot;&amp; allowed.");
+    });
+
+		it("should replace a tab with a HTML-safe equivalent", () => {
+      let text3 = formatter.escapeHtml(`\t let x = 1;`);
+
       assert.strictEqual(text3, "&emsp; let x = 1;");
-      assert.strictEqual(text4, "Line 1.<br/>");
+    });
+
+		it("should replace line breaks with a HTML-safe equivalent", () => {
+      let text1 = formatter.escapeHtml(`Line 1.\r\nLine 2.`);
+			let text2 = formatter.escapeHtml(`Line 1.\nLine 2.`);
+
+      assert.strictEqual(text1, "Line 1.<br/>Line 2.");
+			assert.strictEqual(text2, "Line 1.<br/>Line 2.");
+    });
+
+		it("should replace an escaped backslash with a HTML-safe equivalent", () => {
+			let text = formatter.escapeHtml("`\\$num is a variable`;");
+			assert.strictEqual(text, "`&#92;&#92;$num is a variable`;");
     });
   });
 });

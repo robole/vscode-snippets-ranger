@@ -5,6 +5,18 @@ All notable changes to this project are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.22.2] - 2023-10-14
+
+### Fixed
+
+- Escaped backslashes (2 consecutive backslashes) were not appearing correctly in HTML output. e.g a snippet with a `body` of "\\${num};" appears as "\${num}".
+
+### Changed
+
+- Modify *webpack.config.js* to work with Node v18.x. It was throwing a ['ERR_OSSL_EVP_UNSUPPORTED' error](https://stackoverflow.com/questions/69394632/webpack-build-failing-with-err-ossl-evp-unsupported) whose cause is: "it’s likely that your application or a module you’re using is attempting to use an algorithm or key size which is no longer allowed by default with OpenSSL 3.0".
+- Updated tests in *formatter.test.js*.
+- Updated secret for GitHub Action to publish automatically.
+
 ## [0.22.1] - 2022-06-29
 
 ### Fixed

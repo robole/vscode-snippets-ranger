@@ -69,7 +69,7 @@ If you have a suggestion or find a bug, please file an issue.
 
 ## Show gratitude
 
-If you are happy with the extension: please star the repo, and leave a review to help others find it. 🌟
+If you are happy with the extension: please star the repo, and leave [a review ](https://marketplace.visualstudio.com/items?itemName=robole.snippets-ranger&ssr=false#review-details) in the marketplace to help others find it. 🌟
 
 You can [buy me a coffee or sponsor me](https://ko-fi.com/roboleary) if you would like to support me in maintaining this project and creating more open-source software. 🙏
 

@@ -38,6 +38,7 @@ class Formatter {
       .replace(/'/g, "&#39;")
       .replace(/</g, "&lt;")
       .replace(/>/g, "&gt;")
+			.replace(/\\/g, "&#92;&#92;")
       .replace(/\r?\n/g, "<br/>")
       .replace(/\t/g, "&emsp;");
 
@@ -45,13 +46,15 @@ class Formatter {
   }
 
   /**
-   * Escapes all HTML content in the elements of an array and concatenates it into a string that can be consumed by a web page. Each value is appended with a HTML line break (BR tag).
+   * Escapes all HTML content in the elements of an array and concatenates it into a string 
+	 * that can be consumed by a web page. Each value is appended with a HTML line break (BR tag).
    * @param {Array} array Array of values
    */
   static escapeBody(array) {
     let str = "";
     array.forEach((element) => {
-      str += `${Formatter.escapeHtml(element)}<br>`;
+      str += Formatter.escapeHtml(element);
+			str += "<br>";
     });
     return str;
   }

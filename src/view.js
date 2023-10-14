@@ -1,3 +1,4 @@
+/* eslint-disable class-methods-use-this */
 // @ts-nocheck
 // eslint-disable-next-line import/no-unresolved
 const vscode = require("vscode");
@@ -220,9 +221,10 @@ class View {
 			<td>${snippet.prefix}</td>
 			<td>${snippet.name}</td>
 			<td>${snippet.description}</td>`;
-      table += `<td><code>${Formatter.escapeBody(snippet.body)}</code></td>
-			<td>${editButton}${deleteButton}</td>
-			</tr>`;
+      table += "<td><code>";
+			table += Formatter.escapeBody(snippet.body);
+			table += "</code></td>";
+			table += `<td>${editButton}${deleteButton}</td></tr>`;
     });
 
     table += `${tableEnd}`;
