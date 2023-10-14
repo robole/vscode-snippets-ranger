@@ -11,13 +11,13 @@
 
 <p align="center">
 <img src="https://img.shields.io/static/v1?logo=visual-studio-code&label=made%20for&message=VS%20Code&color=0000ff" alt="Made for VSCode">
-<img src="https://img.shields.io/visual-studio-marketplace/v/robole.snippets-ranger?logo=visual-studio-code&color=ffa500" alt="Visual Studio Marketplace Version">
-<img src="https://img.shields.io/static/v1?logo=visual-studio-code&label=size&message=65KB&color=008000"
+<img src="https://img.shields.io/visual-studio-marketplace/v/robole.snippets-ranger?logo=visual-studio-code&color=0000ff" alt="Visual Studio Marketplace Version">
+<img src="https://img.shields.io/static/v1?logo=visual-studio-code&label=size&message=65KB&color=0000ff"
 alt="Extension file size in bytes">
-<img src="https://img.shields.io/visual-studio-marketplace/r/robole.snippets-ranger?logo=visual-studio-code&color=yellow" alt="Visual Studio Marketplace Rating">
-<img src="https://img.shields.io/visual-studio-marketplace/d/robole.snippets-ranger?logo=visual-studio-code&color=blue" alt="downloads"/>
-<img src="https://img.shields.io/visual-studio-marketplace/i/robole.snippets-ranger?logo=visual-studio-code&color=blue" alt="installs"/>
-<img src="https://img.shields.io/static/v1?label=built%20with&message=sarsaparilla%20%26%20javascript&color=violet" alt="Built with sarsaparilla and javascript"/>
+<img src="https://img.shields.io/visual-studio-marketplace/r/robole.snippets-ranger?logo=visual-studio-code&color=0000ff" alt="Visual Studio Marketplace Rating">
+<img src="https://img.shields.io/visual-studio-marketplace/d/robole.snippets-ranger?logo=visual-studio-code&color=0000ff" alt="downloads"/>
+<img src="https://img.shields.io/visual-studio-marketplace/i/robole.snippets-ranger?logo=visual-studio-code&color=0000ff" alt="installs"/>
+<img src="https://img.shields.io/static/v1?label=built%20with&message=sarsaparilla%20%26%20javascript&color=0000ff" alt="Built with sarsaparilla and javascript"/>
 <a href="https://ko-fi.com/roboleary"><img src="https://img.shields.io/badge/Buy%20me%20a%20coffee-$4-orange?logo=buy-me-a-coffee" alt="Buy me a coffee"></a>
 </p>
 
@@ -31,15 +31,15 @@ The table of contents facilitates quick navigation to a snippets set. Pressing t
 
 There are sticky headings to ensure you can browse through long snippet lists without losing context. 🦎🔝
 
-The snippet `body` is **prettily formatted**. 🌻✨
+You can go to the source snippet file directly with the *View Source File* button. The extension uses **the exact same source files as VS Code**.
 
 ![view source screenshot](img/screenshots/view-source.png)
 
-**You can go to the source snippet file directly** with the *View Source File* button.
+**Editing is a piece of cake**.🍰
 
 ![view source screenshot](img/screenshots/edit.png)
 
-**Editing is a piece of cake**.🍰 The *Edit* action button will take you to the specific snippet in the source file to perform an edit. The *Delete* action button will delete the snippet straight away.
+The *Edit* action button will take you to the specific snippet in the source file to perform an edit. The *Delete* action button will delete the snippet straight away.
 
 ## Activation
 
@@ -58,20 +58,20 @@ The following commands can be run from the Command Palette (`Ctrl+Shift+P`):
 
 To gather and render approx 6000 snippets sourced from 18 different files, it takes 4.5 seconds on a modestly-specced 4-year old laptop running Ubuntu 18. 🚀
 
-## Installation
-
-1. The extension is listed in the [VS Code Marketplace](https://marketplace.visualstudio.com/items?itemName=robole.snippets-ranger) and [Open VSX Marketplace](https://open-vsx.org/extension/robole/snippets-ranger) where you can download or install it directly.
-1. From the Command-line: Run the command `code --install-extension robole.snippets-ranger`.
-
 ## Contribute
 
-If you have a suggestion or find a bug, please file an issue.
+Contributions are welcome. If you have a suggestion or find a bug, please file an issue.
 
-## Show gratitude
+Please do not offer a PR without raising an issue first, my time for reviews are limited. You can [support me](https://ko-fi.com/roboleary) to increase my time available.
 
-If you are happy with the extension: please star the repo, and leave [a review ](https://marketplace.visualstudio.com/items?itemName=robole.snippets-ranger&ssr=false#review-details) in the marketplace to help others find it. 🌟
+## Appreciate
 
-You can [buy me a coffee or sponsor me](https://ko-fi.com/roboleary) if you would like to support me in maintaining this project and creating more open-source software. 🙏
+You can show your appreciation by:
+1. [Buying me a coffee or sponsoring me](https://ko-fi.com/roboleary)
+1. Leaving a positive review in the [visual studio marketplace](https://marketplace.visualstudio.com/items?itemName=robole.snippets-ranger&ssr=false#review-details).
+1. Starring the repo 🌟.
+
+This will **help other people find the extension**. It will **offer me encouragement** to continue maintenance, and can provide **a path to dedicating more time to open-source** in the future.
 
 ## Learn more about snippets
 
