@@ -7,7 +7,11 @@
   },
   "description": "View and edit all your snippets in one purty place. Yee-haw!",
   "icon": "img/logo.png",
-  "version": "0.24.0",
+<<<<<<< HEAD
+  "version": "0.24.1",
+=======
+  "version": "0.24.2",
+>>>>>>> eb29bf7 (Update metadata for reverting to v23 state)
   "engines": {
     "vscode": "^1.4.0",
     "node": ">=12.0.0"

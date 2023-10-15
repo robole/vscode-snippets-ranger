@@ -165,7 +165,7 @@ class SnippetsFetcher {
 }
 
 function hasScopeField(array){
-	has = false;
+	let has = false;
 
 	const result = array.find(({ scope }) => scope !== undefined && scope !== "" );
 
