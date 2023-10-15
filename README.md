@@ -22,8 +22,7 @@ alt="Extension file size in bytes">
 </p>
 
 <p align="center">
-<img src="img/screenshots/demo.webp" width="556" height="482"
-alt="recording of  exploring view opened from the command 'Snippets Ranger: Show me that dur Range, Partner'. An entry of 'Markdown snippets' from the table of contents is selected and clicked, it takes the user down to the table with the snippets displayed for that extension."/>
+<img src="img/screenshots/demo.webp" width="556" height="482" alt="recording of  exploring view opened from the command 'Snippets Ranger: Show me that dur Range, Partner'. An entry of 'Markdown snippets' from the table of contents is selected and clicked, it takes the user down to the table with the snippets displayed for that extension."/>
 </p>
 
 **Snippets are grouped as: *Project*, *User*, *Extension*, and *VS Code*.**

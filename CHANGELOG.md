@@ -21,6 +21,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Some refactoring to improve readability.
 - Updated tests to reflect changes.
 
+### Fixed
+
+- There was some whitespace in `<img src="img/screenshots/demo.webp" ...` in the README.md that broke `vsce package`!
+
 ## [0.23.0] - 2023-10-14
 
 ### Changed
