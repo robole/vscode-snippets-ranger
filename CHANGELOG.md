@@ -5,11 +5,21 @@ All notable changes to this project are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [0.24.2] - 2023-10-16
+## [0.25.0, 0.25.1] - 2023-10-16
 
 ### Changed
 
-- Revert changes of 24.0. Issue found and requires investigation.
+- Published changes made in v24.0.
+
+### Fixed
+
+- The variable `has` was not declared properly in *hasScopeField*. Added `let` to it. Unusual that this is not an issue in test.
+
+## [0.24.1 -> 0.24.3] - 2023-10-16
+
+### Changed
+
+- Rollback changes of v24.0. Git!! Issue found and requires further investigation.
 
 ## [0.24.0] - 2023-10-15
 
