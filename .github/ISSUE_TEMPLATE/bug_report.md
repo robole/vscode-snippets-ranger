@@ -11,13 +11,11 @@ assignees: ''
 
 A clear and concise description of what the bug is.
 
-## To Reproduce 
+## To Reproduce
 
 Steps to reproduce the behavior:
-1. Go to '...'
-2. Click on '....'
-3. Scroll down to '....'
-4. See error
+1. Run command '...'
+2. Click on '....' etc.
 
 ## Expected behavior
 
@@ -27,11 +25,11 @@ A clear and concise description of what you expected to happen.
 
 If applicable, add screenshots to help explain your problem.
 
-## Version/environment
+## Environment information
 
 Please complete the following information:
-- On the main menu, go to *Help*, and select *About* from the drop down. Copy the information from the *About* dialog. 
-- If you are working remotely or using WSL, please state this too.
+- On the main menu, go to *Help*, and select *About* from the drop down. Copy the information from the *About* dialog.
+- Are you are working remotely or using WSL? Please state this too.
 
 ## Additional context
 

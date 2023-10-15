@@ -1,7 +1,7 @@
 const fs = require("fs");
 const jsonc = require("jsonc-parser");
 const Environment = require("./environment");
-const LanguageSnippets = require("./language-snippets");
+const SnippetsCollection = require("./snippets-collection");
 const Snippet = require("./snippet");
 
 /**
@@ -16,10 +16,10 @@ class SnippetsFetcher {
   /**
    * Get the snippets from the files as JSON objects.
    * @param {Array} filepaths The filepaths for the files you want to extract snippets from.
-   * @param {String} type The type of snippets you are seeking. Can be "user", "app", or "extension".
+   * @param {String} type The type of snippets you are seeking. Can be "user", "app", "project", or "extension".
    * @returns {Promise} A Promise with an array of JSON objects.
    */
-  async getSnippetsCollection(filepaths, type) {
+  async createSnippetsCollection(filepaths, type) {
     let jsonObjects = await SnippetsFetcher.getObjectArray(filepaths);
     let array = [];
 
@@ -27,28 +27,34 @@ class SnippetsFetcher {
       if (obj !== undefined) {
         let flatSnippets = this.flattenSnippets(obj);
         let language = Environment.getFilename(filepaths[index]);
-        let languageSnippets = new LanguageSnippets(
-          language,
+				let scoped = hasScopeField(flatSnippets);
+
+        let snippetsCollection = new SnippetsCollection(
           filepaths[index],
           type,
-          flatSnippets
+					scoped,
+          flatSnippets,
+					language	
         );
-        array.push(languageSnippets);
+        array.push(snippetsCollection);
       }
     });
     return array;
   }
 
   /**
-   * Get an array of the snippets in flat object without nested properties. The properties are: name, prefix, body, description.
+   * A snippet is written in a file as a key-value pair where the key is the `name`, and
+	 * the value is an object with the `prefix`, `body`, and `description` fields.
+	 * This function converts the key-value pair into a single object with those four fields.
    * @param {Object} snippets JSON object of snippets file contents.
+	 * @return {Object} An array with flattened snippets objects
    */
   flattenSnippets(snippets) {
     let flatSnippets = [];
-    // eslint-disable-next-line no-restricted-syntax
+    
     for (let [key, value] of Object.entries(snippets)) {
-      let { prefix, body, description } = value;
-      let flatSnippet = new Snippet(key, prefix, body, description);
+      let { prefix, body, description, scope } = value;
+      let flatSnippet = new Snippet(key, prefix, body, description, scope);
       flatSnippets.push(flatSnippet);
     }
     return flatSnippets;
@@ -86,8 +92,18 @@ class SnippetsFetcher {
    * @returns {Promise} A Promise with an array of JSON objects.
    */
   async getUserSnippetsCollection() {
-    let paths = await this.env.getUserSnippetsPaths();
-    return this.getSnippetsCollection(paths, "User");
+    let paths = await this.env.getUserSnippetFilepaths();
+    return this.createSnippetsCollection(paths, "user");
+  }
+
+	/**
+   * Get all of the project's snippets as JSON objects.
+   * @returns {Promise} A Promise with an array of JSON objects.
+   */
+  async getProjectSnippetsCollection() {
+    let paths = await this.env.getProjectSnippetFilepaths();
+		
+    return this.createSnippetsCollection(paths, "project");
   }
 
   /**
@@ -95,8 +111,8 @@ class SnippetsFetcher {
    * @returns {Promise} A Promise with an array of JSON objects.
    */
   async getAppSnippetsCollection() {
-    let paths = await this.env.getAppSnippetsPaths();
-    return this.getSnippetsCollection(paths, "app");
+    let paths = await this.env.getAppSnippetFilepaths();
+    return this.createSnippetsCollection(paths, "app");
   }
 
   /**
@@ -122,7 +138,8 @@ class SnippetsFetcher {
   }
 
   /**
-   * Get the contents of the files as JSON objects. The files can be JSON or JSONC files (Microsoft JSON with comments standard).
+   * Get the contents of the files as JSON objects. The files can be JSON or JSONC 
+	 * files (Microsoft JSON with comments standard).
    * @param {Array} filepaths
    * @returns {Promise} A Promise with an array of JSON objects.
    */
@@ -135,7 +152,8 @@ class SnippetsFetcher {
   /**
    * @async
    * @static
-   * Get the contents of the file as JSON objects. The files can be JSON or JSONC files (Microsoft JSON with comments standard).
+   * Get the contents of the file as JSON objects. The files can be JSON or 
+	 * JSONC files (Microsoft JSON with comments standard).
    * @param {String} filepath
    * @returns {Promise} A Promise with an array of JSON objects.
    */
@@ -144,6 +162,18 @@ class SnippetsFetcher {
     let json = await jsonc.parse(data);
     return json;
   }
+}
+
+function hasScopeField(array){
+	has = false;
+
+	const result = array.find(({ scope }) => scope !== undefined && scope !== "" );
+
+	if(result !== undefined){
+		has = true;
+	}
+
+	return has;
 }
 
 module.exports = SnippetsFetcher;

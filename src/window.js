@@ -15,7 +15,7 @@ class Window {
 
   /**
    * @async
-   * Open a user snippet file. The user it prompted to pick a language.
+   * Open a user snippet file. The user is prompted to pick a language.
    * @returns {Promise} The TextEditor that contains the user snippets document.
    */
   async showUserSnippets(language) {
@@ -31,7 +31,8 @@ class Window {
 
   /**
    * @async
-   * Open a snippet file and jump to the snippet. If the snippet is not found, it will open the snippet file with the cursor on the first line.
+   * Open a snippet file and jump to the snippet. If the snippet is not 
+	 * found, it will open the snippet file with the cursor on the first line.
    * @returns {Promise} The TextEditor that contains the user snippets document.
    */
   static async showSnippet(uri, snippetName) {

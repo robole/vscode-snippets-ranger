@@ -28,7 +28,8 @@ describe("Snippet", () => {
       `map js`,
       `map`,
       ['console.log("err");', 'alert("hello");'],
-      "blah"
+      "blah",
+			"javascript, typescript"
     );
 
     let eol = "\n";
@@ -37,7 +38,7 @@ describe("Snippet", () => {
       eol = "\r\n";
     }
 
-    let expectedResult = `${eol}"map js" : {${eol}\t"prefix": "map",${eol}\t"body": ["console.log(\\"err\\");","alert(\\"hello\\");"],${eol}\t"description": "blah"${eol}}`;
+    let expectedResult = `${eol}"map js" : {${eol}\t"prefix": "map",${eol}\t"body": ["console.log(\\"err\\");","alert(\\"hello\\");"],${eol}\t"description": "blah"${eol}\t"scope": "javascript, typescript"${eol}}`;
 
     assert.strictEqual(mySnippet.toString(), expectedResult);
   });

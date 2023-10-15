@@ -18,7 +18,7 @@
   --code-color-light-mode: #7a5600;
   --code-color-dark-mode: #d7ba7d;
   --table-action-column-width: 80px;
-  --table-min-width: 600px;
+  --table-min-width: 800px;
 }
 
 *,
@@ -50,9 +50,7 @@ body.vscode-high-contrast {
   border-radius: 10px;
 }
 
-section#user h2,
-section#extension h2,
-section#app h2,
+section h2,
 h3,
 h4 {
   font-family: var(--vscode-font-family);
@@ -66,9 +64,7 @@ h4 {
   min-width: var(--table-min-width);
 }
 
-section#user h2,
-section#extension h2,
-section#app h2 {
+section h2 {
   top: 0;
   z-index: 1000;
   text-align: center;
@@ -128,6 +124,26 @@ button {
 
 .upIcon {
   border-radius: inherit;
+}
+
+@media (min-width: 1000px) {
+  body,
+  body.vscode-dark,
+  body.vscode-light,
+  body.vscode-high-contrast {
+    width: 90%;
+  }
+
+  #toTopLink {
+    --size: 30px;
+    right: 6%;
+  }
+}
+
+@media (min-width: 1600px) {
+  #toTopLink {
+    right: calc((100vw - 1592px) / 2);
+  }
 }
 
 table {
@@ -192,6 +208,50 @@ td:nth-child(5) {
   width: var(--table-action-column-width);
 }
 
+.scoped-table :is(th:nth-child(3), td:nth-child(3)) {
+  width: 25%;
+}
+
+/* using percentage value breaks down here, maybe because of long words */
+.scoped-table :is(th:nth-child(5),td:nth-child(5)) {
+  width: clamp(120px, 13vw ,240px);
+}
+
+.scoped-table :is(th:nth-child(6),td:nth-child(6)) {
+  width: var(--table-action-column-width);
+}
+
+@media (min-width: 1000px) {
+  th:nth-child(1),
+  td:nth-child(1) {
+    width: 15%;
+  }
+
+  th:nth-child(2),
+  td:nth-child(2) {
+    display: table-cell;
+  }
+
+  th:nth-child(3),
+  td:nth-child(3) {
+    width: 25%;
+  }
+
+  th:nth-child(4),
+  td:nth-child(4) {
+    width: calc(40% - var(--table-action-column-width));
+  }
+
+	.scoped-table :is(th:nth-child(2), td:nth-child(2)) {
+		width: 15%;
+	}
+
+	.scoped-table :is(th:nth-child(3), td:nth-child(3)) {
+		width: 20%;
+	}
+}
+
+
 body.vscode-dark td,
 body.vscode-high-contrast td {
   border-bottom: 1px solid var(--table-divider-color-dark-mode);
@@ -235,9 +295,7 @@ body.vscode-light {
   color: var(--body-color-light-mode);
 }
 
-body.vscode-light section#user h2,
-body.vscode-light section#extension h2,
-body.vscode-light section#app h2,
+body.vscode-light section h2,
 body.vscode-light h3,
 body.vscode-light h4 {
   background-color: var(--body-bg-color-light-mode);
@@ -263,9 +321,7 @@ body.vscode-dark {
   color: var(--body-color-dark-mode);
 }
 
-body.vscode-dark section#user h2,
-body.vscode-dark section#extension h2,
-body.vscode-dark section#app h2,
+body.vscode-dark section h2,
 body.vscode-dark h3,
 body.vscode-dark h4 {
   background-color: var(--body-bg-color-dark-mode);
@@ -295,9 +351,7 @@ body.vscode-high-contrast {
   color: var(--body-color-contrast-mode);
 }
 
-body.vscode-high-contrast section#user h2,
-body.vscode-high-contrast section#extension h2,
-body.vscode-high-contrast section#app h2,
+body.vscode-high-contrast section h2,
 body.vscode-high-contrast h3,
 body.vscode-high-contrast h4 {
   background-color: var(--body-bg-color-contrast-mode);
@@ -369,44 +423,4 @@ body.vscode-high-contrast button {
 .gif {
   display: block;
   margin: 0 auto;
-}
-
-@media (min-width: 1000px) {
-  body,
-  body.vscode-dark,
-  body.vscode-light,
-  body.vscode-high-contrast {
-    width: 90%;
-  }
-
-  #toTopLink {
-    --size: 30px;
-    right: 6%;
-  }
-
-  th:nth-child(1),
-  td:nth-child(1) {
-    width: 15%;
-  }
-
-  th:nth-child(2),
-  td:nth-child(2) {
-    display: table-cell;
-  }
-
-  th:nth-child(3),
-  td:nth-child(3) {
-    width: 25%;
-  }
-
-  th:nth-child(4),
-  td:nth-child(4) {
-    width: calc(40% - var(--table-action-column-width));
-  }
-}
-
-@media (min-width: 1600px) {
-  #toTopLink {
-    right: calc((100vw - 1592px) / 2);
-  }
 }

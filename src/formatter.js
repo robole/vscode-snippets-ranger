@@ -46,8 +46,8 @@ class Formatter {
   }
 
   /**
-   * Escapes all HTML content in the elements of an array and concatenates it into a string 
-	 * that can be consumed by a web page. Each value is appended with a HTML line break (BR tag).
+   * Escapes all th HTML content in the items of an array and concatenates it into a string 
+	 * that can be consumed by a web page. Each item is appended with a HTML line break (BR tag).
    * @param {Array} array Array of values
    */
   static escapeBody(array) {
@@ -67,6 +67,20 @@ class Formatter {
     let array = text.split(eolChar);
     return array;
   }
+
+	/**
+ * Produces an ID from the text provided that can be used as an URL fragment. Does it in the same style as GitHub.
+ * Based on source code: https://github.com/jch/html-pipeline/blob/master/lib/html/pipeline/toc_filter.rb
+ * @param {string} text - The text to slugify
+ * @returns {string} The slug.
+ */
+static slugify(text) {
+	const PUNCTUATION_REGEXP = /[^\p{L}\p{M}\p{N}\p{Pc}\- ]/gu;
+
+  let slug = text.trim().toLowerCase();
+  slug = slug.replace(PUNCTUATION_REGEXP, "").replace(/ /g, "-");
+  return slug;
+}
 }
 
 module.exports = Formatter;

@@ -73,4 +73,28 @@ describe("Formatter", () => {
 			assert.strictEqual(text, "`&#92;&#92;$num is a variable`;");
     });
   });
+
+	describe("slugify()", () =>{
+			it("should slugify in a GitHub style by creating a trimmed, lowercase, hypenated version of the string", () => {
+				assert.equal(
+					formatter.slugify(" Robole Github com "),
+					"robole-github-com"
+				);
+			});
+
+			it("should slugify by removing characters that are not: a letter, space or hypen", () => {
+				assert.equal(formatter.slugify("robole 🙏 com"), "robole--com");
+				assert.equal(
+					formatter.slugify("Uniform Resource Locator (URL)"),
+					"uniform-resource-locator-url"
+				);
+				assert.equal(formatter.slugify("[re] [] [f])"), "re--f");
+				assert.equal(
+					formatter.slugify("[robole.github.io"),
+					"robolegithubio"
+				);
+				assert.equal(formatter.slugify("robole 🙏 com-"), "robole--com-");
+				assert.equal(formatter.slugify("ha 🐇-👎"), "ha--");
+			});
+	});
 });

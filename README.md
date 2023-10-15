@@ -22,16 +22,17 @@ alt="Extension file size in bytes">
 </p>
 
 <p align="center">
-<img src="img/screenshots/demo.gif" alt="demo"/>
+<img src="img/screenshots/demo.webp" width="556" height="482"
+alt="recording of  exploring view opened from the command 'Snippets Ranger: Show me that dur Range, Partner'. An entry of 'Markdown snippets' from the table of contents is selected and clicked, it takes the user down to the table with the snippets displayed for that extension."/>
 </p>
 
-**Snippets are grouped as: *User*, *Extension*, and *VS Code*.**
+**Snippets are grouped as: *Project*, *User*, *Extension*, and *VS Code*.**
 
 The table of contents facilitates quick navigation to a snippets set. Pressing the <kbd>Home</kbd> key will return you to the table of contents.
 
 There are sticky headings to ensure you can browse through long snippet lists without losing context. 🦎🔝
 
-You can go to the source snippet file directly with the *View Source File* button. The extension uses **the exact same source files as VS Code**.
+You can go to the source snippet file directly with the *View Source File* button. The extension uses **the exact same source files as VS Code does**.
 
 ![view source screenshot](img/screenshots/view-source.png)
 
@@ -71,7 +72,7 @@ You can show your appreciation by:
 1. Leaving a positive review in the [visual studio marketplace](https://marketplace.visualstudio.com/items?itemName=robole.snippets-ranger&ssr=false#review-details).
 1. Starring the repo 🌟.
 
-This will **help other people find the extension**. It will **offer me encouragement** to continue maintenance, and can provide **a path to dedicating more time to open-source** in the future.
+This will **help other people find the extension**. It will **encourage me to continue maintenance**, and may provide **a path to dedicating more time to open-source** in the future.
 
 ## Learn more about snippets
 

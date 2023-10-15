@@ -5,6 +5,22 @@ All notable changes to this project are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.24.0] - 2023-10-15
+
+### Added
+
+- Added **Project** snippets section. The source of the snippets is from files with the *.code-snippets* extension found in the *.vscode* folder in your workspace.
+- Added `scope` field for snippets (*snippets.js*).
+- Added GitHub issue template for bugs. This was done on github.com but edited locally.
+
+### Changed
+
+- The `id` attribute generated for `h3` headings is in the form of the *<section-id>-<title>*. Now the `title` portion is slugified. This ensures that there are no unwanted characters that can break links for table of contents.
+- The `scope` field is shown in tables when there is at least one instance of the field in the **project**, **user** and **vs code** snippet files.
+- Updated animated image demonstrating UI to reflect that project snippets are there now also. I used WebP instead of GIF for better compression/quality.
+- Some refactoring to improve readability.
+- Updated tests to reflect changes.
+
 ## [0.23.0] - 2023-10-14
 
 ### Changed

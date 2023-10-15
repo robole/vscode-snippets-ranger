@@ -63,6 +63,7 @@ class View {
     this.userIDs = [];
     this.extensionIDs = [];
     this.appIDs = [];
+		this.projectIDs = [];
   }
 
   /**
@@ -124,16 +125,18 @@ class View {
     let userSection = await this.getUserSnippetsSection();
     let appSection = await this.getAppSnippetsSection();
     let extensionSection = await this.getExtensionSnippetsSection();
+		let projectSection = await this.getProjectSnippetsSection();
     let toc = this.getTableOfContents(); // relies on IDs being set by methods above
 
     let scriptSrc = this.getScriptWebviewUri();
     let script = `<script src="${scriptSrc}"></script>`;
 
-    return `${htmlStart}${toc}${userSection}${extensionSection}${appSection}${upIcon}${script}${htmlEnd}`;
+    return `${htmlStart}${toc}${projectSection}${userSection}${extensionSection}${appSection}${upIcon}${script}${htmlEnd}`;
   }
 
   /**
-   * Creates the HTML output for the section for a snippets set associated with a language. It has a title and a table listing all of the snippets.
+   * Creates the HTML output for the section for a snippets set associated with a language. 
+	 * It has a title and a table listing all of the snippets.
    * @param {LanguageSnippets} languageSnippets The LanguageSnippets you want the section for
    * @param {String} type The type of snippets. Values can be "user" or "app".
    */
@@ -146,7 +149,7 @@ class View {
     ) {
       section += "<div>";
       let title = Formatter.formatTitle(languageSnippets.language);
-      let id = `${type}-${languageSnippets.language}`;
+      let id = `${type}-${title}`;
       section += `<h3 id="${id}"> ${title} </h3>`;
 
       // encodeURIComponent prevents funny business with charcters especially with slashes
@@ -170,8 +173,48 @@ class View {
     return section;
   }
 
+	 /**
+   * Creates the HTML output for the section for a snippets set associated with a file. 
+	 * It has a title and a table listing all of the snippets.
+   * @param {LanguageSnippets} languageSnippets The LanguageSnippets you want the section for
+   * @param {String} type The type of snippets. Values can be "user" or "app".
+   */
+	 createFileSection(collection) {
+    let section = "";
+
+    if (
+      collection !== undefined &&
+      collection.snippets.length > 0
+    ) {
+      section += "<div>";
+      let title = basename(collection.path, ".code-snippets");
+      let id = `${collection.type}-${Formatter.slugify(title)}`;
+      section += `<h3 id="${id}"> ${title} </h3>`;
+
+      // encodeURIComponent prevents funny business with charcters especially with slashes
+      let uri = encodeURIComponent(collection.path);
+      section += `<div class="source"><button type="button" class="sourceBtn" onclick="script.openFile('${uri}')")>View Source File</button></div>`;
+
+      section += this.getSnippetsTable(collection);
+      section += `</div>`;
+
+      let idObj = {
+        id,
+        name: title,
+      };
+     
+      this.projectIDs.push(idObj);
+      
+    }
+
+    return section;
+  }
+	
+
   /**
-   * Creates the HTML output for a set of snippets associated with a snippets file from an extension. There is a title, a list of all the associated languages, and a table listing all of the snippets.
+   * Creates the HTML output for a set of snippets associated with a snippets file from 
+	 * an extension. There is a title, a list of all the associated languages, 
+	 * and a table listing all of the snippets.
    * @param {ExtensionSnippets} snippets The snippets associated with a snippets file for an extension.
    */
   createExtensionFileSection(snippets) {
@@ -199,9 +242,19 @@ class View {
    * @param {Array} snippetsCollection Array of snippet objects.
    */
   getSnippetsTable(snippetsCollection) {
-    const tableStart = `<table data-path="${snippetsCollection.path}">
-		<thead><th>Prefix</th><th>Name</th><th>Description</th><th>Body</th><th>Action</th></thead>
-		<tbody>`;
+    let tableStart = `<table data-path="${snippetsCollection.path}"`;
+		
+		if (snippetsCollection.scoped === true) {
+			tableStart += `class="scoped-table"`;
+		}
+		
+		tableStart += `><thead><th>Prefix</th><th>Name</th><th>Description</th><th>Body</th>`;
+		
+		if (snippetsCollection.scoped === true) {
+			tableStart += `<th>Scope</th>`;
+		}
+		
+		tableStart += `<th>Action</th></thead><tbody>`;
     const tableEnd = `</tbody></table>`;
     let table = tableStart;
 
@@ -224,6 +277,11 @@ class View {
       table += "<td><code>";
 			table += Formatter.escapeBody(snippet.body);
 			table += "</code></td>";
+
+			if (snippetsCollection.scoped === true) {
+				table += `<td>${snippet.scope}</td>`
+			}
+
 			table += `<td>${editButton}${deleteButton}</td></tr>`;
     });
 
@@ -266,7 +324,7 @@ class View {
   }
 
   /**
-   * Get the app-defined snippets as HTML.
+   * Get the extension-defined snippets as HTML.
    */
   async getExtensionSnippetsSection() {
     return this.snippetsFetcher
@@ -275,7 +333,7 @@ class View {
         let opening = `<section id="extension"><h2>Extension Snippets</h2>`;
         let section = opening;
         extensionSnippetsArray.forEach((extensionSnippetsObj) => {
-          let appID = extensionSnippetsObj.id;
+          let appID = Formatter.slugify(extensionSnippetsObj.id);
           section += `<h3 id="${appID}">${extensionSnippetsObj.displayName}</h3>`;
 
           this.extensionIDs.push({
@@ -296,6 +354,25 @@ class View {
         return section;
       });
   }
+
+	async getProjectSnippetsSection(){
+		let projectSnippets = await this.snippetsFetcher.getProjectSnippetsCollection();
+		
+      
+    let opening = `<section id="project"><h2>Project Snippets</h2>`;
+    let section = opening;
+
+		projectSnippets.forEach((element) => {
+      section += this.createFileSection(element);
+    });
+
+		 if (section === opening) {
+      section += notFoundHTML;
+    }
+  
+    section += `</section>`;
+    return section; 
+	}
 
   /**
    * Get the webview-compliant URI for the loading image.
@@ -334,63 +411,45 @@ class View {
    * Get the Table of Contents as HTML.
    */
   getTableOfContents() {
-    let html = `<section id="toc">
+    let html = `<div id="toc">
 		<h2>Table of Contents</h2>
 		<ul>
-		<li><a href="#user">User Snippets</a></li>`;
-    html += this.getUserTOCEntry();
+		<li><a href="#project">Project Snippets</a></li>`;
+		html += this.createTableOfContentsEntry(this.projectIDs);
+		html += `<li><a href="#user">User Snippets</a></li>`;
+		html += this.createTableOfContentsEntry(this.userIDs);
     html += `<li><a href="#extension">Extension Snippets</a></li>`;
-    html += this.getExtensionTOCEntry();
+    html += this.createTableOfContentsEntry(this.extensionIDs);
     html += `<li><a href="#app">VS Code Snippets</a></li>`;
-    html += this.getAppTOCEntry();
-    html += `</ul></section>`;
+    html += this.createTableOfContentsEntry(this.appIDs);
+    html += `</ul></div>`;
     return html;
   }
 
   /**
    * Get the Table of Contents entry for Extension snippets as HTML.
    */
-  getExtensionTOCEntry() {
+  createTableOfContentsEntry(array) {
     let html = "<ul>";
-    this.extensionIDs.forEach((obj) => {
+
+    array.forEach((obj) => {
       html += `<li><a href=#${obj.id}>${obj.name}</a>`;
     });
-    html += "</ul>";
-    return html;
-  }
 
-  /**
-   * Get the Table of Contents entry for user snippets as HTML.
-   */
-  getUserTOCEntry() {
-    let html = "<ul>";
-    this.userIDs.forEach((obj) => {
-      let name = Formatter.formatTitle(obj.name); // remove prefix
-      html += `<li><a href=#${obj.id}>${name}</a>`;
-    });
     html += "</ul>";
-    return html;
-  }
 
-  /**
-   * Get the Table of Contents entry for app snippets as HTML.
-   */
-  getAppTOCEntry() {
-    let html = "<ul>";
-    this.appIDs.forEach((obj) => {
-      let name = Formatter.formatTitle(obj.name); // remove prefix
-      html += `<li><a href=#${obj.id}>${name}</a>`;
-    });
-    html += "</ul>";
     return html;
   }
 
   toUnorderedList(array) {
     let html = `<ul>`;
+
     array.forEach((element) => {
       html += `<li>${element}</li>`;
     });
+
     html += `</ul>`;
+
     return html;
   }
 }

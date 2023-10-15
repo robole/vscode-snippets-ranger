@@ -5,11 +5,12 @@ const formatter = require("./formatter");
  * VS Code Snippet.
  */
 class Snippet {
-  constructor(name = "", prefix = "", body = [], description = "") {
-    this.name = name; // mandatory
-    this.prefix = prefix; // mandatory
+  constructor(name = "", prefix = "", body = [], description = "", scope = "") {
+    this.name = name;
+    this.prefix = prefix;
     this.description = description; // optional field in source JSON file
     this.body = body; // a string or array is permitted in source JSON file
+		this.scope = scope; // comma-separated list of languages
 
     // ensures no formatting issues when toString() is used
     this.eol = "\n";
@@ -55,9 +56,17 @@ class Snippet {
     return this._body;
   }
 
+	set scope(newScope) {
+    this._scope = newScope;
+  }
+
+  get scope() {
+    return this._scope;
+  }
+
   toString() {
     // prettier-ignore
-    return `${this.eol}${JSON.stringify(this.name)} : {${this.eol}\t"prefix": ${JSON.stringify(this.prefix)},${this.eol}\t"body": ${JSON.stringify(this.body)},${this.eol}\t"description": ${JSON.stringify(this.description)}${this.eol}}`;
+    return `${this.eol}${JSON.stringify(this.name)} : {${this.eol}\t"prefix": ${JSON.stringify(this.prefix)},${this.eol}\t"body": ${JSON.stringify(this.body)},${this.eol}\t"description": ${JSON.stringify(this.description)}${this.eol}\t"scope": ${JSON.stringify(this.scope)}${this.eol}}`;
   }
 }
 

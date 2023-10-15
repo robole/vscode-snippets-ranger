@@ -3,7 +3,7 @@ const fs = require("fs");
 // eslint-disable-next-line import/no-unresolved
 const vscode = require("vscode");
 const glob = require("glob");
-const ExtensionSnippets = require("./extension-snippets");
+const ExtensionSnippets = require("./extension-snippets-collection");
 
 /**
  * Environment information.
@@ -65,7 +65,7 @@ class Environment {
    * Get the filepaths for all of the User Snippets files.
    * @returns {Promise} Promise with array of filepaths.
    */
-  async getUserSnippetsPaths() {
+  async getUserSnippetFilepaths() {
     let list = [];
 
     let filenames = await fs.promises
@@ -88,10 +88,29 @@ class Environment {
    * @return {Promise} Promise with array of filepaths.
    */
   // eslint-disable-next-line class-methods-use-this
-  async getAppSnippetsPaths() {
+  async getAppSnippetFilepaths() {
     let extensionRoot = resolve(vscode.env.appRoot, "extensions");
     return new Promise((fufil, reject) => {
       glob(`${extensionRoot}/**/snippets/*.code-snippets`, {}, (err, files) => {
+        if (err) {
+          reject(err);
+        } else {
+          fufil(files);
+        }
+      });
+    });
+  }
+
+	/**
+   * Get the filepaths for all of the snippets files in the opened project.
+   * @return {Promise} Promise with array of filepaths.
+   */
+  // eslint-disable-next-line class-methods-use-this
+  async getProjectSnippetFilepaths() {
+    let root = vscode.workspace.workspaceFolders[0].uri.fsPath
+
+    return new Promise((fufil, reject) => {
+      glob(`${root}/.vscode/*.code-snippets`, { dot : true}, (err, files) => {
         if (err) {
           reject(err);
         } else {
@@ -108,6 +127,7 @@ class Environment {
   // eslint-disable-next-line class-methods-use-this
   async getExtensionSnippets() {
     let array = [];
+		
     vscode.extensions.all.forEach((extension) => {
       let { packageJSON } = extension;
       if (

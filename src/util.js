@@ -9,7 +9,7 @@ async function createFileIfDoesNotExist(filePath) {
   try {
     await fs.promises.writeFile(filePath, "{ }", { flag: "wx" });
   } catch (err) {
-    console.log(err);
+    console.error(err);
   }
 }
 
