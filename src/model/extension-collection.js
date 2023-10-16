@@ -2,7 +2,7 @@
  * Snippets for a particular extension. An Extension can have snippets declared in
  * different files. One snippet file can be associated with 1 or more languages.
  */
-class ExtensionSnippetsCollection {
+class ExtensionCollection {
   constructor(name, displayName, publisher) {
     this.name = name;
     this.displayName = displayName;
@@ -33,4 +33,4 @@ class ExtensionSnippetsCollection {
   }
 }
 
-module.exports = ExtensionSnippetsCollection;
+module.exports = ExtensionCollection;

@@ -1,5 +1,5 @@
 /* eslint-disable no-underscore-dangle */
-const formatter = require("./formatter");
+const formatter = require("../formatter");
 
 /**
  * VS Code Snippet.

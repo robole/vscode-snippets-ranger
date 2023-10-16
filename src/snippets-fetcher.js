@@ -1,8 +1,8 @@
 const fs = require("fs");
 const jsonc = require("jsonc-parser");
 const Environment = require("./environment");
-const SnippetsCollection = require("./snippets-collection");
-const Snippet = require("./snippet");
+const Collection = require("./model/collection");
+const Snippet = require("./model/snippet");
 
 /**
  * Fetch the Snippets from the file system.
@@ -29,7 +29,7 @@ class SnippetsFetcher {
         let language = Environment.getFilename(filepaths[index]);
 				let scoped = hasScopeField(flatSnippets);
 
-        let snippetsCollection = new SnippetsCollection(
+        let snippetsCollection = new Collection(
           filepaths[index],
           type,
 					scoped,

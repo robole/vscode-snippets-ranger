@@ -1,13 +1,11 @@
-/* eslint-disable class-methods-use-this */
-// @ts-nocheck
-// eslint-disable-next-line import/no-unresolved
 const vscode = require("vscode");
 const { basename } = require("path");
 const path = require("path");
-const SnippetsFetcher = require("./snippets-fetcher");
-const Formatter = require("./formatter");
-const Window = require("./window");
-const SnippetsEditor = require("./snippets-editor");
+const SnippetsFetcher = require("../snippets-fetcher");
+const Formatter = require("../formatter");
+const Window = require("../window");
+const SnippetsEditor = require("../snippets-editor");
+const Collection = require("../model/collection");
 
 const notFoundHTML = `<p class="empty">Oucho Gaucho! 🌵 Nothing to round up! 🤠</p>`;
 
@@ -137,7 +135,7 @@ class View {
   /**
    * Creates the HTML output for the section for a snippets set associated with a language. 
 	 * It has a title and a table listing all of the snippets.
-   * @param {LanguageSnippets} languageSnippets The LanguageSnippets you want the section for
+   * @param {Collection} languageSnippets The collection you want the section for
    * @param {String} type The type of snippets. Values can be "user" or "app".
    */
   createLanguageSection(languageSnippets, type) {

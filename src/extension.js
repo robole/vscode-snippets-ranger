@@ -1,12 +1,12 @@
 // @ts-nocheck
 /* eslint-disable import/no-unresolved, import/no-useless-path-segments, no-template-curly-in-string, no-unused-vars */
 const vscode = require("vscode");
-const View = require("./view");
-const Snippet = require("./snippet");
+const View = require("./view/view");
+const Snippet = require("./model/snippet");
 const SnippetsEditor = require("./snippets-editor");
 
 // this is included for webpack, so that it picks up the CSS file
-const styles = require("../src/css/styles.css");
+const styles = require("../src/view/styles.css");
 
 function activate(context) {
   context.subscriptions.push(

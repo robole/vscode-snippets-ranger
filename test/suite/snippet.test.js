@@ -1,5 +1,5 @@
 const assert = require("assert");
-const Snippet = require("../../src/snippet");
+const Snippet = require("../../src/model/snippet");
 
 describe("Snippet", () => {
   it("should create an empty object if no arguments given to constructor", () => {

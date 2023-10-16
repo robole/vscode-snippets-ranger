@@ -1,7 +1,7 @@
 /**
  * Snippets for a particular programming language.
  */
-class SnippetsCollection {
+class Collection {
   constructor(path, type, scoped, snippets, language = "" ) {
     this.path = path;
     this.type = type;
@@ -11,4 +11,4 @@ class SnippetsCollection {
   }
 }
 
-module.exports = SnippetsCollection;
+module.exports = Collection;

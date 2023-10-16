@@ -3,7 +3,7 @@ const fs = require("fs");
 // eslint-disable-next-line import/no-unresolved
 const vscode = require("vscode");
 const glob = require("glob");
-const ExtensionSnippets = require("./extension-snippets-collection");
+const ExtensionCollection = require("./model/extension-collection");
 
 /**
  * Environment information.
@@ -136,7 +136,7 @@ class Environment {
         packageJSON.contributes &&
         packageJSON.contributes.snippets
       ) {
-        let extensionSnippets = new ExtensionSnippets(
+        let extensionSnippets = new ExtensionCollection(
           packageJSON.name,
           packageJSON.displayName,
           packageJSON.publisher
