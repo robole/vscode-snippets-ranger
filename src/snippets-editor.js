@@ -1,3 +1,4 @@
+/* eslint-disable class-methods-use-this */
 // @ts-nocheck
 /* eslint-disable import/no-unresolved, no-useless-escape, prefer-destructuring, no-template-curly-in-string */
 const vscode = require("vscode");
@@ -48,20 +49,14 @@ class SnippetsEditor {
   /**
    * @async
    * Delete a snippet from a snippet file.
-   * @param {vscode.Uri} uri Uri of snippet file
+   * @param {vscode.Uri} uri URI of the snippet file you want to delete the snippet from.
    * @param {String} snippetName The name of the snippet to delete
    * @returns {Promise} The TextEditor that contains the user snippets document.
    */
   async deleteSnippet(uri, snippetName) {
-    let text = await SnippetsFetcher.getData(uri.fsPath);
-
-    let escapedSnippetName = Util.escapeStringRegexp(snippetName);
-    let regex = new RegExp(
-      `[\r\n]*?"${escapedSnippetName}".*?:.*?\\{.*?\\},{0,1}`,
-      "ms"
-    );
-    let newText = text.replace(regex, "");
-    await fs.promises.writeFile(uri.fsPath, newText);
+    let json = await SnippetsFetcher.getJson(uri.fsPath);
+		delete json[snippetName];
+    await fs.promises.writeFile(uri.fsPath, JSON.stringify(json, null, 2));
   }
 }
 

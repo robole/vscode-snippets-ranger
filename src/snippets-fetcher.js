@@ -149,6 +149,18 @@ class SnippetsFetcher {
     return Promise.all(json);
   }
 
+	/**
+   * Get the contents of the files as JSON objects. The files can be JSON or JSONC 
+	 * files (Microsoft JSON with comments standard).
+   * @param {Array} filepaths
+   * @returns {Promise} A Promise with an array of JSON objects.
+   */
+  static async getJson(filepath) {
+    let data = await SnippetsFetcher.getData(filepath);
+    let json = await jsonc.parse(data);
+    return json;
+  }
+
   /**
    * @async
    * @static
