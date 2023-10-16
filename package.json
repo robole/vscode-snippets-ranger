@@ -7,7 +7,7 @@
   },
   "description": "View and edit all your snippets in one purty place. Yee-haw!",
   "icon": "img/logo.png",
-  "version": "0.25.1",
+  "version": "1.0.0",
   "engines": {
     "vscode": "^1.4.0",
     "node": ">=12.0.0"
@@ -90,7 +90,7 @@
     "onCommand:snippets-ranger.show",
     "onCommand:snippets-ranger.add"
   ],
-  "main": "./dist/extension.js",
+  "main": "./dist/main.js",
   "contributes": {
     "commands": [
       {
@@ -100,7 +100,7 @@
       },
       {
         "command": "snippets-ranger.add",
-        "title": "Add New Snippet",
+        "title": "Add new snippet to snippets file...",
         "category": "Snippets Ranger"
       }
     ]

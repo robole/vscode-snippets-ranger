@@ -1,24 +1,82 @@
 :root {
-  --body-bg-color-light-mode: rgb(255, 255, 255);
-  --body-bg-color-dark-mode: #292a2b;
-  --body-bg-color-contrast-mode: rgb(0, 0, 0);
-  --body-color-light-mode: black;
-  --body-color-dark-mode: #e6e6e6;
-  --body-color-contrast-mode: rgb(255, 255, 255);
-  --toc-bg-light-mode: rgba(241, 241, 241, 0.15);
-  --toc-bg-dark-mode: #1f2020;
-  --toc-box-shadow-light-mode: -2px 2px 8px 1px rgba(214, 214, 214, 0.6);
-  --toc-box-shadow-dark-mode: -2px 2px 8px 1px #18171782;
-  --table-head-color-light-mode: rgb(246, 246, 246);
-  --table-head-color-dark-mode: #383a3b;
-  --table-divider-color-light-mode: rgb(201, 198, 198);
-  --table-divider-color-dark-mode: #a0a7aa;
-  --table-highlight-color-light-mode: #f0f71d2f;
-  --table-highlight-color-dark-mode: #ffffff05;
+  --body-bg-color-light-mode: hsl(0, 0%, 95%);
+  --body-bg-color-dark-mode: hsl(210, 2%, 16%);
+  --body-bg-color-contrast-mode: hsl(0, 0%, 0%);
+  --body-bg-color: var(--body-bg-color-dark-mode);
+
+  --body-color-light-mode: hsl(0, 0%, 5%);
+  --body-color-dark-mode: hsl(0, 0%, 90%);
+  --body-color-contrast-mode: hsl(0, 0%, 100%);
+  --body-color: var(--body-color-dark-mode);
+
   --code-color-light-mode: #7a5600;
   --code-color-dark-mode: #d7ba7d;
+  --code-color: var(--code-color-dark-mode);
+
+  --button-bg-color-dark-mode: hsl(0, 3%, 80%);
+  --button-bg-color-light-mode: hsl(0, 3%, 75%);
+  --button-bg-color-contrast-mode: hsl(0, 3%, 100%);
+  --button-bg-color: var(--button-bg-color-dark-mode);
+
+  --button-color-dark-mode: hsl(0, 3%, 10%);
+  --button-color-light-mode: hsl(0, 3%, 25%);
+  --button-color-contrast-mode: hsl(0, 3%, 0%);
+  --button-color: var(--button-color-dark-mode);
+
+  --toc-bg-color-light-mode: hsla(0, 9%, 87%, 0.15);
+  --toc-bg-color-dark-mode: hsl(0, 0%, 14%);
+  --toc-bg-color-contrast-mode: var(--body-bg-color-light-mode);
+  --toc-bg-color: var(--toc-bg-color-dark-mode);
+
+  --border-color-light-mode: hsl(0, 3%, 78%);
+  --border-color-dark-mode: hsl(198, 6%, 36%);
+  --border-color-contrast-mode: hsl(0, 3%, 100%);
+  --border-color: var(--border-color-dark-mode);
+
+  --table-head-color-light-mode: hsl(200, 0%, 85%);
+  --table-head-color-dark-mode: hsl(200, 0%, 23%);
+  --table-head-color: var(--table-head-color-dark-mode);
+
+  --table-highlight-color-light-mode: #f0f71d2f;
+  --table-highlight-color-dark-mode: #ffffff05;
+  --table-highlight-color: var(--table-highlight-color-dark-mode);
+
   --table-action-column-width: 80px;
   --table-min-width: 800px;
+
+  --h2-height: 3.35rem;
+  --file-section-header-height: 4.4rem;
+  --extension-h3-height: 4.3rem;
+  --extension-file-section-header-height: 6.4rem;
+}
+
+:root body.vscode-high-contrast {
+  --body-color: var(--body-color-contrast-mode);
+  --body-bg-color: var(--body-bg-color-contrast-mode);
+
+  --button-color: var(--button-color-contrast-mode);
+  --button-bg-color: var(--button-bg-color-contrast-mode);
+
+  --border-color: var(--border-color-contrast-mode);
+
+  --toc-bg-color: var(--toc-bg-color-contrast-mode);
+}
+
+:root body.vscode-light {
+  --body-color: var(--body-color-light-mode);
+  --body-bg-color: var(--body-bg-color-light-mode);
+
+  --button-color: var(--button-color-light-mode);
+  --button-bg-color: var(--button-bg-color-light-mode);
+
+  --code-color: var(--code-color-light-mode);
+
+  --border-color: var(--border-color-light-mode);
+
+  --toc-bg-color: var(--toc-bg-color-light-mode);
+
+  --table-head-color: var(--table-head-color-light-mode);
+  --table-highlight-color: var(--table-highlight-color-light-mode);
 }
 
 *,
@@ -27,124 +85,180 @@
   box-sizing: border-box;
 }
 
-body,
-body.vscode-dark,
-body.vscode-light,
-body.vscode-high-contrast {
+:focus-visible {
+  outline: orange dotted 0.25rem;
+}
+
+body {
   font-family: Roboto, "Open Sans", san-serif;
   font-size: calc(16px + 0.15vw);
   padding: 10px;
   margin: 0 auto;
   max-width: 1600px;
   overflow-x: auto;
+
+  color: var(--body-color);
+  background-color: var(--body-bg-color);
 }
+
+@media (min-width: 1000px) {
+  body {
+    width: 90%;
+  }
+}
+
+code {
+  font-family: var(--vscode-editor-font-family);
+  font-size: calc(14px + 0.15vw);
+  color: var(--code-color);
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  margin: 0 auto;
+}
+
+/** headings **/
+
+:is(h1, h2, h3, h4, h5) {
+  margin: 0;
+}
+
+h1 {
+  font-size: 2rem;
+  text-align: center;
+}
+
+h2 {
+  font-size: 1.8rem;
+}
+
+h3 {
+  font-size: 1.6rem;
+}
+
+h4 {
+  font-size: 1.4rem;
+}
+
+/** table of contents **/
 
 #toc {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+
   width: 90%;
   max-width: 580px;
-  margin: 40px auto;
+  margin: 4rem auto;
+  padding: 1rem 0;
   border-radius: 10px;
+
+  background-color: var(--toc-bg-color);
+  border: 1px solid var(--border-color);
+}
+
+body.vscode-high-contrast #toc {
+  color: black;
+}
+
+/** major sections **/
+
+section {
+  margin-block-end: 4rem;
+}
+
+.file-section {
+  position: relative;
+  margin-block-end: 2.5rem;
 }
 
 section h2,
-h3,
-h4 {
-  font-family: var(--vscode-font-family);
-  margin: 0;
-  margin-block-end: 0;
-  position: -webkit-sticky;
-  position: -moz-sticky;
-  position: -ms-sticky;
-  position: -o-sticky;
+section header,
+section#extension h3,
+section#extension header {
   position: sticky;
+  margin: 0;
+  background-color: var(--body-bg-color);
+  font-family: var(--vscode-font-family);
   min-width: var(--table-min-width);
 }
 
 section h2 {
   top: 0;
   z-index: 1000;
-  text-align: center;
+  margin-bottom: 0;
+  padding-block-start: 1.25rem;
 }
 
-body.vscode-high-contrast #toc h2 {
-  color: var(--body-color-light-mode);
-}
+section:not(#extension) header,
+section#extension h3 {
+  --padding-block-start: 1.5rem;
 
-h3 {
-  top: 1.8rem;
-  margin: 0.1rem 0;
+  top: var(--h2-height);
   z-index: 500;
-  line-height: 150%;
-  font-size: 1.4rem;
-  font-style: italic;
+  padding: var(--padding-block-start) 0 1rem 0;
 }
 
-h4 {
-  top: 3.5rem;
+section:not(#extension) header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+section#extension header {
+  top: calc(var(--h2-height) + var(--extension-h3-height));
   z-index: 400;
-  line-height: 150%;
-  font-size: 1.1rem;
-  padding: 0.5em 0;
+  padding: 0.5rem 0;
+
+  display: grid;
+  grid-template-columns: auto auto 1fr;
+  align-items: center;
+  column-gap: 1rem;
 }
 
-code {
-  font-family: var(--vscode-editor-font-family);
-  font-size: calc(14px + 0.15vw);
+section#extension header :is(p, div) {
+  grid-column: 1 / -1;
+  margin: 0;
+  padding: 1.25rem 0;
 }
 
-.empty {
-  text-align: center;
+.language-list {
+  display: inline-block;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
-button {
-  font-family: inherit;
-  border-radius: 5px;
-  border: none;
-  cursor: pointer;
+.language-list li {
+  display: inline;
+  padding-inline-start: 0.1rem;
 }
 
-#toTopLink {
-  --size: 25px;
-  display: none;
-  position: fixed;
-  top: 6px;
-  right: 10px;
-  z-index: 9999;
-  width: var(--size);
-  height: var(--size);
-  border-radius: 15px;
-  cursor: pointer;
-  box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2),
-    0px 6px 10px 0px rgba(0, 0, 0, 0.14), 0px 1px 18px 0px rgba(0, 0, 0, 0.12);
+.language-list li code {
+  font-size: 0.9em;
 }
 
-.upIcon {
-  border-radius: inherit;
+.language-list li:not(:last-child) code::after {
+  content: ",";
+  color: var(--body-color);
 }
 
-@media (min-width: 1000px) {
-  body,
-  body.vscode-dark,
-  body.vscode-light,
-  body.vscode-high-contrast {
-    width: 90%;
-  }
-
-  #toTopLink {
-    --size: 30px;
-    right: 6%;
-  }
+.bookmark {
+  position: absolute;
+  top: calc(var(--h2-height) * -1);
 }
 
-@media (min-width: 1600px) {
-  #toTopLink {
-    right: calc((100vw - 1592px) / 2);
-  }
+section#extension .bookmark {
+  top: calc((var(--h2-height) + var(--extension-h3-height)) * -1);
 }
+
+/** table styles **/
 
 table {
   table-layout: fixed;
@@ -152,18 +266,10 @@ table {
   width: 100%;
   border-collapse: collapse;
   word-break: break-word;
-  margin: 1em 0;
 }
 
-th {
-  font-weight: 500;
-  position: -webkit-sticky;
-  position: -moz-sticky;
-  position: -ms-sticky;
-  position: -o-sticky;
-  position: sticky;
-  line-height: 150%;
-  top: 3.5rem;
+.wrapper {
+  overflow-x: scroll;
 }
 
 th,
@@ -173,13 +279,46 @@ td {
   text-align: left;
 }
 
-td {
-  padding-right: 5px;
-  vertical-align: top;
+thead {
+  position: sticky;
+  top: calc(var(--h2-height) + var(--file-section-header-height));
 }
 
-td:nth-child(1) {
-  font-family: var(--vscode-editor-font-family);
+section#extension thead {
+  top: 14.1rem;
+}
+
+th {
+  font-weight: 500;
+  line-height: 150%;
+
+  background-color: var(--table-head-color);
+  border-bottom: 1px solid var(--border-color);
+}
+
+td {
+  padding-inline-end: 0.25rem;
+  vertical-align: top;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.prefix-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.prefix-list li:not(:last-child) {
+  padding-block-end: 0.5rem;
+}
+
+.prefix-list li:not(:last-child)::after {
+  content: ",";
+  font-weight: bold;
+}
+
+tr:hover {
+  background-color: var(--table-highlight-color);
 }
 
 th:nth-child(1),
@@ -212,12 +351,12 @@ td:nth-child(5) {
   width: 25%;
 }
 
-/* using percentage value breaks down here, maybe because of long words */
-.scoped-table :is(th:nth-child(5),td:nth-child(5)) {
-  width: clamp(120px, 13vw ,240px);
+/* using percentage value breaks down here, maybe because of long words? */
+.scoped-table :is(th:nth-child(5), td:nth-child(5)) {
+  width: clamp(120px, 13vw, 240px);
 }
 
-.scoped-table :is(th:nth-child(6),td:nth-child(6)) {
+.scoped-table :is(th:nth-child(6), td:nth-child(6)) {
   width: var(--table-action-column-width);
 }
 
@@ -242,154 +381,41 @@ td:nth-child(5) {
     width: calc(40% - var(--table-action-column-width));
   }
 
-	.scoped-table :is(th:nth-child(2), td:nth-child(2)) {
-		width: 15%;
-	}
+  .scoped-table :is(th:nth-child(2), td:nth-child(2)) {
+    width: 15%;
+  }
 
-	.scoped-table :is(th:nth-child(3), td:nth-child(3)) {
-		width: 20%;
-	}
+  .scoped-table :is(th:nth-child(3), td:nth-child(3)) {
+    width: 20%;
+  }
 }
 
+/** buttons **/
 
-body.vscode-dark td,
-body.vscode-high-contrast td {
-  border-bottom: 1px solid var(--table-divider-color-dark-mode);
+button {
+  font-family: inherit;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+
+  color: var(--button-color);
+  background-color: var(--button-bg-color);
+  box-shadow: 0 1px 2px 0 hsl(0deg 0% 0% / 15%), 0 0 4px 0 hsl(0deg 0% 0% / 10%),
+    0 0 0 1px hsl(0deg 0% 0% / 10%) inset;
 }
 
-body.vscode-light th {
-  background-color: var(--table-head-color-light-mode);
-  border-bottom: 1px solid var(--table-divider-color-light-mode);
-}
-
-body.vscode-light td {
-  border-bottom: 1px solid var(--table-divider-color-light-mode);
-}
-
-body.vscode-light tr:hover {
-  background-color: var(--table-highlight-color-light-mode);
-}
-
-body.vscode-light td:nth-child(1) {
-  color: var(--code-color-light-mode);
-}
-
-body.vscode-dark th,
-body.vscode-high-contrast th {
-  background-color: var(--table-head-color-dark-mode);
-  border-bottom: 1px solid var(--table-divider-color-dark-mode);
-}
-
-body.vscode-dark tr:hover,
-body.vscode-high-contrast tr:hover {
-  background-color: var(--table-highlight-color-dark-mode);
-}
-
-body.vscode-dark td:nth-child(1),
-body.vscode-high-contrast td:nth-child(1) {
-  color: var(--code-color-dark-mode);
-}
-
-body.vscode-light {
-  background-color: var(--body-bg-color-light-mode);
-  color: var(--body-color-light-mode);
-}
-
-body.vscode-light section h2,
-body.vscode-light h3,
-body.vscode-light h4 {
-  background-color: var(--body-bg-color-light-mode);
-  color: var(--body-color-light-mode);
-}
-
-body.vscode-light #toc {
-  background-color: var(--toc-bg-light-mode);
-  box-shadow: var(--toc-box-shadow-light-mode);
-}
-
-body.vscode-light code {
-  color: var(--code-color-light-mode);
-}
-
-body.vscode-light .upIcon {
-  background-color: rgb(208 208 208);
-  opacity: 1;
-}
-
-body.vscode-dark {
-  background-color: var(--body-bg-color-dark-mode);
-  color: var(--body-color-dark-mode);
-}
-
-body.vscode-dark section h2,
-body.vscode-dark h3,
-body.vscode-dark h4 {
-  background-color: var(--body-bg-color-dark-mode);
-  color: var(--body-color-dark-mode);
-}
-
-body.vscode-dark #toc,
-body.vscode-high-contrast #toc {
-  background-color: var(--toc-bg-dark-mode);
-  box-shadow: var(--toc-box-shadow-dark-mode);
-  border: 1px #323333 solid;
-}
-
-body.vscode-dark code,
-body.vscode-high-contrast code {
-  color: var(--code-color-dark-mode);
-}
-
-body.vscode-dark .upIcon,
-body.vscode-high-contrast .upIcon {
-  background-color: var(--body-bg-color-light-mode);
-  fill: var(--body-color-light-mode);
-}
-
-body.vscode-high-contrast {
-  background-color: var(--body-bg-color-contrast-mode);
-  color: var(--body-color-contrast-mode);
-}
-
-body.vscode-high-contrast section h2,
-body.vscode-high-contrast h3,
-body.vscode-high-contrast h4 {
-  background-color: var(--body-bg-color-contrast-mode);
-  color: var(--body-color-contrast-mode);
-}
-
-body.vscode-high-contrast #toc {
-  background-color: var(--body-bg-color-light-mode);
-}
-
-section#extension div p {
-  margin-top: 1.5rem;
-}
-
-section#extension th {
-  top: 6rem;
-}
-
-a {
-  text-decoration: none;
-}
-
-h1 {
-  text-align: center;
-}
-
-.wrapper {
-  overflow-x: scroll;
+button svg {
+  fill: var(--button-color);
 }
 
 .sourceBtn {
-  margin: 0 0.25em;
-  margin-top: 2.25em;
-  padding: 0.75em;
+  padding: 0.2rem 0.4rem 0.175rem 0.4rem;
+  font-size: 0.75rem;
 }
 
 .actionBtn {
   --size: calc(var(--table-action-column-width) / 2 - 5px);
+
   padding: 0.6em;
   width: var(--size);
   height: var(--size);
@@ -399,28 +425,6 @@ h1 {
   margin-right: 5px;
 }
 
-button:focus {
-  outline: 3px solid orange;
-}
-
-body.vscode-light button {
-  color: black;
-  background-color: rgb(218, 218, 218);
-  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 35%);
-}
-
-body.vscode-dark button,
-body.vscode-high-contrast button {
-  color: black;
-  background-color: white;
-  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 20%);
-}
-
 body.vscode-high-contrast button {
   font-weight: bold;
-}
-
-.gif {
-  display: block;
-  margin: 0 auto;
 }

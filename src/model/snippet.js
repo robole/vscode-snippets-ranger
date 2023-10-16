@@ -1,73 +1,93 @@
-/* eslint-disable no-underscore-dangle */
-const formatter = require("../formatter");
+const format = require("../helper/format");
+const util = require("../helper/util");
 
 /**
- * VS Code Snippet.
+ * The body can be a string or an array. This formats it to be an array internally always.
+ * @param {*} body - The string to format
+ * @param {string} [eol="\n"] - The end of line characters look to use for tokenization
+ * @returns {string}
+ * */
+function formatBody(body) {
+  let formatted = body;
+
+  if (typeof body === "string") {
+    formatted = format.convertToArray(body);
+  }
+
+  return formatted;
+}
+
+/**
+ * The prefix can be a string or an array. This formats it to be an array internally always.
+ * @param {*} prefix - The string to format
+ * @param {string} [eol="\n"] - The end of line delimiter look to use for tokenization
+ * @returns {string}
+ * */
+function formatPrefix(prefix) {
+  let formatted = prefix;
+
+  if (typeof prefix === "string") {
+    formatted = format.convertToArray(prefix);
+  }
+
+  return formatted;
+}
+
+/**
+ * Sort the languages and normalize the whitespace of the `scope` field.
+ * @param {string} scope
+ * @returns {string}
  */
-class Snippet {
-  constructor(name = "", prefix = "", body = [], description = "", scope = "") {
-    this.name = name;
-    this.prefix = prefix;
-    this.description = description; // optional field in source JSON file
-    this.body = body; // a string or array is permitted in source JSON file
-		this.scope = scope; // comma-separated list of languages
+function formatScope(scope) {
+  let formatted;
 
-    // ensures no formatting issues when toString() is used
-    this.eol = "\n";
-    if (process.platform === "win32") {
-      this.eol = "\r\n";
-    }
-  }
+  let items = scope.split(",");
+  let nonblankItems = items.filter((item) => item.trim().length > 0);
+  let trimmedItems = nonblankItems.map((item) => item.trim());
+  trimmedItems.sort();
 
-  set name(newName) {
-    this._name = newName;
-  }
+  formatted = trimmedItems.join(", ");
 
-  get name() {
-    return this._name;
-  }
+  return formatted;
+}
 
-  set prefix(newPrefix) {
-    this._prefix = newPrefix;
-  }
+/**
+ * A code snippet. Code snippets are templates that make it easier to enter repeating code patterns.
+ */
+function Snippet(
+  name = "",
+  prefix = [],
+  body = [],
+  description = "",
+  scope = ""
+) {
+  let formattedPrefix = formatPrefix(prefix);
+  let formattedBody = formatBody(body);
+  let formattedScope = formatScope(scope);
+  let endOfLineDelimiter = util.getEndOfLineDelimiter();
 
-  get prefix() {
-    return this._prefix;
-  }
-
-  set description(newDesc) {
-    this._description = newDesc;
-  }
-
-  get description() {
-    return this._description;
-  }
-
-  set body(newBody) {
-    if (typeof newBody === "object") {
-      // array
-      this._body = newBody;
-    } else if (typeof newBody === "string") {
-      this._body = formatter.convertToArray(newBody, this.eol);
-    }
-  }
-
-  get body() {
-    return this._body;
-  }
-
-	set scope(newScope) {
-    this._scope = newScope;
-  }
-
-  get scope() {
-    return this._scope;
-  }
-
-  toString() {
-    // prettier-ignore
-    return `${this.eol}${JSON.stringify(this.name)} : {${this.eol}\t"prefix": ${JSON.stringify(this.prefix)},${this.eol}\t"body": ${JSON.stringify(this.body)},${this.eol}\t"description": ${JSON.stringify(this.description)}${this.eol}\t"scope": ${JSON.stringify(this.scope)}${this.eol}}`;
-  }
+  return {
+    name,
+    description,
+    set prefix(newPrefix) {
+      formattedPrefix = formatPrefix(newPrefix);
+    },
+    get prefix() {
+      return formattedPrefix;
+    },
+    set body(newBody) {
+      formattedBody = formatBody(newBody);
+    },
+    get body() {
+      return formattedBody;
+    },
+    set scope(newScope) {
+      formattedScope = formatScope(newScope);
+    },
+    get scope() {
+      return formattedScope;
+    },
+  };
 }
 
 module.exports = Snippet;

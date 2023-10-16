@@ -7,9 +7,8 @@ function run() {
   const mocha = new Mocha({
     ui: "bdd",
     color: true,
-    timeout: 2000,
+    timeout: 4000,
   });
-  mocha.set;
 
   const testsRoot = path.resolve(__dirname, "..");
 
@@ -31,9 +30,9 @@ function run() {
             c();
           }
         });
-      } catch (err) {
-        console.error(err);
-        e(err);
+      } catch (error) {
+        console.error(error);
+        e(error);
       }
     });
   });

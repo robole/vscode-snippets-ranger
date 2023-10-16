@@ -1,44 +1,76 @@
+const format = require("../helper/format");
+
 /**
- * A HTML Table of Contents created from data.
+ * Create a table of contents in HTML from the snippets files.
+ * @param {Array} projectSnippetsFiles - An array of `SnippetsFile` objects for the project (workspace)
+ * @param {Array} userSnippetsFiles - An array of `SnippetsFile` objects for the user
+ * @param {Array} appSnippetsFiles - An array of `SnippetsFile` objects for the app (VS Code)
+ * @param {Array} extensions - An array of `Extension` objects that have snippets
+ * @returns {string}
  */
-class TableOfContents {
-  constructor(data) {
-    this.data = data;
+const createTableOfContents = (
+  projectSnippetsFiles = [],
+  userSnippetsFiles = [],
+  appSnippetsFiles = [],
+  extensions = []
+) => {
+  let html = "";
+  let entries = "";
+
+  entries += createCategoryEntry("project", projectSnippetsFiles);
+  entries += createCategoryEntry("user", userSnippetsFiles);
+  entries += createExtensionEntry(extensions);
+  entries += createCategoryEntry("app", appSnippetsFiles);
+
+  if (entries !== "") {
+    html = `<div id="toc"><h2>Table of Contents</h2><ul>${entries}</ul></div>`;
   }
 
-  /**
-   * Get the Table of Contents as HTML.
-   */
-  getTableOfContents() {
-    let html = `<div id="toc">
-		<h2>Table of Contents</h2>
-		<ul>
-		<li><a href="#project">Project Snippets</a></li>`;
-		html += this.createTableOfContentsEntry(this.projectIDs);
-		html += `<li><a href="#user">User Snippets</a></li>`;
-		html += this.createTableOfContentsEntry(this.userIDs);
-    html += `<li><a href="#extension">Extension Snippets</a></li>`;
-    html += this.createTableOfContentsEntry(this.extensionIDs);
-    html += `<li><a href="#app">VS Code Snippets</a></li>`;
-    html += this.createTableOfContentsEntry(this.appIDs);
-    html += `</ul></div>`;
-    return html;
+  return html;
+};
+
+const createCategoryEntry = (category, snippetsFiles) => {
+  let html = "";
+  let entries = "";
+
+  snippetsFiles.forEach((snippetsFile) => {
+    entries += createSnippetsFileEntry(snippetsFile);
+  });
+
+  if (entries !== "") {
+    let title = `${format.capitalize(category)} Snippets`;
+    html += `<li><a href="#${category}">${title}</a><ul>`;
+    html += `${entries}</ul></li>`;
   }
 
-  /**
-   * Get the Table of Contents entry for Extension snippets as HTML.
-   */
-  createTableOfContentsEntry(array) {
-    let html = "<ul>";
+  return html;
+};
 
-    array.forEach((obj) => {
-      html += `<li><a href=#${obj.id}>${obj.name}</a>`;
+const createSnippetsFileEntry = (snippetsFile) => {
+  let id = format.slugify(snippetsFile.path);
+  return `<li><a href="#${id}">${snippetsFile.getTitle()}</a></li>`;
+};
+
+const createExtensionEntry = (extensions) => {
+  let html = "";
+  let entries = "";
+
+  extensions.forEach((extension) => {
+    let id = format.slugify(extension.id);
+    entries += `<li><a href="#${id}">${extension.name}</a><ul>`;
+
+    extension.snippetsFiles.forEach((snippetsFile) => {
+      entries += createSnippetsFileEntry(snippetsFile);
     });
 
-    html += "</ul>";
+    entries += "</ul></li>";
+  });
 
-    return html;
+  if (entries !== "") {
+    html += `<li><a href="#extension">Extension Snippets</a><ul>${entries}</ul></li>`;
   }
-}
 
-module.exports = TableOfContents;
+  return html;
+};
+
+module.exports = { createTableOfContents };

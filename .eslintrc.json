@@ -1,14 +1,24 @@
 {
   "extends": ["eslint-config-node-roboleary"],
-	"env": {
-		"mocha": true
-	},
-	"settings": {
-		"import/core-modules": [ "vscode" ]
-	},
-	"rules": {
-		"node/no-missing-require": ["error", {
-				"allowModules": [ "vscode"]
-		}]
-	}
+  "env": {
+    "mocha": true,
+    "es2020": true
+  },
+  "settings": {
+    "import/core-modules": ["vscode"]
+  },
+  "rules": {
+    "node/no-missing-require": [
+      "error",
+      {
+        "allowModules": ["vscode"]
+      }
+    ],
+    "node/no-unpublished-require": [
+      "error",
+      {
+        "allowModules": ["mocha"]
+      }
+    ]
+  }
 }
