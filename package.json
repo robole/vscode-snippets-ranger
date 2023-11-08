@@ -6,8 +6,8 @@
     "name": "Rob O'Leary"
   },
   "description": "View and edit all your snippets in one purty place. Yee-haw!",
-  "icon": "img/logo.png",
-  "version": "1.0.1",
+  "icon": "img/logo.webp",
+  "version": "1.1.0",
   "engines": {
     "vscode": "^1.4.0",
     "node": ">=12.0.0"
@@ -16,8 +16,8 @@
     "Snippets"
   ],
   "galleryBanner": {
-    "color": "#8bc9e9",
-    "theme": "light"
+    "color": "#6666FF",
+    "theme": "dark"
   },
   "keywords": [
     "snippet",

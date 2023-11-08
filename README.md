@@ -1,6 +1,6 @@
 <h1 align="center">
   <br>
-    <img align="center" src="img/logo.png" width="200">
+    <img align="center" src="img/logo.webp" width="200">
   <br>
 	<br>
   Snippets Ranger
@@ -10,18 +10,18 @@
 <h4 align="center">View and edit all your snippets in one purty place. Yee-haw!</h4>
 
 <p align="center">
-<img src="https://img.shields.io/static/v1?logo=visual-studio-code&label=made%20for&message=VS%20Code&color=blue" alt="Made for VSCode">
-<img src="https://img.shields.io/visual-studio-marketplace/v/robole.snippets-ranger?logo=visual-studio-code&color=blue" alt="Visual Studio Marketplace Version">
-<img src="https://img.shields.io/static/v1?logo=visual-studio-code&label=size&message=68KB&color=blue"
+<img src="https://img.shields.io/static/v1?logo=visual-studio-code&label=made%20for&message=VS%20Code&color=6666FF" alt="Made for VSCode">
+<img src="https://img.shields.io/visual-studio-marketplace/v/robole.snippets-ranger?logo=visual-studio-code&color=6666FF" alt="Visual Studio Marketplace Version">
+<img src="https://img.shields.io/static/v1?logo=visual-studio-code&label=size&message=65KB&color=6666FF"
 alt="Extension file size in bytes">
-<img src="https://img.shields.io/visual-studio-marketplace/r/robole.snippets-ranger?logo=visual-studio-code&color=blue" alt="Visual Studio Marketplace Rating">
-<img src="https://img.shields.io/visual-studio-marketplace/d/robole.snippets-ranger?logo=visual-studio-code&color=blue" alt="downloads"/>
-<img src="https://img.shields.io/visual-studio-marketplace/i/robole.snippets-ranger?logo=visual-studio-code&color=blue" alt="installs"/>
-<img src="https://img.shields.io/static/v1?label=built%20with&message=sarsaparilla%20%26%20javascript&color=blue" alt="Built with sarsaparilla and javascript"/>
+<img src="https://img.shields.io/visual-studio-marketplace/r/robole.snippets-ranger?logo=visual-studio-code&color=6666FF" alt="Visual Studio Marketplace Rating">
+<img src="https://img.shields.io/visual-studio-marketplace/d/robole.snippets-ranger?logo=visual-studio-code&color=6666FF" alt="downloads"/>
+<img src="https://img.shields.io/visual-studio-marketplace/i/robole.snippets-ranger?logo=visual-studio-code&color=6666FF" alt="installs"/>
+<img src="https://img.shields.io/static/v1?label=built%20with&message=sarsaparilla%20%26%20javascript&color=6666FF" alt="Built with sarsaparilla and javascript"/>
 <a href="https://ko-fi.com/roboleary"><img src="https://img.shields.io/badge/Buy%20me%20a%20coffee-$4-gold?logo=buy-me-a-coffee" alt="Buy me a coffee"></a>
 </p>
 
-![Screenshot of the view. It shows the user snippets for the markdown language in a table with the columns: prefix, name, description, body and action.](img/screenshots/view-showcase.jpg)
+![Screenshot of the view. It shows the user snippets for the markdown language in a table with the columns: prefix, name, description, body and action.](img/screenshots/view-showcase.webp)
 
 Snippets are shown in an **easy to read [webview](https://code.visualstudio.com/api/extension-guides/webview)**.
 
@@ -41,15 +41,17 @@ There are **sticky headings** to ensure you can browse through long snippet list
 
 The **table of contents** facilitates quick navigation to a snippets set.
 
-![Screenshot of the table of contents for the view.](img/screenshots/toc.webp)
+<p align="center">
+	<img src="img/screenshots/toc.webp" alt="Screenshot of the table of contents for the view. It has the project, user, extension, and snippet files as entries organised into these groups.">
+</p>
 
 Pressing the <kbd>Home</kbd> key will return you to the table of contents.
 
 ## Easy editing
 
-You can **open the snippets file with the *View Source File* button** contained in the sticky header for each snippets file listed in the view.
+You can **open the snippets file with the *View Source File* button** contained in the sticky header for every snippets file in the webview.
 
-In the table, you can **edit individual snippet with the buttons in each row**:
+In the table, you can **edit each individual snippet with the buttons in the *Action* column**:
 - The *Edit* action button (identified by the pen icon) will take you to the specific snippet in the source file to perform an edit.
 - The *Delete* action button (identified by the trash icon) will delete the snippet straight away without opening the file.
 
@@ -60,7 +62,7 @@ If you are working in code and would like to **quickly add a snippet to a snippe
 1. Choose an existing snippets file or create a new file from the menu,
 1. The file will be opened with a new snippet. Your selection will be in the `body` field as an array of values. You can tab through the properties to fill each one out.
 
-![using add command](img/screenshots/add-command.png)
+![using add command](img/screenshots/add-command.webp)
 
 ## Commands
 
