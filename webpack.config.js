@@ -6,11 +6,12 @@ const TerserPlugin = require("terser-webpack-plugin");
 const crypto = require("crypto");
 
 const crypto_orig_createHash = crypto.createHash;
-crypto.createHash = algorithm => crypto_orig_createHash(algorithm === "md4" ? "sha256" : algorithm);
+crypto.createHash = (algorithm) =>
+  crypto_orig_createHash(algorithm === "md4" ? "sha256" : algorithm);
 
 const config = {
   target: "node",
-  entry: { main: "./src/extension.js" },
+  entry: { main: "./src/main.js" },
   optimization: {
     minimizer: [new OptimizeCSSAssetsPlugin(), new TerserPlugin()],
   },
@@ -22,7 +23,7 @@ const config = {
   },
   output: {
     path: path.resolve(__dirname, "dist"),
-    filename: "extension.js",
+    filename: "main.js",
     libraryTarget: "commonjs2",
     devtoolModuleFilenameTemplate: "../[resource-path]",
   },

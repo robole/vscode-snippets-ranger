@@ -5,6 +5,37 @@ All notable changes to this project are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.0.0] - 2023-11-08
+
+### Changed
+
+- Major refactor of codebase!!
+- Tweaked the appearance of *view* in following ways:
+	- Updated the *table of contents* to show an entry for the snippets file in an extension.
+	- Show *all* snippet files. Previously if a file was empty, it was not shown.
+	- For extensions section, make the file section with the heading (snippet file name) and languages a sticky section.
+	- Moved the "view source" button to be on same line as heading and to be be part of a sticky section.
+	- For the table of snippets:
+		- Show `prefix` as an unstyled list. If it has multiple items, show as a comman-separated list
+		 with each item on a separate line.
+		- Format the `scope` content to be a sorted list and have a space between each item.
+	- Tweaked colours, spacing, and various styles to improve readability.
+	- Change the `h3` headings in the project, user, and "VS Code" sections. Now, it shows the filename with the extension. Previously, the extension was excluded for brevity. Since a snippet file can be a `.json` or `.code-snippets` file, it is better to be give the complete filename.
+	- Changed the title for "app" snippets section from "VS Code Snippets" to "App Snippets".
+- Change `prefix` to accept string or array in *snippet.js*.
+- Change `scope` to be a formatted string (sort items and normalize space between items) in *snippet.js*.
+- Change the title of the `snippets-ranger.add` command from "Snippets Ranger: Add New Snippet" to "Add new snippet to snippets file...".
+- Change the `snippets-ranger.add` command to transform a multi-line string into multiple elements in the array.
+- Updated README copy and added new screenshots.
+
+### Removed
+
+- Removed the "back to button" that resided in the top-right corner of *view*.
+
+### Fixed
+
+- For the `snippets-ranger.add` command, it escapes dollar signs in the selected code. This ensures that they are not interpeted as tabstops.
+
 ## [0.25.2] - 2023-10-16
 
 ### Fixed

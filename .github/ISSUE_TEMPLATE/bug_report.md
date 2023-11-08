@@ -25,11 +25,11 @@ A clear and concise description of what you expected to happen.
 
 If applicable, add screenshots to help explain your problem.
 
-## Environment information
+## Platform information
 
 Please complete the following information:
 - On the main menu, go to *Help*, and select *About* from the drop down. Copy the information from the *About* dialog.
-- Are you are working remotely or using WSL? Please state this too.
+- Are you are working remotely or using WSL?
 
 ## Additional context
 

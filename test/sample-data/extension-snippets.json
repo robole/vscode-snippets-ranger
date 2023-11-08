@@ -1,0 +1,2017 @@
+[
+  {
+    "name": "vscode-markdownlint",
+    "displayName": "markdownlint",
+    "publisher": "DavidAnson",
+    "id": "DavidAnson.vscode-markdownlint",
+    "snippets": [
+      {
+        "languages": {},
+        "path": "/home/rob/.vscode-oss/extensions/davidanson.vscode-markdownlint-0.51.0-universal/snippets.json",
+        "snippets": [
+          {
+            "_name": "insertMarkdownLintDisableComment",
+            "_prefix": "markdownlint-disable",
+            "_description": "Disables one or more rules by name (MD013), alias (line-length), or tag (whitespace). Multiple rules are space-delimited (MD018 MD019). If no rules are specified, all rules are disabled. Takes effect starting with the line the comment is on.",
+            "_body": ["<!-- markdownlint-disable ${1:MD000 }-->"],
+            "_scope": "",
+            "eol": "\n"
+          },
+          {
+            "_name": "insertMarkdownLintEnableComment",
+            "_prefix": "markdownlint-enable",
+            "_description": "Enables one or more rules by name (MD013), alias (line-length), or tag (whitespace). Multiple rules are space-delimited (MD018 MD019). If no rules are specified, all rules are enabled. Takes effect starting with the line the comment is on.",
+            "_body": ["<!-- markdownlint-enable ${1:MD000 }-->"],
+            "_scope": "",
+            "eol": "\n"
+          },
+          {
+            "_name": "insertMarkdownLintDisableFileComment",
+            "_prefix": "markdownlint-disable-file",
+            "_description": "Disables one or more rules by name (MD013), alias (line-length), or tag (whitespace). Multiple rules are space-delimited (MD018 MD019). If no rules are specified, all rules are disabled. Applies to the entire file.",
+            "_body": ["<!-- markdownlint-disable-file ${1:MD000 }-->"],
+            "_scope": "",
+            "eol": "\n"
+          },
+          {
+            "_name": "insertMarkdownLintEnableFileComment",
+            "_prefix": "markdownlint-enable-file",
+            "_description": "Enables one or more rules by name (MD013), alias (line-length), or tag (whitespace). Multiple rules are space-delimited (MD018 MD019). If no rules are specified, all rules are enabled. Applies to the entire file.",
+            "_body": ["<!-- markdownlint-enable-file ${1:MD000 }-->"],
+            "_scope": "",
+            "eol": "\n"
+          },
+          {
+            "_name": "insertMarkdownLintDisableLineComment",
+            "_prefix": "markdownlint-disable-line",
+            "_description": "Disables one or more rules by name (MD013), alias (line-length), or tag (whitespace). Multiple rules are space-delimited (MD018 MD019). If no rules are specified, all rules are disabled. Applies to the current line only.",
+            "_body": ["<!-- markdownlint-disable-line ${1:MD000 }-->"],
+            "_scope": "",
+            "eol": "\n"
+          },
+          {
+            "_name": "insertMarkdownLintDisableNextLineComment",
+            "_prefix": "markdownlint-disable-next-line",
+            "_description": "Disables one or more rules by name (MD013), alias (line-length), or tag (whitespace). Multiple rules are space-delimited (MD018 MD019). If no rules are specified, all rules are disabled. Applies to the next line only.",
+            "_body": ["<!-- markdownlint-disable-next-line ${1:MD000 }-->"],
+            "_scope": "",
+            "eol": "\n"
+          },
+          {
+            "_name": "insertMarkdownLintCaptureComment",
+            "_prefix": "markdownlint-capture",
+            "_description": "Captures the current rule configuration. Takes effect starting with the line the comment is on.",
+            "_body": ["<!-- markdownlint-capture -->"],
+            "_scope": "",
+            "eol": "\n"
+          },
+          {
+            "_name": "insertMarkdownLintRestoreComment",
+            "_prefix": "markdownlint-restore",
+            "_description": "Restores the most recently captured rule configuration. Defaults to the document's initial configuration. Takes effect starting with the line the comment is on.",
+            "_body": ["<!-- markdownlint-restore -->"],
+            "_scope": "",
+            "eol": "\n"
+          },
+          {
+            "_name": "insertMarkdownLintConfigureFileComment",
+            "_prefix": "markdownlint-configure-file",
+            "_description": "Configures one or more rules by name (MD013), alias (line-length), or tag (whitespace) using the same JSON format as the \"markdownlint.config\" object. Applies to the entire file.",
+            "_body": [
+              "<!-- markdownlint-configure-file { ${1:\"MD013\": { \"line_length\": 100 \\}} } -->"
+            ],
+            "_scope": "",
+            "eol": "\n"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "markdown-snippets",
+    "displayName": "Markdown Snippets",
+    "publisher": "robole",
+    "id": "robole.markdown-snippets",
+    "snippets": [
+      {
+        "languages": {},
+        "path": "/home/rob/.vscode-oss/extensions/robole.markdown-snippets-0.9.1-universal/snippets/snippets.code-snippets",
+        "snippets": [
+          {
+            "_name": "Insert task list",
+            "_prefix": "task",
+            "_description": "Insert task list",
+            "_body": ["- [${1| ,x|}] ${2:text}", "${0}"],
+            "_scope": "",
+            "eol": "\n"
+          },
+          {
+            "_name": "Insert task list 2",
+            "_prefix": "task2",
+            "_description": "Insert task list with 2 tasks",
+            "_body": [
+              "- [${1| ,x|}] ${2:text}",
+              "- [${3| ,x|}] ${4:text}",
+              "${0}"
+            ],
+            "_scope": "",
+            "eol": "\n"
+          },
+          {
+            "_name": "Insert task list 3",
+            "_prefix": "task3",
+            "_description": "Insert task list with 3 tasks",
+            "_body": [
+              "- [${1| ,x|}] ${2:text}",
+              "- [${3| ,x|}] ${4:text}",
+              "- [${5| ,x|}] ${6:text}",
+              "${0}"
+            ],
+            "_scope": "",
+            "eol": "\n"
+          },
+          {
+            "_name": "Insert task list 4",
+            "_prefix": "task4",
+            "_description": "Insert task list with 4 tasks",
+            "_body": [
+              "- [${1| ,x|}] ${2:text}",
+              "- [${3| ,x|}] ${4:text}",
+              "- [${5| ,x|}] ${6:text}",
+              "- [${7| ,x|}] ${8:text}",
+              "${0}"
+            ],
+            "_scope": "",
+            "eol": "\n"
+          },
+          {
+            "_name": "Insert task list 5",
+            "_prefix": "task5",
+            "_description": "Insert task list with 5 tasks",
+            "_body": [
+              "- [${1| ,x|}] ${2:text}",
+              "- [${3| ,x|}] ${4:text}",
+              "- [${5| ,x|}] ${6:text}",
+              "- [${7| ,x|}] ${8:text}",
+              "- [${9| ,x|}] ${10:text}",
+              "${0}"
+            ],
+            "_scope": "",
+            "eol": "\n"
+          },
+          {
+            "_name": "Insert table",
+            "_prefix": "table",
+            "_description": "Insert table with 2 rows and 3 columns. First row is heading.",
+            "_body": [
+              "| ${1:Column1}  | ${2:Column2}   | ${3:Column3}   |",
+              "|-------------- | -------------- | -------------- |",
+              "| ${4:Item1}    | ${5:Item1}     | ${6:Item1}     |",
+              "${0}"
+            ],
+            "_scope": "",
+            "eol": "\n"
+          },
+          {
+            "_name": "Insert 2x1 table",
+            "_prefix": "2x1table",
+            "_description": "Insert table with 2 rows and 1 column. First row is heading.",
+            "_body": [
+              "| ${1:Column1}  |",
+              "|-------------- |",
+              "| ${2:Item1}    |",
+              "${0}"
+            ],
+            "_scope": "",
+            "eol": "\n"
+          },
+          {
+            "_name": "Insert 3x1 table",
+            "_prefix": "3x1table",
+            "_description": "Insert table with 3 rows and 1 column. First row is heading.",
+            "_body": [
+              "| ${1:Column1}  |",
+              "|-------------- |",
+              "| ${2:Item1}    |",
+              "| ${3:Item2}    |",
+              "${0}"
+            ],
+            "_scope": "",
+            "eol": "\n"
+          },
+          {
+            "_name": "Insert 4x1 table",
+            "_prefix": "4x1table",
+            "_description": "Insert table with 4 rows and 1 column. First row is heading.",
+            "_body": [
+              "| ${1:Column1}  |",
+              "|-------------- |",
+              "| ${2:Item1}    |",
+              "| ${3:Item2}    |",
+              "| ${4:Item3}    |",
+              "${0}"
+            ],
+            "_scope": "",
+            "eol": "\n"
+          },
+          {
+            "_name": "Insert 5x1 table",
+            "_prefix": "5x1table",
+            "_description": "Insert table with 5 rows and 1 column. First row is heading.",
+            "_body": [
+              "| ${1:Column1}  |",
+              "|-------------- |",
+              "| ${2:Item1}    |",
+              "| ${3:Item2}    |",
+              "| ${4:Item3}    |",
+              "| ${5:Item4}    |",
+              "${0}"
+            ],
+            "_scope": "",
+            "eol": "\n"
+          },
+          {
+            "_name": "Insert 2x2 table",
+            "_prefix": "2x2table",
+            "_description": "Insert table with 2 rows and 2 columns. First row is heading.",
+            "_body": [
+              "| ${1:Column1}   | ${2:Column2}    |",
+              "|--------------- | --------------- |",
+              "| ${3:Item1.1}   | ${4:Item2.1}   |",
+              "${0}"
+            ],
+            "_scope": "",
+            "eol": "\n"
+          },
+          {
+            "_name": "Insert 3x2 table",
+            "_prefix": "3x2table",
+            "_description": "Insert table with 3 rows and 2 columns. First row is heading.",
+            "_body": [
+              "| ${1:Column1}   | ${2:Column2}    |",
+              "|--------------- | --------------- |",
+              "| ${3:Item1.1}   | ${4:Item2.1}   |",
+              "| ${5:Item1.2}   | ${6:Item2.2}   |",
+              "${0}"
+            ],
+            "_scope": "",
+            "eol": "\n"
+          },
+          {
+            "_name": "Insert 4x2 table",
+            "_prefix": "4x2table",
+            "_description": "Insert table with 4 rows and 2 columns. First row is heading.",
+            "_body": [
+              "| ${1:Column1}   | ${2:Column2}    |",
+              "|--------------- | --------------- |",
+              "| ${3:Item1.1}   | ${4:Item2.1}   |",
+              "| ${5:Item1.2}   | ${6:Item2.2}   |",
+              "| ${7:Item1.3}   | ${8:Item2.3}   |",
+              "${0}"
+            ],
+            "_scope": "",
+            "eol": "\n"
+          },
+          {
+            "_name": "Insert 5x2 table",
+            "_prefix": "5x2table",
+            "_description": "Insert table with 5 rows and 2 columns. First row is heading.",
+            "_body": [
+              "| ${1:Column1}   | ${2:Column2}    |",
+              "|--------------- | --------------- |",
+              "| ${3:Item1.1}   | ${4:Item2.1}   |",
+              "| ${5:Item1.2}   | ${6:Item2.2}   |",
+              "| ${7:Item1.3}   | ${8:Item2.3}   |",
+              "| ${9:Item1.4}   | ${10:Item2.4}   |",
+              "${0}"
+            ],
+            "_scope": "",
+            "eol": "\n"
+          },
+          {
+            "_name": "Insert 2x3 table",
+            "_prefix": "2x3table",
+            "_description": "Insert table with 2 rows and 3 columns. First row is heading.",
+            "_body": [
+              "| ${1:Column1}    | ${2:Column2}    | ${3:Column3}    |",
+              "|---------------- | --------------- | --------------- |",
+              "| ${4:Item1.1}    | ${5:Item2.1}    | ${6:Item3.1}    |",
+              "${0}"
+            ],
+            "_scope": "",
+            "eol": "\n"
+          },
+          {
+            "_name": "Insert 3x3 table",
+            "_prefix": "3x3table",
+            "_description": "Insert table with 3 rows and 3 columns. First row is heading.",
+            "_body": [
+              "| ${1:Column1}    | ${2:Column2}    | ${3:Column3}    |",
+              "|---------------- | --------------- | --------------- |",
+              "| ${4:Item1.1}    | ${5:Item2.1}    | ${6:Item3.1}    |",
+              "| ${7:Item1.2}    | ${8:Item2.2}    | ${9:Item3.2}    |",
+              "${0}"
+            ],
+            "_scope": "",
+            "eol": "\n"
+          },
+          {
+            "_name": "Insert 4x3 table",
+            "_prefix": "4x3table",
+            "_description": "Insert table with 4 rows and 3 columns. First row is heading.",
+            "_body": [
+              "| ${1:Column1}    | ${2:Column2}    | ${3:Column3}    |",
+              "|---------------- | --------------- | --------------- |",
+              "| ${4:Item1.1}    | ${5:Item2.1}    | ${6:Item3.1}    |",
+              "| ${7:Item1.2}    | ${8:Item2.2}    | ${9:Item3.2}    |",
+              "| ${10:Item1.3}   | ${11:Item2.3}   | ${12:Item3.3}   |",
+              "${0}"
+            ],
+            "_scope": "",
+            "eol": "\n"
+          },
+          {
+            "_name": "Insert 5x3 table",
+            "_prefix": "5x3table",
+            "_description": "Insert table with 5 rows and 3 columns. First row is heading.",
+            "_body": [
+              "| ${1:Column1}    | ${2:Column2}    | ${3:Column3}    |",
+              "|---------------- | --------------- | --------------- |",
+              "| ${4:Item1.1}    | ${5:Item2.1}    | ${6:Item3.1}    |",
+              "| ${7:Item1.2}    | ${8:Item2.2}    | ${9:Item3.2}    |",
+              "| ${10:Item1.3}   | ${11:Item2.3}   | ${12:Item3.3}   |",
+              "| ${13:Item1.4}   | ${14:Item2.4}   | ${15:Item3.4}   |",
+              "${0}"
+            ],
+            "_scope": "",
+            "eol": "\n"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "vue-vscode-snippets",
+    "displayName": "Vue VSCode Snippets",
+    "publisher": "sdras",
+    "id": "sdras.vue-vscode-snippets",
+    "snippets": [
+      {
+        "languages": {},
+        "path": "/home/rob/.vscode-oss/extensions/sdras.vue-vscode-snippets-3.1.1/snippets/vue.json",
+        "snippets": [
+          {
+            "_name": "Vue Single File Component",
+            "_prefix": "vbase",
+            "_description": "Base for Vue File with SCSS",
+            "_body": [
+              "<template>",
+              "\t<div>",
+              "",
+              "\t</div>",
+              "</template>",
+              "",
+              "<script>",
+              "\texport default {",
+              "\t\t${0}",
+              "\t}",
+              "</script>",
+              "",
+              "<style lang=\"scss\" scoped>",
+              "",
+              "</style>"
+            ],
+            "_scope": "",
+            "eol": "\n"
+          },
+          {
+            "_name": "Vue Single File Component with SASS",
+            "_prefix": "vbase-sass",
+            "_description": "Base for Vue File with PostCSS",
+            "_body": [
+              "<template>",
+              "\t<div>",
+              "",
+              "\t</div>",
+              "</template>",
+              "",
+              "<script>",
+              "\texport default {",
+              "\t\t${0}",
+              "\t}",
+              "</script>",
+              "",
+              "<style lang=\"sass\" scoped>",
+              "",
+              "</style>"
+            ],
+            "_scope": "",
+            "eol": "\n"
+          },
+          {
+            "_name": "Vue Single File Component with LESS",
+            "_prefix": "vbase-less",
+            "_description": "Base for Vue File with PostCSS",
+            "_body": [
+              "<template>",
+              "\t<div>",
+              "",
+              "\t</div>",
+              "</template>",
+              "",
+              "<script>",
+              "\texport default {",
+              "\t\t${0}",
+              "\t}",
+              "</script>",
+              "",
+              "<style lang=\"less\" scoped>",
+              "",
+              "</style>"
+            ],
+            "_scope": "",
+            "eol": "\n"
+          },
+          {
+            "_name": "Vue Single File Component with postcss",
+            "_prefix": "vbase-pcss",
+            "_description": "Base for Vue File with PostCSS",
+            "_body": [
+              "<template>",
+              "\t<div>",
+              "",
+              "\t</div>",
+              "</template>",
+              "",
+              "<script>",
+              "\texport default {",
+              "\t\t${0}",
+              "\t}",
+              "</script>",
+              "",
+              "<style lang=\"postcss\" scoped>",
+              "",
+              "</style>"
+            ],
+            "_scope": "",
+            "eol": "\n"
+          },
+          {
+            "_name": "Vue Single File Component with Css",
+            "_prefix": "vbase-css",
+            "_description": "Base for Vue File with CSS",
+            "_body": [
+              "<template>",
+              "\t<div>",
+              "",
+              "\t</div>",
+              "</template>",
+              "",
+              "<script>",
+              "\texport default {",
+              "\t\t${0}",
+              "\t}",
+              "</script>",
+              "",
+              "<style scoped>",
+              "",
+              "</style>"
+            ],
+            "_scope": "",
+            "eol": "\n"
+          },
+          {
+            "_name": "Vue Single File Component with Stylus",
+            "_prefix": "vbase-styl",
+            "_description": "Base for Vue File with Stylus",
+            "_body": [
+              "<template>",
+              "\t<div>",
+              "",
+              "\t</div>",
+              "</template>",
+              "",
+              "<script>",
+              "\texport default {",
+              "\t\t${0}",
+              "\t}",
+              "</script>",
+              "",
+              "<style lang=\"stylus\" scoped>",
+              "",
+              "</style>"
+            ],
+            "_scope": "",
+            "eol": "\n"
+          },
+          {
+            "_name": "Vue Single File Component with Typescript",
+            "_prefix": "vbase-ts",
+            "_description": "Base for Vue File with Typescript",
+            "_body": [
+              "<template>",
+              "\t<div>",
+              "",
+              "\t</div>",
+              "</template>",
+              "",
+              "<script lang=\"ts\">",
+              "\timport Vue from 'vue'",
+              "",
+              "\texport default Vue.extend({",
+              "\t\t${0}",
+              "\t})",
+              "</script>",
+              "",
+              "<style scoped>",
+              "",
+              "</style>"
+            ],
+            "_scope": "",
+            "eol": "\n"
+          },
+          {
+            "_name": "Vue Single File Component with No Style",
+            "_prefix": "vbase-ns",
+            "_description": "Base for Vue File with no styles",
+            "_body": [
+              "<template>",
+              "\t<div>",
+              "",
+              "\t</div>",
+              "</template>",
+              "",
+              "<script>",
+              "\texport default {",
+              "\t\t${0}",
+              "\t}",
+              "</script>"
+            ],
+            "_scope": "",
+            "eol": "\n"
+          },
+          {
+            "_name": "Vue Single File Component Composition API",
+            "_prefix": "vbase-3",
+            "_description": "Base for Vue File Composition API with SCSS",
+            "_body": [
+              "<template>",
+              "\t<div>",
+              "",
+              "\t</div>",
+              "</template>",
+              "",
+              "<script>",
+              "export default {",
+              "\tsetup () {",
+              "\t\t${0}",
+              "",
+              "\t\treturn {}",
+              "\t}",
+              "}",
+              "</script>",
+              "",
+              "<style lang=\"scss\" scoped>",
+              "",
+              "</style>"
+            ],
+            "_scope": "",
+            "eol": "\n"
+          },
+          {
+            "_name": "Vue Single File Component Setup Composition API",
+            "_prefix": "vbase-3-setup",
+            "_description": "Base for Vue File Setup Composition API with SCSS",
+            "_body": [
+              "<template>",
+              "\t<div>",
+              "",
+              "\t</div>",
+              "</template>",
+              "",
+              "<script setup>",
+              "",
+              "</script>",
+              "",
+              "<style lang=\"scss\" scoped>",
+              "",
+              "</style>"
+            ],
+            "_scope": "",
+            "eol": "\n"
+          },
+          {
+            "_name": "Vue Single File Component Composition API Reactive",
+            "_prefix": "vbase-3-reactive",
+            "_description": "Base for Vue File Composition API with SCSS",
+            "_body": [
+              "<template>",
+              "\t<div>",
+              "",
+              "\t</div>",
+              "</template>",
+              "",
+              "<script>",
+              "import { reactive, toRefs } from 'vue'",
+              "",
+              "export default {",
+              "\tsetup () {",
+              "\t\tconst state = reactive({",
+              "\t\t\t${0:count}: ${1:0},",
+              "\t\t})",
+              "\t",
+              "\t\treturn {",
+              "\t\t\t...toRefs(state),",
+              "\t\t}",
+              "\t}",
+              "}",
+              "</script>",
+              "",
+              "<style lang=\"scss\" scoped>",
+              "",
+              "</style>"
+            ],
+            "_scope": "",
+            "eol": "\n"
+          },
+          {
+            "_name": "Vue Single File Component Composition API with Typescript",
+            "_prefix": "vbase-3-ts",
+            "_description": "Base for Vue File Composition API - Typescript",
+            "_body": [
+              "<template>",
+              "\t<div>",
+              "",
+              "\t</div>",
+              "</template>",
+              "",
+              "<script lang=\"ts\">",
+              "import { defineComponent } from 'vue'",
+              "",
+              "export default defineComponent({",
+              "\tsetup () {",
+              "\t\t${0}\n",
+              "\t\treturn {}",
+              "\t}",
+              "})",
+              "</script>",
+              "",
+              "<style scoped>",
+              "",
+              "</style>"
+            ],
+            "_scope": "",
+            "eol": "\n"
+          },
+          {
+            "_name": "Vue Single File Component Setup Composition API with Typescript",
+            "_prefix": "vbase-3-ts-setup",
+            "_description": "Base for Vue File Setup Composition API - Typescript",
+            "_body": [
+              "<template>",
+              "\t<div>",
+              "",
+              "\t</div>",
+              "</template>",
+              "",
+              "<script setup lang=\"ts\">",
+              "",
+              "</script>",
+              "",
+              "<style scoped>",
+              "",
+              "</style>"
+            ],
+            "_scope": "",
+            "eol": "\n"
+          },
+          {
+            "_name": "Vue Single File Component with Class based Typescript format",
+            "_prefix": "vbase-ts-class",
+            "_description": "Base for Vue File with Class based Typescript format",
+            "_body": [
+              "<template>",
+              "\t<div>",
+              "",
+              "\t</div>",
+              "</template>",
+              "",
+              "<script lang=\"ts\">",
+              "\timport { Component, Vue } from 'vue-property-decorator';",
+              "",
+              "\t@Component",
+              "\texport default class ${0} extends Vue {",
+              "\t\t",
+              "\t}",
+              "</script>",
+              "",
+              "<style scoped>",
+              "",
+              "</style>"
+            ],
+            "_scope": "",
+            "eol": "\n"
+          }
+        ]
+      },
+      {
+        "languages": {},
+        "path": "/home/rob/.vscode-oss/extensions/sdras.vue-vscode-snippets-3.1.1/snippets/vue-pug.json",
+        "snippets": [
+          {
+            "_name": "Vue v-for",
+            "_prefix": "vfor",
+            "_description": "vfor statement",
+            "_body": [
+              "${1:div}(v-for=\"${2:item} in ${2:item}s\" :key=\"${2:item}.id\")",
+              "\t| {{ ${2:item} }}"
+            ],
+            "_scope": "",
+            "eol": "\n"
+          },
+          {
+            "_name": "Vue v-model Directive",
+            "_prefix": "vmodel",
+            "_description": "v-model directive",
+            "_body": ["input(v-model=\"${1:data}\" type=\"text\")"],
+            "_scope": "",
+            "eol": "\n"
+          },
+          {
+            "_name": "Vue v-model Number Directive",
+            "_prefix": "vmodel-num",
+            "_description": "v-model directive number input",
+            "_body": [
+              "input(v-model.number=\"${1:numData}\" type=\"number\" step=\"1\")"
+            ],
+            "_scope": "",
+            "eol": "\n"
+          },
+          {
+            "_name": "Vue v-on Shortcut Directive",
+            "_prefix": "von",
+            "_description": "v-on click handler with arguments",
+            "_body": ["@click=\"${1:handler}(${2:arg}, $event)\""],
+            "_scope": "",
+            "eol": "\n"
+          },
+          {
+            "_name": "Vue Component with Props Binding",
+            "_prefix": "vel-props",
+            "_description": "component element with props",
+            "_body": ["${1:component}(:${1:propName}=\"${0}\")"],
+            "_scope": "",
+            "eol": "\n"
+          },
+          {
+            "_name": "Vue Image Source Binding",
+            "_prefix": "vsrc",
+            "_description": "image source binding",
+            "_body": [
+              "img(:src=\"'/path/to/images/' + ${1:fileName}\" alt=\"${2:altText}\")"
+            ],
+            "_scope": "",
+            "eol": "\n"
+          },
+          {
+            "_name": "Vue Style Binding",
+            "_prefix": "vstyle",
+            "_description": "vue inline style binding",
+            "_body": ["${1:div}(:style=\"{ fontSize: ${2:data} + 'px' }\")"],
+            "_scope": "",
+            "eol": "\n"
+          },
+          {
+            "_name": "Vue Style Binding Object",
+            "_prefix": "vstyle-obj",
+            "_description": "vue inline style binding, objects",
+            "_body": [
+              "${1:div}(:style=\"[${2:styleObjectA}, ${3:styleObjectB]}\")"
+            ],
+            "_scope": "",
+            "eol": "\n"
+          },
+          {
+            "_name": "Vue Class Binding",
+            "_prefix": "vclass",
+            "_description": "vue class binding",
+            "_body": ["${1:div}(:class=\"{ ${2:className}: ${3:data} }\")"],
+            "_scope": "",
+            "eol": "\n"
+          },
+          {
+            "_name": "Vue Class Binding Object",
+            "_prefix": "vclass-obj",
+            "_description": "vue class binding",
+            "_body": [
+              "${1:div}(:class=\"[${2:classNameA}, ${3:classNameB}]\")"
+            ],
+            "_scope": "",
+            "eol": "\n"
+          },
+          {
+            "_name": "Vue Multiple Conditional Class Bindings",
+            "_prefix": "vclass-obj-mult",
+            "_description": "vue multiple conditional class bindings",
+            "_body": [
+              "${1:div}(:class=\"[${2:classNameA}, {${3:classNameB} : ${4:condition}}]\")"
+            ],
+            "_scope": "",
+            "eol": "\n"
+          },
+          {
+            "_name": "Vue Transition Component with JavaScript Hooks",
+            "_prefix": "vanim",
+            "_description": "transition component js hooks",
+            "_body": [
+              "transition(",
+              "\tmode=\"out-in\"",
+              "\t@before-enter=\"beforeEnter\"",
+              "\t@enter=\"enter\"",
+              "",
+              "\t@before-leave=\"beforeLeave\"",
+              "\t@leave=\"leave\"",
+              "\t:css=\"false\"",
+              ")"
+            ],
+            "_scope": "",
+            "eol": "\n"
+          },
+          {
+            "_name": "Vue Nuxt Routing Link",
+            "_prefix": "vnuxtl",
+            "_description": "nuxt routing link",
+            "_body": ["nuxt-link(to=\"/${1:page}\") ${1:page}"],
+            "_scope": "",
+            "eol": "\n"
+          },
+          {
+            "_name": "Vue Emit from Child",
+            "_prefix": "vemit-child",
+            "_description": "Vue Emit from Child Component",
+            "_body": ["@change=\"$emit('change', $event.target.value)\""],
+            "_scope": "",
+            "eol": "\n"
+          },
+          {
+            "_name": "Vue Emit to Parent",
+            "_prefix": "vemit-parent",
+            "_description": "Vue Emit to Parent Component",
+            "_body": ["@change=\"${1:foo} = $event\""],
+            "_scope": "",
+            "eol": "\n"
+          }
+        ]
+      },
+      {
+        "languages": {},
+        "path": "/home/rob/.vscode-oss/extensions/sdras.vue-vscode-snippets-3.1.1/snippets/vue-template.json",
+        "snippets": [
+          {
+            "_name": "Vue v-for",
+            "_prefix": "vfor",
+            "_description": "vfor statement",
+            "_body": [
+              "<${1:div} v-for=\"${2:item} in ${2:item}s\" :key=\"${2:item}.id\">",
+              "\t{{ ${2:item} }}",
+              "</${1:div}>"
+            ],
+            "_scope": "",
+            "eol": "\n"
+          },
+          {
+            "_name": "Vue v-model Directive",
+            "_prefix": "vmodel",
+            "_description": "v-model directive",
+            "_body": ["<input v-model=\"${1:data}\" type=\"text\" />"],
+            "_scope": "",
+            "eol": "\n"
+          },
+          {
+            "_name": "Vue v-model Number Directive",
+            "_prefix": "vmodel-num",
+            "_description": "v-model directive number input",
+            "_body": [
+              "<input v-model.number=\"${1:numData}\" type=\"number\" step=\"1\" />"
+            ],
+            "_scope": "",
+            "eol": "\n"
+          },
+          {
+            "_name": "Vue v-on Shortcut Directive",
+            "_prefix": "von",
+            "_description": "v-on click handler with arguments",
+            "_body": ["@click=\"${1:handler}(${2:arg}, $event)\""],
+            "_scope": "",
+            "eol": "\n"
+          },
+          {
+            "_name": "Vue Component with Props Binding",
+            "_prefix": "vel-props",
+            "_description": "component element with props",
+            "_body": [
+              "<${1:component} :${1:propName}=\"${0}\"></${1:component}>"
+            ],
+            "_scope": "",
+            "eol": "\n"
+          },
+          {
+            "_name": "Vue Named Slot",
+            "_prefix": "vslot-named",
+            "_description": "named slot",
+            "_body": [
+              "<template v-slot:${0:name}>${1:defaultcontent}</template>"
+            ],
+            "_scope": "",
+            "eol": "\n"
+          },
+          {
+            "_name": "Vue Image Source Binding",
+            "_prefix": "vsrc",
+            "_description": "image source binding",
+            "_body": [
+              "<img :src=\"'/path/to/images/' + ${1:fileName}\" alt=\"${2:altText}\"/>"
+            ],
+            "_scope": "",
+            "eol": "\n"
+          },
+          {
+            "_name": "Vue Style Binding",
+            "_prefix": "vstyle",
+            "_description": "vue inline style binding",
+            "_body": [
+              "<${1:div} :style=\"{ fontSize: ${2:data} + 'px' }\"></${1:div}>"
+            ],
+            "_scope": "",
+            "eol": "\n"
+          },
+          {
+            "_name": "Vue Style Binding Object",
+            "_prefix": "vstyle-obj",
+            "_description": "vue inline style binding, objects",
+            "_body": [
+              "<${1:div} :style=\"[${2:styleObjectA}, ${3:styleObjectB]}\"></${1:div}>"
+            ],
+            "_scope": "",
+            "eol": "\n"
+          },
+          {
+            "_name": "Vue Class Binding",
+            "_prefix": "vclass",
+            "_description": "vue class binding",
+            "_body": [
+              "<${1:div} :class=\"{ ${2:className}: ${3:data} }\"></${1:div}>"
+            ],
+            "_scope": "",
+            "eol": "\n"
+          },
+          {
+            "_name": "Vue Class Binding Object",
+            "_prefix": "vclass-obj",
+            "_description": "vue class binding",
+            "_body": [
+              "<${1:div} :class=\"[${2:classNameA}, ${3:classNameB}]\"></${1:div}>"
+            ],
+            "_scope": "",
+            "eol": "\n"
+          },
+          {
+            "_name": "Vue Multiple Conditional Class Bindings",
+            "_prefix": "vclass-obj-mult",
+            "_description": "vue multiple conditional class bindings",
+            "_body": [
+              "<${1:div} :class=\"[${2:classNameA}, {${3:classNameB} : ${4:condition}}]\"></${1:div}>"
+            ],
+            "_scope": "",
+            "eol": "\n"
+          },
+          {
+            "_name": "Vue Emit from Child",
+            "_prefix": "vemit-child",
+            "_description": "Vue Emit from Child Component",
+            "_body": ["@change=\"$emit('change', $event.target.value)\""],
+            "_scope": "",
+            "eol": "\n"
+          },
+          {
+            "_name": "Vue Emit to Parent",
+            "_prefix": "vemit-parent",
+            "_description": "Vue Emit to Parent Component",
+            "_body": ["@change=\"${1:foo} = $event\""],
+            "_scope": "",
+            "eol": "\n"
+          },
+          {
+            "_name": "Vue Transition Component with JavaScript Hooks",
+            "_prefix": "vanim",
+            "_description": "transition component js hooks",
+            "_body": [
+              "<transition",
+              "\tmode=\"out-in\"",
+              "\t@before-enter=\"beforeEnter\"",
+              "\t@enter=\"enter\"",
+              "",
+              "\t@before-leave=\"beforeLeave\"",
+              "\t@leave=\"leave\"",
+              "\t:css=\"false\">",
+              "",
+              "</transition>"
+            ],
+            "_scope": "",
+            "eol": "\n"
+          },
+          {
+            "_name": "Vue Nuxt Routing Link",
+            "_prefix": "vnuxtl",
+            "_description": "nuxt routing link",
+            "_body": ["<nuxt-link to=\"/${1:page}\">${1:page}</nuxt-link>"],
+            "_scope": "",
+            "eol": "\n"
+          },
+          {
+            "_name": "Vue Named Routing Link",
+            "_prefix": "vroutename",
+            "_description": "Named routing link",
+            "_body": [
+              "<router-link :to=\"{name: '${1:name}'}\">${2:LinkTitle}</router-link>"
+            ],
+            "_scope": "",
+            "eol": "\n"
+          },
+          {
+            "_name": "Vue Named Routing Link with Params",
+            "_prefix": "vroutenameparam",
+            "_description": "Named routing link w/ params",
+            "_body": [
+              "<router-link :to=\"{name: '${1:name}', params:{${2:id}: '${3:value}'} }\">${4:LinkTitle}</router-link>"
+            ],
+            "_scope": "",
+            "eol": "\n"
+          },
+          {
+            "_name": "Vue Path Routing Link",
+            "_prefix": "vroutepath",
+            "_description": "Path routing link",
+            "_body": [
+              "<router-link to=\"${1:path}\">${2:LinkTitle}</router-link>"
+            ],
+            "_scope": "",
+            "eol": "\n"
+          }
+        ]
+      },
+      {
+        "languages": {},
+        "path": "/home/rob/.vscode-oss/extensions/sdras.vue-vscode-snippets-3.1.1/snippets/vue-script.json",
+        "snippets": [
+          {
+            "_name": "Vue Data",
+            "_prefix": "vdata",
+            "_description": "Vue Component Data",
+            "_body": [
+              "data() {",
+              "\treturn {",
+              "\t\t${1:key}: ${2:value}",
+              "\t}",
+              "},"
+            ],
+            "_scope": "",
+            "eol": "\n"
+          },
+          {
+            "_name": "Vue Methods",
+            "_prefix": "vmethod",
+            "_description": "vue method",
+            "_body": ["methods: {", "\t${1:name}() {", "\t\t${0}", "\t}", "},"],
+            "_scope": "",
+            "eol": "\n"
+          },
+          {
+            "_name": "Vue Computed",
+            "_prefix": "vcomputed",
+            "_description": "computed value",
+            "_body": [
+              "computed: {",
+              "\t${1:name}() {",
+              "\t\treturn this.${2:data} ${0}",
+              "\t}",
+              "},"
+            ],
+            "_scope": "",
+            "eol": "\n"
+          },
+          {
+            "_name": "Vue Lifecycle beforeCreate",
+            "_prefix": "vbeforecreate",
+            "_description": "beforeCreate lifecycle method",
+            "_body": ["beforeCreate () {", "\t${0};", "},"],
+            "_scope": "",
+            "eol": "\n"
+          },
+          {
+            "_name": "Vue Lifecycle created",
+            "_prefix": "vcreated",
+            "_description": "created lifecycle method",
+            "_body": ["created () {", "\t${0};", "},"],
+            "_scope": "",
+            "eol": "\n"
+          },
+          {
+            "_name": "Vue Lifecycle beforeMount",
+            "_prefix": "vbeforemount",
+            "_description": "beforeMount lifecycle method",
+            "_body": ["beforeMount () {", "\t${0};", "},"],
+            "_scope": "",
+            "eol": "\n"
+          },
+          {
+            "_name": "Vue Lifecycle mounted",
+            "_prefix": "vmounted",
+            "_description": "mounted lifecycle method",
+            "_body": ["mounted () {", "\t${0};", "},"],
+            "_scope": "",
+            "eol": "\n"
+          },
+          {
+            "_name": "Vue Lifecycle beforeUpdate",
+            "_prefix": "vbeforeupdate",
+            "_description": "beforeUpdate lifecycle method",
+            "_body": ["beforeUpdate () {", "\t${0};", "},"],
+            "_scope": "",
+            "eol": "\n"
+          },
+          {
+            "_name": "Vue Lifecycle updated",
+            "_prefix": "vupdated",
+            "_description": "updated lifecycle method",
+            "_body": ["updated () {", "\t${0};", "},"],
+            "_scope": "",
+            "eol": "\n"
+          },
+          {
+            "_name": "Vue Lifecycle beforeDestroy",
+            "_prefix": "vbeforedestroy",
+            "_description": "beforeDestroy lifecycle method",
+            "_body": ["beforeDestroy () {", "\t${0};", "},"],
+            "_scope": "",
+            "eol": "\n"
+          },
+          {
+            "_name": "Vue Lifecycle destroyed",
+            "_prefix": "vdestroyed",
+            "_description": "destroyed lifecycle method",
+            "_body": ["destroyed () {", "\t${0};", "},"],
+            "_scope": "",
+            "eol": "\n"
+          },
+          {
+            "_name": "Vue Watchers",
+            "_prefix": "vwatcher",
+            "_description": "vue watcher",
+            "_body": [
+              "watch: {",
+              "\t${1:data}(${2:newValue}, ${3:oldValue}) {",
+              "\t\t${0}",
+              "\t}",
+              "},"
+            ],
+            "_scope": "",
+            "eol": "\n"
+          },
+          {
+            "_name": "Vue Watchers with Options",
+            "_prefix": "vwatcher-options",
+            "_description": "vue watcher with options",
+            "_body": [
+              "watch: {",
+              "\t${1:data}: {",
+              "\t\timmediate: ${2:true},",
+              "\t\tdeep: ${3:true},",
+              "\t\thandler(${4:newValue}, ${5:oldValue}) {",
+              "\t\t\t${0}",
+              "\t\t}",
+              "\t}",
+              "},"
+            ],
+            "_scope": "",
+            "eol": "\n"
+          },
+          {
+            "_name": "Vue Props with Default",
+            "_prefix": "vprops",
+            "_description": "Vue Props with Default",
+            "_body": [
+              "props: {",
+              "\t${1:propName}: {",
+              "\t\ttype: ${2:Number},",
+              "\t\tdefault: ${0}",
+              "\t},",
+              "},"
+            ],
+            "_scope": "",
+            "eol": "\n"
+          },
+          {
+            "_name": "Vue Import File",
+            "_prefix": "vimport",
+            "_description": "Import one component into another",
+            "_body": ["import ${1:New} from '@/components/${1:New}.vue';"],
+            "_scope": "",
+            "eol": "\n"
+          },
+          {
+            "_name": "Vue Import into the Component",
+            "_prefix": "vcomponents",
+            "_description": "Import one component into another, within export statement",
+            "_body": ["components: {", "\t${1:New},", "},"],
+            "_scope": "",
+            "eol": "\n"
+          },
+          {
+            "_name": "Vue Import Export",
+            "_prefix": "vimport-export",
+            "_description": "import a component and include it in export default",
+            "_body": [
+              "import ${1:Name} from '@/components/${1:Name}.vue';",
+              "",
+              "export default {",
+              "\tcomponents: {",
+              "\t\t${1:Name}",
+              "\t},",
+              "};"
+            ],
+            "_scope": "",
+            "eol": "\n"
+          },
+          {
+            "_name": "Vue Import Component Dynamically",
+            "_prefix": "vimport-dynamic",
+            "_description": "Import component that should be lazy loaded",
+            "_body": ["${1:New} = () => import('@/components/${1:New}.vue')"],
+            "_scope": "",
+            "eol": "\n"
+          },
+          {
+            "_name": "Vue MapState",
+            "_prefix": "vmapstate",
+            "_description": "map getters inside a vue component",
+            "_body": [
+              "import { mapState } from 'vuex';",
+              "",
+              "export default {",
+              "\tcomputed: {",
+              "\t\t...mapState([",
+              "\t\t\t${1:'nameOfState'},",
+              "\t\t])",
+              "\t},",
+              "};"
+            ],
+            "_scope": "",
+            "eol": "\n"
+          },
+          {
+            "_name": "Vue MapGetters",
+            "_prefix": "vmapgetters",
+            "_description": "mapgetters inside a vue component",
+            "_body": [
+              "import { mapGetters } from 'vuex';",
+              "",
+              "export default {",
+              "\tcomputed: {",
+              "\t\t...mapGetters([",
+              "\t\t\t${1:'nameOfGetter'},",
+              "\t\t])",
+              "\t},",
+              "};"
+            ],
+            "_scope": "",
+            "eol": "\n"
+          },
+          {
+            "_name": "Vue MapMutations",
+            "_prefix": "vmapmutations",
+            "_description": "mapmutations inside a vue component",
+            "_body": [
+              "import { mapMutations } from 'vuex';",
+              "",
+              "export default {",
+              "\tmethods: {",
+              "\t\t...mapMutations([",
+              "\t\t\t${1:'nameOfMutation'}, //also supports payload `this.nameOfMutation(amount)` ",
+              "\t\t])",
+              "\t},",
+              "};"
+            ],
+            "_scope": "",
+            "eol": "\n"
+          },
+          {
+            "_name": "Vue MapActions",
+            "_prefix": "vmapactions",
+            "_description": "mapactions inside a vue component",
+            "_body": [
+              "import { mapActions } from 'vuex';",
+              "",
+              "export default {",
+              "\tmethods: {",
+              "\t\t...mapActions([",
+              "\t\t\t${1:'nameOfAction'}, //also supports payload `this.nameOfAction(amount)` ",
+              "\t\t])",
+              "\t},",
+              "};"
+            ],
+            "_scope": "",
+            "eol": "\n"
+          },
+          {
+            "_name": "Vue Filter",
+            "_prefix": "vfilter",
+            "_description": "vue filter",
+            "_body": [
+              "filters: {",
+              "\t${1:fnName}: function(${2:value}) {",
+              "\t\treturn ${2:value}${0};",
+              "\t}",
+              "}"
+            ],
+            "_scope": "",
+            "eol": "\n"
+          },
+          {
+            "_name": "Vue Mixin",
+            "_prefix": "vmixin",
+            "_description": "vue mixin",
+            "_body": [
+              "const ${1:mixinName} = {",
+              "\tmounted() {",
+              "\t\tconsole.log('hello from mixin!');",
+              "\t},",
+              "};"
+            ],
+            "_scope": "",
+            "eol": "\n"
+          },
+          {
+            "_name": "Vue Use Mixin",
+            "_prefix": "vmixin-use",
+            "_description": "vue use mixin",
+            "_body": ["mixins: [${1:mixinName}],"],
+            "_scope": "",
+            "eol": "\n"
+          },
+          {
+            "_name": "Vue Custom Directive",
+            "_prefix": "vc-direct",
+            "_description": "vue custom directive",
+            "_body": [
+              "Vue.directive('${1:directiveName}', {",
+              "\tbind(el, binding, vnode) {",
+              "\t\tel.style.${2:arg} = binding.value.${2:arg};",
+              "\t}",
+              "});"
+            ],
+            "_scope": "",
+            "eol": "\n"
+          },
+          {
+            "_name": "Vue Import Library",
+            "_prefix": "vimport-lib",
+            "_description": "import a library",
+            "_body": ["import { ${1:libName} } from '${1:libName}';"],
+            "_scope": "",
+            "eol": "\n"
+          },
+          {
+            "_name": "Vue Import GSAP",
+            "_prefix": "vimport-gsap",
+            "_description": "import gsap library",
+            "_body": ["import gsap from 'gsap';"],
+            "_scope": "",
+            "eol": "\n"
+          },
+          {
+            "_name": "Vue Transition Methods with JavaScript Hooks",
+            "_prefix": "vanimhook-js",
+            "_description": "transition component js hooks",
+            "_body": [
+              "beforeEnter(el) {",
+              "\tconsole.log('beforeEnter');",
+              "},",
+              "enter(el, done) {",
+              "\tconsole.log('enter');",
+              "\tdone();",
+              "},",
+              "beforeLeave(el) {",
+              "\tconsole.log('beforeLeave');",
+              "},",
+              "leave(el, done) {",
+              "\tconsole.log('leave');",
+              "\tdone();",
+              "},"
+            ],
+            "_scope": "",
+            "eol": "\n"
+          },
+          {
+            "_name": "Vue Commit Vuex Store in Methods",
+            "_prefix": "vcommit",
+            "_description": "commit to vuex store in methods for mutation",
+            "_body": [
+              "${1:mutationName}() {",
+              "\tthis.\\$store.commit('${1:mutationName}', ${2:payload});",
+              "}"
+            ],
+            "_scope": "",
+            "eol": "\n"
+          },
+          {
+            "_name": "Vue Dispatch Vuex Store in Methods",
+            "_prefix": "vdispatch",
+            "_description": "dispatch to vuex store in methods for action",
+            "_body": [
+              "${1:actionName}() {",
+              "\tthis.\\$store.dispatch('${1:actionName}', ${2:payload});",
+              "}"
+            ],
+            "_scope": "",
+            "eol": "\n"
+          },
+          {
+            "_name": "Unit Test",
+            "_prefix": "vtest",
+            "_description": "unit test component",
+            "_body": [
+              "import Vue from 'vue';",
+              "import ${1:HelloWorld} from './components/${1:HelloWorld}';",
+              "",
+              "describe('${1:HelloWorld}.vue', () => {",
+              "\tit('${2:should render correct contents}', () => {",
+              "\t\tconst Constructor = Vue.extend(${1:HelloWorld});",
+              "\t\tconst vm = new Constructor().$mount();",
+              "\t\texpect(vm.$el.querySelector('.hello h1').textContent)",
+              "\t\t\t.to.equal(${3:'Welcome to Your Vue.js App'});",
+              "\t});",
+              "});"
+            ],
+            "_scope": "",
+            "eol": "\n"
+          },
+          {
+            "_name": "Vue.config.js Import",
+            "_prefix": "vconfig",
+            "_description": "vue.config.js",
+            "_body": [
+              "module.exports = {",
+              "\tcss: {",
+              "\t\tloaderOptions: {",
+              "\t\t\t${1:sass}: {",
+              "\t\t\t\tdata: `${2:@import '@/styles/_variables.scss';}`",
+              "\t\t\t}",
+              "\t\t}",
+              "\t}",
+              "}"
+            ],
+            "_scope": "",
+            "eol": "\n"
+          },
+          {
+            "_name": "Vue Composition API - Reactive",
+            "_prefix": "v3reactive",
+            "_description": "Vue Composition api - reactive",
+            "_body": [
+              "const ${1:name} = reactive({",
+              "\t${2:count}: ${3:0}",
+              "})"
+            ],
+            "_scope": "",
+            "eol": "\n"
+          },
+          {
+            "_name": "Vue Composition API - Computed",
+            "_prefix": "v3computed",
+            "_description": "Vue Composition api - computed",
+            "_body": [
+              "const ${1:name} = computed(() => {",
+              "\treturn ${2}",
+              "})"
+            ],
+            "_scope": "",
+            "eol": "\n"
+          },
+          {
+            "_name": "Vue Composition API - watch - single source",
+            "_prefix": "v3watch",
+            "_description": "Vue Composition api - watcher single source",
+            "_body": [
+              "watch(() => ${1:foo}, (newValue, oldValue) => {",
+              "\t${2}",
+              "})"
+            ],
+            "_scope": "",
+            "eol": "\n"
+          },
+          {
+            "_name": "Vue Composition API - watch - array",
+            "_prefix": "v3watch-array",
+            "_description": "Vue Composition api - watch as array",
+            "_body": [
+              "watch([${1:foo}, ${2:bar}], ([new${1}, new${2}], [prev${1}, prev${2}]) => {",
+              "\t${3}",
+              "})"
+            ],
+            "_scope": "",
+            "eol": "\n"
+          },
+          {
+            "_name": "Vue Composition API - watchEffect",
+            "_prefix": "v3watcheffect",
+            "_description": "Vue Composition api - watchEffect",
+            "_body": ["watchEffect(() => {", "\t${1}", "})"],
+            "_scope": "",
+            "eol": "\n"
+          },
+          {
+            "_name": "Vue Composition API - Vue ref",
+            "_prefix": "v3ref",
+            "_description": "Vue Ref",
+            "_body": ["const ${1:name} = ref(${2:initialValue})"],
+            "_scope": "",
+            "eol": "\n"
+          },
+          {
+            "_name": "Vue Lifecycle Hooks - onMounted",
+            "_prefix": "v3onmounted",
+            "_description": "Vue Mounted Lifecycle hook",
+            "_body": ["onMounted(() => {${1}})"],
+            "_scope": "",
+            "eol": "\n"
+          },
+          {
+            "_name": "Vue Lifecycle Hooks - onBeforeMount",
+            "_prefix": "v3onbeforemount",
+            "_description": "Vue onBeforeMount Lifecycle hook",
+            "_body": ["onBeforeMount(() => {${1}})"],
+            "_scope": "",
+            "eol": "\n"
+          },
+          {
+            "_name": "Vue Lifecycle Hooks - onBeforeUpdate",
+            "_prefix": "v3onbeforeupdate",
+            "_description": "Vue onBeforeUpdate Lifecycle hook",
+            "_body": ["onBeforeUpdate(() => {${1}})"],
+            "_scope": "",
+            "eol": "\n"
+          },
+          {
+            "_name": "Vue Lifecycle Hooks - onUpdated",
+            "_prefix": "v3onupdated",
+            "_description": "Vue onUpdated Lifecycle hook",
+            "_body": ["onUpdated(() => {${1}})"],
+            "_scope": "",
+            "eol": "\n"
+          },
+          {
+            "_name": "Vue Lifecycle Hooks - onErrorCaptured",
+            "_prefix": "v3onerrorcaptured",
+            "_description": "Vue onErrorCaptured Lifecycle hook",
+            "_body": ["onErrorCaptured(() => {${1}})"],
+            "_scope": "",
+            "eol": "\n"
+          },
+          {
+            "_name": "Vue Lifecycle Hooks - onUnmounted",
+            "_prefix": "v3onunmounted",
+            "_description": "(destroyed) Vue onUnmounted Lifecycle hook",
+            "_body": ["onUnmounted(() => {${1}})"],
+            "_scope": "",
+            "eol": "\n"
+          },
+          {
+            "_name": "Vue Lifecycle Hooks - onBeforeUnmount",
+            "_prefix": "v3onbeforeunmount",
+            "_description": "(beforeDestroy) Vue onBeforeUnmount Lifecycle hook",
+            "_body": ["onBeforeUnmount(() => {${1}})"],
+            "_scope": "",
+            "eol": "\n"
+          },
+          {
+            "_name": "Plugin import",
+            "_prefix": "vplugin",
+            "_description": "Import a plugin to main.js or plugins file",
+            "_body": [
+              "import Vue from 'vue'",
+              "import ${1:VueCompositionApi} from '${2:@vue/composition-api}'",
+              "",
+              "Vue.use(${1:VueCompositionApi})"
+            ],
+            "_scope": "",
+            "eol": "\n"
+          },
+          {
+            "_name": "Vue Composition API Reactive Script",
+            "_prefix": "v3reactive-setup",
+            "_description": "Vue Composition API Script with Reactive",
+            "_body": [
+              "import { reactive, toRefs } from 'vue'",
+              "",
+              "export default {",
+              "\tsetup () {",
+              "\t\tconst state = reactive({",
+              "\t\t\t${0:count}: ${1:0},",
+              "\t\t})",
+              "\t",
+              "\t\treturn {",
+              "\t\t\t...toRefs(state),",
+              "\t\t}",
+              "\t}",
+              "}"
+            ],
+            "_scope": "",
+            "eol": "\n"
+          },
+          {
+            "_name": "Use Composition API within Options API",
+            "_prefix": "v3useinoptions",
+            "_description": "Use Composition API within Options API",
+            "_body": [
+              "import { ${0:component} } from '@/composables/${0:component}.js'",
+              "",
+              "export default {",
+              "\tsetup () {",
+              "\t\tconst { ${1:name} } = ${0:component}()",
+              "\t",
+              "\t\treturn {",
+              "\t\t\t${1:name}",
+              "\t\t}",
+              "\t}",
+              "}"
+            ],
+            "_scope": "",
+            "eol": "\n"
+          }
+        ]
+      },
+      {
+        "languages": {},
+        "path": "/home/rob/.vscode-oss/extensions/sdras.vue-vscode-snippets-3.1.1/snippets/vue-script-vuex.json",
+        "snippets": [
+          {
+            "_name": "Vuex Store",
+            "_prefix": "vstore",
+            "_description": "Base for Vuex store",
+            "_body": [
+              "import Vue from 'vue';",
+              "import Vuex from 'vuex';",
+              "",
+              "Vue.use(Vuex);",
+              "",
+              "export const store = new Vuex.Store({",
+              "\tstate: {",
+              "\t\t${1:key}: ${2:value}",
+              "\t}",
+              "});"
+            ],
+            "_scope": "",
+            "eol": "\n"
+          },
+          {
+            "_name": "Vuex Getters",
+            "_prefix": "vgetter",
+            "_description": "vuex getter",
+            "_body": [
+              "getters: {",
+              "\t${1:value}: state => {",
+              "\t\treturn state.${1:value};",
+              "\t}",
+              "}"
+            ],
+            "_scope": "",
+            "eol": "\n"
+          },
+          {
+            "_name": "Vuex Mutation",
+            "_prefix": "vmutation",
+            "_description": "vuex mutation",
+            "_body": [
+              "mutations: {",
+              "\t${1:updateValue}(state, ${3:payload}) {",
+              "\t\tstate.${2:value} = ${3:payload};",
+              "\t}",
+              "}"
+            ],
+            "_scope": "",
+            "eol": "\n"
+          },
+          {
+            "_name": "Vuex Action",
+            "_prefix": "vaction",
+            "_description": "vuex action",
+            "_body": [
+              "actions: {",
+              "\t${1:updateValue}({commit}, ${2:payload}) {",
+              "\t\tcommit('${1:updateValue}', ${2:payload});",
+              "\t}",
+              "}"
+            ],
+            "_scope": "",
+            "eol": "\n"
+          },
+          {
+            "_name": "Vue Import Vuex Store",
+            "_prefix": "vstore-import",
+            "_description": "import vuex store into main.js",
+            "_body": ["import { store } from './store/index';"],
+            "_scope": "",
+            "eol": "\n"
+          },
+          {
+            "_name": "Vuex Module",
+            "_prefix": "vmodule",
+            "_description": "vuex module",
+            "_body": [
+              "export default {",
+              "\tstate: {",
+              "\t\tvalue: 'my value'",
+              "\t},",
+              "\tgetters: {",
+              "\t\tvalue: state => {",
+              "\t\t\treturn state.value;",
+              "\t\t}",
+              "\t},",
+              "\tmutations: {",
+              "\t\tupdateValue(state, payload) {",
+              "\t\t\tstate.value = payload;",
+              "\t\t}",
+              "\t},",
+              "\tactions: {",
+              "\t\tupdateValue({commit}, payload) {",
+              "\t\t\tcommit('updateValue', payload);",
+              "\t\t}",
+              "\t}",
+              "};"
+            ],
+            "_scope": "",
+            "eol": "\n"
+          },
+          {
+            "_name": "Vuex Store 2",
+            "_prefix": "vstore2",
+            "_description": "vuex store 2",
+            "_body": [
+              "export const state = () => ({",
+              "\tvalue: 'myvalue'",
+              "})",
+              "",
+              "export const getters = {",
+              "\tgetterValue: state => {",
+              "\t\treturn state.value",
+              "\t}",
+              "}",
+              "",
+              "export const mutations = {",
+              "\tupdateValue: (state, payload) => {",
+              "\t\tstate.value = payload",
+              "\t}",
+              "}",
+              "",
+              "export const actions = {",
+              "\tupdateActionValue({ commit }) {",
+              "\t\tcommit('updateValue', payload)",
+              "\t}",
+              "}"
+            ],
+            "_scope": "",
+            "eol": "\n"
+          }
+        ]
+      },
+      {
+        "languages": {},
+        "path": "/home/rob/.vscode-oss/extensions/sdras.vue-vscode-snippets-3.1.1/snippets/vue-script-router.json",
+        "snippets": [
+          {
+            "_name": "Vue Router",
+            "_prefix": "vrouter",
+            "_description": "Base for Vue Router",
+            "_body": [
+              "import Vue from 'vue';",
+              "import VueRouter from 'vue-router';",
+              "",
+              "Vue.use(VueRouter);",
+              "",
+              "export const router = new VueRouter({",
+              "\tbase: '/',",
+              "\tmode: 'history',",
+              "\troutes: [",
+              "\t\t{ path: '/path', component: component }",
+              "\t]",
+              "});"
+            ],
+            "_scope": "",
+            "eol": "\n"
+          },
+          {
+            "_name": "Vue Router scrollBehavior",
+            "_prefix": "vscrollbehavior",
+            "_description": "Vue Router scrollBehavior",
+            "_body": [
+              "scrollBehavior(to, from, savedPosition) {",
+              "\tif(savedPosition) {",
+              "\t\treturn savedPosition;",
+              "\t} else {",
+              "\t\treturn { x: 0, y: 0 };",
+              "\t}",
+              "},"
+            ],
+            "_scope": "",
+            "eol": "\n"
+          },
+          {
+            "_name": "Vue Router beforeEach",
+            "_prefix": "vbeforeeach",
+            "_description": "Vue Router global guards beforeEach",
+            "_body": [
+              "router.beforeEach((to, from, next) => {",
+              "\t${1:next();}",
+              "});"
+            ],
+            "_scope": "",
+            "eol": "\n"
+          },
+          {
+            "_name": "Vue Router beforeResolve",
+            "_prefix": "vbeforeresolve",
+            "_description": "Vue Router global guards beforeResolve",
+            "_body": [
+              "router.beforeResolve((to, from, next) => {",
+              "\t${1:next();}",
+              "});"
+            ],
+            "_scope": "",
+            "eol": "\n"
+          },
+          {
+            "_name": "Vue Router afterEach",
+            "_prefix": "vaftereach",
+            "_description": "Vue Router global guards afterEach",
+            "_body": ["router.afterEach((to, from) => {", "\t", "});"],
+            "_scope": "",
+            "eol": "\n"
+          },
+          {
+            "_name": "Vue Router beforeEnter",
+            "_prefix": "vbeforeenter",
+            "_description": "Vue Router per-route guard beforeEnter",
+            "_body": ["beforeEnter(to, from, next) {", "\t${1:next();}", "},"],
+            "_scope": "",
+            "eol": "\n"
+          },
+          {
+            "_name": "Vue Router beforeRouteEnter",
+            "_prefix": "vbeforerouteenter",
+            "_description": "Vue Router component guards beforeRouteEnter",
+            "_body": [
+              "beforeRouteEnter(to, from, next) {",
+              "\tnext(vm => {${1:}});",
+              "},"
+            ],
+            "_scope": "",
+            "eol": "\n"
+          },
+          {
+            "_name": "Vue Router beforeRouteUpdate",
+            "_prefix": "vbeforerouteupdate",
+            "_description": "Vue Router component guards beforeRouteUpdate",
+            "_body": [
+              "beforeRouteUpdate(to, from, next) {",
+              "\t${1:next();}",
+              "},"
+            ],
+            "_scope": "",
+            "eol": "\n"
+          },
+          {
+            "_name": "Vue Router beforeRouteLeave",
+            "_prefix": "vbeforerouteleave",
+            "_description": "Vue Router component guards beforeRouteLeave",
+            "_body": [
+              "beforeRouteLeave(to, from, next) {",
+              "\t${1:next();}",
+              "},"
+            ],
+            "_scope": "",
+            "eol": "\n"
+          },
+          {
+            "_name": "Vue Router Route",
+            "_prefix": "vroute-named",
+            "_description": "Vue Router route with per route code-splitting",
+            "_body": [
+              "{",
+              "\tpath: '${1:pathName}',",
+              "\tname: '${2:routeName}',",
+              "\tcomponent: () => import('./${3:pathToComponent}'),",
+              "},"
+            ],
+            "_scope": "",
+            "eol": "\n"
+          }
+        ]
+      },
+      {
+        "languages": {},
+        "path": "/home/rob/.vscode-oss/extensions/sdras.vue-vscode-snippets-3.1.1/snippets/nuxt-config.json",
+        "snippets": [
+          {
+            "_name": "Nuxt Font",
+            "_prefix": "nfont",
+            "_description": "link to include fonts in a nuxt project, in nuxt-config",
+            "_body": [
+              "{ rel: 'stylesheet', href: '${1:https://fonts.googleapis.com/css?family=Montserrat:600|Rufina:700}' }"
+            ],
+            "_scope": "",
+            "eol": "\n"
+          },
+          {
+            "_name": "Nuxt Use CSS File",
+            "_prefix": "ncss",
+            "_description": "link to css assets such as normalize",
+            "_body": ["css: ['assets/${1:normalize.css}'],"],
+            "_scope": "",
+            "eol": "\n"
+          }
+        ]
+      },
+      {
+        "languages": {},
+        "path": "/home/rob/.vscode-oss/extensions/sdras.vue-vscode-snippets-3.1.1/snippets/nuxt-script.json",
+        "snippets": [
+          {
+            "_name": "Nuxt Async",
+            "_prefix": "nasyncdataaxios",
+            "_description": "Nuxt asyncData with Axios module",
+            "_body": [
+              "async asyncData ({ ${1:$axios}, { ${2:params} }) {",
+              "\tconst data = await $axios.$get(`${3:endpoint/${params.slug}}`)",
+              "\treturn { data }",
+              "},"
+            ],
+            "_scope": "",
+            "eol": "\n"
+          },
+          {
+            "_name": "Nuxt Fetch",
+            "_prefix": "nfetch",
+            "_description": "Nuxt Fetch",
+            "_body": [
+              "async fetch ({ store, ${1:params} }) {",
+              "\tlet { data } = await fetch('${2:endpoint}').then(res => res.json())",
+              "\tstore.commit('${3:MUTATION_TYPE}', data)",
+              "},"
+            ],
+            "_scope": "",
+            "eol": "\n"
+          },
+          {
+            "_name": "Nuxt Fetch with Axios",
+            "_prefix": "nfetchaxios",
+            "_description": "Nuxt Fetch with Axios module",
+            "_body": [
+              "async fetch () {",
+              "\tlet this.data = await this.$axios.$get('${1:endpoint/${this.$route.params.slug}}')",
+              "},"
+            ],
+            "_scope": "",
+            "eol": "\n"
+          },
+          {
+            "_name": "Nuxt Route Params",
+            "_prefix": "nparam",
+            "_description": "Nuxt Route Params",
+            "_body": ["this.$route.params.${1:id}"],
+            "_scope": "",
+            "eol": "\n"
+          },
+          {
+            "_name": "Nuxt Head",
+            "_prefix": "nhead",
+            "_description": "Nuxt Head",
+            "_body": [
+              "head () {",
+              "\treturn {",
+              "\t\ttitle: ${1:'Page Title'},",
+              "\t\tmeta: [",
+              "\t\t\t// hid is used as unique identifier. Do not use `vmid` for it as it will not work",
+              "\t\t\t{ hid: 'description', name: 'description', content: ${2:'My custom description'} }",
+              "\t\t]",
+              "\t}",
+              "},"
+            ],
+            "_scope": "",
+            "eol": "\n"
+          }
+        ]
+      }
+    ]
+  }
+]

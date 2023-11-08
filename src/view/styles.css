@@ -1,0 +1,430 @@
+:root {
+  --body-bg-color-light-mode: hsl(0, 0%, 95%);
+  --body-bg-color-dark-mode: hsl(210, 2%, 16%);
+  --body-bg-color-contrast-mode: hsl(0, 0%, 0%);
+  --body-bg-color: var(--body-bg-color-dark-mode);
+
+  --body-color-light-mode: hsl(0, 0%, 5%);
+  --body-color-dark-mode: hsl(0, 0%, 90%);
+  --body-color-contrast-mode: hsl(0, 0%, 100%);
+  --body-color: var(--body-color-dark-mode);
+
+  --code-color-light-mode: #7a5600;
+  --code-color-dark-mode: #d7ba7d;
+  --code-color: var(--code-color-dark-mode);
+
+  --button-bg-color-dark-mode: hsl(0, 3%, 80%);
+  --button-bg-color-light-mode: hsl(0, 3%, 75%);
+  --button-bg-color-contrast-mode: hsl(0, 3%, 100%);
+  --button-bg-color: var(--button-bg-color-dark-mode);
+
+  --button-color-dark-mode: hsl(0, 3%, 10%);
+  --button-color-light-mode: hsl(0, 3%, 25%);
+  --button-color-contrast-mode: hsl(0, 3%, 0%);
+  --button-color: var(--button-color-dark-mode);
+
+  --toc-bg-color-light-mode: hsla(0, 9%, 87%, 0.15);
+  --toc-bg-color-dark-mode: hsl(0, 0%, 14%);
+  --toc-bg-color-contrast-mode: var(--body-bg-color-light-mode);
+  --toc-bg-color: var(--toc-bg-color-dark-mode);
+
+  --border-color-light-mode: hsl(0, 3%, 78%);
+  --border-color-dark-mode: hsl(198, 6%, 36%);
+  --border-color-contrast-mode: hsl(0, 3%, 100%);
+  --border-color: var(--border-color-dark-mode);
+
+  --table-head-color-light-mode: hsl(200, 0%, 85%);
+  --table-head-color-dark-mode: hsl(200, 0%, 23%);
+  --table-head-color: var(--table-head-color-dark-mode);
+
+  --table-highlight-color-light-mode: #f0f71d2f;
+  --table-highlight-color-dark-mode: #ffffff05;
+  --table-highlight-color: var(--table-highlight-color-dark-mode);
+
+  --table-action-column-width: 80px;
+  --table-min-width: 800px;
+
+  --h2-height: 3.35rem;
+  --file-section-header-height: 4.4rem;
+  --extension-h3-height: 4.3rem;
+  --extension-file-section-header-height: 6.4rem;
+}
+
+:root body.vscode-high-contrast {
+  --body-color: var(--body-color-contrast-mode);
+  --body-bg-color: var(--body-bg-color-contrast-mode);
+
+  --button-color: var(--button-color-contrast-mode);
+  --button-bg-color: var(--button-bg-color-contrast-mode);
+
+  --border-color: var(--border-color-contrast-mode);
+
+  --toc-bg-color: var(--toc-bg-color-contrast-mode);
+}
+
+:root body.vscode-light {
+  --body-color: var(--body-color-light-mode);
+  --body-bg-color: var(--body-bg-color-light-mode);
+
+  --button-color: var(--button-color-light-mode);
+  --button-bg-color: var(--button-bg-color-light-mode);
+
+  --code-color: var(--code-color-light-mode);
+
+  --border-color: var(--border-color-light-mode);
+
+  --toc-bg-color: var(--toc-bg-color-light-mode);
+
+  --table-head-color: var(--table-head-color-light-mode);
+  --table-highlight-color: var(--table-highlight-color-light-mode);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:focus-visible {
+  outline: orange dotted 0.25rem;
+}
+
+body {
+  font-family: Roboto, "Open Sans", san-serif;
+  font-size: calc(16px + 0.15vw);
+  padding: 10px;
+  margin: 0 auto;
+  max-width: 1600px;
+  overflow-x: auto;
+
+  color: var(--body-color);
+  background-color: var(--body-bg-color);
+}
+
+@media (min-width: 1000px) {
+  body {
+    width: 90%;
+  }
+}
+
+code {
+  font-family: var(--vscode-editor-font-family);
+  font-size: calc(14px + 0.15vw);
+  color: var(--code-color);
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  margin: 0 auto;
+}
+
+/** headings **/
+
+:is(h1, h2, h3, h4, h5) {
+  margin: 0;
+}
+
+h1 {
+  font-size: 2rem;
+  text-align: center;
+}
+
+h2 {
+  font-size: 1.8rem;
+}
+
+h3 {
+  font-size: 1.6rem;
+}
+
+h4 {
+  font-size: 1.4rem;
+}
+
+/** table of contents **/
+
+#toc {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  width: 90%;
+  max-width: 580px;
+  margin: 4rem auto;
+  padding: 1rem 0;
+  border-radius: 10px;
+
+  background-color: var(--toc-bg-color);
+  border: 1px solid var(--border-color);
+}
+
+body.vscode-high-contrast #toc {
+  color: black;
+}
+
+/** major sections **/
+
+section {
+  margin-block-end: 4rem;
+}
+
+.file-section {
+  position: relative;
+  margin-block-end: 2.5rem;
+}
+
+section h2,
+section header,
+section#extension h3,
+section#extension header {
+  position: sticky;
+  margin: 0;
+  background-color: var(--body-bg-color);
+  font-family: var(--vscode-font-family);
+  min-width: var(--table-min-width);
+}
+
+section h2 {
+  top: 0;
+  z-index: 1000;
+  margin-bottom: 0;
+  padding-block-start: 1.25rem;
+}
+
+section:not(#extension) header,
+section#extension h3 {
+  --padding-block-start: 1.5rem;
+
+  top: var(--h2-height);
+  z-index: 500;
+  padding: var(--padding-block-start) 0 1rem 0;
+}
+
+section:not(#extension) header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+section#extension header {
+  top: calc(var(--h2-height) + var(--extension-h3-height));
+  z-index: 400;
+  padding: 0.5rem 0;
+
+  display: grid;
+  grid-template-columns: auto auto 1fr;
+  align-items: center;
+  column-gap: 1rem;
+}
+
+section#extension header :is(p, div) {
+  grid-column: 1 / -1;
+  margin: 0;
+  padding: 1.25rem 0;
+}
+
+.language-list {
+  display: inline-block;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.language-list li {
+  display: inline;
+  padding-inline-start: 0.1rem;
+}
+
+.language-list li code {
+  font-size: 0.9em;
+}
+
+.language-list li:not(:last-child) code::after {
+  content: ",";
+  color: var(--body-color);
+}
+
+.bookmark {
+  position: absolute;
+  top: calc(var(--h2-height) * -1);
+}
+
+section#extension .bookmark {
+  top: calc((var(--h2-height) + var(--extension-h3-height)) * -1);
+}
+
+/** table styles **/
+
+table {
+  table-layout: fixed;
+  min-width: var(--table-min-width);
+  width: 100%;
+  border-collapse: collapse;
+  word-break: break-word;
+}
+
+.wrapper {
+  overflow-x: scroll;
+}
+
+th,
+td {
+  margin: 0;
+  padding: 10px 0;
+  text-align: left;
+}
+
+thead {
+  position: sticky;
+  top: calc(var(--h2-height) + var(--file-section-header-height));
+}
+
+section#extension thead {
+  top: 14.1rem;
+}
+
+th {
+  font-weight: 500;
+  line-height: 150%;
+
+  background-color: var(--table-head-color);
+  border-bottom: 1px solid var(--border-color);
+}
+
+td {
+  padding-inline-end: 0.25rem;
+  vertical-align: top;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.prefix-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.prefix-list li:not(:last-child) {
+  padding-block-end: 0.5rem;
+}
+
+.prefix-list li:not(:last-child)::after {
+  content: ",";
+  font-weight: bold;
+}
+
+tr:hover {
+  background-color: var(--table-highlight-color);
+}
+
+th:nth-child(1),
+td:nth-child(1) {
+  width: 15%;
+}
+
+th:nth-child(2),
+td:nth-child(2) {
+  width: 20%;
+  display: none;
+}
+
+th:nth-child(3),
+td:nth-child(3) {
+  width: 35%;
+}
+
+th:nth-child(4),
+td:nth-child(4) {
+  width: calc(50% - var(--table-action-column-width));
+}
+
+th:nth-child(5),
+td:nth-child(5) {
+  width: var(--table-action-column-width);
+}
+
+.scoped-table :is(th:nth-child(3), td:nth-child(3)) {
+  width: 25%;
+}
+
+/* using percentage value breaks down here, maybe because of long words? */
+.scoped-table :is(th:nth-child(5), td:nth-child(5)) {
+  width: clamp(120px, 13vw, 240px);
+}
+
+.scoped-table :is(th:nth-child(6), td:nth-child(6)) {
+  width: var(--table-action-column-width);
+}
+
+@media (min-width: 1000px) {
+  th:nth-child(1),
+  td:nth-child(1) {
+    width: 15%;
+  }
+
+  th:nth-child(2),
+  td:nth-child(2) {
+    display: table-cell;
+  }
+
+  th:nth-child(3),
+  td:nth-child(3) {
+    width: 25%;
+  }
+
+  th:nth-child(4),
+  td:nth-child(4) {
+    width: calc(40% - var(--table-action-column-width));
+  }
+
+  .scoped-table :is(th:nth-child(2), td:nth-child(2)) {
+    width: 15%;
+  }
+
+  .scoped-table :is(th:nth-child(3), td:nth-child(3)) {
+    width: 20%;
+  }
+}
+
+/** buttons **/
+
+button {
+  font-family: inherit;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+
+  color: var(--button-color);
+  background-color: var(--button-bg-color);
+  box-shadow: 0 1px 2px 0 hsl(0deg 0% 0% / 15%), 0 0 4px 0 hsl(0deg 0% 0% / 10%),
+    0 0 0 1px hsl(0deg 0% 0% / 10%) inset;
+}
+
+button svg {
+  fill: var(--button-color);
+}
+
+.sourceBtn {
+  padding: 0.2rem 0.4rem 0.175rem 0.4rem;
+  font-size: 0.75rem;
+}
+
+.actionBtn {
+  --size: calc(var(--table-action-column-width) / 2 - 5px);
+
+  padding: 0.6em;
+  width: var(--size);
+  height: var(--size);
+}
+
+.editBtn {
+  margin-right: 5px;
+}
+
+body.vscode-high-contrast button {
+  font-weight: bold;
+}
