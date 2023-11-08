@@ -10,14 +10,14 @@
 <h4 align="center">View and edit all your snippets in one purty place. Yee-haw!</h4>
 
 <p align="center">
-<img src="https://img.shields.io/static/v1?logo=visual-studio-code&label=made%20for&message=VS%20Code&color=6666FF" alt="Made for VSCode">
-<img src="https://img.shields.io/visual-studio-marketplace/v/robole.snippets-ranger?logo=visual-studio-code&color=6666FF" alt="Visual Studio Marketplace Version">
-<img src="https://img.shields.io/static/v1?logo=visual-studio-code&label=size&message=65KB&color=6666FF"
+<img src="https://img.shields.io/static/v1?logo=visual-studio-code&label=made%20for&message=VS%20Code&color=4747d1" alt="Made for VSCode">
+<img src="https://img.shields.io/visual-studio-marketplace/v/robole.snippets-ranger?logo=visual-studio-code&color=4747d1" alt="Visual Studio Marketplace Version">
+<img src="https://img.shields.io/static/v1?logo=visual-studio-code&label=size&message=65KB&color=4747d1"
 alt="Extension file size in bytes">
-<img src="https://img.shields.io/visual-studio-marketplace/r/robole.snippets-ranger?logo=visual-studio-code&color=6666FF" alt="Visual Studio Marketplace Rating">
-<img src="https://img.shields.io/visual-studio-marketplace/d/robole.snippets-ranger?logo=visual-studio-code&color=6666FF" alt="downloads"/>
-<img src="https://img.shields.io/visual-studio-marketplace/i/robole.snippets-ranger?logo=visual-studio-code&color=6666FF" alt="installs"/>
-<img src="https://img.shields.io/static/v1?label=built%20with&message=sarsaparilla%20%26%20javascript&color=6666FF" alt="Built with sarsaparilla and javascript"/>
+<img src="https://img.shields.io/visual-studio-marketplace/r/robole.snippets-ranger?logo=visual-studio-code&color=4747d1" alt="Visual Studio Marketplace Rating">
+<img src="https://img.shields.io/visual-studio-marketplace/d/robole.snippets-ranger?logo=visual-studio-code&color=4747d1" alt="downloads"/>
+<img src="https://img.shields.io/visual-studio-marketplace/i/robole.snippets-ranger?logo=visual-studio-code&color=4747d1" alt="installs"/>
+<img src="https://img.shields.io/static/v1?label=built%20with&message=sarsaparilla%20%26%20javascript&color=4747d1" alt="Built with sarsaparilla and javascript"/>
 <a href="https://ko-fi.com/roboleary"><img src="https://img.shields.io/badge/Buy%20me%20a%20coffee-$4-gold?logo=buy-me-a-coffee" alt="Buy me a coffee"></a>
 </p>
 
@@ -83,7 +83,7 @@ To gather and render approx 6000 snippets sourced from 18 different files, it ta
 
 Contributions are welcome. If you have a suggestion or find a bug, please file an issue. Please do not offer a PR without raising an issue first, my time for reviews are limited.
 
-To help other people find the extension, you can [star the repo 🌟](https://github.com/robole/vscode-snippets-ranger), and leave a positive review in the [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=robole.snippets-ranger&ssr=false#review-details) or [Open VSX Registry](https://open-vsx.org/extension/robole/snippets-ranger/reviews).
+To help other people find the extension, you can [star the repo 🌟](https://github.com/robole/vscode-snippets-ranger), and leave a positive review in the [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=robole.snippets-ranger&ssr=false#review-details) or [Open VSX Registry](https://open-vsx.org/extension/robole/snippets-ranger/reviews). A recommendation on social media or on your blog is welcome too!
 
 You can [support me](https://ko-fi.com/roboleary) to make issues in this project a higher priority and allow me to dedicate more time I can dedicate to open-source projects.
 

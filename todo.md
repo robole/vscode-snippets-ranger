@@ -1,6 +1,6 @@
 # To Do
 
-1. TOC entry for an extension leds to first file table being slightly obscured.
+1. TOC entry for an extension leds to view with first row of the first file table being slightly obscured.
 
 ## Changes to consider
 

@@ -7,7 +7,7 @@
   },
   "description": "View and edit all your snippets in one purty place. Yee-haw!",
   "icon": "img/logo.webp",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "engines": {
     "vscode": "^1.4.0",
     "node": ">=12.0.0"
@@ -16,7 +16,7 @@
     "Snippets"
   ],
   "galleryBanner": {
-    "color": "#6666FF",
+    "color": "#4747d1",
     "theme": "dark"
   },
   "keywords": [
