@@ -69,7 +69,7 @@ If you are working in code and would like to **quickly add a snippet to a snippe
 The following commands are available:
 
 1. **`Snippets Ranger: Show me that dur Range, Partner`**: Opens the view that lists all your snippets.
-1. **`Snippets Ranger: Add new snippet to snippets file...`**: Quickly add a new snippet to a snippet file of your choosing. If you have code selected, this selection will be added to the `body` of the snippet. Any dollar signs in the selection will be escaped (preceded by 2 backslashes) to prevent them being interpeted as tab stops.
+1. **`Snippets Ranger: Add new snippet to snippets file...`**: Quickly add a new snippet to a snippet file of your choosing. If you have code selected, this selection will be added to the `body` of the snippet. Any dollar signs in the selection will be escaped (preceded by 2 backslashes) to prevent them being interpreted as tab stops.
 
 ## Activation
 
@@ -85,7 +85,7 @@ Contributions are welcome. If you have a suggestion or find a bug, please file a
 
 To help other people find the extension, you can [star the repo 🌟](https://github.com/robole/vscode-snippets-ranger), and leave a positive review in the [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=robole.snippets-ranger&ssr=false#review-details) or [Open VSX Registry](https://open-vsx.org/extension/robole/snippets-ranger/reviews). A recommendation on social media or on your blog is welcome too!
 
-You can [support me](https://ko-fi.com/roboleary) to make issues in this project a higher priority and allow me to dedicate more time I can dedicate to open-source projects.
+You can [make a donation to support me](https://ko-fi.com/roboleary) to make this project a higher priority and allow me to dedicate more time to open-source. I can only do bits and pieces in my spare time!
 
 ## Learn more about snippets
 
