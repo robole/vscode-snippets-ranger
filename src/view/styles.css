@@ -86,7 +86,7 @@
 }
 
 :focus-visible {
-  outline: orange dotted 0.25rem;
+  outline: hsl(333, 100%, 60%) solid 0.25rem;
 }
 
 body {
