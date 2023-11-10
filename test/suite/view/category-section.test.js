@@ -47,9 +47,9 @@ describe("category-section.js", () => {
       assert.strictEqual(section.includes(expected), true);
     });
 
-    it("should create a section that states there are no snippets when there are no snippets", () => {
+    it("should state there are no snippets", () => {
       let section = createCategorySection([], "user");
-      let expected = `<p class="empty">Oucho Gaucho!`;
+      let expected = `<p>Oucho Gaucho!`;
 
       assert.strictEqual(section.includes(expected), true);
     });

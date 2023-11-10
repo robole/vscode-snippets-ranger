@@ -37,11 +37,14 @@ const createCategoryEntry = (category, snippetsFiles) => {
     entries += createSnippetsFileEntry(snippetsFile);
   });
 
+  let title = `${format.capitalize(category)} Snippets`;
+  html += `<li><a href="#${category}">${title}</a>`;
+
   if (entries !== "") {
-    let title = `${format.capitalize(category)} Snippets`;
-    html += `<li><a href="#${category}">${title}</a><ul>`;
-    html += `${entries}</ul></li>`;
+    html += `<ul>${entries}</ul>`;
   }
+
+  html += `</li>`;
 
   return html;
 };

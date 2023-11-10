@@ -107,6 +107,11 @@ body {
   }
 }
 
+p {
+  margin: 0;
+  margin-block-start: 1.5rem;
+}
+
 code {
   font-family: var(--vscode-editor-font-family);
   font-size: calc(14px + 0.15vw);
@@ -173,8 +178,12 @@ section {
   margin-block-end: 4rem;
 }
 
+.extension,
 .file-section {
   position: relative;
+}
+
+.file-section {
   margin-block-end: 2.5rem;
 }
 
@@ -254,7 +263,7 @@ section#extension header :is(p, div) {
   top: calc(var(--h2-height) * -1);
 }
 
-section#extension .bookmark {
+.extension .file-section .bookmark {
   top: calc((var(--h2-height) + var(--extension-h3-height)) * -1);
 }
 

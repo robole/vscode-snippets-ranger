@@ -4,7 +4,7 @@ let {
 } = require("./file-section");
 let format = require("../helper/format");
 
-const notFoundHTML = `<p class="empty">Oucho Gaucho! 🌵 Nothing to round up! 🤠</p>`;
+const notFoundHTML = `<p>Oucho Gaucho! 🌵 Nothing to round up! 🤠</p>`;
 
 /**
  * Creates the HTML for a section for a category of snippets e.g. "project" for snippets defined in
@@ -44,7 +44,7 @@ let createExtensionCategorySection = (extensions) => {
 
   extensions.forEach((extension) => {
     let id = format.slugify(extension.id);
-    section += `<div><h3 id="${id}">${extension.name}</h3>`;
+    section += `<div class="extension"><div id="${id}" class="bookmark"></div><h3>${extension.name}</h3>`;
 
     extension.snippetsFiles.forEach((snippetsFile) => {
       section += createExtensionFileSection(snippetsFile);

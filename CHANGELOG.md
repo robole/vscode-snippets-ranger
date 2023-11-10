@@ -5,6 +5,15 @@ All notable changes to this project are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.5.0] - 2023-11-10
+
+### Changed
+
+- Improve table of contents:
+	- Add `.bookmark` element to individual extension sections to ensure there is an accurate location from the table of contents that does not result in upper rows of the snippets table being partially obscured.
+	- Add an entry for category sections to table of contents even if there are no snippets for that category.
+- Add a custom margin for paragraphs to make spacing more consistent.
+
 ## [1.4.0] - 2023-11-10
 
 ### Changed
