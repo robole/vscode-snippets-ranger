@@ -1,5 +1,6 @@
 # To Do
 
+1. Redo creating webp of logo. Quality is a bit too low.
 1. TOC entry for an extension leds to view with first row of the first file table being slightly obscured.
 
 ## Changes to consider
