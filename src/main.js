@@ -12,25 +12,39 @@ const styles = require("./view/styles.css");
 async function activate(context) {
   context.subscriptions.push(
     vscode.commands.registerCommand("snippets-ranger.show", async () => {
-      let view = View(context);
-
-      let fetcher = fetch(context.globalStoragePath);
-
-      let projectSnippetsFiles = await fetcher.fetchProjectSnippetsFiles();
-      let userSnippetsFiles = await fetcher.fetchUserSnippetsFiles();
-      let appSnippetsFiles = await fetcher.fetchAppSnippetsFiles();
-      let extensions = await fetcher.fetchExtensions();
-
-      view.load(
-        projectSnippetsFiles,
-        userSnippetsFiles,
-        appSnippetsFiles,
-        extensions
-      );
+      await showView(context);
     }),
+
     vscode.commands.registerCommand("snippets-ranger.add", async () => {
       await addSnippet();
     })
+  );
+}
+
+async function showView(context) {
+  let view = View(context);
+  let { globalStoragePath } = context;
+
+  if (globalStoragePath === undefined || globalStoragePath === "") {
+    await vscode.window.showErrorMessage(
+      `The context.globalStoragePath variable is not defined: ${globalStoragePath}`
+    );
+
+    return;
+  }
+
+  let fetcher = fetch(globalStoragePath);
+
+  let projectSnippetsFiles = await fetcher.fetchProjectSnippetsFiles();
+  let userSnippetsFiles = await fetcher.fetchUserSnippetsFiles();
+  let appSnippetsFiles = await fetcher.fetchAppSnippetsFiles();
+  let extensions = await fetcher.fetchExtensions();
+
+  view.load(
+    projectSnippetsFiles,
+    userSnippetsFiles,
+    appSnippetsFiles,
+    extensions
   );
 }
 

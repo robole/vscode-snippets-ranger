@@ -5,6 +5,17 @@ All notable changes to this project are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.5.1] - 2023-11-18
+
+### Fixed
+
+- A "cannot read properties of undefined (reading '0')" error is thrown when the command `Snippets Ranger: Show me that dur Range, Partner` is run and no workspace is open. Fixed this scenario.
+
+### Changed
+
+- If a snippets files has invalid data or is empty, the file is show in the view with the description "No snippets".
+- Improved error handling for rejected promises from `glob`.
+
 ## [1.5.0] - 2023-11-10
 
 ### Changed

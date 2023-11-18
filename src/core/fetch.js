@@ -9,8 +9,15 @@ function fetch(globalStoragePath) {
    * @returns {Array} An array of `SnippetsFile` objects
    */
   async function fetchProjectSnippetsFiles() {
-    let projectPaths = await env.getProjectSnippetPaths();
-    let snippetsFiles = await fetchSnippetsFiles(projectPaths);
+    let paths = [];
+
+    try {
+      paths = await env.getProjectSnippetPaths();
+    } catch (error) {
+      console.log(`No project files. Error: ${error}`);
+    }
+
+    let snippetsFiles = await fetchSnippetsFiles(paths);
     return snippetsFiles;
   }
 
@@ -19,8 +26,15 @@ function fetch(globalStoragePath) {
    * @returns {Array} An array of `SnippetsFile` objects
    */
   async function fetchUserSnippetsFiles() {
-    let userPaths = await env.getUserSnippetPaths(globalStoragePath);
-    let snippetsFiles = fetchSnippetsFiles(userPaths);
+    let paths = [];
+
+    try {
+      paths = await env.getUserSnippetPaths(globalStoragePath);
+    } catch (error) {
+      console.log(`No user files. Error: ${error}`);
+    }
+
+    let snippetsFiles = fetchSnippetsFiles(paths);
     return snippetsFiles;
   }
 
@@ -29,8 +43,15 @@ function fetch(globalStoragePath) {
    * @returns {Array} An array of `SnippetsFile` objects
    */
   async function fetchAppSnippetsFiles() {
-    let appPaths = await env.getAppSnippetPaths();
-    let snippetsFiles = await fetchSnippetsFiles(appPaths);
+    let paths = [];
+
+    try {
+      paths = await env.getAppSnippetPaths();
+    } catch (error) {
+      console.log(`No app files. Error: ${error}`);
+    }
+
+    let snippetsFiles = await fetchSnippetsFiles(paths);
     return snippetsFiles;
   }
 
@@ -70,15 +91,14 @@ function fetch(globalStoragePath) {
 
 async function fetchSnippetsFiles(paths) {
   let array = [];
+
   let parsedCollectionPromised = paths.map((path) => parser.parse(path));
   let collection = await Promise.all(parsedCollectionPromised);
 
   collection.forEach((snippetsJson, index) => {
-    if (snippetsJson !== undefined) {
-      let snippetsArray = toSnippetsArray(snippetsJson);
-      let snippetsFile = new SnippetsFile(paths[index], snippetsArray);
-      array.push(snippetsFile);
-    }
+    let snippetsArray = toSnippetsArray(snippetsJson);
+    let snippetsFile = new SnippetsFile(paths[index], snippetsArray);
+    array.push(snippetsFile);
   });
 
   return array;

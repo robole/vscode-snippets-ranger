@@ -14,16 +14,18 @@ const Extension = require("../model/extension");
 function toSnippetsArray(snippetsObj) {
   let array = [];
 
-  Object.entries(snippetsObj).forEach(([key, value]) => {
-    let snippet = new Snippet(
-      key,
-      value.prefix,
-      value.body,
-      value.description,
-      value.scope
-    );
-    array.push(snippet);
-  });
+  if (snippetsObj !== undefined) {
+    Object.entries(snippetsObj).forEach(([key, value]) => {
+      let snippet = new Snippet(
+        key,
+        value.prefix,
+        value.body,
+        value.description,
+        value.scope
+      );
+      array.push(snippet);
+    });
+  }
 
   return array;
 }

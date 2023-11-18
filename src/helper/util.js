@@ -1,6 +1,5 @@
 const vscode = require("vscode");
 const fs = require("fs");
-const path = require("path");
 
 /**
  * If the file exists, it does nothing. If the file does not exist, it will create a new file with an empty object.
