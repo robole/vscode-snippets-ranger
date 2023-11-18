@@ -58,14 +58,14 @@ const createTableBody = (snippetsFile) => {
 
     body += `<tr data-name="${snippet.name}">`;
     body += `<td>${createPrefixList(snippet.prefix)}</td>`;
-    body += `<td>${snippet.name}</td>`;
-    body += `<td>${snippet.description}</td>`;
+    body += `<td>${format.escape(snippet.name)}</td>`;
+    body += `<td>${format.escape(snippet.description)}</td>`;
     body += "<td><code>";
-    body += format.escapeBody(snippet.body);
+    body += format.escape(snippet.body);
     body += "</code></td>";
 
     if (snippetsFile.isScoped() === true) {
-      body += `<td>${snippet.scope}</td>`;
+      body += `<td>${format.escape(snippet.scope)}</td>`;
     }
 
     body += `<td>${editButton}${deleteButton}</td></tr>`;
@@ -83,7 +83,7 @@ function createPrefixList(prefix) {
     list = `<ul class="prefix-list simple-list">`;
 
     prefix.forEach((item) => {
-      list += `<li><code>${item}</code></li>`;
+      list += `<li><code>${format.escape(item)}</code></li>`;
     });
 
     list += `</ul>`;

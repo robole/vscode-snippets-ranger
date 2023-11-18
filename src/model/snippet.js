@@ -1,5 +1,4 @@
 const format = require("../helper/format");
-const util = require("../helper/util");
 
 /**
  * The body can be a string or an array. This formats it to be an array internally always.
@@ -64,7 +63,6 @@ function Snippet(
   let formattedPrefix = formatPrefix(prefix);
   let formattedBody = formatBody(body);
   let formattedScope = formatScope(scope);
-  let endOfLineDelimiter = util.getEndOfLineDelimiter();
 
   return {
     name,

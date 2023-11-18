@@ -68,5 +68,25 @@ describe("snippets-table.js", () => {
 
       assert.strictEqual(table.startsWith(expected), true);
     });
+
+    it("should create a table when a snippet contains reserved HTML characters", () => {
+      let snippet = {
+        name: "test",
+        prefix: ["<html>", "test"],
+        body: ["This is <i>"],
+        description: "Testing <div>",
+        scope: "<bogus>",
+      };
+
+      let snippetsFile = new SnippetsFile("/somepath/a.code-snippets", [
+        snippet,
+      ]);
+
+      let table = createSnippetsTable(snippetsFile);
+
+      let expected = `<tr data-name="test"><td><ul class="prefix-list simple-list"><li><code>&lt;html&gt;</code></li><li><code>test</code></li></ul></td><td>test</td><td>Testing &lt;div&gt;</td><td><code>This is &lt;i&gt;<br></code></td><td>&lt;bogus&gt;</td>`;
+
+      assert.strictEqual(table.includes(expected), true);
+    });
   });
 });

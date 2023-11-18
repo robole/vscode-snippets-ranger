@@ -55,7 +55,7 @@ const createSnippetsFileEntry = (snippetsFile) => {
 };
 
 const createExtensionEntry = (extensions) => {
-  let html = "";
+  let html = `<li><a href="#extension">Extension Snippets</a>`;
   let entries = "";
 
   extensions.forEach((extension) => {
@@ -70,8 +70,10 @@ const createExtensionEntry = (extensions) => {
   });
 
   if (entries !== "") {
-    html += `<li><a href="#extension">Extension Snippets</a><ul>${entries}</ul></li>`;
+    html += `<ul>${entries}</ul>`;
   }
+
+  html += `</li>`;
 
   return html;
 };

@@ -80,18 +80,15 @@ describe("format.js", () => {
     });
   });
 
-  describe("escapeBody()", () => {
+  describe("escape()", () => {
     it("should replace html elements with a HTML-safe equivalent for a string", () => {
-      let body = format.escapeBody(`This is the <html> tag.`);
+      let body = format.escape(`This is the <html> tag.`);
 
       assert.strictEqual(body, "This is the &lt;html&gt; tag.");
     });
 
     it("should replace html elements with a HTML-safe equivalent for an array", () => {
-      let text1 = format.escapeBody([
-        `This is the <html> tag.`,
-        `\t let x = 1;`,
-      ]);
+      let text1 = format.escape([`This is the <html> tag.`, `\t let x = 1;`]);
 
       assert.strictEqual(
         text1,

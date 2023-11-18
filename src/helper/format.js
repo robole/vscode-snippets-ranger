@@ -32,17 +32,17 @@ function escapeHtml(text) {
 }
 
 /**
- * Escapes all the HTML content in the items of an array and concatenates it into a string
- * that can be consumed by a web page. Each item is appended with a HTML line break (BR tag).
+ * Escapes all the HTML content in the items of an array/string that can be consumed by a web page.
+ * Each item in the array is appended with a HTML line break (BR tag) and returned as a single string.
  * @param {string|Array} array Array of values
  */
-function escapeBody(body) {
+function escape(content) {
   let str = "";
 
-  if (typeof body === "string") {
-    str = escapeHtml(body);
-  } else if (Array.isArray(body)) {
-    body.forEach((element) => {
+  if (typeof content === "string") {
+    str = escapeHtml(content);
+  } else if (Array.isArray(content)) {
+    content.forEach((element) => {
       str += escapeHtml(element);
       str += "<br>";
     });
@@ -82,7 +82,7 @@ function slugify(text) {
 module.exports = {
   capitalize,
   escapeHtml,
-  escapeBody,
+  escape,
   convertToArray,
   slugify,
 };

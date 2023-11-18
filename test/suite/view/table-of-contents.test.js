@@ -7,10 +7,14 @@ const Extension = require("../../../src/model/extension");
 
 describe("table-of-contents.js", () => {
   describe("createTableOfContents()", () => {
-    it("should create an empty table if an empty outline is provided", () => {
+    it("should create a table with category entries", () => {
       let toc = createTableOfContents(); // OR createTableOfContents([], [], [], []);
 
-      assert.strictEqual(toc, "");
+      let expected = `<div id="toc"><h2>Table of Contents</h2><ul><li><a href="#project">Project Snippets</a></li>`;
+      expected += `<li><a href="#user">User Snippets</a></li><li><a href="#extension">Extension Snippets</a></li>`;
+      expected += `<li><a href="#app">App Snippets</a></li></ul></div>`;
+
+      assert.strictEqual(toc, expected);
     });
 
     it("should create a table with an entry for a collection of snippets files", () => {
@@ -24,14 +28,16 @@ describe("table-of-contents.js", () => {
         []
       );
 
-      let expectedOutput = `<div id="toc"><h2>Table of Contents</h2><ul>`;
-      expectedOutput += `<li><a href="#project">Project Snippets</a><ul>`;
-      expectedOutput += `<li><a href="#somepathacode-snippets">a</a></li>`;
-      expectedOutput += `<li><a href="#somepathbcode-snippets">b</a></li>`;
-      expectedOutput += `</ul></li>`;
-      expectedOutput += `</ul></div>`;
+      let expected = `<div id="toc"><h2>Table of Contents</h2><ul>`;
+      expected += `<li><a href="#project">Project Snippets</a><ul>`;
+      expected += `<li><a href="#somepathacode-snippets">a</a></li>`;
+      expected += `<li><a href="#somepathbcode-snippets">b</a></li></ul></li>`;
+      expected += `<li><a href="#user">User Snippets</a></li>`;
+      expected += `<li><a href="#extension">Extension Snippets</a></li>`;
+      expected += `<li><a href="#app">App Snippets</a></li>`;
+      expected += `</ul></div>`;
 
-      assert.strictEqual(toc, expectedOutput);
+      assert.strictEqual(toc, expected);
     });
 
     it("should create a table with an entry for an extension and its snippets files", () => {
@@ -46,15 +52,18 @@ describe("table-of-contents.js", () => {
 
       let toc = createTableOfContents([], [], [], [extension]);
 
-      let expectedOutput = `<div id="toc"><h2>Table of Contents</h2><ul>`;
-      expectedOutput += `<li><a href="#extension">Extension Snippets</a><ul>`;
-      expectedOutput += `<li><a href="#robole-snippets-ranger">Snippets Ranger</a><ul>`;
-      expectedOutput += `<li><a href="#somepathacode-snippets">a</a></li>`;
-      expectedOutput += `<li><a href="#somepathbcode-snippets">b</a></li>`;
-      expectedOutput += `</ul></li></ul>`;
-      expectedOutput += `</li></ul></div>`;
+      let expected = `<div id="toc"><h2>Table of Contents</h2><ul>`;
+      expected += `<li><a href="#project">Project Snippets</a></li>`;
+      expected += `<li><a href="#user">User Snippets</a></li>`;
+      expected += `<li><a href="#extension">Extension Snippets</a><ul>`;
+      expected += `<li><a href="#robole-snippets-ranger">Snippets Ranger</a><ul>`;
+      expected += `<li><a href="#somepathacode-snippets">a</a></li>`;
+      expected += `<li><a href="#somepathbcode-snippets">b</a></li>`;
+      expected += `</ul></li></ul></li>`;
+      expected += `<li><a href="#app">App Snippets</a></li>`;
+      expected += `</ul></div>`;
 
-      assert.strictEqual(toc, expectedOutput);
+      assert.strictEqual(toc, expected);
     });
   });
 });
