@@ -13,6 +13,6 @@ refactor
 webpack.config.js
 img/**
 !img/logo.webp
-!img/loading.gif
+!img/loader-clip.mp4
 todo.md
 funding.yml

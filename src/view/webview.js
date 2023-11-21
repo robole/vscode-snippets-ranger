@@ -96,11 +96,11 @@ function View(context) {
 		<body>
 		<main class="loading">
 		<h1>Snippets Ranger</h1>
-			<img src=${convertToWebviewUri(
+			<video src=${convertToWebviewUri(
         "img",
-        "loading.gif"
-      )} alt="loading image" class="gif"/>
-			<p style="text-align:center">Rounding them up!</p>
+        "loader-clip.mp4"
+      )} autoplay muted loop></video>
+			<p>Rounding them up!</p>
 		</main>
 		</body></html>`;
 

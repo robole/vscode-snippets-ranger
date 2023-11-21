@@ -12,7 +12,7 @@
 <p align="center">
 <img src="https://img.shields.io/static/v1?logo=visual-studio-code&label=made%20for&message=VS%20Code&color=4747d1" alt="Made for VSCode">
 <img src="https://img.shields.io/visual-studio-marketplace/v/robole.snippets-ranger?logo=visual-studio-code&color=4747d1" alt="Visual Studio Marketplace Version">
-<img src="https://img.shields.io/static/v1?logo=visual-studio-code&label=size&message=65KB&color=4747d1"
+<img src="https://img.shields.io/static/v1?logo=visual-studio-code&label=size&message=159KB&color=4747d1"
 alt="Extension file size in bytes">
 <img src="https://img.shields.io/visual-studio-marketplace/r/robole.snippets-ranger?logo=visual-studio-code&color=4747d1" alt="Visual Studio Marketplace Rating">
 <img src="https://img.shields.io/visual-studio-marketplace/d/robole.snippets-ranger?logo=visual-studio-code&color=4747d1" alt="downloads"/>
@@ -21,9 +21,9 @@ alt="Extension file size in bytes">
 <a href="https://ko-fi.com/roboleary"><img src="https://img.shields.io/badge/Buy%20me%20a%20coffee-$4-gold?logo=buy-me-a-coffee" alt="Buy me a coffee"></a>
 </p>
 
-![Screenshot of the view. It shows the user snippets for the markdown language in a table with the columns: prefix, name, description, body and action.](img/screenshots/view-showcase.webp)
+![Screenshot of the webview. It shows the user snippets for the markdown language in a table with the columns: prefix, name, description, body and action.](img/screenshots/view-showcase.webp)
 
-Snippets are shown in an **easy to read [webview](https://code.visualstudio.com/api/extension-guides/webview)**.
+Snippets are shown in an **easy to browse [webview](https://code.visualstudio.com/api/extension-guides/webview)**.
 
 Snippets are formed into posses:
 - ***Project***: These are the snippets contained in the `.vscode` folder of the current workspace,
@@ -68,7 +68,7 @@ If you are working in code and would like to **quickly add a snippet to a snippe
 
 The following commands are available:
 
-1. **`Snippets Ranger: Show me that dur Range, Partner`**: Opens the view that lists all your snippets.
+1. **`Snippets Ranger: Show me that dur Range, Partner`**: Opens the webview that lists all your snippets.
 1. **`Snippets Ranger: Add new snippet to snippets file...`**: Quickly add a new snippet to a snippet file of your choosing. If you have code selected, this selection will be added to the `body` of the snippet. Any dollar signs in the selection will be escaped (preceded by 2 backslashes) to prevent them being interpreted as tab stops.
 
 ## Activation

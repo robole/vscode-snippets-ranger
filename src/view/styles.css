@@ -107,6 +107,48 @@ body {
   }
 }
 
+.loading {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.loading p {
+  --color1: hsl(280, 100%, 50%);
+  --color2: hsl(280, 100%, 20%);
+
+  font-size: 1.75rem;
+
+  -webkit-background-clip: text;
+  background-image: repeating-linear-gradient(
+    0deg,
+    var(--color1),
+    var(--color1) 25%,
+    var(--color2) 25%,
+    var(--color2) 50%
+  );
+  background-position: center;
+  font-size: 2rem;
+  font-weight: 900;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+
+  color: transparent;
+  filter: drop-shadow(0 8px 10px white) drop-shadow(8px 0 10px white)
+    drop-shadow(-8px 0 10px white) drop-shadow(0 -8px 10px white)
+    drop-shadow(0 10px 2px pink) drop-shadow(0 -10px 2px pink);
+  text-align: center;
+  margin: 1rem;
+  padding: 2rem;
+}
+
+video {
+  width: 400px;
+  aspect-ratio: 1 / 1;
+  max-width: 100%;
+  border-radius: 50%;
+}
+
 p {
   margin: 0;
   margin-block-start: 1.5rem;

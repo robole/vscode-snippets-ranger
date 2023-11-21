@@ -14,7 +14,7 @@ function fetch(globalStoragePath) {
     try {
       paths = await env.getProjectSnippetPaths();
     } catch (error) {
-      console.log(`No project files. Error: ${error}`);
+      console.error(`No project files. ${error}`);
     }
 
     let snippetsFiles = await fetchSnippetsFiles(paths);
@@ -31,7 +31,7 @@ function fetch(globalStoragePath) {
     try {
       paths = await env.getUserSnippetPaths(globalStoragePath);
     } catch (error) {
-      console.log(`No user files. Error: ${error}`);
+      console.error(`No user files. ${error}`);
     }
 
     let snippetsFiles = fetchSnippetsFiles(paths);
@@ -48,7 +48,7 @@ function fetch(globalStoragePath) {
     try {
       paths = await env.getAppSnippetPaths();
     } catch (error) {
-      console.log(`No app files. Error: ${error}`);
+      console.error(`No app files. ${error}`);
     }
 
     let snippetsFiles = await fetchSnippetsFiles(paths);
