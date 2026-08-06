@@ -7,6 +7,7 @@ const {
 const { createTableOfContents } = require("./table-of-contents");
 const { deleteSnippet } = require("../actions/delete");
 const { editSnippet } = require("../actions/edit");
+const { copySnippet } = require("../actions/copy");
 
 /**
  * A view displaying the snippets on a user's system.
@@ -55,6 +56,9 @@ function View(context) {
           let uri = vscode.Uri.file(decodeURIComponent(message.path));
 
           await vscode.window.showTextDocument(uri);
+        } else if (message.command === "copySnippet") {
+          let decodedSnippet = decodeURI(message.snippet);
+          await copySnippet(decodedSnippet);
         } else if (message.command === "editSnippet") {
           let uri = vscode.Uri.file(decodeURIComponent(message.path));
 

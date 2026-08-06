@@ -41,7 +41,7 @@
   --table-highlight-color-dark-mode: #ffffff05;
   --table-highlight-color: var(--table-highlight-color-dark-mode);
 
-  --table-action-column-width: 80px;
+  --table-action-column-width: 100px;
   --table-min-width: 800px;
 
   --h2-height: 3.35rem;
@@ -444,15 +444,12 @@ button svg {
 }
 
 .actionBtn {
-  --size: calc(var(--table-action-column-width) / 2 - 5px);
+  --size: calc(var(--table-action-column-width) / 3.6);
 
-  padding: 0.6em;
+  padding: 0.35em;
+  margin-inline-end: 0.3em;
   width: var(--size);
   height: var(--size);
-}
-
-.editBtn {
-  margin-right: 5px;
 }
 
 body.vscode-high-contrast button {

@@ -50,6 +50,20 @@ function formatScope(scope) {
   return formatted;
 }
 
+function getValueObject(name, prefix, body, description, scope) {
+  let obj = {
+    prefix,
+    body,
+    description,
+  };
+
+  if (scope) {
+    obj.scope = scope;
+  }
+
+  return obj;
+}
+
 /**
  * A code snippet. Code snippets are templates that make it easier to enter repeating code patterns.
  */
@@ -58,11 +72,12 @@ function Snippet(
   prefix = [],
   body = [],
   description = "",
-  scope = ""
+  scope = "",
 ) {
   let formattedPrefix = formatPrefix(prefix);
   let formattedBody = formatBody(body);
   let formattedScope = formatScope(scope);
+  let valueObject = getValueObject(name, prefix, body, description, scope);
 
   return {
     name,
@@ -84,6 +99,9 @@ function Snippet(
     },
     get scope() {
       return formattedScope;
+    },
+    toString() {
+      return `"${name}": ${JSON.stringify(valueObject)}`;
     },
   };
 }

@@ -10,6 +10,13 @@ let script = (function () {
     });
   };
 
+  let copySnippet = function (snippet) {
+    vscode.postMessage({
+      command: "copySnippet",
+      snippet,
+    });
+  };
+
   let editSnippet = function (path, snippetName) {
     vscode.postMessage({
       command: "editSnippet",
@@ -27,7 +34,7 @@ let script = (function () {
 
     let decodedPath = decodeURIComponent(path);
     let row = document.querySelector(
-      `table[data-path='${decodedPath}'] tbody tr[data-name='${snippetName}']`
+      `table[data-path='${decodedPath}'] tbody tr[data-name='${snippetName}']`,
     );
 
     if (row !== null) {
@@ -38,6 +45,7 @@ let script = (function () {
   return {
     openFile,
     editSnippet,
+    copySnippet,
     deleteSnippet,
   };
 })();
