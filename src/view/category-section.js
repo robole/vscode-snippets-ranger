@@ -1,7 +1,4 @@
-let {
-  createFileSection,
-  createExtensionFileSection,
-} = require("./file-section");
+let { createFileSection, createExtensionFileSection } = require("./file-section");
 let format = require("../helper/format");
 
 const notFoundHTML = `<p>Oucho Gaucho! 🌵 Nothing to round up! 🤠</p>`;
@@ -11,16 +8,17 @@ const notFoundHTML = `<p>Oucho Gaucho! 🌵 Nothing to round up! 🤠</p>`;
  * the currently opened project.
  * @param {SnippetsFile} snippetsFile - The snippets file you want the section based on.
  * @param {string} category - The category of snippets. Examples are: project, user, app.
+ * @param {Boolean} editable - Are the snippets editable
  * @returns {string} The HTML for the section
  */
-let createCategorySection = (snippetsFiles, category) => {
+let createCategorySection = (snippetsFiles, category, editable) => {
   let title = `${format.capitalize(category)} Snippets`;
   let opening = `<section id="${category}"><h2>${title}</h2>`;
 
   let section = opening;
 
   snippetsFiles.forEach((snippetFile) => {
-    section += createFileSection(snippetFile);
+    section += createFileSection(snippetFile, editable);
   });
 
   if (section === opening) {

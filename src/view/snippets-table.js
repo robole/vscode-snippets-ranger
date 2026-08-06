@@ -4,9 +4,10 @@ const format = require("../helper/format");
 /**
  * Create a HTML `table` that displays the snippet collection.
  * @param {SnippetsFile} snippetsFile - The `SnippetFile` to base the table on
+ * @param {Boolean} editable - Are the snippets editable
  * @returns {string} The HTML `table`
  */
-const createSnippetsTable = (snippetsFile) => {
+const createSnippetsTable = (snippetsFile, editable = true) => {
   let html = "";
   let opening = `<table data-path="${snippetsFile.path}"`;
 
@@ -17,7 +18,7 @@ const createSnippetsTable = (snippetsFile) => {
   }
 
   let head = createTableHead(snippetsFile);
-  let body = createTableBody(snippetsFile);
+  let body = createTableBody(snippetsFile, editable);
   let closing = `</table>`;
 
   html = `${opening}${head}${body}${closing}`;
@@ -43,7 +44,7 @@ const createTableHead = (snippetsFile) => {
 /**
  * Create the `tbody` section for the `SnippetsFile`
  */
-const createTableBody = (snippetsFile) => {
+const createTableBody = (snippetsFile, editable) => {
   // prevents funny business with charcters especially with slashes
   let uri = encodeURIComponent(snippetsFile.path);
 
@@ -68,7 +69,11 @@ const createTableBody = (snippetsFile) => {
       body += `<td>${format.escape(snippet.scope)}</td>`;
     }
 
-    body += `<td>${editButton}${deleteButton}</td></tr>`;
+    if (editable) {
+      body += `<td>${editButton}${deleteButton}</td></tr>`;
+    } else {
+      body += `<td></td></tr>`;
+    }
   });
 
   body += `</tbody>`;

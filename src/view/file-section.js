@@ -5,9 +5,10 @@ const format = require("../helper/format");
  * Creates the HTML for a section for the snippets contained in a file.
  * @param {SnippetsFile} snippetsFile The snippets file you want the section based on.
  * @param {string} category The category of the snippets e.g "project".
+ * @param {Boolean} editable - Are the snippets editable
  * @returns {string} The HTML for the section
  */
-const createFileSection = (snippetsFile) => {
+const createFileSection = (snippetsFile, editable) => {
   let html = "";
 
   if (snippetsFile !== undefined) {
@@ -22,7 +23,7 @@ const createFileSection = (snippetsFile) => {
     html += `<div id="${id}" class="bookmark"></div>`;
 
     if (snippetsFile.snippets.length > 0) {
-      html += createSnippetsTable(snippetsFile);
+      html += createSnippetsTable(snippetsFile, editable);
     } else {
       html += `<p>No snippets.</p>`;
     }

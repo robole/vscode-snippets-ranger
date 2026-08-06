@@ -5,13 +5,19 @@ All notable changes to this project are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [1.10.0] - 2023-11-21
+## [1.11.0] - 2026-08-06
+
+### Changed
+
+- No actions are shown for "App" snippets in the webview. Any changes made to these files will be wiped when VS Code is updated. Giving the impression that these changes are permanent is misleading.
+
+## [1.10.0] - 2026-08-05
 
 ### Changed
 
 - Update PAT secret to automate publishing to VS Code Marketplace again.
 
-## [1.9.0] - 2023-11-21
+## [1.9.0] - 2026-08-05
 
 ### Changed
 

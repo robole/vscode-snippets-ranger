@@ -36,7 +36,7 @@ function View(context) {
       {
         enableScripts: true,
         retainContextWhenHidden: true,
-      }
+      },
     );
 
     head = createHead();
@@ -66,7 +66,7 @@ function View(context) {
         }
       },
       {},
-      context.subscriptions
+      context.subscriptions,
     );
   }
 
@@ -77,7 +77,7 @@ function View(context) {
   function createHead() {
     let stylesheetLink = `<link rel="stylesheet" href="${convertToWebviewUri(
       "dist",
-      "styles.minified.css"
+      "styles.minified.css",
     )}">`;
 
     let html = `<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -98,7 +98,7 @@ function View(context) {
 		<h1>Snippets Ranger</h1>
 			<video src=${convertToWebviewUri(
         "img",
-        "loader-clip.mp4"
+        "loader-clip.mp4",
       )} autoplay muted loop></video>
 			<p>Rounding them up!</p>
 		</main>
@@ -128,7 +128,7 @@ function View(context) {
     projectSnippetsFiles,
     userSnippetsFiles,
     appSnippetsFiles,
-    extensions
+    extensions,
   ) {
     let html = `<!DOCTYPE html><html lang="en">${head}
 		<body><main><h1>Snippets Ranger</h1>`;
@@ -136,16 +136,13 @@ function View(context) {
       projectSnippetsFiles,
       userSnippetsFiles,
       appSnippetsFiles,
-      extensions
+      extensions,
     );
     html += createCategorySection(projectSnippetsFiles, "project");
     html += createCategorySection(userSnippetsFiles, "user");
     html += createExtensionCategorySection(extensions);
-    html += createCategorySection(appSnippetsFiles, "app");
-    html += `<script src="${convertToWebviewUri(
-      "script",
-      "main.js"
-    )}"></script>`;
+    html += createCategorySection(appSnippetsFiles, "app", false);
+    html += `<script src="${convertToWebviewUri("script", "main.js")}"></script>`;
     html += `</main></body></html>`;
 
     panel.webview.html = html;
