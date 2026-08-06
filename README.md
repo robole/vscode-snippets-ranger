@@ -8,18 +8,7 @@
   <br>
 </h1>
 <h4 align="center">View and edit all your snippets in one purty place. Yee-haw!</h4>
-
-<p align="center">
-<img src="https://img.shields.io/static/v1?logo=visual-studio-code&label=made%20for&message=VS%20Code&color=4747d1" alt="Made for VSCode">
-<img src="https://img.shields.io/visual-studio-marketplace/v/robole.snippets-ranger?logo=visual-studio-code&color=4747d1" alt="Visual Studio Marketplace Version">
-<img src="https://img.shields.io/static/v1?logo=visual-studio-code&label=size&message=159KB&color=4747d1"
-alt="Extension file size in bytes">
-<img src="https://img.shields.io/visual-studio-marketplace/r/robole.snippets-ranger?logo=visual-studio-code&color=4747d1" alt="Visual Studio Marketplace Rating">
-<img src="https://img.shields.io/visual-studio-marketplace/d/robole.snippets-ranger?logo=visual-studio-code&color=4747d1" alt="downloads"/>
-<img src="https://img.shields.io/visual-studio-marketplace/i/robole.snippets-ranger?logo=visual-studio-code&color=4747d1" alt="installs"/>
-<img src="https://img.shields.io/static/v1?label=built%20with&message=sarsaparilla%20%26%20javascript&color=4747d1" alt="Built with sarsaparilla and javascript"/>
-<a href="https://ko-fi.com/roboleary"><img src="https://img.shields.io/badge/Buy%20me%20a%20coffee-$4-gold?logo=buy-me-a-coffee" alt="Buy me a coffee"></a>
-</p>
+<br>
 
 ![Screenshot of the webview. It shows the user snippets for the markdown language in a table with the columns: prefix, name, description, body and action.](img/screenshots/view-showcase.webp)
 
@@ -77,7 +66,7 @@ The extension is only loaded when one of the commands are executed.
 
 ## Performance
 
-To gather and render approx 6000 snippets sourced from 18 different files, it takes 4.5 seconds on a modestly-specced laptop running Ubuntu 18. 🚀
+To gather and render approx 6000 snippets sourced from 18 different files, it takes 4.5 seconds on a very modestly-specced laptop running Ubuntu 18. 🚀
 
 ## Contribute
 
@@ -85,7 +74,7 @@ Contributions are welcome. If you have a suggestion or find a bug, please file a
 
 To help other people find the extension, you can [star the repo 🌟](https://github.com/robole/vscode-snippets-ranger), and leave a positive review in the [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=robole.snippets-ranger&ssr=false#review-details) or [Open VSX Registry](https://open-vsx.org/extension/robole/snippets-ranger/reviews). A recommendation on social media or on your blog is welcome too!
 
-You can [make a donation to support me](https://ko-fi.com/roboleary) to make this project a higher priority and allow me to dedicate more time to open-source. I can only do bits and pieces in my spare time!
+You can [make a donation to support me](https://ko-fi.com/roboleary) to make this project a higher priority and allow me to dedicate more time to open-source.
 
 ## Learn more about snippets
 
