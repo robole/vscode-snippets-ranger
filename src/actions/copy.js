@@ -6,7 +6,6 @@ const vscode = require("vscode");
  * @param {Snippet} snippet The snippet to copy
  */
 async function copySnippet(snippet) {
-  console.log(`Copying...${snippet}`);
   await vscode.env.clipboard.writeText(snippet);
 }
 

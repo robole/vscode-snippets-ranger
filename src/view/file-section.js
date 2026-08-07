@@ -55,7 +55,7 @@ const createExtensionFileSection = (snippetsFile) => {
     html += `<div id="${id}" class="bookmark"></div>`;
 
     if (snippetsFile.snippets.length > 0) {
-      html += createSnippetsTable(snippetsFile);
+      html += createSnippetsTable(snippetsFile, false);
     } else {
       html += `<p>No snippets.</p>`;
     }
